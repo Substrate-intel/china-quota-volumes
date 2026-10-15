@@ -1,0 +1,381 @@
+{
+ "principle": "忠实层只读；规则层改动必须先过门控（scripts/gate.py 全绿）再刷新本 manifest；视图层可再生成，不入指纹。",
+ "files": {
+  "schema/quota_schema.json": {
+   "sha256": "afe47bd27ec540add596906aa461c102248688867d79fc9cf2d45ad46c374cc8",
+   "size": 16463
+  },
+  "schema/amplified.json": {
+   "sha256": "24e64ae2e0a16fe1f662e6c7d3b3a2d42d78ed02f6f013d59900ce60164fe544",
+   "size": 1662
+  },
+  "scripts/build_page_map.py": {
+   "sha256": "bc3b4631a1c72035e3a8ca557583a9159b21b6382487cf73c36f1a01d062bd6f",
+   "size": 2416
+  },
+  "scripts/extract_raw.py": {
+   "sha256": "e87f3a6842f81fcad64e040da3b7f78c63ea0805597ad95f9741a1e202e11684",
+   "size": 41508
+  },
+  "scripts/map_price.py": {
+   "sha256": "a8a93af1e44593b040e97260999bd3f29cf4e8d32ef9f8124c22ed28555e6c3c",
+   "size": 10879
+  },
+  "scripts/map_machine_price.py": {
+   "sha256": "69faef3629a95c2af9fdb51278cd23ff4c8256c6cf14c595ba897241711b3ed3",
+   "size": 15929
+  },
+  "scripts/map_errata.py": {
+   "sha256": "7776ad604228a252b781a88acd9379279f739c41bcdac354bf38c2945d0ef978",
+   "size": 10883
+  },
+  "scripts/map_semantic.py": {
+   "sha256": "b44f8ce0bb0be6b2805386ff0c0ae2f69b24569d393310df4ddce81e8c87375e",
+   "size": 86634
+  },
+  "scripts/parse_note_rules.py": {
+   "sha256": "32a66d480ed38c5620d7e3761c0737e733f96a1a301d338ab2b57358cd3f0d5b",
+   "size": 14776
+  },
+  "scripts/apply_errata.py": {
+   "sha256": "9a52677bced1a95e5bb96721e0b2c5036f51898457ffb7e92c11f0dbb9e03e34",
+   "size": 15175
+  },
+  "scripts/validate_quota.py": {
+   "sha256": "8b195d94ca54fab2a70a65236c2b66ff93c123af6796f581e28970f9e2709847",
+   "size": 13876
+  },
+  "scripts/validate_chapter.py": {
+   "sha256": "26d5894bc60910cc82264b3bf891c20f38b3a2737b423b414f0fa9db557d6e7e",
+   "size": 33010
+  },
+  "scripts/check_errata_update.py": {
+   "sha256": "ba6456df686c36d0eda481a98ea8eb0523cfb0e4a7d7fa5c1d96096f5b079272",
+   "size": 20867
+  },
+  "scripts/make_manifest.py": {
+   "sha256": "afd6a28988bf3049498a53a817efd71ffd225a029434946f9599b3f6d93909a6",
+   "size": 5540
+  },
+  "scripts/gate.py": {
+   "sha256": "ce8420cb8dc2f310fe40bb855b841c696a054f0eb108c63e120401db72d37bd0",
+   "size": 9883
+  },
+  "scripts/crosscheck_fitz.py": {
+   "sha256": "c462062198eb54a89de1eb34f1217ee21a7676788570289e0f2e28876853a5ef",
+   "size": 11510
+  },
+  "scripts/extract_sections.py": {
+   "sha256": "69b33203793c24960bc5507c63ee138d6630829a435c551b0fb746f2f193b85b",
+   "size": 38724
+  },
+  "scripts/map_sections.py": {
+   "sha256": "bbb54ebe3ec1d9e0f454ff647773eee4d3dd8a2207432ddeef6e4d6c98894b43",
+   "size": 13834
+  },
+  "scripts/extract_toc.py": {
+   "sha256": "6439fc4fa2c2c29c784b1b08ac0769db1c882cf59c68f40c8421888542975688",
+   "size": 55118
+  },
+  "scripts/merge_material_prices.py": {
+   "sha256": "eaaedcc18cc62f3f51197b803fd020fe8576abd70e48bed0bcd38b2fc3e51ebc",
+   "size": 2355
+  },
+  "scripts/build_db.py": {
+   "sha256": "1092d30bb672a9dcc83bb76f7e923c7fc293c8d1e232c139c926ef0d8c17e93d",
+   "size": 88010
+  },
+  "scripts/derive_missing_prices.py": {
+   "sha256": "074c5a2757e82ec5a722a5ef5501d462ae762f098fff7e6e8c484b022e0403d7",
+   "size": 15484
+  },
+  "scripts/amplify_chapter.py": {
+   "sha256": "6018c230c138c618afb4258f96b5c8326cbd8b8b9619a68bbdf3debbb3aa5a3d",
+   "size": 31768
+  },
+  "web/template.html": {
+   "sha256": "d5302fdc6c25c2b27c86c0c919a4441b30406905fb73ace3d2a140c8a3cd4293",
+   "size": 75274
+  },
+  "out/errata.json": {
+   "sha256": "101daac0a3d44bb91c903896fe24feac5d49e49c8119521207e078d0b1f92e52",
+   "size": 466
+  },
+  "out/price_derive.json": {
+   "sha256": "59e65e1fc6ad341f4e9e4271837d10964858b7420fe187d92b591be43abe440e",
+   "size": 246048
+  },
+  "out/material_prices.json": {
+   "sha256": "4e32ba5569159d416a76f4f1fc8701a54cd7a8fa8d143101821ddf7e63c9387c",
+   "size": 114439
+  },
+  "out/machine_prices.json": {
+   "sha256": "ec61573e18ef7fb8feb1641c82c50cb401b4ef095e929a7c29058f6510d55fd3",
+   "size": 461774
+  },
+  "out/book_sections.json": {
+   "sha256": "75fc95fbe3f1afd00df657f7b49b9094fb4c7d1551224206e2c77d3debf0768c",
+   "size": 7992
+  },
+  "out/toc_raw.json": {
+   "sha256": "7e2e8be77b255fe2d6d0bfea6c2af14a13e1f469b4832c3bfb9cf13f8783d95d",
+   "size": 237416
+  },
+  "out/ch01_amplify_summary.json": {
+   "sha256": "112d8e0eb3b6dc5bef79864f6b7eef7f9b2bde516d38fc3f0b9b864532d460a0",
+   "size": 30881
+  },
+  "out/ch01_extract.json": {
+   "sha256": "b0b8edc396c407edfdbb0a4f24fb34bca22641f9067b45994f724faf03fcc1c6",
+   "size": 7509162
+  },
+  "out/ch01_note_rules.json": {
+   "sha256": "797c8da694b2b6ab3961398cc7d22b31eded1d99772569c743b1a5a6aca74d55",
+   "size": 248
+  },
+  "out/ch01_raw.json": {
+   "sha256": "1728e09808a1ed69e99fd102d8ffedffecfbc2df7e044cbab36bcbaaa73105fa",
+   "size": 2407046
+  },
+  "out/ch01_sections_raw.json": {
+   "sha256": "76b0f00fbda2f5cf37623c535bc9fb46784f13919c20324ff623874bac21a629",
+   "size": 36262
+  },
+  "out/ch01_validate.json": {
+   "sha256": "c428d41a7cac0508ed28c4046af4ac6969bfad11cf846624e99806611be50fe6",
+   "size": 1217690
+  },
+  "out/ch02_amplify_summary.json": {
+   "sha256": "155b18b8d0ae2c95173cd7c778a047fe7a0eb7a203b8be71eb76bcc97f8b736c",
+   "size": 11156
+  },
+  "out/ch02_extract.json": {
+   "sha256": "e8f1c264b7b73c8545fca4f64f7c5697959b917c9fd7b1a1a0beb6380f3e9009",
+   "size": 936691
+  },
+  "out/ch02_note_rules.json": {
+   "sha256": "797c8da694b2b6ab3961398cc7d22b31eded1d99772569c743b1a5a6aca74d55",
+   "size": 248
+  },
+  "out/ch02_raw.json": {
+   "sha256": "d78b2f7ca8ce0530961e487bbcb0322b30d4d276a65f3930a61831956caa9d9f",
+   "size": 343736
+  },
+  "out/ch02_sections_raw.json": {
+   "sha256": "3876084d7bf8f5f25c7c0e7b48eeae76a9116aa419e36e6f821f2be3b0bc540b",
+   "size": 19830
+  },
+  "out/ch02_validate.json": {
+   "sha256": "bc32d927242dd573cbefb8c7d72dfc984d12b4a05f1aa1bc4e530f13fc66862e",
+   "size": 255900
+  },
+  "out/ch03_amplify_summary.json": {
+   "sha256": "718d3ce3de0318a41016e4a7239cdd6c3b536077d6ba73ad96119991a078cba5",
+   "size": 28085
+  },
+  "out/ch03_extract.json": {
+   "sha256": "dc552fec768ea84bf7997237b3c41b46debc88067adc04de7dfe1c625615923c",
+   "size": 3532260
+  },
+  "out/ch03_note_rules.json": {
+   "sha256": "85377492b03980c554f43d74285efe435d87fbbd2f50535c5b9e0214be0ce5ca",
+   "size": 1410
+  },
+  "out/ch03_raw.json": {
+   "sha256": "694a3a6a93c4c2134f316ad816f5e54502f1262ab0df1ea6281d6d0eaa79bbad",
+   "size": 1354753
+  },
+  "out/ch03_sections_raw.json": {
+   "sha256": "b5276c11d13376f40f0881f692c96b3ad56698bd7be0dd84f197a05b1188fed8",
+   "size": 21569
+  },
+  "out/ch03_validate.json": {
+   "sha256": "3736d8e15982fba7d48eb4834ef5c7696f45fa2a0eb85abbec2a64d26144eb9a",
+   "size": 640416
+  },
+  "out/ch04_amplify_summary.json": {
+   "sha256": "eab653497ffc1dfc0aee0464d5299238e806b491849bf460c85cf2ca7d3fef01",
+   "size": 19019
+  },
+  "out/ch04_extract.json": {
+   "sha256": "de921c35d518a33a1974cf4670d36a46f1541d3a95194c152ba8a29b6a0e2c49",
+   "size": 593703
+  },
+  "out/ch04_note_rules.json": {
+   "sha256": "8a4e2901ef246666ece3e3315357a557829616f8fa7227b0c74e129935f96dbe",
+   "size": 699
+  },
+  "out/ch04_raw.json": {
+   "sha256": "8e0f7ef86ed84535673d50626531a6915356aea8c697c47da5e66e4d15156827",
+   "size": 364658
+  },
+  "out/ch04_sections_raw.json": {
+   "sha256": "94d0360f28907acaa9e9c0bfc45fdc908edc14aba6cec6300512e5baae10d46d",
+   "size": 16863
+  },
+  "out/ch04_validate.json": {
+   "sha256": "c99f6b65b61c5699c17c1657880ba33544764296f10c60ba790bbd4da4acdc76",
+   "size": 153135
+  },
+  "out/ch05_amplify_summary.json": {
+   "sha256": "504683c86fca07ffa2aec2485af2d6e7ee4212feda0ba717b1fce155bb5855fe",
+   "size": 12153
+  },
+  "out/ch05_extract.json": {
+   "sha256": "a192831d22b592d9a0e14156c596bd503cd39c371b0c285d9d3cdfec524215b6",
+   "size": 658587
+  },
+  "out/ch05_note_rules.json": {
+   "sha256": "797c8da694b2b6ab3961398cc7d22b31eded1d99772569c743b1a5a6aca74d55",
+   "size": 248
+  },
+  "out/ch05_raw.json": {
+   "sha256": "4d49d73572076a6a2429af5c8530130d8479fb4e0e22ba80f8e3f8e07b4ca3c5",
+   "size": 279162
+  },
+  "out/ch05_sections_raw.json": {
+   "sha256": "cc3c85c3b4b11e4aa7051054c7049cc43c046bba1c412945e7e2723b74602c3b",
+   "size": 20930
+  },
+  "out/ch05_validate.json": {
+   "sha256": "8236f6a79debefdcc12e6212a4bf0053c5d0d0a7c9aa43e9ab6d1c4410de92dd",
+   "size": 195955
+  },
+  "out/ch06_amplify_summary.json": {
+   "sha256": "fcffe9cbc5cadeb653d3bbd64f594b4585381bec64fa2952a6fe5575f709214c",
+   "size": 9845
+  },
+  "out/ch06_extract.json": {
+   "sha256": "9f9253c05676be4e7aa698bc34d542ad66d7cbb18d9538fd52193d41e8d234f6",
+   "size": 802617
+  },
+  "out/ch06_note_rules.json": {
+   "sha256": "797c8da694b2b6ab3961398cc7d22b31eded1d99772569c743b1a5a6aca74d55",
+   "size": 248
+  },
+  "out/ch06_raw.json": {
+   "sha256": "f745673a1a4ead7eb2fe87390bb8e9b99333db05b069902bcc7635c4c238b788",
+   "size": 260734
+  },
+  "out/ch06_sections_raw.json": {
+   "sha256": "c861dc90dc481cc6aedf2c41984ef8bd58cc6333a4482f4ebc6a1fe18375d09f",
+   "size": 16499
+  },
+  "out/ch06_validate.json": {
+   "sha256": "aff88997bd0e13a62ac5d6459c0e17b47b38aca69865562d2a1e0becec139845",
+   "size": 183153
+  },
+  "out/ch07_amplify_summary.json": {
+   "sha256": "f50ca9a9826bd27cae30368eac6c7f9ca9cc9be3dbb54481c0e9f810ad3b2a09",
+   "size": 9474
+  },
+  "out/ch07_extract.json": {
+   "sha256": "c595997907924e3605cd413b6cc6d4570a21efff213b32225b50d1277275bf77",
+   "size": 577133
+  },
+  "out/ch07_note_rules.json": {
+   "sha256": "797c8da694b2b6ab3961398cc7d22b31eded1d99772569c743b1a5a6aca74d55",
+   "size": 248
+  },
+  "out/ch07_raw.json": {
+   "sha256": "1a282af2d089ff12f1fe499d5339dba0bf2dc5f30ee50a99eb754b38c280d881",
+   "size": 262734
+  },
+  "out/ch07_sections_raw.json": {
+   "sha256": "bce8cbe34111a48bd89bb179f8ce661eb316dca93b0c3483203881fb131dc34f",
+   "size": 17931
+  },
+  "out/ch07_validate.json": {
+   "sha256": "baf43a82d2ad0cc9f848e225e967884545fb4a56ba54715a1dc0e4d7ef5b68da",
+   "size": 125863
+  },
+  "out/ch08_amplify_summary.json": {
+   "sha256": "d8c1b24daaa6caffef243cbc5261f4775031f2546a54f58e08d03369af9cb015",
+   "size": 5012
+  },
+  "out/ch08_extract.json": {
+   "sha256": "559ca1347f38c8bfe5f390ae26b61c95d4a60a093b0d56e2522abe45cb0c7133",
+   "size": 250182
+  },
+  "out/ch08_note_rules.json": {
+   "sha256": "797c8da694b2b6ab3961398cc7d22b31eded1d99772569c743b1a5a6aca74d55",
+   "size": 248
+  },
+  "out/ch08_raw.json": {
+   "sha256": "38e24c0a0ecf356bc8717c4c9bd085172e2c2b195b1236e4df07f241f67572d9",
+   "size": 101995
+  },
+  "out/ch08_sections_raw.json": {
+   "sha256": "04e1afb94f833842ac29e192792af82f0e629f84ffb45dc4147635cbfeea9fc4",
+   "size": 16363
+  },
+  "out/ch08_validate.json": {
+   "sha256": "054afdd84aed0e97e9e4670d34fd7307b24af3216d2e73367d7faa7d2fa753e0",
+   "size": 51547
+  },
+  "out/ch09_amplify_summary.json": {
+   "sha256": "9f46c6a3dc0f1622828be84f0c91e0e7c10f1ee0609f10a2f4db42274c5c4c89",
+   "size": 28161
+  },
+  "out/ch09_extract.json": {
+   "sha256": "67edece944bae24ec80bdf556de9e6d86ee1c5751879f63bb51e5a96231838da",
+   "size": 31059
+  },
+  "out/ch09_note_rules.json": {
+   "sha256": "797c8da694b2b6ab3961398cc7d22b31eded1d99772569c743b1a5a6aca74d55",
+   "size": 248
+  },
+  "out/ch09_raw.json": {
+   "sha256": "a5deefa020584fe5b47d6607387fb105d216a1e6dd1d595f421a5cc2d64a4246",
+   "size": 376941
+  },
+  "out/ch09_sections_raw.json": {
+   "sha256": "87fde8e0c19d0c2e55c64f9df5aaa85bb93548fbef729b491ff0b01177207978",
+   "size": 94623
+  },
+  "out/ch09_validate.json": {
+   "sha256": "18b0feb6a99a2310de398db09eb54ea4d172573bd25e790332e42ce902f450e2",
+   "size": 538
+  },
+  "out/book_sections_ch01.json": {
+   "sha256": "956424e77c8681c5981abd3c26a5a762757320c9b4b7a79379c5b34899fd3da7",
+   "size": 31700
+  },
+  "out/book_sections_ch02.json": {
+   "sha256": "4e638155527a922e44e4edf11302c1e4ef76dbb08f5e2f4f7b00fa859feed682",
+   "size": 16864
+  },
+  "out/book_sections_ch03.json": {
+   "sha256": "9d600884fff057ff928aed0e0e91e93e7b3b0c38c50123e1eaae3700d7bca702",
+   "size": 18479
+  },
+  "out/book_sections_ch04.json": {
+   "sha256": "180b1fb9f9e857604b2bbf24d5696abca1ddb9888af649d96b7333fd9be8e422",
+   "size": 14302
+  },
+  "out/book_sections_ch05.json": {
+   "sha256": "824c9d03597addf48e6cb409a5f2ee6842c874c24990c55923b84ce98844ea69",
+   "size": 18012
+  },
+  "out/book_sections_ch06.json": {
+   "sha256": "3261fb2b6c33b0e8e2c0927bdab6fb72c1ead55edc3402d49a88c4cbcbea74ea",
+   "size": 13894
+  },
+  "out/book_sections_ch07.json": {
+   "sha256": "26a517415c3d9c977c6bfc0471d273f4ae2f05e60e9f02f520627e5e6292874f",
+   "size": 15167
+  },
+  "out/book_sections_ch08.json": {
+   "sha256": "aee987ed1cd57444fd9fd4e6aea3c67f2643fc6e0f9fcaf395215d48c94d540c",
+   "size": 13672
+  },
+  "out/book_sections_ch09.json": {
+   "sha256": "e7663c9d439443b772e879ae146f94cba42e061e47696d6694a7a5a6e1074a5c",
+   "size": 130095
+  },
+  "11_价格库补录反推清单.md": {
+   "sha256": "24efa67c4ee9cba4407069d7ddad9c21eb23e1ae5a9e4fd27fc71266112bd0ad",
+   "size": 160442
+  }
+ }
+}

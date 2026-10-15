@@ -56,6 +56,16 @@
      "items": 1546
     },
     {
+     "key": "lvse",
+     "kind": "quota",
+     "label": "quota-extract-lvse",
+     "province": "辽宁",
+     "db": "liaoning-2024/quota-extract-lvse/db_pdf/lvse_quota.db",
+     "sha256": "e0bad2590006605c44d2082892561192ff96765c676316c2f1c1e53ed305973d",
+     "bytes": 425984,
+     "items": 487
+    },
+    {
      "key": "phb",
      "kind": "table",
      "label": "混凝土、砂浆配合比",

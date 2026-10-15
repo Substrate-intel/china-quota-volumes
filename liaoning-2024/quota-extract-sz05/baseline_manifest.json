@@ -1,0 +1,245 @@
+{
+ "principle": "忠实层只读；规则层改动必须先过门控（scripts/gate.py 全绿）再刷新本 manifest；视图层可再生成，不入指纹。",
+ "files": {
+  "schema/quota_schema.json": {
+   "sha256": "47dd54cb40f9db4a43d2d7bb473714529c8b4aea46e96dfa816509b466478622",
+   "size": 15367
+  },
+  "schema/amplified.json": {
+   "sha256": "1ace4d34106873ca2852e691cdb751c88307eff90fef77d31c98f43de01190e9",
+   "size": 825
+  },
+  "scripts/build_page_map.py": {
+   "sha256": "bc3b4631a1c72035e3a8ca557583a9159b21b6382487cf73c36f1a01d062bd6f",
+   "size": 2416
+  },
+  "scripts/extract_raw.py": {
+   "sha256": "e87f3a6842f81fcad64e040da3b7f78c63ea0805597ad95f9741a1e202e11684",
+   "size": 41508
+  },
+  "scripts/map_price.py": {
+   "sha256": "a8a93af1e44593b040e97260999bd3f29cf4e8d32ef9f8124c22ed28555e6c3c",
+   "size": 10879
+  },
+  "scripts/map_machine_price.py": {
+   "sha256": "69faef3629a95c2af9fdb51278cd23ff4c8256c6cf14c595ba897241711b3ed3",
+   "size": 15929
+  },
+  "scripts/map_errata.py": {
+   "sha256": "98c838f32b6efc2049f5425acb4e2ed6fcecdaff5c01e6355b15164bfdc40206",
+   "size": 10901
+  },
+  "scripts/map_semantic.py": {
+   "sha256": "aae9c57e392b53244f78a6072a35b28902dc094781f8766be5016a8f740abe73",
+   "size": 89359
+  },
+  "scripts/parse_note_rules.py": {
+   "sha256": "9903c9028329b46f2357c78ffe7696ad7c75305834ce88e2969ae96f08f67f4b",
+   "size": 17750
+  },
+  "scripts/apply_errata.py": {
+   "sha256": "1c8b9e2c04282592f2650300b3945ed6e583f35b5e433b5b720ddf7327851f83",
+   "size": 24297
+  },
+  "scripts/validate_quota.py": {
+   "sha256": "8b195d94ca54fab2a70a65236c2b66ff93c123af6796f581e28970f9e2709847",
+   "size": 13876
+  },
+  "scripts/validate_chapter.py": {
+   "sha256": "baea46f18d4e3b7e8da4cbdf60a2743cef5f9a912f08a93f9e0ef59ce582ad9d",
+   "size": 33278
+  },
+  "scripts/check_errata_update.py": {
+   "sha256": "ba6456df686c36d0eda481a98ea8eb0523cfb0e4a7d7fa5c1d96096f5b079272",
+   "size": 20867
+  },
+  "scripts/make_manifest.py": {
+   "sha256": "afd6a28988bf3049498a53a817efd71ffd225a029434946f9599b3f6d93909a6",
+   "size": 5540
+  },
+  "scripts/gate.py": {
+   "sha256": "c93a5197dad6f228aca002a75ff1a6a60ee080758bbed01bf61ea59662fe3e10",
+   "size": 12700
+  },
+  "scripts/crosscheck_fitz.py": {
+   "sha256": "c462062198eb54a89de1eb34f1217ee21a7676788570289e0f2e28876853a5ef",
+   "size": 11510
+  },
+  "scripts/extract_sections.py": {
+   "sha256": "4fd43d0fc48af8f4a533601d63ab9467c28ebed54a508e532f7a71a953bc6100",
+   "size": 40056
+  },
+  "scripts/map_sections.py": {
+   "sha256": "1ffafca115b11ea500b2432b9e668654d7a539d00d603640973d00278856c4b6",
+   "size": 14568
+  },
+  "scripts/extract_toc.py": {
+   "sha256": "fa7c477b54aa76b29164e5bbb84a72fee8afb9521946786282b1ef9ccd437158",
+   "size": 57053
+  },
+  "scripts/merge_material_prices.py": {
+   "sha256": "eaaedcc18cc62f3f51197b803fd020fe8576abd70e48bed0bcd38b2fc3e51ebc",
+   "size": 2355
+  },
+  "scripts/build_db.py": {
+   "sha256": "1092d30bb672a9dcc83bb76f7e923c7fc293c8d1e232c139c926ef0d8c17e93d",
+   "size": 88010
+  },
+  "scripts/derive_missing_prices.py": {
+   "sha256": "074c5a2757e82ec5a722a5ef5501d462ae762f098fff7e6e8c484b022e0403d7",
+   "size": 15484
+  },
+  "scripts/amplify_chapter.py": {
+   "sha256": "f21e0f869c8ee847ef522dadb0c564c011c3b19fc450d3b2cba89b2b18ba6a0b",
+   "size": 32767
+  },
+  "web/template.html": {
+   "sha256": "d5302fdc6c25c2b27c86c0c919a4441b30406905fb73ace3d2a140c8a3cd4293",
+   "size": 75274
+  },
+  "out/errata.json": {
+   "sha256": "5b004cb1573ff2f23473829bc333799f32c6bdf73875551e110bb44693187e79",
+   "size": 1062
+  },
+  "out/price_derive.json": {
+   "sha256": "b7bc989c262f89734fbc99baf7e90ffda2e561a193c020d15f6deb14369c005a",
+   "size": 62517
+  },
+  "out/material_prices.json": {
+   "sha256": "5f24c55d789d43f2ad5eff5c6805b7ceac4c957ee955489495c341c156a8c830",
+   "size": 118674
+  },
+  "out/machine_prices.json": {
+   "sha256": "ec61573e18ef7fb8feb1641c82c50cb401b4ef095e929a7c29058f6510d55fd3",
+   "size": 461774
+  },
+  "out/book_sections.json": {
+   "sha256": "aeac07dadce4038e0dcfef3c62477f07f838c7b04ac01fa35f1959dd2fcad6f8",
+   "size": 13818
+  },
+  "out/toc_raw.json": {
+   "sha256": "06d37b441da1b48f9e7c5a3a35df609dcf84be46f9448b5d05c8147504963240",
+   "size": 182600
+  },
+  "out/ch01_amplify_summary.json": {
+   "sha256": "de75d0d5adfeb8b22ae37a5d2bad62def58da0a679efb26acaec433d06ca92bc",
+   "size": 124876
+  },
+  "out/ch01_extract.json": {
+   "sha256": "72939c232fccb7f207c40f38e86ea045645f069d20600863b26846ded918d82b",
+   "size": 6012639
+  },
+  "out/ch01_note_rules.json": {
+   "sha256": "bd00f54a18300a1e6ddc86037adde1566bdb4797c556cd8f2aac3049b610c21f",
+   "size": 647
+  },
+  "out/ch01_raw.json": {
+   "sha256": "79505b2ab2c0a51888f0e804314ffd64724a4ed98c998a972fbd192197df1b51",
+   "size": 1980573
+  },
+  "out/ch01_sections_raw.json": {
+   "sha256": "b891946b0038577aa9bfca48991710bee455b7c09cd039485030d6b6e3d1a247",
+   "size": 45009
+  },
+  "out/ch01_validate.json": {
+   "sha256": "d2d64ce23c4d495d85b0e23a96ca7b1bdb519c6f7062051f3a77b7ce247b5e92",
+   "size": 1377228
+  },
+  "out/ch02_amplify_summary.json": {
+   "sha256": "4bf735bab42c9bd57ecc691fc97921e3d7f7a32fd660f349b52bf7dac00ce7ae",
+   "size": 23027
+  },
+  "out/ch02_extract.json": {
+   "sha256": "d6eab09f42e0f5cc85f77fdd91276da6f4aeb9a7e645c5b254e333d921b253a0",
+   "size": 7270765
+  },
+  "out/ch02_note_rules.json": {
+   "sha256": "797c8da694b2b6ab3961398cc7d22b31eded1d99772569c743b1a5a6aca74d55",
+   "size": 248
+  },
+  "out/ch02_raw.json": {
+   "sha256": "df10dd1db7b0866d9366ca61a0312233c3daf0926c71e6c6555528635a3f05f3",
+   "size": 2090164
+  },
+  "out/ch02_sections_raw.json": {
+   "sha256": "fe535338ba74f8fb237890f0953cfcf03a7e86b88edaaf81c10e00ab770a7082",
+   "size": 47336
+  },
+  "out/ch02_validate.json": {
+   "sha256": "db4a4f1ebc35bfb7561b4f4626f527bc551331df339d8bf8852a40cbe7947f11",
+   "size": 1454971
+  },
+  "out/ch03_amplify_summary.json": {
+   "sha256": "4ffb6f9268ec26778c75a0bca6a2416c97648424e092763e39a2c49506f5e814",
+   "size": 2885
+  },
+  "out/ch03_extract.json": {
+   "sha256": "ace1a1a0ee1021bb26072edf6ea61f40e5290531546c2ed85edb688f2097d930",
+   "size": 71985
+  },
+  "out/ch03_note_rules.json": {
+   "sha256": "797c8da694b2b6ab3961398cc7d22b31eded1d99772569c743b1a5a6aca74d55",
+   "size": 248
+  },
+  "out/ch03_raw.json": {
+   "sha256": "7c5c61cd47a4a6c154b6e259f85d9fe0899c67a9d131093431c32898623002da",
+   "size": 32473
+  },
+  "out/ch03_sections_raw.json": {
+   "sha256": "95d00410fdbe8d728a37ffe4c47e850fc86541e8bdc5c11bea652212fa44af88",
+   "size": 20297
+  },
+  "out/ch03_validate.json": {
+   "sha256": "0cef10288585f968d5eefaa307f0c5b6c00b574e100f1f3a172d13d6855803b9",
+   "size": 15587
+  },
+  "out/ch04_amplify_summary.json": {
+   "sha256": "7b74e793a1b8b7814b2b8e4a99947386562f78067643d9add425a7a59d333420",
+   "size": 29111
+  },
+  "out/ch04_errata_check.json": {
+   "sha256": "7f6237946b5585bf975225bab00020512b4f95c31982fbe8664be31205e40ce1",
+   "size": 2542
+  },
+  "out/ch04_extract.json": {
+   "sha256": "497bbbbe156736c2b7060d2154caed599c317ee3b90ae7c9f3bf0ba567d7032e",
+   "size": 3857749
+  },
+  "out/ch04_note_rules.json": {
+   "sha256": "797c8da694b2b6ab3961398cc7d22b31eded1d99772569c743b1a5a6aca74d55",
+   "size": 248
+  },
+  "out/ch04_raw.json": {
+   "sha256": "1141c5b69859559079bf84ac9506bc938b3b357782e5a037d6fb0199f543a8a8",
+   "size": 1541864
+  },
+  "out/ch04_sections_raw.json": {
+   "sha256": "f921583069df5942bf86e042e055b2acb301d6934eab0a43b72a14cab11e10e2",
+   "size": 86081
+  },
+  "out/ch04_validate.json": {
+   "sha256": "9d6781ebc81d55387cdf6965ad8198d2395b6bfa81cf9c031dc1c230e5823068",
+   "size": 632868
+  },
+  "out/book_sections_ch01.json": {
+   "sha256": "f5bd48a2b810141f1c0aa095726e2e9e225f4533098a1c151ed3e081a07f2ba2",
+   "size": 39992
+  },
+  "out/book_sections_ch02.json": {
+   "sha256": "c2e4c0359fa7125a0ef40e1a7c2bbb8e049df3561695532fc4f31e80936ed276",
+   "size": 46927
+  },
+  "out/book_sections_ch03.json": {
+   "sha256": "366fabf498ec375d2ceb193204989deb36ddb6fcc98b4cb091303333e8e2cb74",
+   "size": 16955
+  },
+  "out/book_sections_ch04.json": {
+   "sha256": "6e968f211b65a0f39cef29744f77c9ed431cd6926be71623834f8a0b9b486b1d",
+   "size": 110565
+  },
+  "11_价格库补录反推清单.md": {
+   "sha256": "8d48588cda64200c2836c25b2a3cf280414f50579377c5156e1b6a1e44608733",
+   "size": 23104
+  }
+ }
+}

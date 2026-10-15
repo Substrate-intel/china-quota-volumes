@@ -1,0 +1,165 @@
+{
+ "principle": "忠实层只读；规则层改动必须先过门控（scripts/gate.py 全绿）再刷新本 manifest；视图层可再生成，不入指纹。",
+ "files": {
+  "schema/quota_schema.json": {
+   "sha256": "e87b028960cb18617d6d0db70119ef87d3107dc1a3c54611197fb42b1ef9d684",
+   "size": 14656
+  },
+  "schema/amplified.json": {
+   "sha256": "f689013e1f79a8f6868650203e4f93862530e3b10cb56059e61f27f59252f3b7",
+   "size": 251
+  },
+  "scripts/build_page_map.py": {
+   "sha256": "bc3b4631a1c72035e3a8ca557583a9159b21b6382487cf73c36f1a01d062bd6f",
+   "size": 2416
+  },
+  "scripts/extract_raw.py": {
+   "sha256": "e87f3a6842f81fcad64e040da3b7f78c63ea0805597ad95f9741a1e202e11684",
+   "size": 41508
+  },
+  "scripts/map_price.py": {
+   "sha256": "a8a93af1e44593b040e97260999bd3f29cf4e8d32ef9f8124c22ed28555e6c3c",
+   "size": 10879
+  },
+  "scripts/map_machine_price.py": {
+   "sha256": "69faef3629a95c2af9fdb51278cd23ff4c8256c6cf14c595ba897241711b3ed3",
+   "size": 15929
+  },
+  "scripts/map_errata.py": {
+   "sha256": "c9af055d0d70700636f4f2c3a394eaf621129e091bebcd312bb5a931eba0a1cc",
+   "size": 10873
+  },
+  "scripts/map_semantic.py": {
+   "sha256": "b44f8ce0bb0be6b2805386ff0c0ae2f69b24569d393310df4ddce81e8c87375e",
+   "size": 86634
+  },
+  "scripts/parse_note_rules.py": {
+   "sha256": "9903c9028329b46f2357c78ffe7696ad7c75305834ce88e2969ae96f08f67f4b",
+   "size": 17750
+  },
+  "scripts/apply_errata.py": {
+   "sha256": "43ae00cf9f85c31b590f04e37c5147d8bddb8a96ba34de50f78af5c822712d37",
+   "size": 22804
+  },
+  "scripts/validate_quota.py": {
+   "sha256": "8b195d94ca54fab2a70a65236c2b66ff93c123af6796f581e28970f9e2709847",
+   "size": 13876
+  },
+  "scripts/validate_chapter.py": {
+   "sha256": "26d5894bc60910cc82264b3bf891c20f38b3a2737b423b414f0fa9db557d6e7e",
+   "size": 33010
+  },
+  "scripts/check_errata_update.py": {
+   "sha256": "ba6456df686c36d0eda481a98ea8eb0523cfb0e4a7d7fa5c1d96096f5b079272",
+   "size": 20867
+  },
+  "scripts/make_manifest.py": {
+   "sha256": "afd6a28988bf3049498a53a817efd71ffd225a029434946f9599b3f6d93909a6",
+   "size": 5540
+  },
+  "scripts/gate.py": {
+   "sha256": "5a59064b552fde83f3d49af75f7b98b349a879b0f4d96b2b8ed1e6279f5fe050",
+   "size": 11632
+  },
+  "scripts/crosscheck_fitz.py": {
+   "sha256": "c462062198eb54a89de1eb34f1217ee21a7676788570289e0f2e28876853a5ef",
+   "size": 11510
+  },
+  "scripts/extract_sections.py": {
+   "sha256": "cf18a010cb37d01564aac5bad7ed9d7f9eeb848437fd24c9165073ad34ca8c15",
+   "size": 38942
+  },
+  "scripts/map_sections.py": {
+   "sha256": "2044e47b20152e3649936c575940c9ef0704435a5fefaf79908a1d4e4ff4d151",
+   "size": 14351
+  },
+  "scripts/extract_toc.py": {
+   "sha256": "aa045f9371ca313a5012f1fc40473829f0284ccd3410bc9a7c14226425aaaaeb",
+   "size": 56822
+  },
+  "scripts/merge_material_prices.py": {
+   "sha256": "eaaedcc18cc62f3f51197b803fd020fe8576abd70e48bed0bcd38b2fc3e51ebc",
+   "size": 2355
+  },
+  "scripts/build_db.py": {
+   "sha256": "1092d30bb672a9dcc83bb76f7e923c7fc293c8d1e232c139c926ef0d8c17e93d",
+   "size": 88010
+  },
+  "scripts/derive_missing_prices.py": {
+   "sha256": "074c5a2757e82ec5a722a5ef5501d462ae762f098fff7e6e8c484b022e0403d7",
+   "size": 15484
+  },
+  "scripts/amplify_chapter.py": {
+   "sha256": "f21e0f869c8ee847ef522dadb0c564c011c3b19fc450d3b2cba89b2b18ba6a0b",
+   "size": 32767
+  },
+  "web/template.html": {
+   "sha256": "d5302fdc6c25c2b27c86c0c919a4441b30406905fb73ace3d2a140c8a3cd4293",
+   "size": 75274
+  },
+  "out/errata.json": {
+   "sha256": "887ce619b713e8cb4ccca4a9bf245354c3375b6f48c9f2628ea3b63967070f82",
+   "size": 1037
+  },
+  "out/price_derive.json": {
+   "sha256": "bd8508485ebe4f3c956b5812031f6f326e1f883503e749249d237552a37a5701",
+   "size": 285
+  },
+  "out/material_prices.json": {
+   "sha256": "0505cbef402d75d1f03a1b5b42344e540c14445d9db00cbfd4225cae4f7c26be",
+   "size": 1820
+  },
+  "out/machine_prices.json": {
+   "sha256": "ec61573e18ef7fb8feb1641c82c50cb401b4ef095e929a7c29058f6510d55fd3",
+   "size": 461774
+  },
+  "out/validate_report.json": {
+   "sha256": "5af8261791f20c41a5ebf38f37818ef3f8b92453ff4ea6d05afb5d1816f8c2a0",
+   "size": 1021
+  },
+  "out/book_sections.json": {
+   "sha256": "02eb23b8fb4995e27e70b74f658da176674b0af10e88f5fb700e367efd082c89",
+   "size": 2388
+  },
+  "out/toc_raw.json": {
+   "sha256": "cce718361cec94eabfb64e1bd9fe64c0e09fd8b347e797b6c67291fe3d7ac0f5",
+   "size": 19835
+  },
+  "out/ch01_amplify_summary.json": {
+   "sha256": "aa1aebd1c0788a0c47cab3a85e7a9e9d921937142d0a980a3f2606b245c67ff9",
+   "size": 10596
+  },
+  "out/ch01_errata_check.json": {
+   "sha256": "58b613669ac04c6de75bb6a7fa801b7d4acfd31dd645708639a2f5bafc22cb80",
+   "size": 2146
+  },
+  "out/ch01_extract.json": {
+   "sha256": "097bf32f31d07a9ce4317cdc677f3c3275f06e91352d111e9ec9ffa097e33682",
+   "size": 141603
+  },
+  "out/ch01_note_rules.json": {
+   "sha256": "452f5423ad736608de02d29b1e304935c10f02c0de9c6745224a1b68cffd5abe",
+   "size": 4916
+  },
+  "out/ch01_raw.json": {
+   "sha256": "29fa52a5365a66ad989c3f1b5b64ae510a7eb4222920cc695b3f872cc26dc6b8",
+   "size": 108069
+  },
+  "out/ch01_sections_raw.json": {
+   "sha256": "255fa7dda275453198586342d155ab7a43397d016429fe588b539d3565516d89",
+   "size": 12132
+  },
+  "out/ch01_validate.json": {
+   "sha256": "521f1a1ed38bccc7c206672803a1791338b63a80acbf3a27e9aa61784a5f0a6a",
+   "size": 80775
+  },
+  "out/book_sections_ch01.json": {
+   "sha256": "8ce40bb328e89f267d8a3da4f3d9be6225c12fce434dd7bc1c508d67cab2d7c6",
+   "size": 10005
+  },
+  "11_价格库补录反推清单.md": {
+   "sha256": "b989790f4223fef671a333e75f64c62a57edd44adde04ac8d392d0e71ebb65bd",
+   "size": 571
+  }
+ }
+}

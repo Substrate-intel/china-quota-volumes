@@ -121,6 +121,21 @@ VOLUMES = [
         "official_id": "1773818336979993",
         "source_sha12": "8cdcaed634f4",
     },
+    {
+        "id": "lvse",
+        "kind": "docx_quota",
+        "tag": "绿色建筑册（md源提取）",
+        "name": "辽宁省建设工程计价依据《绿色建筑工程定额》(2024)",
+        "dir": "quota-extract-lvse",
+        "sub": "out",
+        "db": "lvse_quota.db",
+        "web": "web/index.html",
+        "manifest": "baseline_manifest.json",
+        "report": "交付报告_绿色建筑工程定额_md源管线.md",
+        "pdf": "1773816825515128_nowm.pdf",
+        "official_id": "1773816825515128",
+        "source_sha12": "ac0de6d04eba",
+    },
 ]
 
 # 官方清单分组展示顺序（其余组排最后）
@@ -216,9 +231,11 @@ def collect_table(v):
 
 def collect_docx_quota(v):
     """docx 提取卷（sz01 起）：库=docx_source/docx_quota.db，前端=docx_source/index.html，
-    基线=docx_source/manifest.json，核验=docx_source/cost_check_report.json。现查渲染。"""
-    d = ROOT / v["dir"] / "docx_source"
-    con = sqlite3.connect(str(d / "docx_quota.db"))
+    基线=docx_source/manifest.json，核验=docx_source/cost_check_report.json。现查渲染。
+    可选覆盖项：sub（子目录，默认 docx_source）、db（库名，默认 docx_quota.db）、
+    web（前端相对路径，默认 <sub>/index.html）、manifest（默认 <sub>/manifest.json）。"""
+    d = ROOT / v["dir"] / v.get("sub", "docx_source")
+    con = sqlite3.connect(str(d / v.get("db", "docx_quota.db")))
     cur = con.cursor()
     meta = dict(cur.execute("select key, value from book_meta").fetchall())
     st = {
@@ -236,17 +253,19 @@ def collect_docx_quota(v):
     con.close()
     try:
         cc = json.load(open(d / "cost_check_report.json", encoding="utf-8"))
-        st["h1"] = cc["summary"]["H1"]; st["p1"] = cc["summary"]["P1"]
-        st["h2"] = cc["summary"]["H2"]; st["h3"] = cc["summary"]["H3"]; st["h4"] = cc["summary"]["H4"]
+        cc2 = cc.get("summary", cc)
+        st["h1"] = cc2["H1"]; st["p1"] = cc2["P1"]
+        st["h2"] = cc2.get("H2"); st["h3"] = cc2.get("H3"); st["h4"] = cc2.get("H4")
     except Exception:
         st["h1"] = st["p1"] = st["h2"] = st["h3"] = st["h4"] = None
     try:
-        st["baseline_files"] = len(json.load(open(d / "manifest.json", encoding="utf-8"))["files"])
+        mf = json.load(open(ROOT / v["dir"] / v.get("manifest", "docx_source/manifest.json"), encoding="utf-8"))
+        st["baseline_files"] = len(mf.get("files", mf))
     except Exception:
         st["baseline_files"] = None
     d0 = ROOT / v["dir"]
     st["pdf_pages"] = pdf_pages(v, d0)
-    st["web_ok"] = (d / "index.html").exists()
+    st["web_ok"] = (d0 / v.get("web", v.get("sub", "docx_source") + "/index.html")).exists()
     st["report_ok"] = bool(v["report"]) and (d0 / v["report"]).exists()
     return st
 
@@ -361,10 +380,13 @@ def render_quota(v, st):
 
 
 def render_docx_quota(v, st):
+    sub = v.get("sub", "docx_source")
+    db_rel = f'{sub}/{v.get("db", "docx_quota.db")}'
+    web_rel = v.get("web", f"{sub}/index.html")
     links = []
     if st["web_ok"]:
-        links.append(f'<a class="lbtn" href="{v["dir"]}/docx_source/index.html">识别成果库·章节树前端（docx提取卷）</a>')
-    links.append(f'<a class="lbtn ghost" href="{v["dir"]}/docx_source/docx_quota.db">SQLite 成果库</a>')
+        links.append(f'<a class="lbtn" href="{v["dir"]}/{web_rel}">识别成果库·章节树前端（提取卷）</a>')
+    links.append(f'<a class="lbtn ghost" href="{v["dir"]}/{db_rel}">SQLite 成果库</a>')
     if st["report_ok"]:
         links.append(f'<a class="lbtn ghost" href="{v["dir"]}/{v["report"]}">交付报告</a>')
     pdf = f'官方PDF {st["pdf_pages"]} 页' if st["pdf_pages"] else "PDF —"
@@ -480,7 +502,7 @@ def render_registry(registry, vols):
         v_st = done.get(it["file_id"])
         if v_st:
             v, st = v_st
-            front_rel = ("docx_source/index.html" if st.get("kind") == "docx_quota"
+            front_rel = (v.get("web", "docx_source/index.html") if st.get("kind") == "docx_quota"
                          else "web/index.html")
             entry = (f'<a class="lbtn" href="{v["dir"]}/{front_rel}">'
                      f'{v["tag"]}成果库</a>')
