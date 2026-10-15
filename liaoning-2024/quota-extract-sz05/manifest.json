@@ -1,0 +1,17 @@
+{
+ "policy": "核心产物 sha256 基线；有意变更后须过全部门控再刷新",
+ "source": "1773818587204558_nowm.docx sha12 6008b61e81de",
+ "files": {
+  "docx_extract_full.json": "cf32ecd9db8fe2249921c2c9b3743bc46ac0804f035e092805cd19defb5664ec",
+  "docx_index.json": "07362c7b3c5f4a95132824bd994c0b5d02bb801941e09b328372845fd8545d46",
+  "docx_items.json": "540d8bd58e5967da0ba2f21f1cc760ec64bc7cd8ae386aaf78a8b1db969230bc",
+  "alignment_log.json": "97dfe80d76b791e5e38dd956da1c48e80004a19304beea35a94fe0b494b02528",
+  "cost_check_report.json": "f6b11ccbbe01be350c8313ac9afa91bf14edd27e60fe3da0d8bdd9d0d3a8afee",
+  "index.html": "ecb813a5bee30dc7c6a57ee505fba1c509520bdb3b63e13fcd8b0efe50d0b5a5",
+  "docx_quota.db": "7f135eb4f1173e74ac5ed74be7b1add19a1bf42009bf41f6badf656c2b4f6371",
+  "docx_desc_rules.json": "19857087d49ad4cdffd589694b66d6fcc315a5557f270e5151456720ebab4f1b",
+  "docx_desc_rules_raw.json": "95378bafbe7b16a8a7b477ef2a93efb37e4363f228c4cb1a0ffbd946e2c62bb7",
+  "docx_toc.json": "c32cbcc074b15383651376dc3f9735290f3bd8736367cdf79a9e58d1ef784813",
+  "desc_align_log.json": "e4a5eed52f0d0f9ff5d221f77589aab57a073766e60c63003db4f337772ff2f7"
+ }
+}

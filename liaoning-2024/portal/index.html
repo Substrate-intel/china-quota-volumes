@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>辽宁省计价依据·文件库总览 (2024)</title>
+<style>
+:root{--bg:#f6f7f9;--panel:#fff;--line:#e5e7eb;--ink:#111827;--ink2:#6b7280;
+--accent:#1d4ed8;--accentbg:#eff6ff;--green:#16a34a;--greenbg:#f0fdf4;
+--red:#dc2626;--redbg:#fef2f2;--amber:#d97706;--amberbg:#fffbeb;
+--mono:"Consolas","Courier New",monospace}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Microsoft YaHei","PingFang SC",sans-serif;background:var(--bg);color:var(--ink);font-size:14px}
+.wrap{max-width:1180px;margin:0 auto;padding:26px 20px 60px}
+header{position:sticky;top:0;z-index:30;background:var(--panel);border-bottom:1px solid var(--line)}
+.h-in{max-width:1180px;margin:0 auto;padding:14px 20px;display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+h1{font-size:19px;font-weight:700}
+.h-sub{color:var(--ink2);font-size:12px}
+.cards{display:flex;gap:10px;margin:18px 0 6px;flex-wrap:wrap}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:9px 16px;min-width:132px}
+.card .n{font-size:20px;font-weight:700;font-family:var(--mono)}
+.card .n.b{color:var(--accent)} .card .n.g{color:var(--green)}
+.card .t{font-size:11px;color:var(--ink2)}
+section{margin-top:26px}
+h2{font-size:15px;font-weight:700;margin-bottom:10px;padding-left:9px;border-left:4px solid var(--accent)}
+.vgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:860px){.vgrid{grid-template-columns:1fr}}
+.vcard{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.vhead{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:4px}
+.vtitle{font-size:15px;font-weight:700}
+.vtag{font-size:11px;color:var(--ink2);background:var(--bg);border:1px solid var(--line);border-radius:5px;padding:2px 7px}
+.badge{font-size:11px;border-radius:20px;padding:3px 10px;font-weight:600}
+.badge.g{background:var(--greenbg);color:var(--green);border:1px solid #bbf7d0}
+.badge.a{background:var(--amberbg);color:var(--amber);border:1px solid #fde68a}
+.vname{color:var(--ink2);font-size:12px;margin:2px 0 10px}
+.ngrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:6px 10px;margin:8px 0 10px}
+.num{background:var(--bg);border-radius:8px;padding:6px 9px}
+.num .n{font-size:16px;font-weight:700;font-family:var(--mono);color:var(--ink)}
+.num .t{font-size:10.5px;color:var(--ink2)}
+.qrow{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0}
+.qchip{font-size:11.5px;border-radius:6px;padding:3px 9px;border:1px solid var(--line);background:var(--bg);color:var(--ink)}
+.qchip b{font-family:var(--mono)}
+.qchip.ok{background:var(--greenbg);border-color:#bbf7d0;color:var(--green)}
+.qchip.warn{background:var(--amberbg);border-color:#fde68a;color:var(--amber)}
+.qchip.bad{background:var(--redbg);border-color:#fecaca;color:var(--red)}
+.links{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.lbtn{display:inline-block;font-size:12.5px;text-decoration:none;border-radius:7px;padding:6px 13px;border:1px solid var(--accent);color:var(--accent);background:var(--accentbg)}
+.lbtn:hover{background:var(--accent);color:#fff}
+.lbtn.ghost{border-color:var(--line);color:var(--ink2);background:var(--panel)}
+.lbtn.ghost:hover{border-color:var(--ink2);color:var(--ink);background:var(--bg)}
+.meta{margin-top:10px;color:var(--ink2);font-size:11px;line-height:1.7}
+table{width:100%;border-collapse:collapse;background:var(--panel);border:1px solid var(--line);border-radius:10px;overflow:hidden;font-size:13px}
+th{background:var(--bg);text-align:left;font-size:12px;color:var(--ink2);padding:8px 12px;border-bottom:1px solid var(--line)}
+td{padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:none}
+td .m{font-family:var(--mono)}
+.note{background:var(--panel);border:1px dashed var(--line);border-radius:10px;padding:12px 16px;color:var(--ink2);font-size:12px;line-height:1.9;margin-top:14px}
+.note b{color:var(--ink)}
+footer{margin-top:34px;color:var(--ink2);font-size:11px;text-align:center;line-height:1.8}
+</style>
+</head>
+<body>
+<header><div class="h-in">
+  <h1>辽宁省建设工程计价依据 · 文件库总览（2024）</h1>
+  <span class="h-sub">并列文件识别提取情况与成果库入口 ｜ 双击即开 ｜ 指标现查渲染</span>
+</div></header>
+<div class="wrap">
+  <div class="cards">
+    <div class="card"><div class="n b">9</div><div class="t">计价依据文件（全独立）</div></div>
+    <div class="card"><div class="n b">13620</div><div class="t">定额子目合计</div></div>
+    <div class="card"><div class="n g">1546</div><div class="t">台班单价（机械+仪表）</div></div>
+    <div class="card"><div class="n g">382</div><div class="t">配合比组</div></div>
+    <div class="card"><div class="n">9</div><div class="t">独立成果库前端</div></div>
+    <div class="card"><div class="n" style="color:var(--amber)">21</div><div class="t">未识别名目（官方 30 份清单内）</div></div>
+  </div>
+
+  <section>
+    <h2>定额卷（章节树前端）</h2>
+    <div class="vgrid">
+<div class="vcard">
+  <div class="vhead"><span class="vtitle">房建装饰卷</span>
+    <span class="badge g">已收官 · gate 全绿</span>
+    <span class="vtag">PDF 1612 页</span><span class="vtag">基线指纹 178 文件</span></div>
+  <div class="vname">辽宁省建设工程计价依据《房屋建筑与装饰工程定额》(2024)</div>
+  <div class="ngrid">
+    <div class="num"><div class="n">17</div><div class="t">章</div></div>
+    <div class="num"><div class="n">3767</div><div class="t">定额子目</div></div>
+    <div class="num"><div class="n">968</div><div class="t">规则区块</div></div>
+    <div class="num"><div class="n">3723</div><div class="t">人工条目</div></div>
+    <div class="num"><div class="n">4535</div><div class="t">机械条目</div></div>
+    <div class="num"><div class="n">17097</div><div class="t">材料条目</div></div>
+    <div class="num"><div class="n">1787</div><div class="t">材料价格库</div></div>
+  </div>
+  <div class="qrow"><span class="qchip ok">unit 空值 <b>0</b></span><span class="qchip bad">H3 fail <b>1</b></span><span class="qchip ">H3 skip(库缺口·反推三表承接) <b>487</b></span><span class="qchip warn">疑点 open <b>946</b></span><span class="qchip ok">已确认 <b>108</b></span><span class="qchip warn">缺价反推 open <b>4</b></span><span class="qchip ">勘误 overlay <b>40</b></span></div>
+  <div class="links"><a class="lbtn" href="quota-extract/web/index.html">识别成果库·章节树前端</a><a class="lbtn ghost" href="quota-extract/out/quota_ln2024.db">SQLite 成果库</a></div>
+  <div class="meta">库生成：2026-10-13T23:01:33 ｜ 目录 quota-extract/ ｜ 管线：忠实层(fitz 按字体坐标归位)→语义映射→附注规则→勘误 overlay→校验→章节结构→建库(行数+外键+交叉对账门控)</div>
+</div>
+<div class="vcard">
+  <div class="vhead"><span class="vtitle">安装卷·电气册</span>
+    <span class="badge g">已收官 · gate 全绿</span>
+    <span class="vtag">PDF 999 页</span><span class="vtag">基线指纹 155 文件</span></div>
+  <div class="vname">辽宁省建设工程计价依据《安装工程·电气设备与线缆安装工程定额》(2024)</div>
+  <div class="ngrid">
+    <div class="num"><div class="n">17</div><div class="t">章</div></div>
+    <div class="num"><div class="n">2528</div><div class="t">定额子目</div></div>
+    <div class="num"><div class="n">463</div><div class="t">规则区块</div></div>
+    <div class="num"><div class="n">2528</div><div class="t">人工条目</div></div>
+    <div class="num"><div class="n">5774</div><div class="t">机械条目</div></div>
+    <div class="num"><div class="n">20106</div><div class="t">材料条目</div></div>
+    <div class="num"><div class="n">787</div><div class="t">材料价格库</div></div>
+  </div>
+  <div class="qrow"><span class="qchip warn">unit 空值 <b>103</b></span><span class="qchip bad">H3 fail <b>6</b></span><span class="qchip ">H3 skip(库缺口·反推三表承接) <b>128</b></span><span class="qchip warn">疑点 open <b>576</b></span><span class="qchip warn">缺价反推 open <b>8</b></span><span class="qchip ">勘误 overlay <b>5</b></span></div>
+  <div class="links"><a class="lbtn" href="quota-extract-az04/web/index.html">识别成果库·章节树前端</a><a class="lbtn ghost" href="quota-extract-az04/out/quota_ln2024.db">SQLite 成果库</a><a class="lbtn ghost" href="quota-extract-az04/out/AZ04_交付报告_覆盖清单与人工复核.md">交付报告</a></div>
+  <div class="meta">库生成：2026-10-14T00:34:48 ｜ 目录 quota-extract-az04/ ｜ 管线：忠实层(fitz 按字体坐标归位)→语义映射→附注规则→勘误 overlay→校验→章节结构→建库(行数+外键+交叉对账门控)</div>
+</div>
+<div class="vcard">
+  <div class="vhead"><span class="vtitle">安装卷·给排水采暖燃气册</span>
+    <span class="badge g">已收官 · gate 全绿</span>
+    <span class="vtag">PDF 881 页</span><span class="vtag">基线指纹 94 文件</span></div>
+  <div class="vname">辽宁省建设工程计价依据《安装工程·给排水、采暖、燃气安装工程定额》(2024)</div>
+  <div class="ngrid">
+    <div class="num"><div class="n">9</div><div class="t">章</div></div>
+    <div class="num"><div class="n">2091</div><div class="t">定额子目</div></div>
+    <div class="num"><div class="n">238</div><div class="t">规则区块</div></div>
+    <div class="num"><div class="n">2091</div><div class="t">人工条目</div></div>
+    <div class="num"><div class="n">6668</div><div class="t">机械条目</div></div>
+    <div class="num"><div class="n">24002</div><div class="t">材料条目</div></div>
+    <div class="num"><div class="n">505</div><div class="t">材料价格库</div></div>
+  </div>
+  <div class="qrow"><span class="qchip ok">unit 空值 <b>0</b></span><span class="qchip ok">H3 fail <b>0</b></span><span class="qchip ">H3 skip(库缺口·反推三表承接) <b>2060</b></span><span class="qchip warn">疑点 open <b>298</b></span><span class="qchip warn">缺价反推 open <b>8</b></span></div>
+  <div class="links"><a class="lbtn" href="quota-extract-az10/web/index.html">识别成果库·章节树前端</a><a class="lbtn ghost" href="quota-extract-az10/out/quota_ln2024.db">SQLite 成果库</a><a class="lbtn ghost" href="quota-extract-az10/out/AZ10_交付报告_覆盖清单与人工复核.md">交付报告</a></div>
+  <div class="meta">库生成：2026-10-14T00:34:21 ｜ 目录 quota-extract-az10/ ｜ 管线：忠实层(fitz 按字体坐标归位)→语义映射→附注规则→勘误 overlay→校验→章节结构→建库(行数+外键+交叉对账门控)</div>
+</div>
+<div class="vcard">
+  <div class="vhead"><span class="vtitle">安装卷·刷油防腐蚀绝热册</span>
+    <span class="badge g">已收官 · gate 全绿</span>
+    <span class="vtag">PDF 678 页</span><span class="vtag">基线指纹 119 文件</span></div>
+  <div class="vname">辽宁省建设工程计价依据《安装工程·刷油、防腐蚀、绝热工程定额》(2024)</div>
+  <div class="ngrid">
+    <div class="num"><div class="n">12</div><div class="t">章</div></div>
+    <div class="num"><div class="n">1885</div><div class="t">定额子目</div></div>
+    <div class="num"><div class="n">138</div><div class="t">规则区块</div></div>
+    <div class="num"><div class="n">1885</div><div class="t">人工条目</div></div>
+    <div class="num"><div class="n">2188</div><div class="t">机械条目</div></div>
+    <div class="num"><div class="n">4916</div><div class="t">材料条目</div></div>
+    <div class="num"><div class="n">207</div><div class="t">材料价格库</div></div>
+  </div>
+  <div class="qrow"><span class="qchip warn">unit 空值 <b>6</b></span><span class="qchip ok">H3 fail <b>0</b></span><span class="qchip ">H3 skip(库缺口·反推三表承接) <b>99</b></span><span class="qchip warn">疑点 open <b>830</b></span><span class="qchip warn">缺价反推 open <b>2</b></span><span class="qchip ">勘误 overlay <b>11</b></span></div>
+  <div class="links"><a class="lbtn" href="quota-extract-az12/web/index.html">识别成果库·章节树前端</a><a class="lbtn ghost" href="quota-extract-az12/out/quota_ln2024.db">SQLite 成果库</a><a class="lbtn ghost" href="quota-extract-az12/out/AZ12_交付报告_覆盖清单与人工复核.md">交付报告</a></div>
+  <div class="meta">库生成：2026-10-14T08:11:07 ｜ 目录 quota-extract-az12/ ｜ 管线：忠实层(fitz 按字体坐标归位)→语义映射→附注规则→勘误 overlay→校验→章节结构→建库(行数+外键+交叉对账门控)</div>
+</div>
+<div class="vcard">
+  <div class="vhead"><span class="vtitle">市政卷·拆除册</span>
+    <span class="badge g">已收官 · gate 全绿</span>
+    <span class="vtag">PDF 44 页</span><span class="vtag">基线指纹 40 文件</span></div>
+  <div class="vname">辽宁省建设工程计价依据《市政工程·拆除工程定额》(2024)</div>
+  <div class="ngrid">
+    <div class="num"><div class="n">1</div><div class="t">章</div></div>
+    <div class="num"><div class="n">77</div><div class="t">定额子目</div></div>
+    <div class="num"><div class="n">21</div><div class="t">规则区块</div></div>
+    <div class="num"><div class="n">77</div><div class="t">人工条目</div></div>
+    <div class="num"><div class="n">59</div><div class="t">机械条目</div></div>
+    <div class="num"><div class="n">50</div><div class="t">材料条目</div></div>
+    <div class="num"><div class="n">7</div><div class="t">材料价格库</div></div>
+  </div>
+  <div class="qrow"><span class="qchip ok">unit 空值 <b>0</b></span><span class="qchip ok">H3 fail <b>0</b></span><span class="qchip ">H3 skip(库缺口·反推三表承接) <b>56</b></span><span class="qchip warn">疑点 open <b>27</b></span><span class="qchip ok">缺价反推 open <b>0</b></span><span class="qchip ">勘误 overlay <b>1</b></span></div>
+  <div class="links"><a class="lbtn" href="quota-extract-sz10/web/index.html">识别成果库·章节树前端</a><a class="lbtn ghost" href="quota-extract-sz10/out/quota_ln2024.db">SQLite 成果库</a><a class="lbtn ghost" href="quota-extract-sz10/out/SZ10_交付报告_覆盖清单与人工复核.md">交付报告</a></div>
+  <div class="meta">库生成：2026-10-14T09:21:09 ｜ 目录 quota-extract-sz10/ ｜ 管线：忠实层(fitz 按字体坐标归位)→语义映射→附注规则→勘误 overlay→校验→章节结构→建库(行数+外键+交叉对账门控)</div>
+</div>
+<div class="vcard">
+  <div class="vhead"><span class="vtitle">市政卷·市政管网册</span>
+    <span class="badge g">已收官 · gate 全绿</span>
+    <span class="vtag">PDF 839 页</span><span class="vtag">基线指纹 60 文件</span></div>
+  <div class="vname">辽宁省建设工程计价依据《市政工程·市政管网工程定额》(2024)</div>
+  <div class="ngrid">
+    <div class="num"><div class="n">4</div><div class="t">章</div></div>
+    <div class="num"><div class="n">3014</div><div class="t">定额子目</div></div>
+    <div class="num"><div class="n">175</div><div class="t">规则区块</div></div>
+    <div class="num"><div class="n">3014</div><div class="t">人工条目</div></div>
+    <div class="num"><div class="n">6800</div><div class="t">机械条目</div></div>
+    <div class="num"><div class="n">24315</div><div class="t">材料条目</div></div>
+    <div class="num"><div class="n">531</div><div class="t">材料价格库</div></div>
+  </div>
+  <div class="qrow"><span class="qchip warn">unit 空值 <b>4</b></span><span class="qchip bad">H3 fail <b>6</b></span><span class="qchip ">H3 skip(库缺口·反推三表承接) <b>152</b></span><span class="qchip warn">疑点 open <b>507</b></span><span class="qchip warn">缺价反推 open <b>9</b></span><span class="qchip ">勘误 overlay <b>1</b></span></div>
+  <div class="links"><a class="lbtn" href="quota-extract-sz05/web/index.html">识别成果库·章节树前端</a><a class="lbtn ghost" href="quota-extract-sz05/out/quota_ln2024.db">SQLite 成果库</a><a class="lbtn ghost" href="quota-extract-sz05/out/SZ05_交付报告_覆盖清单与人工复核.md">交付报告</a></div>
+  <div class="meta">库生成：2026-10-14T15:50:56 ｜ 目录 quota-extract-sz05/ ｜ 管线：忠实层(fitz 按字体坐标归位)→语义映射→附注规则→勘误 overlay→校验→章节结构→建库(行数+外键+交叉对账门控)</div>
+</div></div>
+  </section>
+
+  <section>
+    <h2>定额卷（docx 提取卷）</h2>
+    <div class="vgrid">
+<div class="vcard">
+  <div class="vhead"><span class="vtitle">市政卷·土石方册（docx提取）</span>
+    <span class="badge g">已收官 · 九门全绿</span>
+    <span class="vtag">官方PDF 132 页</span><span class="vtag">基线指纹 11 文件</span></div>
+  <div class="vname">市政工程定额 第一册 土石方工程 (0401)</div>
+  <div class="ngrid">
+    <div class="num"><div class="n">258</div><div class="t">定额子目</div></div>
+    <div class="num"><div class="n">242</div><div class="t">人工条目</div></div>
+    <div class="num"><div class="n">283</div><div class="t">机械条目</div></div>
+    <div class="num"><div class="n">289</div><div class="t">材料条目</div></div>
+    <div class="num"><div class="n">84</div><div class="t">目录行</div></div>
+    <div class="num"><div class="n">57</div><div class="t">条文记录</div></div>
+  </div>
+  <div class="qrow"><span class="qchip ok">H1 <b>258/258</b></span><span class="qchip ok">P1 原版PDF取证 <b>258</b></span><span class="qchip ok">unit 空值 <b>0</b></span><span class="qchip ok">H2/H3/H4 fail <b>0/0/0</b></span></div>
+  <div class="links"><a class="lbtn" href="quota-extract-sz01/docx_source/index.html">识别成果库·章节树前端（docx提取卷）</a><a class="lbtn ghost" href="quota-extract-sz01/docx_source/docx_quota.db">SQLite 成果库</a><a class="lbtn ghost" href="quota-extract-sz01/out/SZ01_交付报告_覆盖清单与人工复核.md">交付报告</a></div>
+  <div class="meta">库生成：2026-10-15 ｜ 目录 quota-extract-sz01/ ｜ 管线：docx 保真层→子目解析(列=子目/行=费用)→条文每条一记录→H1-H6 造价逻辑核验→P1 官方原版 PDF 取证→九门门控（docx-quota-extract skill）</div>
+</div></div>
+  </section>
+
+  <section>
+    <h2>价格与配合比依据（检索前端）</h2>
+    <div class="vgrid">
+<div class="vcard">
+  <div class="vhead"><span class="vtitle">机械台班费用标准</span>
+    <span class="badge g">独立卷 · 已结构化</span>
+    <span class="vtag">PDF 224 页</span></div>
+  <div class="vname">辽宁省建设工程计价依据《施工机械台班费用标准》(2024)</div>
+  <div class="ngrid"><div class="num"><div class="n">953</div><div class="t">施工机械台班</div></div><div class="num"><div class="n">593</div><div class="t">仪器仪表台班</div></div></div>
+  <div class="qrow"><span class="qchip ok">机械 identity_bad <b>0</b></span><span class="qchip ok">仪表恒等 fail <b>0</b></span><span class="qchip bad">重复编码疑点 <b>1</b></span><span class="qchip">990803060（电动多级离心清水泵 / 砂泵）</span><span class="qchip warn">跨册引用缺口 <b>5</b></span></div>
+  <div class="links"><a class="lbtn" href="quota-extract-jxtb/web/index.html">识别成果库·检索前端</a><a class="lbtn ghost" href="quota-extract-jxtb/out/quota_ln2024.db">SQLite 成果库</a></div>
+  <div class="meta">施工机械 953（P19-141）+ 仪器仪表 593（P144-223，873 段 10 位码）全书两篇全覆盖；仪表恒等式 593/593 全 pass（单价≈折旧+维护+校验+动力费） ｜ 源 PDF sha12=4d7f9419cb92 ｜ 拆分自房建卷库（宿主 5 列副本保留），对应关系见 hosting_map.json</div>
+</div>
+<div class="vcard">
+  <div class="vhead"><span class="vtitle">混凝土·砂浆配合比</span>
+    <span class="badge g">独立卷 · 已结构化</span>
+    <span class="vtag">PDF 63 页</span></div>
+  <div class="vname">辽宁省建设工程计价依据《混凝土、砂浆配合比》(2024)</div>
+  <div class="ngrid"><div class="num"><div class="n">382</div><div class="t">配合比组</div></div><div class="num"><div class="n">1498</div><div class="t">组分明细</div></div></div>
+  <div class="qrow"><span class="qchip">一、混凝土配合比 220、二、耐酸、防腐及特种砂浆、混凝土配合比 52、三、抹灰砂浆配合比 52、五、垫层、保温层材料配合比 34、四、砌筑砂浆配合比 24</span></div>
+  <div class="links"><a class="lbtn" href="quota-extract-phb/web/index.html">识别成果库·检索前端</a><a class="lbtn ghost" href="quota-extract-phb/out/quota_ln2024.db">SQLite 成果库</a></div>
+  <div class="meta">mix_ratios（组基价）+ mix_components（组分消耗量） ｜ 源 PDF sha12=3c98f0b44f51（省平台官方册） ｜ 拆分自房建卷库（宿主副本保留），对应关系见 hosting_map.json</div>
+</div></div>
+    <div class="note">机械台班费用标准与混凝土·砂浆配合比为并列层级的独立计价依据文件，
+    2026-10-13 起从房建卷库拆分独立（原寄生形态：machine_prices / mix_ratios / mix_components 表）。
+    拆分前对应关系、宿主副本与恢复/复建引用路径全部留档于
+    <a href="hosting_map.json">hosting_map.json</a>；宿主卷库内历史副本保留、基线指纹不动，
+    需要数据链接或引用时从独立库按列映射复建。</div>
+  </section>
+
+  
+  <section>
+    <h2>官方清单对照 · 未识别名目（共 30 份）</h2>
+    <div class="qrow">
+      <span class="qchip ok">已识别 <b>9</b></span>
+      <span class="qchip warn">未识别 <b>21</b></span>
+      <span class="qchip">通用安装工程 <b>3/12</b></span><span class="qchip">市政工程 <b>3/11</b></span><span class="qchip ok">房屋建筑与装饰 <b>1/1</b></span><span class="qchip">装配式建筑 <b>0/1</b></span><span class="qchip">园林绿化 <b>0/1</b></span><span class="qchip">绿色建筑 <b>0/1</b></span><span class="qchip ok">机械台班费用 <b>1/1</b></span><span class="qchip ok">混凝土·砂浆配合比 <b>1/1</b></span><span class="qchip">建筑工程费用标准 <b>0/1</b></span>
+    </div>
+    <table>
+      <tr><th style="width:30px">#</th><th style="width:110px">专业组</th><th>名目（官方标题）</th>
+      <th style="width:130px">官方文件 ID</th><th style="width:76px">状态</th>
+      <th style="width:210px">入口</th><th style="width:200px">备注</th></tr>
+      <tr><td class="m">1</td><td>通用安装工程</td><td>2024年辽宁省《通用安装工程定额》第一册 机械设备安装工程</td><td class="m">1773817223827840</td><td><span class="badge a">待提取</span></td><td><a class="lbtn ghost" href="https://fwpt.zjt.ln.gov.cn/gczj//files/ZJT/2026-03-18/1773817223827840.pdf" target="_blank">官方 PDF 下载</a></td><td style="color:var(--ink2);font-size:11.5px">官方原版 PDF（省平台直链）</td></tr><tr><td class="m">2</td><td>通用安装工程</td><td>2024年辽宁省《通用安装工程定额》第十册 给排水、采暖、燃气安装工程</td><td class="m">1773818051825682</td><td><span class="badge g">已识别</span></td><td><a class="lbtn" href="quota-extract-az10/web/index.html">安装卷·给排水采暖燃气册成果库</a><a class="lbtn ghost" href="quota-extract-az10/out/AZ10_交付报告_覆盖清单与人工复核.md">交付报告</a></td><td style="color:var(--ink2);font-size:11.5px">源 PDF sha12=4f4b15e152d5 ｜ 子目 2091</td></tr><tr><td class="m">3</td><td>通用安装工程</td><td>2024年辽宁省《通用安装工程定额》第十一册 信息通信设备及线缆安装工程</td><td class="m">1773818095166709</td><td><span class="badge a">待提取</span></td><td><a class="lbtn ghost" href="https://fwpt.zjt.ln.gov.cn/gczj//files/ZJT/2026-03-18/1773818095166709.pdf" target="_blank">官方 PDF 下载</a></td><td style="color:var(--ink2);font-size:11.5px">官方原版 PDF（省平台直链）</td></tr><tr><td class="m">4</td><td>通用安装工程</td><td>2024年辽宁省《通用安装工程定额》第十二册 刷油、防腐蚀、绝热工程</td><td class="m">1773818164358303</td><td><span class="badge g">已识别</span></td><td><a class="lbtn" href="quota-extract-az12/web/index.html">安装卷·刷油防腐蚀绝热册成果库</a><a class="lbtn ghost" href="quota-extract-az12/out/AZ12_交付报告_覆盖清单与人工复核.md">交付报告</a></td><td style="color:var(--ink2);font-size:11.5px">源 PDF sha12=3ed50922ca02 ｜ 子目 1885</td></tr><tr><td class="m">5</td><td>通用安装工程</td><td>2024年辽宁省《通用安装工程定额》第二册 热力设备安装工程</td><td class="m">1773817330205464</td><td><span class="badge a">待提取</span></td><td><a class="lbtn ghost" href="https://fwpt.zjt.ln.gov.cn/gczj//files/ZJT/2026-03-18/1773817330205464.pdf" target="_blank">官方 PDF 下载</a></td><td style="color:var(--ink2);font-size:11.5px">官方原版 PDF（省平台直链）</td></tr><tr><td class="m">6</td><td>通用安装工程</td><td>2024年辽宁省《通用安装工程定额》第三册 静置设备与工艺金属结构制作安装工程</td><td class="m">1773817524947018</td><td><span class="badge a">待提取</span></td><td><a class="lbtn ghost" href="https://fwpt.zjt.ln.gov.cn/gczj//files/ZJT/2026-03-18/1773817524947018.pdf" target="_blank">官方 PDF 下载</a></td><td style="color:var(--ink2);font-size:11.5px">官方原版 PDF（省平台直链）</td></tr><tr><td class="m">7</td><td>通用安装工程</td><td>2024年辽宁省《通用安装工程定额》第四册 电气设备与线缆安装工程</td><td class="m">1773817671812302</td><td><span class="badge g">已识别</span></td><td><a class="lbtn" href="quota-extract-az04/web/index.html">安装卷·电气册成果库</a><a class="lbtn ghost" href="quota-extract-az04/out/AZ04_交付报告_覆盖清单与人工复核.md">交付报告</a></td><td style="color:var(--ink2);font-size:11.5px">源 PDF sha12=5d0a8c584ba7 ｜ 子目 2528</td></tr><tr><td class="m">8</td><td>通用安装工程</td><td>2024年辽宁省《通用安装工程定额》第五册 建筑智能化工程</td><td class="m">1773817700853997</td><td><span class="badge a">待提取</span></td><td><a class="lbtn ghost" href="https://fwpt.zjt.ln.gov.cn/gczj//files/ZJT/2026-03-18/1773817700853997.pdf" target="_blank">官方 PDF 下载</a></td><td style="color:var(--ink2);font-size:11.5px">官方原版 PDF（省平台直链）</td></tr><tr><td class="m">9</td><td>通用安装工程</td><td>2024年辽宁省《通用安装工程定额》第六册 自动化控制仪表安装工程</td><td class="m">1773817800796178</td><td><span class="badge a">待提取</span></td><td><a class="lbtn ghost" href="https://fwpt.zjt.ln.gov.cn/gczj//files/ZJT/2026-03-18/1773817800796178.pdf" target="_blank">官方 PDF 下载</a></td><td style="color:var(--ink2);font-size:11.5px">官方原版 PDF（省平台直链）</td></tr><tr><td class="m">10</td><td>通用安装工程</td><td>2024年辽宁省《通用安装工程定额》第七册 通风空调安装工程</td><td class="m">1773817847518209</td><td><span class="badge a">待提取</span></td><td><a class="lbtn ghost" href="https://fwpt.zjt.ln.gov.cn/gczj//files/ZJT/2026-03-18/1773817847518209.pdf" target="_blank">官方 PDF 下载</a></td><td style="color:var(--ink2);font-size:11.5px">官方原版 PDF（省平台直链）</td></tr><tr><td class="m">11</td><td>通用安装工程</td><td>2024年辽宁省《通用安装工程定额》第八册 工业管道安装工程</td><td class="m">1773817916889781</td><td><span class="badge a">待提取</span></td><td><a class="lbtn ghost" href="https://fwpt.zjt.ln.gov.cn/gczj//files/ZJT/2026-03-18/1773817916889781.pdf" target="_blank">官方 PDF 下载</a></td><td style="color:var(--ink2);font-size:11.5px">官方原版 PDF（省平台直链）</td></tr><tr><td class="m">12</td><td>通用安装工程</td><td>2024年辽宁省《通用安装工程定额》第九册 消防工程</td><td class="m">1773817984224554</td><td><span class="badge a">待提取</span></td><td><a class="lbtn ghost" href="https://fwpt.zjt.ln.gov.cn/gczj//files/ZJT/2026-03-18/1773817984224554.pdf" target="_blank">官方 PDF 下载</a></td><td style="color:var(--ink2);font-size:11.5px">官方原版 PDF（省平台直链）</td></tr><tr><td class="m">13</td><td>市政工程</td><td>2024年辽宁省《市政工程定额》第一册 土石方工程</td><td class="m">1773818336979993</td><td><span class="badge g">已识别</span></td><td><a class="lbtn" href="quota-extract-sz01/docx_source/index.html">市政卷·土石方册（docx提取）成果库</a><a class="lbtn ghost" href="quota-extract-sz01/out/SZ01_交付报告_覆盖清单与人工复核.md">交付报告</a></td><td style="color:var(--ink2);font-size:11.5px">源 PDF sha12=8cdcaed634f4 ｜ 子目 258</td></tr><tr><td class="m">14</td><td>市政工程</td><td>2024年辽宁省《市政工程定额》第十册 拆除工程</td><td class="m">1773818765049947</td><td><span class="badge g">已识别</span></td><td><a class="lbtn" href="quota-extract-sz10/web/index.html">市政卷·拆除册成果库</a><a class="lbtn ghost" href="quota-extract-sz10/out/SZ10_交付报告_覆盖清单与人工复核.md">交付报告</a></td><td style="color:var(--ink2);font-size:11.5px">源 PDF sha12=139de8f4d6dc ｜ 子目 77</td></tr><tr><td class="m">15</td><td>市政工程</td><td>2024年辽宁省《市政工程定额》第十一册 措施项目</td><td class="m">1773818813192976</td><td><span class="badge a">待提取</span></td><td><a class="lbtn ghost" href="https://fwpt.zjt.ln.gov.cn/gczj//files/ZJT/2026-03-18/1773818813192976.pdf" target="_blank">官方 PDF 下载</a></td><td style="color:var(--ink2);font-size:11.5px">官方原版 PDF（省平台直链）</td></tr><tr><td class="m">16</td><td>市政工程</td><td>2024年辽宁省《市政工程定额》第二册 道路工程</td><td class="m">1773818365410596</td><td><span class="badge a">待提取</span></td><td><a class="lbtn ghost" href="https://fwpt.zjt.ln.gov.cn/gczj//files/ZJT/2026-03-18/1773818365410596.pdf" target="_blank">官方 PDF 下载</a></td><td style="color:var(--ink2);font-size:11.5px">官方原版 PDF（省平台直链）</td></tr><tr><td class="m">17</td><td>市政工程</td><td>2024年辽宁省《市政工程定额》第三册 桥涵工程</td><td class="m">1773818415211293</td><td><span class="badge a">待提取</span></td><td><a class="lbtn ghost" href="https://fwpt.zjt.ln.gov.cn/gczj//files/ZJT/2026-03-18/1773818415211293.pdf" target="_blank">官方 PDF 下载</a></td><td style="color:var(--ink2);font-size:11.5px">官方原版 PDF（省平台直链）</td></tr><tr><td class="m">18</td><td>市政工程</td><td>2024年辽宁省《市政工程定额》第四册 隧道工程</td><td class="m">1773818476061359</td><td><span class="badge a">待提取</span></td><td><a class="lbtn ghost" href="https://fwpt.zjt.ln.gov.cn/gczj//files/ZJT/2026-03-18/1773818476061359.pdf" target="_blank">官方 PDF 下载</a></td><td style="color:var(--ink2);font-size:11.5px">官方原版 PDF（省平台直链）</td></tr><tr><td class="m">19</td><td>市政工程</td><td>2024年辽宁省《市政工程定额》第五册 市政管网工程</td><td class="m">1773818587204558</td><td><span class="badge g">已识别</span></td><td><a class="lbtn" href="quota-extract-sz05/web/index.html">市政卷·市政管网册成果库</a><a class="lbtn ghost" href="quota-extract-sz05/out/SZ05_交付报告_覆盖清单与人工复核.md">交付报告</a></td><td style="color:var(--ink2);font-size:11.5px">源 PDF sha12=eee418929f37 ｜ 子目 3014</td></tr><tr><td class="m">20</td><td>市政工程</td><td>2024年辽宁省《市政工程定额》第六册 水处理工程</td><td class="m">1773818668747916</td><td><span class="badge a">待提取</span></td><td><a class="lbtn ghost" href="https://fwpt.zjt.ln.gov.cn/gczj//files/ZJT/2026-03-18/1773818668747916.pdf" target="_blank">官方 PDF 下载</a></td><td style="color:var(--ink2);font-size:11.5px">官方原版 PDF（省平台直链）</td></tr><tr><td class="m">21</td><td>市政工程</td><td>2024年辽宁省《市政工程定额》第七册 生活垃圾处理工程</td><td class="m">1773818696988773</td><td><span class="badge a">待提取</span></td><td><a class="lbtn ghost" href="https://fwpt.zjt.ln.gov.cn/gczj//files/ZJT/2026-03-18/1773818696988773.pdf" target="_blank">官方 PDF 下载</a></td><td style="color:var(--ink2);font-size:11.5px">官方原版 PDF（省平台直链）</td></tr><tr><td class="m">22</td><td>市政工程</td><td>2024年辽宁省《市政工程定额》第八册 路灯工程</td><td class="m">1773818720878087</td><td><span class="badge a">待提取</span></td><td><a class="lbtn ghost" href="https://fwpt.zjt.ln.gov.cn/gczj//files/ZJT/2026-03-18/1773818720878087.pdf" target="_blank">官方 PDF 下载</a></td><td style="color:var(--ink2);font-size:11.5px">官方原版 PDF（省平台直链）</td></tr><tr><td class="m">23</td><td>市政工程</td><td>2024年辽宁省《市政工程定额》第九册 钢筋工程</td><td class="m">1773818745668531</td><td><span class="badge a">待提取</span></td><td><a class="lbtn ghost" href="https://fwpt.zjt.ln.gov.cn/gczj//files/ZJT/2026-03-18/1773818745668531.pdf" target="_blank">官方 PDF 下载</a></td><td style="color:var(--ink2);font-size:11.5px">官方原版 PDF（省平台直链）</td></tr><tr><td class="m">24</td><td>房屋建筑与装饰</td><td>2024年辽宁省《房屋建筑与装饰工程定额》合订册</td><td class="m">1773816609118923</td><td><span class="badge g">已识别</span></td><td><a class="lbtn" href="quota-extract/web/index.html">房建装饰卷成果库</a></td><td style="color:var(--ink2);font-size:11.5px">源 PDF sha12=cb3b6faba744 ｜ 子目 3767</td></tr><tr><td class="m">25</td><td>装配式建筑</td><td>2024年辽宁省《装配式建筑工程定额》合订册</td><td class="m">1773817000900819</td><td><span class="badge a">待提取</span></td><td><a class="lbtn ghost" href="https://fwpt.zjt.ln.gov.cn/gczj//files/ZJT/2026-03-18/1773817000900819.pdf" target="_blank">官方 PDF 下载</a></td><td style="color:var(--ink2);font-size:11.5px">官方原版 PDF（省平台直链）</td></tr><tr><td class="m">26</td><td>园林绿化</td><td>2024年辽宁省《园林绿化工程定额》合订册</td><td class="m">1773819131300494</td><td><span class="badge a">待提取</span></td><td><a class="lbtn ghost" href="https://fwpt.zjt.ln.gov.cn/gczj//files/ZJT/2026-03-18/1773819131300494.pdf" target="_blank">官方 PDF 下载</a></td><td style="color:var(--ink2);font-size:11.5px">官方原版 PDF（省平台直链）</td></tr><tr><td class="m">27</td><td>绿色建筑</td><td>2024年辽宁省《绿色建筑工程定额》合订册</td><td class="m">1773816825515128</td><td><span class="badge a">待提取</span></td><td><a class="lbtn ghost" href="https://fwpt.zjt.ln.gov.cn/gczj//files/ZJT/2026-03-18/1773816825515128.pdf" target="_blank">官方 PDF 下载</a></td><td style="color:var(--ink2);font-size:11.5px">官方原版 PDF（省平台直链）</td></tr><tr><td class="m">28</td><td>机械台班费用</td><td>2024年辽宁省《施工机械台班费用标准》合订册</td><td class="m">1773819019186524</td><td><span class="badge g">已识别</span></td><td><a class="lbtn" href="quota-extract-jxtb/web/index.html">机械台班费用标准成果库</a></td><td style="color:var(--ink2);font-size:11.5px">源 PDF sha12=4d7f9419cb92 ｜ 子目 953</td></tr><tr><td class="m">29</td><td>混凝土·砂浆配合比</td><td>2024年辽宁省《混凝土、砂浆配合比标准》合订册</td><td class="m">1773819057797896</td><td><span class="badge g">已识别</span></td><td><a class="lbtn" href="quota-extract-phb/web/index.html">混凝土·砂浆配合比成果库</a></td><td style="color:var(--ink2);font-size:11.5px">源 PDF sha12=3c98f0b44f51 ｜ 子目 382</td></tr><tr><td class="m">30</td><td>建筑工程费用标准</td><td>2024年辽宁省《建筑工程费用标准》合订册</td><td class="m">1773818980464198</td><td><span class="badge a">待提取</span></td><td><a class="lbtn ghost" href="https://fwpt.zjt.ln.gov.cn/gczj//files/ZJT/2026-03-18/1773818980464198.pdf" target="_blank">官方 PDF 下载</a></td><td style="color:var(--ink2);font-size:11.5px">官方原版 PDF（省平台直链）</td></tr>
+    </table>
+    <div class="note">清单来源：辽宁省住建厅工程造价管理平台「计价依据文件库」2024 年度
+    （<a href="https://fwpt.zjt.ln.gov.cn/gczj/gczj/jjyjwd/api/search.xhtml?nd=2024" target="_blank">官方检索页</a>），
+    共 30 份；本页快照 30 条，
+    页指纹 sha12=<span class="m">37422d959862</span>，
+    抓取于 2026-10-14 02:28:16（scripts/fetch_official_list.py，可重复执行核对）。
+    <b>已识别 5 份</b>：房建装饰、安装·电气（第四册）、安装·给排水采暖燃气（第十册）、
+    施工机械台班、混凝土·砂浆配合比，本地源 PDF 与官方文件 sha256 逐份校验一致。
+    <b>未识别 21 份</b>：含通用安装其余 10 册、市政 11 册、园林绿化/装配式建筑/绿色建筑/
+    建筑工程费用标准 4 册合订本——按同一规程（忠实层→语义→校验→建库→门控）开工，
+    说一声即启动。</div>
+  </section>
+
+  <section>
+    <h2>人工确认待办（跨卷汇总）</h2>
+    <table>
+      <tr><th style="width:28px">#</th><th style="width:110px">所属</th><th style="width:150px">事项</th><th style="width:70px">数量</th><th>说明</th></tr>
+      <tr><td>1</td><td>房建装饰卷</td><td>缺价反推确认</td><td class='m'>4</td><td>水泥砂浆 1∶1→319.25、1∶2.5→260.84（舍入级中位价，price_confirm.json 确认后补库）</td></tr><tr><td>2</td><td>房建装饰卷</td><td>H3 恒等式 fail</td><td class='m'>1</td><td>13-76/13-84 剩余人工对价</td></tr><tr><td>3</td><td>安装卷·电气册</td><td>缺价反推确认</td><td class='m'>8</td><td>price_confirm.json 确认后补库</td></tr><tr><td>4</td><td>安装卷·电气册</td><td>unit 空值复核</td><td class='m'>103</td><td>明细 out/unit_null_review.json；安装卷 95 条为名称内嵌括号单位（030410 章 65 条）</td></tr><tr><td>5</td><td>安装卷·电气册</td><td>H3 恒等式 fail</td><td class='m'>6</td><td>4-1683/1684、4-2316~2319</td></tr><tr><td>6</td><td>安装卷·给排水采暖燃气册</td><td>缺价反推确认</td><td class='m'>8</td><td>price_confirm.json 确认后补库</td></tr><tr><td>7</td><td>安装卷·刷油防腐蚀绝热册</td><td>缺价反推确认</td><td class='m'>2</td><td>price_confirm.json 确认后补库</td></tr><tr><td>8</td><td>安装卷·刷油防腐蚀绝热册</td><td>unit 空值复核</td><td class='m'>6</td><td>明细 out/unit_null_review.json；安装卷 95 条为名称内嵌括号单位（030410 章 65 条）</td></tr><tr><td>9</td><td>市政卷·市政管网册</td><td>缺价反推确认</td><td class='m'>9</td><td>price_confirm.json 确认后补库</td></tr><tr><td>10</td><td>市政卷·市政管网册</td><td>unit 空值复核</td><td class='m'>4</td><td>明细 out/unit_null_review.json；安装卷 95 条为名称内嵌括号单位（030410 章 65 条）</td></tr><tr><td>11</td><td>市政卷·市政管网册</td><td>H3 恒等式 fail</td><td class='m'>6</td><td>13-76/13-84 剩余人工对价</td></tr><tr><td>12</td><td>机械台班卷</td><td>重复编码人工确认</td><td class='m'>1</td><td>990803060（电动多级离心清水泵 / 砂泵） —— 同码不同机，按铁律留痕不静默去重</td></tr><tr><td>13</td><td>机械台班卷</td><td>跨册引用缺口人工对价</td><td class='m'>5</td><td>房建卷 1-163~167（液压锤破碎石方）引用「履带式单头液压岩石破碎机」，本册全书查无该机型（反推单价 1563.95 元/台班），属书本身引用缺口，禁硬造条目</td></tr><tr><td>14</td><td>安装卷</td><td>R1 编码推定确认</td><td class='m'>1</td><td>十五/十七章同印 030417，同位对齐推定十五章为 030415，raw_line 保真待人工确认</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>统一技术底座</h2>
+    <div class="note">
+      <b>提取管线</b>：忠实层（fitz 按字体+坐标归位，字节级可复现，禁运行时时间戳）→ 语义映射 → 附注规则 → 勘误 overlay →
+      分章校验 → 章节结构 → TOC 回锚 → 建库（行数+外键+交叉对账门控）<br>
+      <b>门控</b>：十二项全绿才合入（忠实层/分块/语义/目录/校验器/附注/勘误/C 疑点=0/恒等式 H1-H4/数据库对账/语义完整性/基线指纹）<br>
+      <b>基线指纹</b>：房建装饰卷 178 文件 ／ 安装卷·电气册 155 文件 ／ 安装卷·给排水采暖燃气册 94 文件 ／ 安装卷·刷油防腐蚀绝热册 119 文件 ／ 市政卷·拆除册 40 文件 ／ 市政卷·市政管网册 60 文件，
+      产物字节+脚本 sha+页界签名+源 PDF sha 四条件缓存命中则忠实层跳过重抽<br>
+      <b>人工确认口径</b>：一律 overlay（manual_confirm.json / price_confirm.json），改动过门控+刷指纹，禁直改 extract<br>
+      <b>页码口径</b>：房建卷 P28 起恒定偏移 27（1612 物理页）；安装卷册说明与正文共用偏移 19（999 物理页）；
+      机械台班册 224 物理页；配合比册 63 物理页（印刷页偏移 7）
+    </div>
+  </section>
+
+  <footer>由 build_portal.py 现查各卷 SQLite / baseline_manifest / PDF 生成 ｜ 重新生成：
+  venv python build_portal.py ｜ 新增计价依据文件 → VOLUMES 注册（official_id 对照官方文件 ID）｜
+  官方清单核对 → scripts/fetch_official_list.py ｜ 拆分对应关系 → hosting_map.json</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,101 @@
+{
+ "schema": 1,
+ "regions": [
+  {
+   "dir": "liaoning-2024",
+   "province": "辽宁",
+   "volumes": [
+    {
+     "key": "fj",
+     "kind": "quota",
+     "label": "房建与装饰工程定额",
+     "province": "辽宁",
+     "db": "liaoning-2024/quota-extract/db_pdf/quota_ln2024.db",
+     "sha256": "011a7a4fd1481d4e06fa88c527d1df9116cc3c178a630dfc388b1a0fba08427b",
+     "bytes": 4124672,
+     "items": 3767
+    },
+    {
+     "key": "az",
+     "kind": "quota",
+     "label": "安装工程定额·电气设备",
+     "province": "辽宁",
+     "db": "liaoning-2024/quota-extract-az04/db_pdf/quota_ln2024.db",
+     "sha256": "f5438ba601c66069da142554d97b2fd57a995e977ec2d1b9961834aab49368c6",
+     "bytes": 3866624,
+     "items": 2528
+    },
+    {
+     "key": "az10",
+     "kind": "quota",
+     "label": "安装工程定额·给排水采暖燃气",
+     "province": "辽宁",
+     "db": "liaoning-2024/quota-extract-az10/db_pdf/quota_ln2024.db",
+     "sha256": "00bf7418c4328a7f289a4f4905afba2a4bec32b18a81e2c04d489fd8b441b24f",
+     "bytes": 4239360,
+     "items": 2091
+    },
+    {
+     "key": "az12",
+     "kind": "quota",
+     "label": "安装工程定额·刷油防腐蚀绝热",
+     "province": "辽宁",
+     "db": "liaoning-2024/quota-extract-az12/db_pdf/quota_ln2024.db",
+     "sha256": "a45e588effac4dc4d5b9d9da78217a788e7c404ee98cd1706cc26026cd929be1",
+     "bytes": 1830912,
+     "items": 1885
+    },
+    {
+     "key": "jxtb",
+     "kind": "table",
+     "label": "施工机械台班费用标准（含仪器仪表）",
+     "province": "辽宁",
+     "db": "liaoning-2024/quota-extract-jxtb/db_pdf/quota_ln2024.db",
+     "sha256": "e10855c007b8aae8bb25bbf83c1e738515b45ea0edcbb878e1fc45ad9d7c5901",
+     "bytes": 221184,
+     "items": 1546
+    },
+    {
+     "key": "phb",
+     "kind": "table",
+     "label": "混凝土、砂浆配合比",
+     "province": "辽宁",
+     "db": "liaoning-2024/quota-extract-phb/db_pdf/quota_ln2024.db",
+     "sha256": "710d1da02dc65e697f6c738cb933e0379c2e62c583df88faf7cac1e6fabfaba1",
+     "bytes": 110592,
+     "items": 382
+    },
+    {
+     "key": "sz01",
+     "kind": "quota",
+     "label": "市政工程定额·土石方工程",
+     "province": "辽宁",
+     "db": "liaoning-2024/quota-extract-sz01/db_docx/docx_quota.db",
+     "sha256": "98f342272c58ffcaaeffe0fba1bde27bdfbc69654e25695c16a7cac57467a5ae",
+     "bytes": 249856,
+     "items": 258
+    },
+    {
+     "key": "sz05",
+     "kind": "quota",
+     "label": "市政工程定额·管网工程",
+     "province": "辽宁",
+     "db": "liaoning-2024/quota-extract-sz05/db_pdf/quota_ln2024.db",
+     "sha256": "db8a179dcc3af83fad0ef6f06f0a9972a93653e0860b5479be618904fa486d03",
+     "bytes": 4587520,
+     "items": 3014
+    },
+    {
+     "key": "sz10",
+     "kind": "quota",
+     "label": "市政工程定额·拆除",
+     "province": "辽宁",
+     "db": "liaoning-2024/quota-extract-sz10/db_pdf/quota_ln2024.db",
+     "sha256": "d29a5c8829c79aa1ea7fe712e26830fc3874917762ce617f45edf82c0c6f89e0",
+     "bytes": 319488,
+     "items": 77
+    }
+   ]
+  }
+ ]
+}

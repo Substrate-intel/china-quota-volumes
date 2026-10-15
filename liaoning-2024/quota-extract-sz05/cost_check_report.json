@@ -1,0 +1,469 @@
+{
+ "meta": {
+  "checked_at": "2026-10-14",
+  "source": "docx_source/docx_items.json (3014 items)",
+  "tolerance": {
+   "H1": 0.02,
+   "H3": 0.02,
+   "H4": 0.05
+  },
+  "rules": {
+   "H1": "基价=人工+材料+机械+综合费用(±0.02)",
+   "H2": "人工费/合计工日→单价聚类(容差±0.5)",
+   "H3": "机械费=Σ台班×台班价(machine_prices.json,名称+规格数字核匹配)",
+   "H4": "材料费=Σ消耗×材料价(material_prices_merged,名称+单位匹配;未计价括号与'其他材料费'按书口径)",
+   "H5": "量纲/倍数可疑扫描(不计pass/fail)",
+   "H6": "结构完整性",
+   "P1": "原版PDF取证:item_code+基价字符串 在库页码±1页文本命中"
+  }
+ },
+ "summary": {
+  "H1": {
+   "pass": 3014,
+   "fail": 0,
+   "skip": 0
+  },
+  "H2": {
+   "pass": 2997,
+   "fail": 17,
+   "skip": 0
+  },
+  "H3": {
+   "pass": 2238,
+   "fail": 0,
+   "skip": 776
+  },
+  "H4": {
+   "pass": 868,
+   "fail": 0,
+   "skip": 2146
+  },
+  "P1": {
+   "pass": 3014,
+   "fail": 0,
+   "skip": 0
+  },
+  "H5_suspects": 21,
+  "H6": {
+   "base_price缺": 0,
+   "unit缺": 0,
+   "work缺": 0,
+   "无人材机": 0
+  }
+ },
+ "H1_fails": [],
+ "H2_fails": [
+  {
+   "item_code": "5-400",
+   "rate": 117.0,
+   "labor_fee": 338.95,
+   "src": {
+    "tbl": 95,
+    "col": 3
+   }
+  },
+  {
+   "item_code": "5-418",
+   "rate": 117.13,
+   "labor_fee": 347.99,
+   "src": {
+    "tbl": 98,
+    "col": 3
+   }
+  },
+  {
+   "item_code": "5-497",
+   "rate": 145.4,
+   "labor_fee": 1488.58,
+   "src": {
+    "tbl": 118,
+    "col": 3
+   }
+  },
+  {
+   "item_code": "5-498",
+   "rate": 145.4,
+   "labor_fee": 1604.06,
+   "src": {
+    "tbl": 118,
+    "col": 4
+   }
+  },
+  {
+   "item_code": "5-499",
+   "rate": 145.4,
+   "labor_fee": 1718.02,
+   "src": {
+    "tbl": 118,
+    "col": 5
+   }
+  },
+  {
+   "item_code": "5-1008",
+   "rate": 136.06,
+   "labor_fee": 961.29,
+   "src": {
+    "tbl": 228,
+    "col": 8
+   }
+  },
+  {
+   "item_code": "5-2403",
+   "rate": 122.65,
+   "labor_fee": 439.32,
+   "src": {
+    "tbl": 561,
+    "col": 3
+   }
+  },
+  {
+   "item_code": "5-2950",
+   "rate": 148.06,
+   "labor_fee": 31.98,
+   "src": {
+    "tbl": 767,
+    "col": 3
+   }
+  },
+  {
+   "item_code": "5-2951",
+   "rate": 148.1,
+   "labor_fee": 31.25,
+   "src": {
+    "tbl": 767,
+    "col": 4
+   }
+  },
+  {
+   "item_code": "5-2952",
+   "rate": 148.21,
+   "labor_fee": 31.42,
+   "src": {
+    "tbl": 767,
+    "col": 5
+   }
+  },
+  {
+   "item_code": "5-2959",
+   "rate": 143.6,
+   "labor_fee": 555.72,
+   "src": {
+    "tbl": 770,
+    "col": 3
+   }
+  },
+  {
+   "item_code": "5-2960",
+   "rate": 143.61,
+   "labor_fee": 305.88,
+   "src": {
+    "tbl": 770,
+    "col": 4
+   }
+  },
+  {
+   "item_code": "5-2961",
+   "rate": 143.59,
+   "labor_fee": 278.56,
+   "src": {
+    "tbl": 770,
+    "col": 5
+   }
+  },
+  {
+   "item_code": "5-2980",
+   "rate": 124.83,
+   "labor_fee": 414.07,
+   "src": {
+    "tbl": 774,
+    "col": 3
+   }
+  },
+  {
+   "item_code": "5-2981",
+   "rate": 114.62,
+   "labor_fee": 256.17,
+   "src": {
+    "tbl": 774,
+    "col": 4
+   }
+  },
+  {
+   "item_code": "5-2982",
+   "rate": 110.6,
+   "labor_fee": 219.55,
+   "src": {
+    "tbl": 774,
+    "col": 5
+   }
+  },
+  {
+   "item_code": "5-2983",
+   "rate": 123.47,
+   "labor_fee": 384.87,
+   "src": {
+    "tbl": 774,
+    "col": 6
+   }
+  }
+ ],
+ "H2_zero": [],
+ "H3_fails": [],
+ "H4_fails": [],
+ "H4_match": {
+  "occ_total": 10405,
+  "occ_unmatched": 2050,
+  "rate": 0.803
+ },
+ "H5_suspects": [
+  {
+   "type": "邻列基价跳变>10x",
+   "item_code": "5-1149 <-> 5-1150",
+   "evidence": "tbl=265: 3387.9 -> 52728.03"
+  },
+  {
+   "type": "邻列基价跳变>10x",
+   "item_code": "5-2537 <-> 5-2538",
+   "evidence": "tbl=626: 86.26 -> 3094.81"
+  },
+  {
+   "type": "极端消耗量>1000",
+   "item_code": "5-477",
+   "evidence": "石蜡 1079kg",
+   "src": {
+    "tbl": 113,
+    "col": 7
+   }
+  },
+  {
+   "type": "极端消耗量>1000",
+   "item_code": "5-478",
+   "evidence": "石蜡 1190kg",
+   "src": {
+    "tbl": 113,
+    "col": 8
+   }
+  },
+  {
+   "type": "极端消耗量>1000",
+   "item_code": "5-482",
+   "evidence": "热轧厚钢板 δ10 ~ 20 1510kg",
+   "src": {
+    "tbl": 114,
+    "col": 6
+   }
+  },
+  {
+   "type": "极端消耗量>1000",
+   "item_code": "5-483",
+   "evidence": "热轧厚钢板 δ10 ~ 20 1880kg",
+   "src": {
+    "tbl": 114,
+    "col": 7
+   }
+  },
+  {
+   "type": "极端消耗量>1000",
+   "item_code": "5-484",
+   "evidence": "热轧厚钢板 δ10 ~ 20 2554kg",
+   "src": {
+    "tbl": 115,
+    "col": 3
+   }
+  },
+  {
+   "type": "极端消耗量>1000",
+   "item_code": "5-485",
+   "evidence": "热轧厚钢板 δ10 ~ 20 2925kg",
+   "src": {
+    "tbl": 115,
+    "col": 4
+   }
+  },
+  {
+   "type": "极端消耗量>1000",
+   "item_code": "5-486",
+   "evidence": "热轧厚钢板 δ10 ~ 20 3624kg",
+   "src": {
+    "tbl": 115,
+    "col": 5
+   }
+  },
+  {
+   "type": "极端消耗量>1000",
+   "item_code": "5-487",
+   "evidence": "热轧厚钢板 δ10 ~ 20 3724kg",
+   "src": {
+    "tbl": 115,
+    "col": 6
+   }
+  },
+  {
+   "type": "极端消耗量>1000",
+   "item_code": "5-1054",
+   "evidence": "水 1175.238m3",
+   "src": {
+    "tbl": 242,
+    "col": 7
+   }
+  },
+  {
+   "type": "极端消耗量>1000",
+   "item_code": "5-1055",
+   "evidence": "水 1780.952m3",
+   "src": {
+    "tbl": 242,
+    "col": 8
+   }
+  },
+  {
+   "type": "极端消耗量>1000",
+   "item_code": "5-1056",
+   "evidence": "水 2198.095m3",
+   "src": {
+    "tbl": 243,
+    "col": 3
+   }
+  },
+  {
+   "type": "极端消耗量>1000",
+   "item_code": "5-1057",
+   "evidence": "水 2615.238m3",
+   "src": {
+    "tbl": 243,
+    "col": 4
+   }
+  },
+  {
+   "type": "极端消耗量>1000",
+   "item_code": "5-1058",
+   "evidence": "水 3032.381m3",
+   "src": {
+    "tbl": 243,
+    "col": 5
+   }
+  },
+  {
+   "type": "极端消耗量>1000",
+   "item_code": "5-1059",
+   "evidence": "水 3448.571m3",
+   "src": {
+    "tbl": 243,
+    "col": 6
+   }
+  },
+  {
+   "type": "极端消耗量>1000",
+   "item_code": "5-1060",
+   "evidence": "水 3658.095m3",
+   "src": {
+    "tbl": 243,
+    "col": 7
+   }
+  },
+  {
+   "type": "极端消耗量>1000",
+   "item_code": "5-1061",
+   "evidence": "水 3866.667m3",
+   "src": {
+    "tbl": 243,
+    "col": 8
+   }
+  },
+  {
+   "type": "极端消耗量>1000",
+   "item_code": "5-1095",
+   "evidence": "水 1590.5m3",
+   "src": {
+    "tbl": 252,
+    "col": 7
+   }
+  },
+  {
+   "type": "极端消耗量>1000",
+   "item_code": "5-1096",
+   "evidence": "水 2472.15m3",
+   "src": {
+    "tbl": 252,
+    "col": 8
+   }
+  },
+  {
+   "type": "极端消耗量>1000",
+   "item_code": "5-1097",
+   "evidence": "水 3559.5m3",
+   "src": {
+    "tbl": 252,
+    "col": 9
+   }
+  }
+ ],
+ "H6_detail": {
+  "unit缺": [],
+  "work缺": [],
+  "无人材机": []
+ },
+ "P1_fails": [],
+ "H2_clusters": [
+  {
+   "rate": 110,
+   "count": 13
+  },
+  {
+   "rate": 116,
+   "count": 18
+  },
+  {
+   "rate": 118,
+   "count": 11
+  },
+  {
+   "rate": 119,
+   "count": 9
+  },
+  {
+   "rate": 120,
+   "count": 10
+  },
+  {
+   "rate": 121,
+   "count": 6
+  },
+  {
+   "rate": 122,
+   "count": 1284
+  },
+  {
+   "rate": 128,
+   "count": 160
+  },
+  {
+   "rate": 134,
+   "count": 13
+  },
+  {
+   "rate": 140,
+   "count": 7
+  },
+  {
+   "rate": 141,
+   "count": 5
+  },
+  {
+   "rate": 146,
+   "count": 1353
+  },
+  {
+   "rate": 152,
+   "count": 77
+  },
+  {
+   "rate": 158,
+   "count": 24
+  },
+  {
+   "rate": 266,
+   "count": 7
+  }
+ ]
+}

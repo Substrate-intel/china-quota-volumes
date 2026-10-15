@@ -1,0 +1,129 @@
+{
+  "title": "机械台班与配合比独立拆分·对应关系映射（拆分前留档，方便恢复/复建引用）",
+  "split_date": "2026-10-13",
+  "principle": "机械台班费用标准与混凝土·砂浆配合比为并列层级的独立计价依据文件，不再寄生定额卷库。宿主卷（房建装饰/安装电气）库内对应表保留为历史挂接副本，宿主卷 build_db.py 链路与基线指纹一律不动（gate 全绿不破）；独立卷为权威版。如需恢复寄生或复建引用，按本映射执行。",
+  "independent_volumes": [
+    {
+      "dir": "quota-extract-jxtb",
+      "book_name": "辽宁省建设工程计价依据《施工机械台班费用标准》(2024)",
+      "source_pdf": "input/machine_ln.pdf",
+      "source_pdf_sha12": "4d7f9419cb92",
+      "source_pdf_pages": 224,
+      "faithful_artifact": "out/mach_raw.json（忠实层，字节不动拷贝自房建卷）",
+      "semantic_artifact": "out/machine_prices.json（语义层含费用组成+恒等校验，sha12=ec61573e18ef）",
+      "db": "out/quota_ln2024.db",
+      "db_tables": {
+        "machine_prices": "全列权威版：code,name,spec,unit_price,dep,repair,maintain,assemble,labor_fee,fuel_fee,other_fee,labor_days,gasoline,diesel,electric,page,identity_ok",
+        "instrument_prices": "仪器仪表台班（extract_instrument_prices.py 产）：code,name,spec,unit_price,dep,maintain,check_fee,motive_fee,electric,page,identity_ok；恒等式 593/593 全 pass",
+        "extraction_issues": "提取疑点（990803060 重复编码 high + 跨册引用缺口 5 条：履带式单头液压岩石破碎机人工对价）",
+        "book_meta": "书名/来源/口径"
+      },
+      "known_gaps": "仪器仪表台班篇已补提取（P144-223，593 条，2026-10-13）；遗留：跨册引用缺口——房建卷 1-163~167 引用「履带式单头液压岩石破碎机」本册查无（反推 1563.95 元/台班），人工对价"
+    },
+    {
+      "dir": "quota-extract-phb",
+      "book_name": "辽宁省建设工程计价依据《混凝土、砂浆配合比》(2024)",
+      "source_pdf": "input/official/mortar_mix_ratio.pdf",
+      "source_pdf_sha12": "3c98f0b44f51",
+      "source_pdf_pages": 63,
+      "source_url": "https://fwpt.zjt.ln.gov.cn/gczj//files/ZJT/2026-03-18/1773819057797896.pdf",
+      "faithful_artifact": "out/mix_ratios_raw.json（忠实+语义一体，含组分，sha12=978338375dbe，条目内 source_sha=3c98f0b44f51）",
+      "db": "out/quota_ln2024.db",
+      "db_tables": {
+        "mix_ratios": "mix_code,section,item_name,spec,unit,base_price,page,print_page,source_sha",
+        "mix_components": "mix_id(FK)→mix_ratios.id，seq,name,unit,qty",
+        "book_meta": "书名/来源/口径"
+      }
+    },
+    {
+      "host": "quota-extract-sz10（市政卷·拆除册）",
+      "tables": {
+        "machine_prices": 953,
+        "mix_ratios": 0,
+        "mix_components": 0
+      },
+      "note": "2026-10-14 新提取卷（官方 1773818765049947.pdf，44 页，sha12=139de8f4d6dc）。机械台班 953 条复用 jxtb 独立卷产物（sha12=ec61573e18ef）；本册未挂载官方配比表，mix 表为 0。附录材料价格表 P44 仅 7 条（本册自带），无缺价反推缺口。"
+    },
+    {
+      "host": "quota-extract-sz05（市政卷·市政管网册）",
+      "tables": {
+        "machine_prices": 953,
+        "mix_ratios": 0,
+        "mix_components": 0
+      },
+      "note": "2026-10-14 新提取卷（官方 1773818587204558.pdf，839 页，sha12=eee418929f37）。四章 040501~040504 共 3014 子目，H1/H2/H4 fail=0，H3 fail 6 条（5-521~526 书印基准差白名单）。机械台班 953 条复用 jxtb 独立卷产物（sha12=ec61573e18ef）；本卷未挂载官方配比表，mix 表为 0。附录材料价格表 531 条（P808-822 区段）；勘误 1 条（材料行单位修正 套→m3，命中 5-2959~2961）；缺价反推 9 组/溯源 71/无法反推 78 待人工复核。"
+    }
+  ],
+  "host_copies_to_keep": [
+    {
+      "host": "quota-extract（房建装饰卷）",
+      "tables": {
+        "machine_prices": 953,
+        "mix_ratios": 382,
+        "mix_components": 1498
+      },
+      "note": "历史挂接副本，5 列精简版（code,name,spec,unit_price,page）。宿主 build_db.py 原链路未删，重跑即恢复寄生形态。"
+    },
+    {
+      "host": "quota-extract-az04（安装卷·电气册）",
+      "tables": {
+        "machine_prices": 953,
+        "mix_ratios": 382,
+        "mix_components": 1498
+      },
+      "note": "同上，与房建卷同源（两卷提取产物 sha 一致：machine_prices.json=ec61573e18ef，mix_ratios_raw.json=978338375dbe）。"
+    },
+    {
+      "host": "quota-extract-az10（安装卷·给排水采暖燃气册）",
+      "tables": {
+        "machine_prices": 953,
+        "mix_ratios": 0,
+        "mix_components": 0
+      },
+      "note": "2026-10-14 新提取卷。机械台班 953 条同为房建卷复刻（source=machine_prices.json sha12=ec61573e18ef）；本册未挂载官方配比表（子目砂浆/配合比材料按名称引用价格库），故 mix 表为 0。"
+    },
+    {
+      "host": "quota-extract-az12（安装卷·刷油防腐蚀绝热册）",
+      "tables": {
+        "machine_prices": 953,
+        "mix_ratios": 0,
+        "mix_components": 0
+      },
+      "note": "2026-10-14 新提取卷（官方 1773818164358303.pdf，678 页，sha12=3ed50922ca02）。机械台班 953 条复用 jxtb 独立卷产物（sha12=ec61573e18ef）；本册未挂载官方配比表，mix 表为 0。"
+    }
+  ],
+  "column_map": {
+    "host_machine_prices_5col": [
+      "code",
+      "name",
+      "spec",
+      "unit_price",
+      "page"
+    ],
+    "independent_machine_prices_full": [
+      "code",
+      "name",
+      "spec",
+      "unit_price",
+      "dep",
+      "repair",
+      "maintain",
+      "assemble",
+      "labor_fee",
+      "fuel_fee",
+      "other_fee",
+      "labor_days",
+      "gasoline",
+      "diesel",
+      "electric",
+      "page",
+      "identity_ok"
+    ],
+    "note": "独立库全列 ⊃ 宿主 5 列，宿主可无损从独立库导入。"
+  },
+  "recovery_and_relink": [
+    "恢复寄生（回滚独立）：宿主卷 build_db.py 链路原样保留，直接重跑即回寄生形态；独立卷目录可整体移除，数据无损失（同源）。",
+    "复建引用（推荐方向）：宿主卷需要机械台班/配合比数据时，从独立卷 out/quota_ln2024.db 导入（全列，列映射见 column_map），或 ATTACH 只读引用；引用关系在宿主 build_db.py 中注明来源卷与 sha。",
+    "两卷共用同一机械价格库的历史事实：machine_prices.json / mix_ratios_raw.json 在两宿主卷 out/ 中字节级一致，独立后单一权威源为独立卷产物。"
+  ]
+}
