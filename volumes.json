@@ -26,6 +26,16 @@
      "items": 2528
     },
     {
+     "key": "az09",
+     "kind": "quota",
+     "label": "安装工程定额·消防工程（md源提取）",
+     "province": "辽宁",
+     "db": "liaoning-2024/quota-extract-az09/db_pdf/az09_quota.db",
+     "sha256": "61bf92cee8ad8d6f521ef6fe49b5aed0bc5c275e456cbb2a906728604f6c8c65",
+     "bytes": 344064,
+     "items": 286
+    },
+    {
      "key": "az10",
      "kind": "quota",
      "label": "安装工程定额·给排水采暖燃气",
