@@ -136,21 +136,6 @@ VOLUMES = [
         "official_id": "1773816825515128",
         "source_sha12": "ac0de6d04eba",
     },
-    {
-        "id": "sz11",
-        "kind": "docx_quota",
-        "tag": "市政卷·措施项目册（md源提取）",
-        "name": "辽宁省建设工程计价依据《市政工程定额 第十一册 措施项目》(2024)",
-        "dir": "quota-extract-sz11",
-        "sub": "out",
-        "db": "sz11_quota.db",
-        "web": "web/index.html",
-        "manifest": "baseline_manifest.json",
-        "report": "交付报告_sz11_措施项目.md",
-        "pdf": "input/nowm.pdf",
-        "official_id": "1773818813192976",
-        "source_sha12": "2eecfa19fd87",
-    },
 ]
 
 # 官方清单分组展示顺序（其余组排最后）
