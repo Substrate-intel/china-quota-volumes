@@ -104,6 +104,16 @@
      "sha256": "d29a5c8829c79aa1ea7fe712e26830fc3874917762ce617f45edf82c0c6f89e0",
      "bytes": 319488,
      "items": 77
+    },
+    {
+     "key": "sz11",
+     "kind": "quota",
+     "label": "市政工程定额·第十一册 措施项目（md源提取）",
+     "province": "辽宁",
+     "db": "liaoning-2024/quota-extract-sz11/db_pdf/sz11_quota.db",
+     "sha256": "f0f83de848fd291284b820fa230198c34e2d30afe58085f40d837dbb363173ac",
+     "bytes": 421888,
+     "items": 470
     }
    ]
   }
