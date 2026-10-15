@@ -54,3 +54,5 @@
 - 提取管线：[docx-quota-extract](https://github.com/Substrate-intel/docx-quota-extract)（公开）
 - 质量体系：字节级可复现 · sha12 锚定 · 基线指纹 · 九门门控 · P1 原版取证
 - 在线调用：[工程人工具包 · 定额库](http://134.175.50.9/quota.html)
+
+<!-- sync-touch 2026-10-15: sz11 措施项目册入库（触发协同重放，私有仓 db 已先行就位） -->
