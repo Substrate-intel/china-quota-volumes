@@ -196,6 +196,21 @@ VOLUMES = [
         "official_id": "1773818720878087",
         "source_sha12": "1be417028780",
     },
+    {
+        "id": "yl01",
+        "kind": "docx_quota",
+        "tag": "园林绿化卷（md源提取）",
+        "name": "辽宁省建设工程计价依据《园林绿化工程定额》(2024)",
+        "dir": "quota-extract-yl01",
+        "sub": "out",
+        "db": "yl01_quota.db",
+        "web": "web/index.html",
+        "manifest": "baseline_manifest.json",
+        "report": "交付报告_yl01_园林绿化工程.md",
+        "pdf": "input/nowm.pdf",
+        "official_id": "1773819131300494",
+        "source_sha12": "7071387e8709",
+    },
 ]
 
 # 官方清单分组展示顺序（其余组排最后）

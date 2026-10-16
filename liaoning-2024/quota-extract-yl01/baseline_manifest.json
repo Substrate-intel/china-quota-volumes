@@ -1,0 +1,15 @@
+{
+ "md_extract_full.json": "20ecddae2c5573bc66dc8ed4c3ed083b6fce8b8b7a8a83248ba978b88cbbd970",
+ "md_index.json": "e157f0fb7a572419165f8c7cde3c1a0867a76312f621c26e153803d889e413ce",
+ "yl01_items.json": "e50b32b5a85365a5b107fe194a82a93ee81bec9a751e82197b5807c30d8fd521",
+ "yl01_toc.json": "02ea92c548c0c7c33e20fe9ef959cae8cf9f935c5bc7b8ab8014dbea06d44532",
+ "yl01_desc_rules.json": "ba95bb105ee7ada44d7538125e8c71bdb8d6df4b46e5d412e179fcfec8779eab",
+ "yl01_quota.db": "f4c237c65775567e5cb76b6c9fd9e1f961de6b062dcfd3d5b9c790c4599260e9",
+ "cost_check_report.json": "3cf1647105655bff42a5f4d36879f5e08ebd18d0355f4e8b2e73ee5e0bea777d",
+ "_web_data.json": "abf279668fc0af9a8e83b84313b2b66bf61d044b906b60fe2fed5012d06de9c1",
+ "index.html": "24e991a0c42706c12fb1be78c1911afae4339f6e901cbc7a016fa3ee821bd131",
+ "_anchors": {
+  "nowm_pdf_sha12": "77350d6d3a2d",
+  "wm_pdf_sha12": "7071387e8709"
+ }
+}

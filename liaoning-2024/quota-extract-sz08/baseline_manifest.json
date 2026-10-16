@@ -3,11 +3,11 @@
  "md_index.json": "5c50da0e0066e9d045e1fa8c2711e86fd095d4a4784e2e28dfcacf7c5475adce",
  "sz08_items.json": "27fc63da0085094919dd152fc65a657c913c2fb546c20208b728c6a38404c5e4",
  "sz08_toc.json": "781536d9e55af1b072bf8dff341caa7a1f4a8be03f5e46dac11e970784ec5a80",
- "sz08_desc_rules.json": "d8ef6e920098dfde14ef5b0fdea78dd5347a6a24c877e3f8488c6a145d09817f",
- "sz08_quota.db": "144341308dd6d512f3b0c31ac78672f0d449144b747976f9c926595ab1d55dd7",
+ "sz08_desc_rules.json": "638c17f82676d7ccd5e8a395c41fc38ee17dc3992f8b08e6b802e03bb7b7f2b2",
+ "sz08_quota.db": "cfe502f161416765cdb50a41b2d041bd16e69897b86e96108c7b06494cebd0ad",
  "cost_check_report.json": "ad90085d0ae77bbe8f08d5848f19aa68ef04140c2de9209e83ebb411be8b6ebc",
  "_web_data.json": "546c080c3a528724eb7e4afabe569bc8bd358a422952cba26dca5a61298f5cb0",
- "index.html": "ff47955f3fc21cb0659c2934cfef6f06d12a685dcc5066766406208b08b6cbd9",
+ "index.html": "d348ea95dc8205adf69782e02728dda8594b40b71b2edc9802115fb4dcbcb5c9",
  "_anchors": {
   "nowm_pdf_sha12": "ce4ff026042e",
   "wm_pdf_sha12": "1be417028780"
