@@ -31,7 +31,7 @@
      "label": "安装工程定额·消防工程（md源提取）",
      "province": "辽宁",
      "db": "liaoning-2024/quota-extract-az09/db_pdf/az09_quota.db",
-     "sha256": "61bf92cee8ad8d6f521ef6fe49b5aed0bc5c275e456cbb2a906728604f6c8c65",
+     "sha256": "e266aa8c0a4fe85498603f432823ef98ea5107e1e8e50d8758925ec99e182310",
      "bytes": 344064,
      "items": 286
     },
@@ -71,7 +71,7 @@
      "label": "绿色建筑工程定额（md源提取）",
      "province": "辽宁",
      "db": "liaoning-2024/quota-extract-lvse/db_pdf/lvse_quota.db",
-     "sha256": "e0bad2590006605c44d2082892561192ff96765c676316c2f1c1e53ed305973d",
+     "sha256": "d9cfea9fab51129920a4f438b75ea022ac6785f652cbb56469bcbf858049a670",
      "bytes": 425984,
      "items": 487
     },
@@ -101,7 +101,7 @@
      "label": "市政工程定额·第二册 道路工程（md源提取）",
      "province": "辽宁",
      "db": "liaoning-2024/quota-extract-sz02/db_pdf/sz02_quota.db",
-     "sha256": "3b8a511e498548e512c34d2178afa974aabf34b9b0329df0c258b0cda8db01c1",
+     "sha256": "36756e4f5efb2a93aac80f7a21f4d8a62113af31a34b6a9c5c0bbad8e291163d",
      "bytes": 479232,
      "items": 650
     },
@@ -131,7 +131,7 @@
      "label": "市政工程定额·第十一册 措施项目（md源提取）",
      "province": "辽宁",
      "db": "liaoning-2024/quota-extract-sz11/db_pdf/sz11_quota.db",
-     "sha256": "f0f83de848fd291284b820fa230198c34e2d30afe58085f40d837dbb363173ac",
+     "sha256": "04e97d06b3227ae3ca2686a3457a8b67bb78f3294ed699ebdebb3d80759f8dc6",
      "bytes": 421888,
      "items": 470
     }
