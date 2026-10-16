@@ -68,7 +68,7 @@
     {
      "key": "lvse",
      "kind": "quota",
-     "label": "quota-extract-lvse",
+     "label": "绿色建筑工程定额（md源提取）",
      "province": "辽宁",
      "db": "liaoning-2024/quota-extract-lvse/db_pdf/lvse_quota.db",
      "sha256": "e0bad2590006605c44d2082892561192ff96765c676316c2f1c1e53ed305973d",
@@ -94,6 +94,16 @@
      "sha256": "98f342272c58ffcaaeffe0fba1bde27bdfbc69654e25695c16a7cac57467a5ae",
      "bytes": 249856,
      "items": 258
+    },
+    {
+     "key": "sz02",
+     "kind": "quota",
+     "label": "市政工程定额·第二册 道路工程（md源提取）",
+     "province": "辽宁",
+     "db": "liaoning-2024/quota-extract-sz02/db_pdf/sz02_quota.db",
+     "sha256": "3b8a511e498548e512c34d2178afa974aabf34b9b0329df0c258b0cda8db01c1",
+     "bytes": 479232,
+     "items": 650
     },
     {
      "key": "sz05",
