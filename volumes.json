@@ -118,7 +118,7 @@
     {
      "key": "sz08",
      "kind": "quota",
-     "label": "quota-extract-sz08",
+     "label": "市政工程定额·第八册 路灯工程（md源提取）",
      "province": "辽宁",
      "db": "liaoning-2024/quota-extract-sz08/db_pdf/sz08_quota.db",
      "sha256": "144341308dd6d512f3b0c31ac78672f0d449144b747976f9c926595ab1d55dd7",
