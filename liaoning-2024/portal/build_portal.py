@@ -181,6 +181,21 @@ VOLUMES = [
         "official_id": "1773818365410596",
         "source_sha12": "08e1d3988a91",
     },
+    {
+        "id": "sz08",
+        "kind": "docx_quota",
+        "tag": "市政卷·路灯工程册（md源提取）",
+        "name": "辽宁省建设工程计价依据《市政工程定额 第八册 路灯工程》(2024)",
+        "dir": "quota-extract-sz08",
+        "sub": "out",
+        "db": "sz08_quota.db",
+        "web": "web/index.html",
+        "manifest": "baseline_manifest.json",
+        "report": "交付报告_sz08_路灯工程.md",
+        "pdf": "input/nowm.pdf",
+        "official_id": "1773818720878087",
+        "source_sha12": "1be417028780",
+    },
 ]
 
 # 官方清单分组展示顺序（其余组排最后）
