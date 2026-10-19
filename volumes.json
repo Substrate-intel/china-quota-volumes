@@ -180,6 +180,16 @@
      "sha256": "3701006eb6e2983a20082efc73293e2bfae0ac3cced1b9e4736ff9f7ea3e434d",
      "bytes": 1028096,
      "items": 1296
+    },
+    {
+     "key": "xj03",
+     "kind": "fee",
+     "label": "新疆维吾尔自治区建筑、安装、市政工程费用定额（2020版）",
+     "province": "新疆",
+     "db": "xinjiang-2020/quota-extract-xj03/db_pdf/xj03_quota.db",
+     "sha256": "d21ad023341e1be80d895aece6d9802e437d96a52771413360d3871f161c3f79",
+     "bytes": 249856,
+     "items": 66
     }
    ]
   }

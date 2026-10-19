@@ -1,0 +1,25 @@
+{
+ "_anchors": {
+  "charmap_sha12": "299e04bdef8d",
+  "md_sha12": "a738c92edf44",
+  "source_sha12": "9e5415fd102f"
+ },
+ "_counts": {
+  "atts": 6,
+  "docs": 10,
+  "issues": 6,
+  "items": 66,
+  "notes": 8,
+  "programs": 75,
+  "sections": 17,
+  "tables": 14,
+  "terms": 20,
+  "toc": 25
+ },
+ "convert_meta.json": "4b1ffca81db5a217b766c9fbe5cf793bc5e107a3596583530648fa7397188ce5",
+ "index.html": "4e0d7378993a2d5fcc3fafe6d54eaa8d9400c425048961f898aad88d89033c30",
+ "parse_fee.json": "37e6514bbddd1d56c29d69e465d7448dea519bb8435a53d3dba9414d417be7a9",
+ "xj03_charmap.json": "299e04bdef8d48545179f3a7a5fee953cefd12f220a00da8e27acb05fc0ac108",
+ "xj03_quota.db": "d21ad023341e1be80d895aece6d9802e437d96a52771413360d3871f161c3f79",
+ "xj03_source.md": "a738c92edf4485fcb1e10342cee1d29d16bdab05161d96c51173ad2bb3887a23"
+}
