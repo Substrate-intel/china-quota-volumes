@@ -3,6 +3,6 @@
  "out/convert_meta_xj15.json": "2db38da4768fe5181f16aa620efa89b3d54bac49dca9d24f0c24c969d1199a8b",
  "out/parse_fee_xj15.json": "fdb8e9cc5c390d30c9c80b466ee7dec02e97a4f9c02482749fe8d073b9c6d884",
  "out/xj15_quota.db": "c8cdba56e3731904e51fe50ae529c795770577660dfcaa4aca16180f324bea7c",
- "web/index.html": "08ecef2b50e7cdebf0caf99a9681f8d09ed3478a4e8a21f8256dc522fb716511",
- "web/template.html": "373231a0e4d0feeb2a458518abfff7e7868a96b96318fc6c056132f34a2cb4df"
+ "web/index.html": "b64a3e625752531d8722058a13d1a8a2bc262f7b5d76c1ab4cb97dedb05b3faf",
+ "web/template.html": "43006431c5e01599defcce0847984415d1da9bd2a1fbe1cefc32334d32bbb3a8"
 }

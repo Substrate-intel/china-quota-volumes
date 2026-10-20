@@ -103,8 +103,22 @@ $('tabs').addEventListener('click',function(e){
 // ---- structure tree ----
 // xj15：册→大节结构无「第X章」层，虚拟章 ch_no=0/1（合成）→ 标签只显示册下
 // 主体/附录名，禁渲染「第0章」（书无此层，防误导）
+// 坑94（2026-10-20 爪哥实证）：虚拟章标题=册名，与树上「第N册 册名」行重复 →
+// 册主体节点标签改「册主体（N节/M子目）」，禁二次渲染册名；附录虚拟章保留本名。
 function chLabel(ch){
-  return ch.title+'（'+ch.sections.length+'节/'+ch.n_items+'子目）';
+  var t=ch.title||'';
+  var vt=D.volumes[String(ch.vol)];
+  if(vt && normEq(t, vt.title||'')){
+    return '册主体（'+ch.sections.length+'节/'+ch.n_items+'子目）';
+  }
+  return t+'（'+ch.sections.length+'节/'+ch.n_items+'子目）';
+}
+function normEq(a,b){return String(a).replace(/\s+/g,'')===String(b).replace(/\s+/g,'');}
+// 坑94：区块标题随结构分流——册-节结构（虚拟章 no=0/1，书无「第X章」层）的
+// 说明条文是**册说明**，禁套章层模板渲染「章说明」（术语错误，用户实证无法
+// 与「册说明」对账）；rules 桶书名印「工程量计算规则」，标题如实保留。
+function explainLabel(ch){
+  return (ch.no===0||ch.no===1) ? '册说明' : '章说明';
 }
 var tree=$('tree'), chMap={};
 D.chapters.forEach(function(ch){
@@ -123,11 +137,16 @@ Object.keys(D.volumes).forEach(function(vn){
 function showCh(k){
   document.querySelectorAll('.tree .ch').forEach(function(x){x.classList.toggle('on',x.dataset.k===k)});
   var ch=chMap[k]; if(!ch)return;
-  var h='<h3>第'+ch.vol+'册 · '+esc(ch.title)+'</h3>';
+  var vt=D.volumes[String(ch.vol)];
+  // 坑94：虚拟章标题已含册名 → 主标题禁「第N册 · 册名」二次重复，册主体节点
+  // 直渲染册名；附录虚拟章（第十二册下）渲染「第十二册 · 附录」
+  var hd=(vt && normEq(ch.title, vt.title||'')) ? esc(ch.title)
+        : '第'+ch.vol+'册 · '+esc(ch.title);
+  var h='<h3>'+hd+'</h3>';
   h+='<p class="kw">节 '+ch.sections.length+' · 子目 '+ch.n_items+' · 说明条文 '+ch.explain.length+' · 计算规则 '+ch.rules.length+' · 注 '+ch.notes.length+'</p>';
   h+='<h3>节清单</h3>';
   ch.sections.forEach(function(s){h+='<p>· '+esc(s.title)+(s.pno?' <span class="kw">P'+s.pno+'</span>':'')+'</p>'});
-  if(ch.explain.length){h+='<h3>章说明</h3>'; ch.explain.forEach(function(x){h+='<p>'+(x.pno?'<span class="kw">P'+x.pno+'</span> ':'')+esc(x.text)+'</p>'})}
+  if(ch.explain.length){h+='<h3>'+explainLabel(ch)+'</h3>'; ch.explain.forEach(function(x){h+='<p>'+(x.pno?'<span class="kw">P'+x.pno+'</span> ':'')+esc(x.text)+'</p>'})}
   if(ch.rules.length){h+='<h3>工程量计算规则</h3>'; ch.rules.forEach(function(x){h+='<p>'+(x.pno?'<span class="kw">P'+x.pno+'</span> ':'')+esc(x.text)+'</p>'})}
   if(ch.notes.length){h+='<h3>注</h3>'; ch.notes.forEach(function(x){h+='<p><span class="kw">P'+x.pno+'</span> '+esc(x.content)+'</p>'})}
   $('ch-info').innerHTML=h;
