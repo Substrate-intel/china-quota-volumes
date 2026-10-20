@@ -228,7 +228,7 @@ VOLUMES = [
     {
         "id": "xj10",
         "kind": "xj_quota",
-        "tag": "市政消耗量定额卷（新疆2020·OCR双源）",
+        "tag": "市政消耗量定额一卷（新疆2020·OCR双源）",
         "name": "新疆维吾尔自治区市政工程消耗量定额（一）（2020版）",
         "dir": "quota-extract-xj10",
         "sub": "out",
@@ -238,6 +238,20 @@ VOLUMES = [
         "report": "交付报告_xj10_市政消耗量定额.md",
         "pdf": "input/ocr.pdf",
         "source_sha12": None,
+    },
+    {
+        "id": "xj11",
+        "kind": "xj_quota",
+        "tag": "市政消耗量定额二卷（新疆2020·OCR双源）",
+        "name": "新疆维吾尔自治区市政工程消耗量定额（二）（2020版）",
+        "dir": "quota-extract-xj11",
+        "sub": "out",
+        "db": "xj11_quota.db",
+        "web": "web/index.html",
+        "manifest": "baseline_manifest.json",
+        "report": "交付报告_xj11_市政消耗量定额.md",
+        "pdf": "input/ocr.pdf",
+        "source_sha12": "ffe37a296322",
     },
 ]
 
