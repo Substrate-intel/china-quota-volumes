@@ -1,0 +1,8 @@
+{
+ "out/xj12_source.md": "288c925fe57d11ac6c42942dcf723072ec1b3b542779a0c3fb10cdc0d4e2895f",
+ "out/convert_meta.json": "e7b18010487ab915939d6f31ddcd92736166d8a382b0c269465a211032ac44d5",
+ "out/parse_fee.json": "a6f0585c3052c8ade8f6a3c06693e5ae5bb0ff94e41fa91c158e7025c8cbc10c",
+ "out/xj12_quota.db": "32c06c6e796ecabc924f2a11b263b2177b8ceee2ed156f891c9f67ee299ab749",
+ "web/index.html": "69181ada57a2a2cf3ff815085ea8a3a13fb6c379663bf34464ae7299890d4d1d",
+ "web/template.html": "c4db906db94173e5bc7bb9322fe1ae705ed22a5987a1c6f2c9b14198e66573eb"
+}
