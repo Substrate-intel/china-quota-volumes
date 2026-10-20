@@ -214,7 +214,7 @@
     {
      "key": "xj12",
      "kind": "quota",
-     "label": "2020版新疆维吾尔自治区市政工程消耗量定额（三）",
+     "label": "新疆市政工程消耗量定额（三）（OCR双源）",
      "province": "新疆",
      "db": "xinjiang-2020/quota-extract-xj12/db_pdf/xj12_quota.db",
      "sha256": "32c06c6e796ecabc924f2a11b263b2177b8ceee2ed156f891c9f67ee299ab749",
@@ -224,7 +224,7 @@
     {
      "key": "xj13",
      "kind": "quota",
-     "label": "2020版新疆维吾尔自治区市政工程消耗量定额（四）",
+     "label": "新疆市政工程消耗量定额（四）（OCR双源）",
      "province": "新疆",
      "db": "xinjiang-2020/quota-extract-xj13/db_pdf/xj13_quota.db",
      "sha256": "610966c6c132c3358b307487d422754cfbff625a63d9fa80afea7f0ec7caab1c",
@@ -234,12 +234,22 @@
     {
      "key": "xj14",
      "kind": "quota",
-     "label": "2020版新疆维吾尔自治区市政工程消耗量定额（五）",
+     "label": "新疆市政工程消耗量定额（五）（OCR双源）",
      "province": "新疆",
      "db": "xinjiang-2020/quota-extract-xj14/db_pdf/xj14_quota.db",
      "sha256": "86f9e332ab49cea67b53eeac6f003a2596db76c6297c60afc7a2d1c7c2a5cfd6",
      "bytes": 1261568,
      "items": 950
+    },
+    {
+     "key": "xj15",
+     "kind": "quota",
+     "label": "新疆安装工程补充消耗量定额（OCR双源）",
+     "province": "新疆",
+     "db": "xinjiang-2020/quota-extract-xj15/db_pdf/xj15_quota.db",
+     "sha256": "c8cdba56e3731904e51fe50ae529c795770577660dfcaa4aca16180f324bea7c",
+     "bytes": 397312,
+     "items": 314
     }
    ]
   }
