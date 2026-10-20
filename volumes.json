@@ -146,6 +146,36 @@
      "items": 470
     },
     {
+     "key": "xj02",
+     "kind": "quota",
+     "label": "quota-extract-xj02",
+     "province": "辽宁",
+     "db": "liaoning-2024/quota-extract-xj02/db_pdf/xj02_quota.db",
+     "sha256": "3701006eb6e2983a20082efc73293e2bfae0ac3cced1b9e4736ff9f7ea3e434d",
+     "bytes": 1028096,
+     "items": 1296
+    },
+    {
+     "key": "xj03",
+     "kind": "table",
+     "label": "quota-extract-xj03",
+     "province": "辽宁",
+     "db": "liaoning-2024/quota-extract-xj03/db_pdf/xj03_quota.db",
+     "sha256": "d21ad023341e1be80d895aece6d9802e437d96a52771413360d3871f161c3f79",
+     "bytes": 249856,
+     "items": 0
+    },
+    {
+     "key": "xj10",
+     "kind": "quota",
+     "label": "新疆市政工程消耗量定额（一）（OCR双源）",
+     "province": "辽宁",
+     "db": "liaoning-2024/quota-extract-xj10/db_pdf/xj10_quota.db",
+     "sha256": "9cb0e29311e9ab664d40b0b5e8daaadb52930d258f2907e42766634be8cb24fd",
+     "bytes": 1523712,
+     "items": 1800
+    },
+    {
      "key": "yl01",
      "kind": "quota",
      "label": "园林绿化工程定额（md源提取）",
@@ -170,36 +200,6 @@
      "sha256": "86f946743956428f29770f3899c9ec810722c0757d987ac08c8eb602565a7d6e",
      "bytes": 1413120,
      "items": 1755
-    },
-    {
-     "key": "xj02",
-     "kind": "quota",
-     "label": "新疆房屋建筑与装饰消耗量定额·下册（OCR双源）",
-     "province": "新疆",
-     "db": "xinjiang-2020/quota-extract-xj02/db_pdf/xj02_quota.db",
-     "sha256": "3701006eb6e2983a20082efc73293e2bfae0ac3cced1b9e4736ff9f7ea3e434d",
-     "bytes": 1028096,
-     "items": 1296
-    },
-    {
-     "key": "xj03",
-     "kind": "fee",
-     "label": "新疆维吾尔自治区建筑、安装、市政工程费用定额（2020版）",
-     "province": "新疆",
-     "db": "xinjiang-2020/quota-extract-xj03/db_pdf/xj03_quota.db",
-     "sha256": "d21ad023341e1be80d895aece6d9802e437d96a52771413360d3871f161c3f79",
-     "bytes": 249856,
-     "items": 66
-    },
-    {
-     "key": "xj10",
-     "kind": "quota",
-     "label": "2020版新疆维吾尔自治区市政工程消耗量定额（一）",
-     "province": "新疆",
-     "db": "xinjiang-2020/quota-extract-xj10/db_pdf/xj10_quota.db",
-     "sha256": "9cb0e29311e9ab664d40b0b5e8daaadb52930d258f2907e42766634be8cb24fd",
-     "bytes": 1523712,
-     "items": 1800
     }
    ]
   }

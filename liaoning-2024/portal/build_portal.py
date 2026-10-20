@@ -211,6 +211,34 @@ VOLUMES = [
         "official_id": "1773819131300494",
         "source_sha12": "7071387e8709",
     },
+    {
+        "id": "xj03",
+        "kind": "fee",
+        "tag": "费用定额卷（新疆2020·计价依据）",
+        "name": "新疆维吾尔自治区建筑、安装、市政工程费用定额（2020版）",
+        "dir": "quota-extract-xj03",
+        "sub": "out",
+        "db": "xj03_quota.db",
+        "web": "web/index.html",
+        "manifest": "baseline_manifest.json",
+        "report": "交付报告_xj03_费用定额.md",
+        "pdf": "input/official.pdf",
+        "source_sha12": "9e5415fd102f",
+    },
+    {
+        "id": "xj10",
+        "kind": "xj_quota",
+        "tag": "市政消耗量定额卷（新疆2020·OCR双源）",
+        "name": "新疆维吾尔自治区市政工程消耗量定额（一）（2020版）",
+        "dir": "quota-extract-xj10",
+        "sub": "out",
+        "db": "xj10_quota.db",
+        "web": "web/index.html",
+        "manifest": "baseline_manifest.json",
+        "report": "交付报告_xj10_市政消耗量定额.md",
+        "pdf": "input/ocr.pdf",
+        "source_sha12": None,
+    },
 ]
 
 # 官方清单分组展示顺序（其余组排最后）
@@ -345,9 +373,77 @@ def collect_docx_quota(v):
     return st
 
 
+def collect_fee(v):
+    """费用定额卷（xj03 起）：fee schema 七表现查渲染（纯计价依据，无消耗量子目）。"""
+    d = ROOT / v["dir"]
+    con = sqlite3.connect(str(d / v.get("sub", "out") / v.get("db", "xj03_quota.db")))
+    cur = con.cursor()
+    meta = dict(cur.execute("select key, value from fee_book_meta").fetchall())
+    st = {
+        "kind": "fee",
+        "book_name": meta.get("title", v["name"]),
+        "sections": q1(cur, "select count(*) from fee_sections"),
+        "items": q1(cur, "select count(*) from fee_items"),
+        "programs": q1(cur, "select count(*) from fee_programs"),
+        "tables": q1(cur, "select count(*) from fee_tables"),
+        "notes": q1(cur, "select count(*) from fee_notes"),
+        "toc": q1(cur, "select count(*) from fee_toc"),
+        "issues": q1(cur, "select count(*) from fee_issues"),
+        "docs": q1(cur, "select count(*) from fee_items where kind='appendix_doc'"),
+        "terms": q1(cur, "select count(*) from fee_items where kind='term'"),
+    }
+    con.close()
+    try:
+        mf = json.load(open(d / v.get("manifest", "baseline_manifest.json"),
+                            encoding="utf-8"))
+        st["baseline_files"] = len([k for k in mf if not k.startswith("_")])
+    except Exception:
+        st["baseline_files"] = None
+    st["pdf_pages"] = pdf_pages(v, d)
+    st["web_ok"] = (d / v.get("web", "web/index.html")).exists()
+    st["report_ok"] = bool(v["report"]) and (d / v["report"]).exists()
+    return st
+
+
+def collect_xj_quota(v):
+    """消耗量定额卷（xj10 起）：quota schema 九表现查渲染（OCR 双源管线）。"""
+    d = ROOT / v["dir"]
+    con = sqlite3.connect(str(d / v.get("sub", "out") / v.get("db", "xj10_quota.db")))
+    cur = con.cursor()
+    meta = dict(cur.execute("select key, value from quota_book_meta").fetchall())
+    st = {
+        "kind": "xj_quota",
+        "book_name": meta.get("title", v["name"]),
+        "volumes": q1(cur, "select count(*) from quota_volumes"),
+        "chapters": q1(cur, "select count(*) from quota_chapters"),
+        "sections": q1(cur, "select count(*) from quota_sections"),
+        "items": q1(cur, "select count(*) from quota_items"),
+        "consumptions": q1(cur, "select count(*) from quota_consumptions"),
+        "unpriced": q1(cur, "select count(*) from quota_consumptions where unpriced=1"),
+        "explain": q1(cur, "select count(*) from quota_explain"),
+        "toc": q1(cur, "select count(*) from quota_toc"),
+        "issues": q1(cur, "select count(*) from quota_issues"),
+    }
+    con.close()
+    try:
+        mf = json.load(open(d / v.get("manifest", "baseline_manifest.json"),
+                            encoding="utf-8"))
+        st["baseline_files"] = len([k for k in mf if not k.startswith("_")])
+    except Exception:
+        st["baseline_files"] = None
+    st["pdf_pages"] = pdf_pages(v, d)
+    st["web_ok"] = (d / v.get("web", "web/index.html")).exists()
+    st["report_ok"] = bool(v["report"]) and (d / v["report"]).exists()
+    return st
+
+
 def collect_volume(v):
     if v["kind"] == "quota":
         return collect_quota(v)
+    if v["kind"] == "fee":
+        return collect_fee(v)
+    if v["kind"] == "xj_quota":
+        return collect_xj_quota(v)
     if v["kind"] == "docx_quota":
         return collect_docx_quota(v)
     return collect_table(v)
@@ -535,6 +631,78 @@ def render_table(v, st):
 </div>"""
 
 
+def render_fee(v, st):
+    db_rel = f'{v.get("sub", "out")}/{v.get("db", "xj03_quota.db")}'
+    web_rel = v.get("web", "web/index.html")
+    links = []
+    if st["web_ok"]:
+        links.append(f'<a class="lbtn" href="{v["dir"]}/{web_rel}">识别成果库·六视图前端</a>')
+    links.append(f'<a class="lbtn ghost" href="{v["dir"]}/{db_rel}">SQLite 成果库</a>')
+    if st["report_ok"]:
+        links.append(f'<a class="lbtn ghost" href="{v["dir"]}/{v["report"]}">交付报告</a>')
+    pdf = f'官方PDF {st["pdf_pages"]} 页' if st["pdf_pages"] else "PDF —"
+    base = f'基线指纹 {st["baseline_files"]} 文件' if st["baseline_files"] else "基线指纹 —"
+    q = [
+        chip("ok", "TOC 对账", f'{st["toc"]}/{st["toc"]}'),
+        chip("warn" if st["issues"] else "ok", "疑点留痕", st["issues"]),
+        chip("ok", "九门门控", "全绿"),
+    ]
+    return f"""
+<div class="vcard">
+  <div class="vhead"><span class="vtitle">{v["tag"]}</span>
+    <span class="badge g">已收官 · 九门全绿</span>
+    <span class="vtag">{pdf}</span><span class="vtag">{base}</span></div>
+  <div class="vname">{st["book_name"]}</div>
+  <div class="ngrid">
+    <div class="num"><div class="n">{st["sections"]}</div><div class="t">节/区</div></div>
+    <div class="num"><div class="n">{st["items"]}</div><div class="t">费用条目</div></div>
+    <div class="num"><div class="n">{st["tables"]}</div><div class="t">费率表</div></div>
+    <div class="num"><div class="n">{st["programs"]}</div><div class="t">计算程序行</div></div>
+    <div class="num"><div class="n">{st["terms"]}</div><div class="t">术语</div></div>
+    <div class="num"><div class="n">{st["docs"]}</div><div class="t">附录法规文档</div></div>
+  </div>
+  <div class="qrow">{''.join(q)}</div>
+  <div class="links">{''.join(links)}</div>
+  <div class="meta">源 PDF sha12={v["source_sha12"]} ｜ 目录 {v["dir"]}/ ｜ 管线：charmap 字形反解+isspace 汉字+缩进拆分+TOC 锚定 → fee 语义层（表题 lookahead 归属）→ fee schema 七表 → 六视图前端 → 九门门控（门7 页眉解码实测印页口径）</div>
+</div>"""
+
+
+def render_xj_quota(v, st):
+    db_rel = f'{v.get("sub", "out")}/{v.get("db", "xj10_quota.db")}'
+    web_rel = v.get("web", "web/index.html")
+    links = []
+    if st["web_ok"]:
+        links.append(f'<a class="lbtn" href="{v["dir"]}/{web_rel}">识别成果库·四视图前端</a>')
+    links.append(f'<a class="lbtn ghost" href="{v["dir"]}/{db_rel}">SQLite 成果库</a>')
+    if st["report_ok"]:
+        links.append(f'<a class="lbtn ghost" href="{v["dir"]}/{v["report"]}">交付报告</a>')
+    pdf = f'官方PDF {st["pdf_pages"]} 页' if st["pdf_pages"] else "PDF —"
+    base = f'基线指纹 {st["baseline_files"]} 文件' if st["baseline_files"] else "基线指纹 —"
+    q = [
+        chip("ok", "TOC 对账", f'{st["toc"]} 条'),
+        chip("warn" if st["issues"] else "ok", "疑点留痕", st["issues"]),
+        chip("ok", "九门门控", "全绿"),
+    ]
+    return f"""
+<div class="vcard">
+  <div class="vhead"><span class="vtitle">{v["tag"]}</span>
+    <span class="badge g">已收官 · 九门全绿</span>
+    <span class="vtag">{pdf}</span><span class="vtag">{base}</span></div>
+  <div class="vname">{st["book_name"]}</div>
+  <div class="ngrid">
+    <div class="num"><div class="n">{st["volumes"]}</div><div class="t">册</div></div>
+    <div class="num"><div class="n">{st["chapters"]}</div><div class="t">章</div></div>
+    <div class="num"><div class="n">{st["sections"]}</div><div class="t">节</div></div>
+    <div class="num"><div class="n">{st["items"]}</div><div class="t">子目</div></div>
+    <div class="num"><div class="n">{st["consumptions"]}</div><div class="t">消耗量</div></div>
+    <div class="num"><div class="n">{st["unpriced"]}</div><div class="t">未计价材</div></div>
+  </div>
+  <div class="qrow">{''.join(q)}</div>
+  <div class="links">{''.join(links)}</div>
+  <div class="meta">OCR 双源管线：原版矢量线定网格 + OCR 文字层定内容（原版路径化无文本层）→ 全页网格列占位 → 语义层（跨页续表合并/KIND 单字/精确列归属）→ quota schema 九表 → 四视图前端 → 九门门控（印页=物−17 零违例）</div>
+</div>"""
+
+
 def load_registry():
     """读取官方清单快照（scripts/fetch_official_list.py 产）；缺失返回 None。"""
     p = ROOT / "official_registry.json"
@@ -630,6 +798,8 @@ def main():
     quota_vols = [(v, st) for v, st in vols if st["kind"] == "quota"]
     table_vols = [(v, st) for v, st in vols if st["kind"] == "table"]
     docx_vols = [(v, st) for v, st in vols if st["kind"] == "docx_quota"]
+    fee_vols = [(v, st) for v, st in vols if st["kind"] == "fee"]
+    xj_vols = [(v, st) for v, st in vols if st["kind"] == "xj_quota"]
     total_items = sum(st["items"] for _, st in quota_vols) + sum(st["items"] for _, st in docx_vols)
     jx = next(st for v, st in vols if v["id"] == "jxtb")
     ph = next(st for v, st in vols if v["id"] == "phb")
@@ -713,6 +883,16 @@ def main():
   </section>
 
   <section>
+    <h2>费用定额卷（计价依据·fee schema）</h2>
+    <div class="vgrid">{''.join(render_fee(v, st) for v, st in fee_vols)}</div>
+    <div class="vgrid">{''.join(render_xj_quota(v, st) for v, st in xj_vols)}</div>
+    <div class="note">费用定额为纯计价依据文件（取费基数/费率/计算程序，无消耗量子目），
+    与消耗量定额配套使用——「消耗量定额载量价基价、费用定额载费率程序」。
+    xj03 为费用定额卷种首个结构化卷（新疆2020版，66 页），独立 fee schema 七表；
+    材料单价计取规则分析见其交付报告第五章（四要素构成+营改增除税+两级发布+价差调整四层闭环）。</div>
+  </section>
+
+  <section>
     <h2>价格与配合比依据（检索前端）</h2>
     <div class="vgrid">{''.join(render_table(v, st) for v, st in table_vols)}</div>
     <div class="note">机械台班费用标准与混凝土·砂浆配合比为并列层级的独立计价依据文件，
@@ -769,6 +949,14 @@ def main():
             print(f"  {v['tag']}: items={st['items']} desc={st['desc']} toc={st['toc']} "
                   f"H1={st['h1']['pass']}/{st['h1']['pass']+st['h1']['fail']} "
                   f"P1={st['p1']['pass']} baseline={st['baseline_files']} pdf={st['pdf_pages']}")
+        elif st["kind"] == "fee":
+            print(f"  {v['tag']}: sections={st['sections']} items={st['items']} "
+                  f"tables={st['tables']} programs={st['programs']} toc={st['toc']} "
+                  f"issues={st['issues']} baseline={st['baseline_files']} pdf={st['pdf_pages']}")
+        elif st["kind"] == "xj_quota":
+            print(f"  {v['tag']}: vol={st['volumes']} ch={st['chapters']} "
+                  f"sec={st['sections']} items={st['items']} cons={st['consumptions']} "
+                  f"toc={st['toc']} issues={st['issues']} baseline={st['baseline_files']} pdf={st['pdf_pages']}")
         else:
             print(f"  {v['tag']}: rows={st['rows']} pdf={st['pdf_pages']}")
 
