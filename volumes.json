@@ -220,6 +220,16 @@
      "sha256": "32c06c6e796ecabc924f2a11b263b2177b8ceee2ed156f891c9f67ee299ab749",
      "bytes": 1773568,
      "items": 1683
+    },
+    {
+     "key": "xj13",
+     "kind": "quota",
+     "label": "2020版新疆维吾尔自治区市政工程消耗量定额（四）",
+     "province": "新疆",
+     "db": "xinjiang-2020/quota-extract-xj13/db_pdf/xj13_quota.db",
+     "sha256": "610966c6c132c3358b307487d422754cfbff625a63d9fa80afea7f0ec7caab1c",
+     "bytes": 1859584,
+     "items": 1370
     }
    ]
   }

@@ -1,0 +1,8 @@
+{
+ "out/xj13_source.md": "ca7ccfb69752bf3f4bbd7917c3e475a9c0dd1e3483cdc8a365423183d35e4331",
+ "out/convert_meta.json": "227f6cea2f32dfe6630ff41246abe9b90393c4c145965cac4c05dd87e0039aea",
+ "out/parse_fee.json": "543d8cf25f68cd33392275d026530039fdd0738c1dd06722244c674e2c543b5d",
+ "out/xj13_quota.db": "610966c6c132c3358b307487d422754cfbff625a63d9fa80afea7f0ec7caab1c",
+ "web/index.html": "eb8d9826f28806b30ac8b85fe034a96fa4fa805a1a89ddee31b3838da072affd",
+ "web/template.html": "c4db906db94173e5bc7bb9322fe1ae705ed22a5987a1c6f2c9b14198e66573eb"
+}
