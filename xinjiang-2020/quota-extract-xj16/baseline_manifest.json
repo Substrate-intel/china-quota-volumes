@@ -1,0 +1,12 @@
+{
+ "files": {
+  "parse_fee_xj16.json": "c8a6d1aa8ef2",
+  "xj16_errata.json": "7cd015852efb",
+  "xj16_quota.db": "b18adcb72a87",
+  "index.html": "76054239e877"
+ },
+ "anchors": {
+  "official.pdf": "d9e5e4c61e25",
+  "jiedu.docx": "fc53498aeaa8"
+ }
+}
