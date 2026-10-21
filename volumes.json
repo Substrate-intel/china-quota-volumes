@@ -167,28 +167,28 @@
      "label": "新疆房屋建筑与装饰消耗量定额·上册（OCR双源）",
      "province": "新疆",
      "db": "xinjiang-2020/quota-extract-xj01/db_pdf/xj01_quota.db",
-     "sha256": "86f946743956428f29770f3899c9ec810722c0757d987ac08c8eb602565a7d6e",
-     "bytes": 1413120,
-     "items": 1755
+     "sha256": "34fb3e6956c23103df5d2455b022ca394281a35657f49013403fbef9f881aae1",
+     "bytes": 1425408,
+     "items": 1760
     },
     {
      "key": "xj02",
      "kind": "quota",
-     "label": "quota-extract-xj02",
+     "label": "新疆房屋建筑与装饰消耗量定额·下册（OCR双源）",
      "province": "新疆",
      "db": "xinjiang-2020/quota-extract-xj02/db_pdf/xj02_quota.db",
-     "sha256": "3701006eb6e2983a20082efc73293e2bfae0ac3cced1b9e4736ff9f7ea3e434d",
-     "bytes": 1028096,
+     "sha256": "6a58a02e18bca1b5e45ce4d473940ca2b8bd27e46609402c0ad970e3e576d43e",
+     "bytes": 1036288,
      "items": 1296
     },
     {
      "key": "xj03",
      "kind": "table",
-     "label": "quota-extract-xj03",
+     "label": "新疆建筑安装市政工程费用定额（OCR双源）",
      "province": "新疆",
      "db": "xinjiang-2020/quota-extract-xj03/db_pdf/xj03_quota.db",
-     "sha256": "d21ad023341e1be80d895aece6d9802e437d96a52771413360d3871f161c3f79",
-     "bytes": 249856,
+     "sha256": "b800f309c027adff0ae1477f41cf1b51df708db34a04365815741265c641414a",
+     "bytes": 258048,
      "items": 0
     },
     {
@@ -247,8 +247,8 @@
      "label": "新疆安装工程补充消耗量定额（OCR双源）",
      "province": "新疆",
      "db": "xinjiang-2020/quota-extract-xj15/db_pdf/xj15_quota.db",
-     "sha256": "c8cdba56e3731904e51fe50ae529c795770577660dfcaa4aca16180f324bea7c",
-     "bytes": 397312,
+     "sha256": "7dd4b68da95e608747bcc83d7fde662fd3a195ef4d27b23a5771ef36971376d3",
+     "bytes": 425984,
      "items": 314
     }
    ]

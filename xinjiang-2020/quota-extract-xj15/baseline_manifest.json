@@ -2,7 +2,8 @@
  "out/xj15_source.md": "ff098a824c15f25dd2f080d1f604f6eb767699c29e19d714cd57cf0382f6b077",
  "out/convert_meta_xj15.json": "2db38da4768fe5181f16aa620efa89b3d54bac49dca9d24f0c24c969d1199a8b",
  "out/parse_fee_xj15.json": "fdb8e9cc5c390d30c9c80b466ee7dec02e97a4f9c02482749fe8d073b9c6d884",
- "out/xj15_quota.db": "c8cdba56e3731904e51fe50ae529c795770577660dfcaa4aca16180f324bea7c",
- "web/index.html": "b64a3e625752531d8722058a13d1a8a2bc262f7b5d76c1ab4cb97dedb05b3faf",
- "web/template.html": "43006431c5e01599defcce0847984415d1da9bd2a1fbe1cefc32334d32bbb3a8"
+ "out/xj15_errata.json": "37084e0e5ceeb4acefad41326bc6d0b5fd6853298b5785cbfc1c1be8aca2cc74",
+ "out/xj15_quota.db": "7dd4b68da95e608747bcc83d7fde662fd3a195ef4d27b23a5771ef36971376d3",
+ "web/index.html": "0f7cff3d18ea2aff4bb897e434e87e6623d27a39fc5162463001c30726e25a6b",
+ "web/template.html": "8d2f2268699cb38a58661a7af6fd781a8ef6bf4f81c0f407276f4fa029fcf15d"
 }
