@@ -412,6 +412,22 @@ VOLUMES = [
         "gates": 6,
         "pipeline": "源形态第五型（网页 HTML+xlsx 双源直读）：条款逐字取自页面原文、清单表 xlsx 单元格级程序化实读（合并展开/多值留换行），parse 内置双源闭环断言 → fee schema + fee_semantics 语义分析 11 条 → 七视图前端 → 六门门控+冒烟 12/12；增补清单项目 X010103003~006，「余方弃置」停止执行（废止性条款）",
     },
+    {
+        "id": "xj21",
+        "kind": "xj_quota",
+        "tag": "排水设施养护及维修工程消耗量定额（新疆·2025）",
+        "name": "新疆维吾尔自治区排水设施养护及维修工程消耗量定额",
+        "dir": "quota-extract-xj21",
+        "sub": "out",
+        "db": "xj21_quota.db",
+        "web": "web/index.html",
+        "manifest": "baseline_manifest.json",
+        "report": "交付报告_xj21_排水设施养护及维修工程消耗量定额.md",
+        "pdf": "input/official.pdf",
+        "source_sha12": "5e5c16323e30",
+        "gates": 10,
+        "pipeline": "官方 99 页 PDF 干净文本层 + 矢量网格字符级重建（复用 xj18 链，非 OCR）→ 9 章 51 节 218 子目 2977 消耗量 → quota schema 九表 + 站点兼容三表 + fee_standard 费用标准表 → 六视图前端 → 十门门控（P1 官方原版逐格取证 2977/2977）+ 冒烟 26/26；双区页码（正文印页=物−6），列级计量单位三形态，括号未计价 99 条",
+    },
 ]
 
 # 官方清单分组展示顺序（其余组排最后）

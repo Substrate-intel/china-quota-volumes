@@ -1,0 +1,12 @@
+{
+ "files": {
+  "parse_xj21.json": "94c2a7afd56d",
+  "xj21_source.md": "b6a730dcce77",
+  "xj21_quota.db": "4f243606e3a8",
+  "web/index.html": "2cc7c43d023d",
+  "web/template.html": "f560c3242bcd"
+ },
+ "anchors": {
+  "official.pdf": "5e5c16323e30"
+ }
+}

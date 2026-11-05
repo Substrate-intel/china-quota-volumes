@@ -300,6 +300,16 @@
      "sha256": "09530414fcbf1f659cfab48fde50a7db380ba799ce7e5399e51f79a1450cd487",
      "bytes": 98304,
      "items": 11
+    },
+    {
+     "key": "xj21",
+     "kind": "quota",
+     "label": "新疆排水设施养护及维修工程消耗量定额",
+     "province": "新疆",
+     "db": "xinjiang-2020/quota-extract-xj21/db_pdf/xj21_quota.db",
+     "sha256": "4f243606e3a87a4e3386453cce86446b59bc574a231f32f019f4488c1fef477f",
+     "bytes": 577536,
+     "items": 218
     }
    ]
   }
