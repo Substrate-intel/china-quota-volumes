@@ -197,8 +197,8 @@
      "label": "新疆市政工程消耗量定额（一）（OCR双源）",
      "province": "新疆",
      "db": "xinjiang-2020/quota-extract-xj10/db_pdf/xj10_quota.db",
-     "sha256": "9cb0e29311e9ab664d40b0b5e8daaadb52930d258f2907e42766634be8cb24fd",
-     "bytes": 1523712,
+     "sha256": "d242eb5e320233ea5b68c2c9cca91d3703c58275149b3baf535769073830e5fb",
+     "bytes": 1572864,
      "items": 1800
     },
     {
@@ -207,8 +207,8 @@
      "label": "新疆市政工程消耗量定额（二）（本地OCR双源）",
      "province": "新疆",
      "db": "xinjiang-2020/quota-extract-xj11/db_pdf/xj11_quota.db",
-     "sha256": "f52f1b5a12b4605479c166790f71abf7231530fdf48b6114353d3b298accd184",
-     "bytes": 1339392,
+     "sha256": "e4898652476bc85ba9ba67105c91ae92aa2f7ebcb7a6d67ce7468753a7c798d5",
+     "bytes": 1388544,
      "items": 1281
     },
     {
@@ -217,8 +217,8 @@
      "label": "新疆市政工程消耗量定额（三）（OCR双源）",
      "province": "新疆",
      "db": "xinjiang-2020/quota-extract-xj12/db_pdf/xj12_quota.db",
-     "sha256": "32c06c6e796ecabc924f2a11b263b2177b8ceee2ed156f891c9f67ee299ab749",
-     "bytes": 1773568,
+     "sha256": "35a56cc84b6be6756cb1555dfbf4c19ff95687a2d16a61e2c31f13957e9fdfaa",
+     "bytes": 1859584,
      "items": 1683
     },
     {
@@ -227,8 +227,8 @@
      "label": "新疆市政工程消耗量定额（四）（OCR双源）",
      "province": "新疆",
      "db": "xinjiang-2020/quota-extract-xj13/db_pdf/xj13_quota.db",
-     "sha256": "610966c6c132c3358b307487d422754cfbff625a63d9fa80afea7f0ec7caab1c",
-     "bytes": 1859584,
+     "sha256": "0cbbddb918ede012a4e5ba490911ceed066966b9fc5343138c4bcbabf04243e9",
+     "bytes": 1953792,
      "items": 1370
     },
     {
@@ -237,8 +237,8 @@
      "label": "新疆市政工程消耗量定额（五）（OCR双源）",
      "province": "新疆",
      "db": "xinjiang-2020/quota-extract-xj14/db_pdf/xj14_quota.db",
-     "sha256": "86f9e332ab49cea67b53eeac6f003a2596db76c6297c60afc7a2d1c7c2a5cfd6",
-     "bytes": 1261568,
+     "sha256": "fc0bd2f985d6c83c282851d55d10dde6302a2f7680c5096645ca3dba8fc3a0d6",
+     "bytes": 1323008,
      "items": 950
     },
     {
@@ -247,8 +247,8 @@
      "label": "新疆安装工程补充消耗量定额（OCR双源）",
      "province": "新疆",
      "db": "xinjiang-2020/quota-extract-xj15/db_pdf/xj15_quota.db",
-     "sha256": "7aa125d470de69094361044e204eae0bea955416ad67274cc7004beba6bcc4c6",
-     "bytes": 454656,
+     "sha256": "c6e16fb76f5dffaa0866fad2f9c56d773c396394443dca2fa6f50d1f2ce8ba6a",
+     "bytes": 466944,
      "items": 318
     },
     {
