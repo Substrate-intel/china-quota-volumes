@@ -365,6 +365,22 @@ VOLUMES = [
         "pdf": "input/j1.pdf",
         "source_sha12": "j1=119188f6a586 · j2=8b584cac622e · j3=50602bd568dc · j4=ca2ed5e43cb2（四源锚定）",
     },
+    {
+        "id": "xj18",
+        "kind": "xj_quota",
+        "tag": "智能建造（建筑机器人）消耗量定额项目（新疆·试行）",
+        "name": "新疆维吾尔自治区智能建造（建筑机器人）消耗量定额项目（试行）",
+        "dir": "quota-extract-xj18",
+        "sub": "out",
+        "db": "xj18_quota.db",
+        "web": "web/index.html",
+        "manifest": "baseline_manifest.json",
+        "report": "交付报告_xj18_智能建造建筑机器人消耗量定额.md",
+        "pdf": "input/official.pdf",
+        "source_sha12": "e36b519621de",
+        "gates": 10,
+        "pipeline": "官方 PDF 干净文本层 + 矢量网格字符级重建（非 OCR）→ quota schema 九表 + 站点兼容三表 → 六视图前端 → 十门门控（P1 官方原版逐格取证 178/178，印页=物−1）",
+    },
 ]
 
 # 官方清单分组展示顺序（其余组排最后）
@@ -804,15 +820,20 @@ def render_xj_quota(v, st):
         links.append(f'<a class="lbtn ghost" href="{v["dir"]}/{v["report"]}">交付报告</a>')
     pdf = f'官方PDF {st["pdf_pages"]} 页' if st["pdf_pages"] else "PDF —"
     base = f'基线指纹 {st["baseline_files"]} 文件' if st["baseline_files"] else "基线指纹 —"
+    n_gate = v.get("gates", 9)   # 坑83：门数与管线说明按卷数据驱动，禁静态字面量
+    pipeline = v.get("pipeline",
+                     "OCR 双源管线：原版矢量线定网格 + OCR 文字层定内容（原版路径化无文本层）"
+                     " → 全页网格列占位 → 语义层（跨页续表合并/KIND 单字/精确列归属）"
+                     " → quota schema 九表 → 四视图前端 → 九门门控（印页=物−17 零违例）")
     q = [
         chip("ok", "TOC 对账", f'{st["toc"]} 条'),
         chip("warn" if st["issues"] else "ok", "疑点留痕", st["issues"]),
-        chip("ok", "九门门控", "全绿"),
+        chip("ok", f"{n_gate}门门控", "全绿"),
     ]
     return f"""
 <div class="vcard">
   <div class="vhead"><span class="vtitle">{v["tag"]}</span>
-    <span class="badge g">已收官 · 九门全绿</span>
+    <span class="badge g">已收官 · {n_gate}门全绿</span>
     <span class="vtag">{pdf}</span><span class="vtag">{base}</span></div>
   <div class="vname">{st["book_name"]}</div>
   <div class="ngrid">
@@ -825,7 +846,7 @@ def render_xj_quota(v, st):
   </div>
   <div class="qrow">{''.join(q)}</div>
   <div class="links">{''.join(links)}</div>
-  <div class="meta">OCR 双源管线：原版矢量线定网格 + OCR 文字层定内容（原版路径化无文本层）→ 全页网格列占位 → 语义层（跨页续表合并/KIND 单字/精确列归属）→ quota schema 九表 → 四视图前端 → 九门门控（印页=物−17 零违例）</div>
+  <div class="meta">{pipeline}</div>
 </div>"""
 
 

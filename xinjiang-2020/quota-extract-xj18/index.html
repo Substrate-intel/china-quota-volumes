@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>新疆维吾尔自治区智能建造（建筑机器人）消耗量定额项目（试行）</title>
+<style>
+:root{--bg:#f6f7f9;--card:#fff;--bd:#e2e6ea;--tx:#24292f;--sub:#57606a;--ac:#0b62d6;--ok:#1a7f37;--warn:#9a6700;--err:#cf222e;--mono:ui-monospace,Consolas,monospace}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font:14px/1.6 "Segoe UI","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--tx)}
+header{background:var(--card);border-bottom:1px solid var(--bd);padding:14px 22px;display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+header h1{font-size:19px}
+header .meta{color:var(--sub);font-size:12.5px}
+header .meta b{color:var(--ac)}
+nav.tabs{display:flex;gap:4px;padding:10px 22px 0;background:var(--card);border-bottom:1px solid var(--bd);flex-wrap:wrap}
+nav.tabs button{border:1px solid var(--bd);border-bottom:none;background:var(--bg);padding:7px 16px;border-radius:8px 8px 0 0;cursor:pointer;font-size:13.5px;color:var(--sub)}
+nav.tabs button.on{background:var(--card);color:var(--ac);font-weight:600;border-color:var(--ac)}
+main{padding:18px 22px;max-width:1400px;margin:0 auto}
+.panel{display:none}
+.panel.on{display:block}
+.bar{display:flex;gap:10px;margin-bottom:12px;flex-wrap:wrap;align-items:center}
+input[type=text]{padding:8px 12px;border:1px solid var(--bd);border-radius:8px;width:340px;font-size:13.5px}
+select{padding:8px;border:1px solid var(--bd);border-radius:8px;font-size:13px}
+.count{color:var(--sub);font-size:12.5px}
+.grid{display:grid;grid-template-columns:290px 1fr;gap:16px;align-items:start}
+.tree{background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:10px;max-height:76vh;overflow:auto}
+.tree .vol{font-weight:700;margin:8px 0 2px;color:var(--ac)}
+.tree .ch{cursor:pointer;padding:4px 6px;border-radius:6px}
+.tree .ch:hover{background:#eef4fd}
+.tree .ch.on{background:#e7f0fe;color:var(--ac);font-weight:600}
+.info{background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:14px;max-height:76vh;overflow:auto}
+table{border-collapse:collapse;width:100%;font-size:13px;background:var(--card)}
+th,td{border:1px solid var(--bd);padding:5px 9px;text-align:left;vertical-align:top}
+th{background:#f0f3f6;position:sticky;top:0}
+tr:hover td{background:#f7fafd}
+.num{text-align:right;font-variant-numeric:tabular-nums;font-family:var(--mono)}
+.tag{display:inline-block;padding:1px 8px;border-radius:10px;font-size:12px;margin-right:6px}
+.tag.ok{background:#dafbe1;color:var(--ok)}
+.tag.warn{background:#fff8c5;color:var(--warn)}
+.sec h3{margin:14px 0 6px;color:var(--ac);font-size:15px}
+.sec p{margin:4px 0}
+.item-head{background:#f0f6ff;border:1px solid #cfe1ff;border-radius:8px;padding:8px 12px;margin:12px 0 6px;display:flex;gap:12px;flex-wrap:wrap;align-items:baseline}
+.item-head b.code{color:var(--ac);font-size:15px;font-family:var(--mono)}
+.kw{color:var(--sub);font-size:12px}
+.mono{font-family:var(--mono)}
+.pill{display:inline-block;background:#eef4fd;color:var(--ac);border-radius:6px;padding:1px 7px;margin:2px 4px 2px 0;font-size:12px;cursor:pointer}
+</style>
+</head>
+<body>
+<header>
+  <h1 id="h-title"></h1>
+  <span class="meta">官方 PDF 文本层 · 矢量网格重建 · <b id="m-items"></b> 子目 · <b id="m-cons"></b> 消耗量 · <b id="m-sec"></b> 节 · 疑点 <b id="m-iss"></b> · 印页=物页−<b id="m-off"></b></span>
+</header>
+<nav class="tabs" id="tabs">
+  <button data-p="p-struct" class="on">章节结构</button>
+  <button data-p="p-search">子目检索</button>
+  <button data-p="p-prose">总说明与计算规则</button>
+  <button data-p="p-toc">目录对账</button>
+  <button data-p="p-issues">疑点留痕</button>
+  <button data-p="p-src">源信息</button>
+</nav>
+<main>
+  <div class="panel on" id="p-struct">
+    <div class="grid">
+      <div class="tree" id="tree"></div>
+      <div class="info sec" id="ch-info"></div>
+    </div>
+  </div>
+  <div class="panel" id="p-search">
+    <div class="bar">
+      <input type="text" id="q" placeholder="子目编号 / 项目名称 / 工作内容 / 消耗量名称…">
+      <select id="f-ch"><option value="">全部章</option></select>
+      <select id="f-kind"><option value="">全部类别</option><option value="人工">人工</option><option value="材料">材料</option><option value="机械">机械</option></select>
+      <span class="count" id="q-count"></span>
+    </div>
+    <div id="q-out" style="max-height:72vh;overflow:auto"></div>
+  </div>
+  <div class="panel" id="p-prose">
+    <div id="prose-out"></div>
+  </div>
+  <div class="panel" id="p-toc">
+    <div class="bar"><span class="count" id="toc-count"></span></div>
+    <div style="max-height:74vh;overflow:auto"><table id="toc-tbl"></table></div>
+  </div>
+  <div class="panel" id="p-issues">
+    <div class="bar"><span class="count" id="iss-count"></span></div>
+    <div style="max-height:74vh;overflow:auto"><table id="iss-tbl"></table></div>
+  </div>
+  <div class="panel" id="p-src">
+    <div id="src-out"></div>
+  </div>
+</main>
+<script id="payload" type="application/json">{"meta":{"title":"新疆维吾尔自治区智能建造（建筑机器人）消耗量定额项目（试行）","kind":"quota","volume_key":"xj18","region":"新疆维吾尔自治区","year":2026,"pages":12,"print_offset":1,"source_sha12":"e36b519621de","alt_sha12":"e36b519621de","source_md_sha12":"3a163ca2bfa5","parse_schema":"xj18-quota-v1","notice_date":"2026-05-06","notice_url":"https://zjt.xinjiang.gov.cn/xjzjt/c113382/202605/a960625a6b4049d8ba71073bc72132d7.shtml","source_kind":"WPS 文本层 PDF + 矢量网格（字符级坐标重建）","n_items":20,"n_consumptions":178,"n_tables":9},"book":{"title":"新疆维吾尔自治区智能建造（建筑机器人）消耗量定额项目（试行）"},"volumes":{"1":{"title":"新疆维吾尔自治区智能建造（建筑机器人）消耗量定额项目（试行）"}},"chapters":[{"vol":1,"no":0,"title":"总说明（全卷通用）","raw_title":"","print_page":1,"sections":[],"explain":[{"pno":2,"text":"一、《智能建造（建筑机器人）消耗量定额项目（试行）》（以下简称“本定额”）适用于使用建筑机器人的工业与民用建筑的新建、扩建、改建房屋建筑与装饰工程，与2020 版《新疆维吾尔自治区房屋建筑与装饰工程消耗量定额》配套使用。"},{"pno":2,"text":"二、本定额是编制地区单位估价表、投资估算、设计概算、招标控制价、施工图预算的依据，可作为投标报价、签订施工合同、工程结算、编制企业定额的参考。"},{"pno":2,"text":"三、本定额按正常的施工环境、常规施工工艺、合理的施工组织设计、适用于机器人的施工条件进行编制。"},{"pno":2,"text":"四、本定额包括砌筑工程、现浇混凝土工程、楼地面工程、墙面工程、涂料工程共五节。"},{"pno":2,"text":"五、关于人工：1.本定额以两种类别的综合工日表示，包括基本用工、超运距用工、辅助用工和人工幅度差。2.本定额的人工每工日按8 小时工作制计算。3.本定额已综合考虑了人工配合。人工配合包括配合机器人盲区施工、机器人楼层之间搬运等。"},{"pno":2,"text":"六、关于材料：1.本定额采用的材料（包括构配件、零件、半成品、成品）均为符合国家质量标准和相应设计要求的合格产品。2.本定额的材料消耗量包括净用量和损耗量。3.本定额的混凝土按预拌混凝土编制，采用现场搅拌时，执行2020 版《新疆维吾尔自治区房屋建筑与装饰工程消耗量定额》相关规定。4.本定额中所使用的砂浆按干混预拌砂浆编制，若实际使用现拌砂浆或湿拌砂浆时，执行2020 版《新疆维吾尔自治区房屋建筑与装饰工程消耗量定额》相关规定。5.对于用量少、低值易耗的零星材料，列为其他材料。"},{"pno":3,"text":"七、关于机械：1.本定额中的建筑机器人按租赁方式编制，已包含进出场费、安装调试费和操作人员人工费。2.本定额中机械台班消耗量是按正常机械施工工效并考虑机械幅度差综合取定的。3.凡单位价值在2000 元以内，使用年限在一年以内的不构成固定资产的施工机械，不列入机械台班消耗量，作为工具用具在企业管理费中考虑，其消耗的燃料动力等列入材料中。"},{"pno":3,"text":"八、蒸压加气混凝土墙板设计厚度与定额不同时，人工、材料可进行调整换算。"},{"pno":3,"text":"九、设计要求的腻子遍数与定额不同时，按增减一遍子目进行调整。"},{"pno":3,"text":"十、乳胶漆子目包括喷腻子，设计要求的乳胶漆遍数与定额不同时，按每增加一遍子目进行调整。"},{"pno":3,"text":"十一、本定额由自治区建筑业发展中心负责管理和解释。"}],"rules":[],"items":[],"n_items":0},{"vol":1,"no":1,"title":"砌筑工程","raw_title":"一、砌筑工程","print_page":5,"sections":[{"title":"1.蒸压加气混凝土墙板","pno":6}],"explain":[],"rules":[{"pno":4,"text":"砌筑工程1.蒸压加气混凝土墙板安装，按设计墙体长度乘以设计高度，以面积计算，扣除门窗洞口及单个面积＞0.3m2 孔洞的面积。"}],"items":["18-1","18-2"],"n_items":2},{"vol":1,"no":2,"title":"现浇混凝土工程","raw_title":"二、现浇混凝土工程","print_page":6,"sections":[{"title":"1.混凝土基础","pno":7},{"title":"2.混凝土板","pno":7}],"explain":[],"rules":[{"pno":4,"text":"现浇混凝土工程1.垫层、筏形基础混凝土均按设计图示尺寸以体积计算，不扣除构件内钢筋、预埋件及单个面积≤0.3m2 的孔洞所占体积。2.有梁板、平板混凝土均按设计图示尺寸以体积计算，不扣除构件内钢筋、预埋件及单个面积≤0.3m2 的孔洞所占体积。有梁板包括梁与板，按梁、板体积之和计算。"}],"items":["18-3","18-4","18-5","18-6","18-7"],"n_items":5},{"vol":1,"no":3,"title":"楼地面工程","raw_title":"二、楼地面工程","print_page":7,"sections":[{"title":"1.找平层","pno":8},{"title":"2.整体面层","pno":8}],"explain":[],"rules":[{"pno":4,"text":"楼地面工程1.找平层，按设计图示尺寸以面积计算。扣除凸出地面构筑物、设备基础、室内管道、地沟等所占面积，不扣除间壁墙及单个面积≤0.3m2 柱、垛、附墙烟囱及孔洞所占面积。门洞、空圈、暖气包槽、壁龛的开口部分不增加面积。2.环氧自流平涂料，按设计图示尺寸以面积计算。扣除凸出地面构筑物、设备基础、室内管道、地沟等所占面积，不扣除间壁墙及单个面积≤0.3m2 柱、垛、附墙烟囱及孔洞所占面积。门洞、空圈、暖气包槽、壁龛的开口部分不增加面积。"}],"items":["18-8","18-9","18-10","18-11","18-12","18-13"],"n_items":6},{"vol":1,"no":4,"title":"墙面工程","raw_title":"三、墙面工程","print_page":9,"sections":[{"title":"1.墙面一般抹灰","pno":10}],"explain":[],"rules":[{"pno":4,"text":"墙面工程墙面一般抹灰按设计图示尺寸以面积计算，应扣除门窗洞口和单个面积＞0.3m2 的空圈所占的面积，不扣除踢脚线、挂镜线及单个面积≤0.3m2 的孔洞和墙与构件交接处的面积所占面积。且门窗洞口、空圈、孔洞的侧壁面积亦不增加，附墙柱的侧面抹灰应并入墙面、墙裙抹灰工程量内计算。"}],"items":["18-14"],"n_items":1},{"vol":1,"no":5,"title":"涂料工程","raw_title":"五、涂料工程","print_page":10,"sections":[{"title":"1.抹灰面腻子","pno":11},{"title":"2.抹灰面乳胶漆","pno":11}],"explain":[],"rules":[{"pno":4,"text":"涂料工程抹灰面腻子、乳胶漆按设计图示尺寸以面积计算。"}],"items":["18-15","18-16","18-17","18-18","18-19","18-20"],"n_items":6}],"items":[{"code":"18-1","vol":1,"ch_no":1,"section_title":"1.蒸压加气混凝土墙板","project":"蒸压加气混凝土墙板 板厚（mm以内） 100","work_content":"构件就位堆放、切割、搬运、安装校正、固定、修整、水泥砂浆坐浆、勾缝、打胶、板面清扫。","unit":"100㎡","phys_page":6,"print_page":5,"chapter":1,"consumptions":[{"kind":"人工","name":"二类人工","unit":"工日","qty":23.9,"unpriced":false,"raw":"23.900"},{"kind":"材料","name":"蒸压加气混凝土墙板100mm厚","unit":"m2","qty":105.0,"unpriced":false,"raw":"105.000"},{"kind":"材料","name":"蒸压加气混凝土墙板200mm厚","unit":"m2","qty":null,"unpriced":false,"raw":"-"},{"kind":"材料","name":"镀锌连接铁件","unit":"t","qty":0.04,"unpriced":false,"raw":"0.040"},{"kind":"材料","name":"镀锌U型卡","unit":"个","qty":48.0,"unpriced":false,"raw":"48.000"},{"kind":"材料","name":"镀锌管卡","unit":"个","qty":120.0,"unpriced":false,"raw":"120.000"},{"kind":"材料","name":"钢筋（综合）","unit":"t","qty":0.025,"unpriced":false,"raw":"0.025"},{"kind":"材料","name":"干混砌筑砂浆DMM15.0","unit":"m3","qty":0.31,"unpriced":false,"raw":"0.310"},{"kind":"材料","name":"蒸压加气混凝土墙板专用勾缝剂","unit":"kg","qty":65.0,"unpriced":false,"raw":"65.000"},{"kind":"材料","name":"蒸压加气混凝土墙板专用修补砂浆","unit":"kg","qty":5.0,"unpriced":false,"raw":"5.000"},{"kind":"材料","name":"合金钢切割片φ300","unit":"片","qty":0.5,"unpriced":false,"raw":"0.500"},{"kind":"材料","name":"水","unit":"m3","qty":0.023,"unpriced":false,"raw":"0.023"},{"kind":"材料","name":"电","unit":"kw·h","qty":75.312,"unpriced":false,"raw":"75.312"},{"kind":"机械","name":"干混砂浆罐式搅拌机公称储量（L）20000","unit":"台班","qty":0.032,"unpriced":false,"raw":"0.032"},{"kind":"机械","name":"墙板搬运机器人3kw","unit":"台班","qty":1.569,"unpriced":false,"raw":"1.569"},{"kind":"机械","name":"墙板安装机器人3kw","unit":"台班","qty":1.569,"unpriced":false,"raw":"1.569"}]},{"code":"18-2","vol":1,"ch_no":1,"section_title":"1.蒸压加气混凝土墙板","project":"蒸压加气混凝土墙板 板厚（mm以内） 200","work_content":"构件就位堆放、切割、搬运、安装校正、固定、修整、水泥砂浆坐浆、勾缝、打胶、板面清扫。","unit":"100㎡","phys_page":6,"print_page":5,"chapter":1,"consumptions":[{"kind":"人工","name":"二类人工","unit":"工日","qty":26.419,"unpriced":false,"raw":"26.419"},{"kind":"材料","name":"蒸压加气混凝土墙板100mm厚","unit":"m2","qty":null,"unpriced":false,"raw":"-"},{"kind":"材料","name":"蒸压加气混凝土墙板200mm厚","unit":"m2","qty":105.0,"unpriced":false,"raw":"105.000"},{"kind":"材料","name":"镀锌连接铁件","unit":"t","qty":0.04,"unpriced":false,"raw":"0.040"},{"kind":"材料","name":"镀锌U型卡","unit":"个","qty":48.0,"unpriced":false,"raw":"48.000"},{"kind":"材料","name":"镀锌管卡","unit":"个","qty":120.0,"unpriced":false,"raw":"120.000"},{"kind":"材料","name":"钢筋（综合）","unit":"t","qty":0.025,"unpriced":false,"raw":"0.025"},{"kind":"材料","name":"干混砌筑砂浆DMM15.0","unit":"m3","qty":0.607,"unpriced":false,"raw":"0.607"},{"kind":"材料","name":"蒸压加气混凝土墙板专用勾缝剂","unit":"kg","qty":65.0,"unpriced":false,"raw":"65.000"},{"kind":"材料","name":"蒸压加气混凝土墙板专用修补砂浆","unit":"kg","qty":10.0,"unpriced":false,"raw":"10.000"},{"kind":"材料","name":"合金钢切割片φ300","unit":"片","qty":0.52,"unpriced":false,"raw":"0.520"},{"kind":"材料","name":"水","unit":"m3","qty":0.035,"unpriced":false,"raw":"0.035"},{"kind":"材料","name":"电","unit":"kw·h","qty":75.312,"unpriced":false,"raw":"75.312"},{"kind":"机械","name":"干混砂浆罐式搅拌机公称储量（L）20000","unit":"台班","qty":0.627,"unpriced":false,"raw":"0.627"},{"kind":"机械","name":"墙板搬运机器人3kw","unit":"台班","qty":1.569,"unpriced":false,"raw":"1.569"},{"kind":"机械","name":"墙板安装机器人3kw","unit":"台班","qty":1.569,"unpriced":false,"raw":"1.569"}]},{"code":"18-3","vol":1,"ch_no":2,"section_title":"1.混凝土基础","project":"垫层","work_content":"浇筑、振捣、机器人整平、机器人抹平、人工配合、养护等。","unit":"10m3","phys_page":7,"print_page":6,"chapter":2,"consumptions":[{"kind":"人工","name":"二类人工","unit":"工日","qty":2.723,"unpriced":false,"raw":"2.723"},{"kind":"材料","name":"预拌混凝土C20","unit":"m3","qty":10.1,"unpriced":false,"raw":"10.100"},{"kind":"材料","name":"塑料薄膜","unit":"㎡","qty":47.775,"unpriced":false,"raw":"47.775"},{"kind":"材料","name":"水","unit":"m3","qty":3.95,"unpriced":false,"raw":"3.950"},{"kind":"材料","name":"电","unit":"kw·h","qty":4.117,"unpriced":false,"raw":"4.117"},{"kind":"机械","name":"整平机器人1.7kw","unit":"台班","qty":0.098,"unpriced":false,"raw":"0.098"},{"kind":"机械","name":"抹平机器人4kw","unit":"台班","qty":0.087,"unpriced":false,"raw":"0.087"}]},{"code":"18-4","vol":1,"ch_no":2,"section_title":"1.混凝土基础","project":"筏形基础 有梁式","work_content":"浇筑、振捣、机器人整平、机器人抹平、人工配合、养护等。","unit":"10m3","phys_page":7,"print_page":6,"chapter":2,"consumptions":[{"kind":"人工","name":"二类人工","unit":"工日","qty":1.838,"unpriced":false,"raw":"1.838"},{"kind":"材料","name":"预拌混凝土C20","unit":"m3","qty":10.1,"unpriced":false,"raw":"10.100"},{"kind":"材料","name":"塑料薄膜","unit":"㎡","qty":25.095,"unpriced":false,"raw":"25.095"},{"kind":"材料","name":"水","unit":"m3","qty":1.339,"unpriced":false,"raw":"1.339"},{"kind":"材料","name":"电","unit":"kw·h","qty":2.44,"unpriced":false,"raw":"2.440"},{"kind":"机械","name":"整平机器人1.7kw","unit":"台班","qty":0.09,"unpriced":false,"raw":"0.090"},{"kind":"机械","name":"抹平机器人4kw","unit":"台班","qty":0.038,"unpriced":false,"raw":"0.038"}]},{"code":"18-5","vol":1,"ch_no":2,"section_title":"1.混凝土基础","project":"筏形基础 无梁式","work_content":"浇筑、振捣、机器人整平、机器人抹平、人工配合、养护等。","unit":"10m3","phys_page":7,"print_page":6,"chapter":2,"consumptions":[{"kind":"人工","name":"二类人工","unit":"工日","qty":1.738,"unpriced":false,"raw":"1.738"},{"kind":"材料","name":"预拌混凝土C20","unit":"m3","qty":10.1,"unpriced":false,"raw":"10.100"},{"kind":"材料","name":"塑料薄膜","unit":"㎡","qty":25.095,"unpriced":false,"raw":"25.095"},{"kind":"材料","name":"水","unit":"m3","qty":1.52,"unpriced":false,"raw":"1.520"},{"kind":"材料","name":"电","unit":"kw·h","qty":2.44,"unpriced":false,"raw":"2.440"},{"kind":"机械","name":"整平机器人1.7kw","unit":"台班","qty":0.09,"unpriced":false,"raw":"0.090"},{"kind":"机械","name":"抹平机器人4kw","unit":"台班","qty":0.038,"unpriced":false,"raw":"0.038"}]},{"code":"18-6","vol":1,"ch_no":2,"section_title":"2.混凝土板","project":"有梁板","work_content":"浇筑、振捣、机器人整平、机器人抹平、人工配合、养护等。","unit":"10m3","phys_page":7,"print_page":6,"chapter":2,"consumptions":[{"kind":"人工","name":"二类人工","unit":"工日","qty":2.159,"unpriced":false,"raw":"2.159"},{"kind":"材料","name":"预拌混凝土C20","unit":"m3","qty":10.1,"unpriced":false,"raw":"10.100"},{"kind":"材料","name":"塑料薄膜","unit":"㎡","qty":54.724,"unpriced":false,"raw":"54.724"},{"kind":"材料","name":"水","unit":"m3","qty":2.595,"unpriced":false,"raw":"2.595"},{"kind":"材料","name":"电","unit":"kw·h","qty":2.44,"unpriced":false,"raw":"2.440"},{"kind":"机械","name":"整平机器人1.7kw","unit":"台班","qty":0.09,"unpriced":false,"raw":"0.090"},{"kind":"机械","name":"抹平机器人4kw","unit":"台班","qty":0.038,"unpriced":false,"raw":"0.038"}]},{"code":"18-7","vol":1,"ch_no":2,"section_title":"2.混凝土板","project":"平板","work_content":"浇筑、振捣、机器人整平、机器人抹平、人工配合、养护等。","unit":"10m3","phys_page":7,"print_page":6,"chapter":2,"consumptions":[{"kind":"人工","name":"二类人工","unit":"工日","qty":2.176,"unpriced":false,"raw":"2.176"},{"kind":"材料","name":"预拌混凝土C20","unit":"m3","qty":10.1,"unpriced":false,"raw":"10.100"},{"kind":"材料","name":"塑料薄膜","unit":"㎡","qty":78.209,"unpriced":false,"raw":"78.209"},{"kind":"材料","name":"水","unit":"m3","qty":4.104,"unpriced":false,"raw":"4.104"},{"kind":"材料","name":"电","unit":"kw·h","qty":4.117,"unpriced":false,"raw":"4.117"},{"kind":"机械","name":"整平机器人1.7kw","unit":"台班","qty":0.098,"unpriced":false,"raw":"0.098"},{"kind":"机械","name":"抹平机器人4kw","unit":"台班","qty":0.087,"unpriced":false,"raw":"0.087"}]},{"code":"18-8","vol":1,"ch_no":3,"section_title":"1.找平层","project":"干混砂浆找平层 20mm厚","work_content":"清理基层、调运砂浆、机器人整平、人工配合、压实、养护。","unit":"100㎡","phys_page":8,"print_page":7,"chapter":3,"consumptions":[{"kind":"人工","name":"三类人工","unit":"工日","qty":2.605,"unpriced":false,"raw":"2.605"},{"kind":"材料","name":"干混地面砂浆DSM20","unit":"m3","qty":2.04,"unpriced":false,"raw":"2.040"},{"kind":"材料","name":"水","unit":"m3","qty":0.4,"unpriced":false,"raw":"0.400"},{"kind":"材料","name":"电","unit":"kw·h","qty":7.798,"unpriced":false,"raw":"7.798"},{"kind":"机械","name":"干混砂浆罐式搅拌机公称储量（L）20000","unit":"台班","qty":0.34,"unpriced":false,"raw":"0.340"},{"kind":"机械","name":"整平机器人1.7kw","unit":"台班","qty":0.171,"unpriced":false,"raw":"0.171"},{"kind":"机械","name":"抹平机器人4kw","unit":"台班","qty":0.171,"unpriced":false,"raw":"0.171"}]},{"code":"18-9","vol":1,"ch_no":3,"section_title":"1.找平层","project":"干混砂浆找平层 每增减1mm","work_content":"清理基层、调运砂浆、机器人整平、人工配合、压实、养护。","unit":"100㎡","phys_page":8,"print_page":7,"chapter":3,"consumptions":[{"kind":"人工","name":"三类人工","unit":"工日","qty":0.094,"unpriced":false,"raw":"0.094"},{"kind":"材料","name":"干混地面砂浆DSM20","unit":"m3","qty":0.102,"unpriced":false,"raw":"0.102"},{"kind":"材料","name":"水","unit":"m3","qty":null,"unpriced":false,"raw":"-"},{"kind":"材料","name":"电","unit":"kw·h","qty":0.122,"unpriced":false,"raw":"0.122"},{"kind":"机械","name":"干混砂浆罐式搅拌机公称储量（L）20000","unit":"台班","qty":0.017,"unpriced":false,"raw":"0.017"},{"kind":"机械","name":"整平机器人1.7kw","unit":"台班","qty":0.009,"unpriced":false,"raw":"0.009"},{"kind":"机械","name":"抹平机器人4kw","unit":"台班","qty":null,"unpriced":false,"raw":"-"}]},{"code":"18-10","vol":1,"ch_no":3,"section_title":"1.找平层","project":"细石混凝土找平层 30mm厚","work_content":"清理基层、浇捣细石混凝土、机器人整平、人工配合、压实、养护。","unit":"100㎡","phys_page":8,"print_page":7,"chapter":3,"consumptions":[{"kind":"人工","name":"三类人工","unit":"工日","qty":3.572,"unpriced":false,"raw":"3.572"},{"kind":"材料","name":"预拌细石混凝土C20","unit":"m3","qty":3.03,"unpriced":false,"raw":"3.030"},{"kind":"材料","name":"水","unit":"m3","qty":0.4,"unpriced":false,"raw":"0.400"},{"kind":"材料","name":"电","unit":"kw·h","qty":7.798,"unpriced":false,"raw":"7.798"},{"kind":"机械","name":"整平机器人1.7kw","unit":"台班","qty":0.171,"unpriced":false,"raw":"0.171"},{"kind":"机械","name":"抹平机器人4kw","unit":"台班","qty":0.171,"unpriced":false,"raw":"0.171"}]},{"code":"18-11","vol":1,"ch_no":3,"section_title":"1.找平层","project":"细石混凝土找平层 每增减1mm","work_content":"清理基层、浇捣细石混凝土、机器人整平、人工配合、压实、养护。","unit":"100㎡","phys_page":8,"print_page":7,"chapter":3,"consumptions":[{"kind":"人工","name":"三类人工","unit":"工日","qty":0.077,"unpriced":false,"raw":"0.077"},{"kind":"材料","name":"预拌细石混凝土C20","unit":"m3","qty":0.101,"unpriced":false,"raw":"0.101"},{"kind":"材料","name":"水","unit":"m3","qty":null,"unpriced":false,"raw":"-"},{"kind":"材料","name":"电","unit":"kw·h","qty":0.122,"unpriced":false,"raw":"0.122"},{"kind":"机械","name":"整平机器人1.7kw","unit":"台班","qty":0.009,"unpriced":false,"raw":"0.009"},{"kind":"机械","name":"抹平机器人4kw","unit":"台班","qty":null,"unpriced":false,"raw":"-"}]},{"code":"18-12","vol":1,"ch_no":3,"section_title":"2.整体面层","project":"环氧自流平地面 1.2mm厚","work_content":"清理基层、分层配料，机器人涂刷底漆，满刮中涂砂浆，批刮腻子、填补地面坑洞缺陷、批刮封闭层、滚涂面漆，机器人分层打磨。","unit":"10㎡","phys_page":9,"print_page":8,"chapter":3,"consumptions":[{"kind":"人工","name":"三类人工","unit":"工日","qty":1.15,"unpriced":false,"raw":"1.15"},{"kind":"材料","name":"无溶剂型环氧底漆","unit":"kg","qty":2.05,"unpriced":false,"raw":"2.050"},{"kind":"材料","name":"无溶剂型环氧中涂漆","unit":"kg","qty":9.225,"unpriced":false,"raw":"9.225"},{"kind":"材料","name":"环氧面漆","unit":"kg","qty":13.018,"unpriced":false,"raw":"13.018"},{"kind":"材料","name":"环氧底漆固化剂","unit":"kg","qty":2.358,"unpriced":false,"raw":"2.358"},{"kind":"材料","name":"环氧面漆固化剂","unit":"kg","qty":3.254,"unpriced":false,"raw":"3.254"},{"kind":"材料","name":"基面整平腻子","unit":"kg","qty":16.5,"unpriced":false,"raw":"16.500"},{"kind":"材料","name":"石英砂","unit":"kg","qty":28.764,"unpriced":false,"raw":"28.764"},{"kind":"材料","name":"电","unit":"kw·h","qty":7.064,"unpriced":false,"raw":"7.064"},{"kind":"机械","name":"地坪研磨机器人25kw","unit":"台班","qty":0.025,"unpriced":false,"raw":"0.025"},{"kind":"机械","name":"地坪漆涂敷机器人3kw","unit":"台班","qty":0.086,"unpriced":false,"raw":"0.086"}]},{"code":"18-13","vol":1,"ch_no":3,"section_title":"2.整体面层","project":"环氧自流平地面 每增减0.5mm厚","work_content":"清理基层、分层配料，机器人涂刷底漆，满刮中涂砂浆，批刮腻子、填补地面坑洞缺陷、批刮封闭层、滚涂面漆，机器人分层打磨。","unit":"10㎡","phys_page":9,"print_page":8,"chapter":3,"consumptions":[{"kind":"人工","name":"三类人工","unit":"工日","qty":0.479,"unpriced":false,"raw":"0.479"},{"kind":"材料","name":"无溶剂型环氧底漆","unit":"kg","qty":null,"unpriced":false,"raw":"-"},{"kind":"材料","name":"无溶剂型环氧中涂漆","unit":"kg","qty":1.645,"unpriced":false,"raw":"1.645"},{"kind":"材料","name":"环氧面漆","unit":"kg","qty":null,"unpriced":false,"raw":"-"},{"kind":"材料","name":"环氧底漆固化剂","unit":"kg","qty":0.345,"unpriced":false,"raw":"0.345"},{"kind":"材料","name":"环氧面漆固化剂","unit":"kg","qty":null,"unpriced":false,"raw":"-"},{"kind":"材料","name":"基面整平腻子","unit":"kg","qty":2.531,"unpriced":false,"raw":"2.531"},{"kind":"材料","name":"石英砂","unit":"kg","qty":3.06,"unpriced":false,"raw":"3.060"},{"kind":"材料","name":"电","unit":"kw·h","qty":1.656,"unpriced":false,"raw":"1.656"},{"kind":"机械","name":"地坪研磨机器人25kw","unit":"台班","qty":0.006,"unpriced":false,"raw":"0.006"},{"kind":"机械","name":"地坪漆涂敷机器人3kw","unit":"台班","qty":0.019,"unpriced":false,"raw":"0.019"}]},{"code":"18-14","vol":1,"ch_no":4,"section_title":"1.墙面一般抹灰","project":"内墙面一般抹灰 （15+5）mm","work_content":"清理基层、修补堵眼、湿润基层、调运砂浆、清扫落地灰，机器人分层抹灰找平、面层压光、人工配合（包括门窗洞口侧壁抹灰）。","unit":"100㎡","phys_page":10,"print_page":9,"chapter":4,"consumptions":[{"kind":"人工","name":"三类人工","unit":"工日","qty":5.348,"unpriced":false,"raw":"5.348"},{"kind":"材料","name":"干混抹灰砂浆DPM10","unit":"m3","qty":2.32,"unpriced":false,"raw":"2.320"},{"kind":"材料","name":"水","unit":"m3","qty":1.057,"unpriced":false,"raw":"1.057"},{"kind":"材料","name":"电","unit":"kw·h","qty":28.8,"unpriced":false,"raw":"28.800"},{"kind":"机械","name":"干混砂浆罐式搅拌机公称储量（L）20000","unit":"台班","qty":0.386,"unpriced":false,"raw":"0.386"},{"kind":"机械","name":"喷涂机器人7.2kw","unit":"台班","qty":0.5,"unpriced":false,"raw":"0.500"}]},{"code":"18-15","vol":1,"ch_no":5,"section_title":"1.抹灰面腻子","project":"室内腻子 墙面 二遍","work_content":"清扫、基层打磨、机器人喷涂腻子、机器人打磨腻子、人工配合。","unit":"100㎡","phys_page":11,"print_page":10,"chapter":5,"consumptions":[{"kind":"人工","name":"三类人工","unit":"工日","qty":1.767,"unpriced":false,"raw":"1.767"},{"kind":"材料","name":"腻子粉（成品）","unit":"kg","qty":204.12,"unpriced":false,"raw":"204.120"},{"kind":"材料","name":"水","unit":"m3","qty":0.095,"unpriced":false,"raw":"0.095"},{"kind":"材料","name":"水砂纸","unit":"张","qty":2.0,"unpriced":false,"raw":"2.000"},{"kind":"材料","name":"电","unit":"kw·h","qty":27.5,"unpriced":false,"raw":"27.500"},{"kind":"机械","name":"腻子涂敷机器人7.2kw","unit":"台班","qty":0.347,"unpriced":false,"raw":"0.347"},{"kind":"机械","name":"腻子打磨机器人3kw","unit":"台班","qty":0.313,"unpriced":false,"raw":"0.313"}]},{"code":"18-16","vol":1,"ch_no":5,"section_title":"1.抹灰面腻子","project":"室内腻子 天棚面 二遍","work_content":"清扫、基层打磨、机器人喷涂腻子、机器人打磨腻子、人工配合。","unit":"100㎡","phys_page":11,"print_page":10,"chapter":5,"consumptions":[{"kind":"人工","name":"三类人工","unit":"工日","qty":2.566,"unpriced":false,"raw":"2.566"},{"kind":"材料","name":"腻子粉（成品）","unit":"kg","qty":204.12,"unpriced":false,"raw":"204.120"},{"kind":"材料","name":"水","unit":"m3","qty":0.095,"unpriced":false,"raw":"0.095"},{"kind":"材料","name":"水砂纸","unit":"张","qty":2.0,"unpriced":false,"raw":"2.000"},{"kind":"材料","name":"电","unit":"kw·h","qty":27.5,"unpriced":false,"raw":"27.500"},{"kind":"机械","name":"腻子涂敷机器人7.2kw","unit":"台班","qty":0.347,"unpriced":false,"raw":"0.347"},{"kind":"机械","name":"腻子打磨机器人3kw","unit":"台班","qty":0.313,"unpriced":false,"raw":"0.313"}]},{"code":"18-17","vol":1,"ch_no":5,"section_title":"1.抹灰面腻子","project":"室内腻子 每增减一遍","work_content":"清扫、基层打磨、机器人喷涂腻子、机器人打磨腻子、人工配合。","unit":"100㎡","phys_page":11,"print_page":10,"chapter":5,"consumptions":[{"kind":"人工","name":"三类人工","unit":"工日","qty":0.962,"unpriced":false,"raw":"0.962"},{"kind":"材料","name":"腻子粉（成品）","unit":"kg","qty":102.06,"unpriced":false,"raw":"102.06"},{"kind":"材料","name":"水","unit":"m3","qty":0.047,"unpriced":false,"raw":"0.047"},{"kind":"材料","name":"水砂纸","unit":"张","qty":1.0,"unpriced":false,"raw":"1.000"},{"kind":"材料","name":"电","unit":"kw·h","qty":13.79,"unpriced":false,"raw":"13.790"},{"kind":"机械","name":"腻子涂敷机器人7.2kw","unit":"台班","qty":0.174,"unpriced":false,"raw":"0.174"},{"kind":"机械","name":"腻子打磨机器人3kw","unit":"台班","qty":0.157,"unpriced":false,"raw":"0.157"}]},{"code":"18-18","vol":1,"ch_no":5,"section_title":"2.抹灰面乳胶漆","project":"室内乳胶漆 墙面 二遍","work_content":"1.清扫、基层打磨、机器人喷涂腻子、机器人打磨腻子、门窗等保护、机器人喷乳胶漆二遍、人工配合等。 2.机器人喷涂乳胶漆一遍及人工配合。","unit":"100㎡","phys_page":12,"print_page":11,"chapter":5,"consumptions":[{"kind":"人工","name":"三类人工","unit":"工日","qty":2.462,"unpriced":false,"raw":"2.462"},{"kind":"材料","name":"苯丙乳胶漆室内用","unit":"kg","qty":27.81,"unpriced":false,"raw":"27.810"},{"kind":"材料","name":"水","unit":"m3","qty":0.1,"unpriced":false,"raw":"0.100"},{"kind":"材料","name":"砂纸","unit":"张","qty":3.1,"unpriced":false,"raw":"3.100"},{"kind":"材料","name":"苯丙乳胶底漆（综合）","unit":"kg","qty":11.62,"unpriced":false,"raw":"11.620"},{"kind":"材料","name":"腻子粉（成品）","unit":"kg","qty":204.12,"unpriced":false,"raw":"204.120"},{"kind":"材料","name":"塑料薄膜","unit":"㎡","qty":0.046,"unpriced":false,"raw":"0.046"},{"kind":"材料","name":"电","unit":"kw·h","qty":31.968,"unpriced":false,"raw":"31.968"},{"kind":"材料","name":"其他材料费","unit":"%","qty":1.0,"unpriced":false,"raw":"1.000"},{"kind":"机械","name":"喷涂机器人7.2kw","unit":"台班","qty":0.208,"unpriced":false,"raw":"0.208"},{"kind":"机械","name":"腻子涂敷机器人7.2kw","unit":"台班","qty":0.347,"unpriced":false,"raw":"0.347"},{"kind":"机械","name":"腻子打磨机器人3kw","unit":"台班","qty":0.313,"unpriced":false,"raw":"0.313"}]},{"code":"18-19","vol":1,"ch_no":5,"section_title":"2.抹灰面乳胶漆","project":"室内乳胶漆 天棚面 二遍","work_content":"1.清扫、基层打磨、机器人喷涂腻子、机器人打磨腻子、门窗等保护、机器人喷乳胶漆二遍、人工配合等。 2.机器人喷涂乳胶漆一遍及人工配合。","unit":"100㎡","phys_page":12,"print_page":11,"chapter":5,"consumptions":[{"kind":"人工","name":"三类人工","unit":"工日","qty":3.078,"unpriced":false,"raw":"3.078"},{"kind":"材料","name":"苯丙乳胶漆室内用","unit":"kg","qty":27.81,"unpriced":false,"raw":"27.810"},{"kind":"材料","name":"水","unit":"m3","qty":0.1,"unpriced":false,"raw":"0.100"},{"kind":"材料","name":"砂纸","unit":"张","qty":3.1,"unpriced":false,"raw":"3.100"},{"kind":"材料","name":"苯丙乳胶底漆（综合）","unit":"kg","qty":11.62,"unpriced":false,"raw":"11.620"},{"kind":"材料","name":"腻子粉（成品）","unit":"kg","qty":204.12,"unpriced":false,"raw":"204.120"},{"kind":"材料","name":"塑料薄膜","unit":"㎡","qty":null,"unpriced":false,"raw":"-"},{"kind":"材料","name":"电","unit":"kw·h","qty":31.968,"unpriced":false,"raw":"31.968"},{"kind":"材料","name":"其他材料费","unit":"%","qty":1.0,"unpriced":false,"raw":"1.000"},{"kind":"机械","name":"喷涂机器人7.2kw","unit":"台班","qty":0.208,"unpriced":false,"raw":"0.208"},{"kind":"机械","name":"腻子涂敷机器人7.2kw","unit":"台班","qty":0.347,"unpriced":false,"raw":"0.347"},{"kind":"机械","name":"腻子打磨机器人3kw","unit":"台班","qty":0.313,"unpriced":false,"raw":"0.313"}]},{"code":"18-20","vol":1,"ch_no":5,"section_title":"2.抹灰面乳胶漆","project":"室内乳胶漆 每增加一遍","work_content":"1.清扫、基层打磨、机器人喷涂腻子、机器人打磨腻子、门窗等保护、机器人喷乳胶漆二遍、人工配合等。 2.机器人喷涂乳胶漆一遍及人工配合。","unit":"100㎡","phys_page":12,"print_page":11,"chapter":5,"consumptions":[{"kind":"人工","name":"三类人工","unit":"工日","qty":0.583,"unpriced":false,"raw":"0.583"},{"kind":"材料","name":"苯丙乳胶漆室内用","unit":"kg","qty":12.36,"unpriced":false,"raw":"12.360"},{"kind":"材料","name":"水","unit":"m3","qty":0.002,"unpriced":false,"raw":"0.002"},{"kind":"材料","name":"砂纸","unit":"张","qty":1.0,"unpriced":false,"raw":"1.000"},{"kind":"材料","name":"苯丙乳胶底漆（综合）","unit":"kg","qty":null,"unpriced":false,"raw":"-"},{"kind":"材料","name":"腻子粉（成品）","unit":"kg","qty":null,"unpriced":false,"raw":"-"},{"kind":"材料","name":"塑料薄膜","unit":"㎡","qty":null,"unpriced":false,"raw":"-"},{"kind":"材料","name":"电","unit":"kw·h","qty":9.758,"unpriced":false,"raw":"9.758"},{"kind":"材料","name":"其他材料费","unit":"%","qty":1.0,"unpriced":false,"raw":"1.000"},{"kind":"机械","name":"喷涂机器人7.2kw","unit":"台班","qty":0.104,"unpriced":false,"raw":"0.104"},{"kind":"机械","name":"腻子涂敷机器人7.2kw","unit":"台班","qty":null,"unpriced":false,"raw":"-"},{"kind":"机械","name":"腻子打磨机器人3kw","unit":"台班","qty":0.157,"unpriced":false,"raw":"0.157"}]}],"explain":[{"no":"一","text":"《智能建造（建筑机器人）消耗量定额项目（试行）》（以下简称“本定额”）适用于使用建筑机器人的工业与民用建筑的新建、扩建、改建房屋建筑与装饰工程，与2020 版《新疆维吾尔自治区房屋建筑与装饰工程消耗量定额》配套使用。","pno":2},{"no":"二","text":"本定额是编制地区单位估价表、投资估算、设计概算、招标控制价、施工图预算的依据，可作为投标报价、签订施工合同、工程结算、编制企业定额的参考。","pno":2},{"no":"三","text":"本定额按正常的施工环境、常规施工工艺、合理的施工组织设计、适用于机器人的施工条件进行编制。","pno":2},{"no":"四","text":"本定额包括砌筑工程、现浇混凝土工程、楼地面工程、墙面工程、涂料工程共五节。","pno":2},{"no":"五","text":"关于人工：1.本定额以两种类别的综合工日表示，包括基本用工、超运距用工、辅助用工和人工幅度差。2.本定额的人工每工日按8 小时工作制计算。3.本定额已综合考虑了人工配合。人工配合包括配合机器人盲区施工、机器人楼层之间搬运等。","pno":2},{"no":"六","text":"关于材料：1.本定额采用的材料（包括构配件、零件、半成品、成品）均为符合国家质量标准和相应设计要求的合格产品。2.本定额的材料消耗量包括净用量和损耗量。3.本定额的混凝土按预拌混凝土编制，采用现场搅拌时，执行2020 版《新疆维吾尔自治区房屋建筑与装饰工程消耗量定额》相关规定。4.本定额中所使用的砂浆按干混预拌砂浆编制，若实际使用现拌砂浆或湿拌砂浆时，执行2020 版《新疆维吾尔自治区房屋建筑与装饰工程消耗量定额》相关规定。5.对于用量少、低值易耗的零星材料，列为其他材料。","pno":2},{"no":"七","text":"关于机械：1.本定额中的建筑机器人按租赁方式编制，已包含进出场费、安装调试费和操作人员人工费。2.本定额中机械台班消耗量是按正常机械施工工效并考虑机械幅度差综合取定的。3.凡单位价值在2000 元以内，使用年限在一年以内的不构成固定资产的施工机械，不列入机械台班消耗量，作为工具用具在企业管理费中考虑，其消耗的燃料动力等列入材料中。","pno":3},{"no":"八","text":"蒸压加气混凝土墙板设计厚度与定额不同时，人工、材料可进行调整换算。","pno":3},{"no":"九","text":"设计要求的腻子遍数与定额不同时，按增减一遍子目进行调整。","pno":3},{"no":"十","text":"乳胶漆子目包括喷腻子，设计要求的乳胶漆遍数与定额不同时，按每增加一遍子目进行调整。","pno":3},{"no":"十一","text":"本定额由自治区建筑业发展中心负责管理和解释。","pno":3}],"rules":[{"ch_no":1,"title":"砌筑工程","text":"砌筑工程1.蒸压加气混凝土墙板安装，按设计墙体长度乘以设计高度，以面积计算，扣除门窗洞口及单个面积＞0.3m2 孔洞的面积。","pno":4},{"ch_no":2,"title":"现浇混凝土工程","text":"现浇混凝土工程1.垫层、筏形基础混凝土均按设计图示尺寸以体积计算，不扣除构件内钢筋、预埋件及单个面积≤0.3m2 的孔洞所占体积。2.有梁板、平板混凝土均按设计图示尺寸以体积计算，不扣除构件内钢筋、预埋件及单个面积≤0.3m2 的孔洞所占体积。有梁板包括梁与板，按梁、板体积之和计算。","pno":4},{"ch_no":3,"title":"楼地面工程","text":"楼地面工程1.找平层，按设计图示尺寸以面积计算。扣除凸出地面构筑物、设备基础、室内管道、地沟等所占面积，不扣除间壁墙及单个面积≤0.3m2 柱、垛、附墙烟囱及孔洞所占面积。门洞、空圈、暖气包槽、壁龛的开口部分不增加面积。2.环氧自流平涂料，按设计图示尺寸以面积计算。扣除凸出地面构筑物、设备基础、室内管道、地沟等所占面积，不扣除间壁墙及单个面积≤0.3m2 柱、垛、附墙烟囱及孔洞所占面积。门洞、空圈、暖气包槽、壁龛的开口部分不增加面积。","pno":4},{"ch_no":4,"title":"墙面工程","text":"墙面工程墙面一般抹灰按设计图示尺寸以面积计算，应扣除门窗洞口和单个面积＞0.3m2 的空圈所占的面积，不扣除踢脚线、挂镜线及单个面积≤0.3m2 的孔洞和墙与构件交接处的面积所占面积。且门窗洞口、空圈、孔洞的侧壁面积亦不增加，附墙柱的侧面抹灰应并入墙面、墙裙抹灰工程量内计算。","pno":4},{"ch_no":5,"title":"涂料工程","text":"涂料工程抹灰面腻子、乳胶漆按设计图示尺寸以面积计算。","pno":4}],"n_cons":178,"n_sec":8,"toc":[{"level":"h1","title":"说明","print_page":1,"vol":1,"ch":null},{"level":"h1","title":"工程量计算规则","print_page":3,"vol":1,"ch":null},{"level":"h1","title":"一、砌筑工程","print_page":5,"vol":1,"ch":1},{"level":"h2","title":"1.蒸压加气混凝土墙板","print_page":5,"vol":1,"ch":1},{"level":"h1","title":"二、现浇混凝土工程","print_page":6,"vol":1,"ch":2},{"level":"h2","title":"1.混凝土基础","print_page":6,"vol":1,"ch":2},{"level":"h2","title":"2.混凝土板","print_page":6,"vol":1,"ch":2},{"level":"h1","title":"三、楼地面工程","print_page":7,"vol":1,"ch":3},{"level":"h2","title":"1.找平层","print_page":7,"vol":1,"ch":3},{"level":"h2","title":"2.整体面层","print_page":7,"vol":1,"ch":3},{"level":"h1","title":"四、墙面工程","print_page":9,"vol":1,"ch":4},{"level":"h2","title":"1.墙面一般抹灰","print_page":9,"vol":1,"ch":4},{"level":"h1","title":"五、涂料工程","print_page":10,"vol":1,"ch":5},{"level":"h2","title":"1.抹灰面腻子","print_page":10,"vol":1,"ch":5},{"level":"h2","title":"2.抹灰面乳胶漆","print_page":10,"vol":1,"ch":5}],"toc_check":{"matched":15,"sec_total":15,"unmatched":[],"note":"源无目录页；目录按正文标题与规则页章序结构化生成"},"issues":[{"kind":"chapter_number_typo","pno":8,"note":"正文第8页章标题原文「二、楼地面工程」，与《工程量计算规则》第三章及说明「共五节」不符；DB 按规则页权威序归章（第3章），忠实层保留原文「二、楼地面工程」"},{"kind":"chapter_number_typo","pno":10,"note":"正文第10页章标题原文「三、墙面工程」，与《工程量计算规则》第四章及说明「共五节」不符；DB 按规则页权威序归章（第4章），忠实层保留原文「三、墙面工程」"},{"kind":"qty_decimal_width","pno":9,"note":"18-12 人工/三类人工 原值=1.15 非三位小数（忠实保留）"},{"kind":"qty_decimal_width","pno":11,"note":"18-17 材料/腻子粉（成品） 原值=102.06 非三位小数（忠实保留）"},{"kind":"unit_glyph_mixed","pno":null,"note":"面积/体积单位原文混用上标 m2/m3 与 ㎡（忠实保留各自写法）"}]}</script>
+<script>
+var D = JSON.parse(document.getElementById('payload').textContent);
+function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function $(id){return document.getElementById(id)}
+function cn(n){return ['零','一','二','三','四','五','六','七','八','九','十'][n]||String(n)}
+
+// ---- meta ----
+$('h-title').textContent=D.meta.title;
+document.title=D.meta.title;
+$('m-items').textContent=D.items.length;
+$('m-cons').textContent=D.n_cons;
+$('m-sec').textContent=D.n_sec;
+$('m-iss').textContent=D.issues.length;
+$('m-off').textContent=D.meta.print_offset;
+
+// ---- tabs ----
+$('tabs').addEventListener('click',function(e){
+  var b=e.target.closest('button'); if(!b)return;
+  document.querySelectorAll('nav.tabs button').forEach(function(x){x.classList.toggle('on',x===b)});
+  document.querySelectorAll('.panel').forEach(function(p){p.classList.toggle('on',p.id===b.dataset.p)});
+});
+
+// ---- structure tree ----
+var tree=$('tree'), chMap={};
+D.chapters.forEach(function(ch){chMap[ch.no]=ch});
+var dv=document.createElement('div'); dv.className='vol'; dv.textContent=D.meta.region+' · '+D.meta.year; tree.appendChild(dv);
+D.chapters.forEach(function(ch){
+  var d=document.createElement('div'); d.className='ch'; d.dataset.k=ch.no;
+  d.textContent=(ch.no===0?'总说明':('第'+cn(ch.no)+'章 '+ch.title))+'（'+ch.n_items+'子目）';
+  d.onclick=function(){showCh(ch.no)};
+  tree.appendChild(d);
+});
+function showCh(k){
+  document.querySelectorAll('.tree .ch').forEach(function(x){x.classList.toggle('on',Number(x.dataset.k)===Number(k))});
+  var ch=chMap[k]; if(!ch)return;
+  var h='<h3>'+esc(ch.no===0?'总说明（全卷通用）':('第'+cn(ch.no)+'章 '+ch.title))+'</h3>';
+  h+='<p class="kw">原文标题：'+esc(ch.raw_title||'—')+' · 印页 P'+ch.print_page+' · 节 '+ch.sections.length+' · 子目 '+ch.n_items+' · 说明 '+ch.explain.length+' 条 · 计算规则 '+ch.rules.length+' 条</p>';
+  if(ch.sections.length){h+='<h3>节清单</h3>';ch.sections.forEach(function(s){h+='<p>· '+esc(s.title)+(s.pno?' <span class="kw">P'+s.pno+'</span>':'')+'</p>'})}
+  if(ch.explain.length){h+='<h3>'+(ch.no===0?'总说明':'章说明')+'</h3>';ch.explain.forEach(function(x){h+='<p>'+esc(x.text)+'</p>'})}
+  if(ch.rules.length){h+='<h3>工程量计算规则</h3>';ch.rules.forEach(function(x){h+='<p>'+esc(x.text)+'</p>'})}
+  if(ch.items.length){h+='<h3>本章子目</h3><p>';ch.items.forEach(function(c){h+='<span class="pill" onclick="jump(\''+c+'\')">'+esc(c)+'</span>'});h+='</p>'}
+  $('ch-info').innerHTML=h;
+}
+showCh(0);
+
+// ---- search ----
+var chSel=$('f-ch');
+D.chapters.forEach(function(ch){if(ch.no===0)return;var o=document.createElement('option');o.value=ch.no;o.textContent='第'+cn(ch.no)+'章 '+ch.title;chSel.appendChild(o)});
+var idx=D.items.map(function(it){
+  return {it:it,hay:[it.code,it.project,it.work_content,it.unit,it.section].concat((it.consumptions||[]).map(function(c){return c.name})).join(' ')};
+});
+$('q').addEventListener('input',doSearch);
+$('f-ch').addEventListener('change',doSearch);
+$('f-kind').addEventListener('change',doSearch);
+function doSearch(){
+  var q=$('q').value.trim(), fc=chSel.value, fk=$('f-kind').value;
+  var hits=idx.filter(function(x){
+    if(fc&&String(x.it.chapter)!==fc)return false;
+    if(fk&&!(x.it.consumptions||[]).some(function(c){return c.kind===fk}))return false;
+    if(!q)return true;
+    if(/^\d+-\d+$/.test(q))return x.it.code===q;
+    return x.hay.indexOf(q)>=0;
+  }).slice(0,120);
+  $('q-count').textContent='命中 '+hits.length+' 条'+(hits.length===120?'（截断，最多显示 120）':'');
+  var h='';
+  hits.forEach(function(x){
+    var it=x.it;
+    h+='<div class="item-head" id="it-'+esc(it.code)+'"><b class="code">'+esc(it.code)+'</b><span>'+esc(it.project)+'</span>'
+      +'<span class="kw">单位 '+esc(it.unit||'')+'</span><span class="kw">印页 P'+it.print_page+'（物页 '+it.phys_page+'）</span></div>';
+    h+='<p class="kw">节：'+esc(it.section||'')+' · 工作内容：'+esc(it.work_content||'')+'</p>';
+    if((it.consumptions||[]).length){
+      h+='<table><tr><th>类别</th><th>名称</th><th>单位</th><th>消耗量</th></tr>';
+      it.consumptions.forEach(function(c){
+        h+='<tr><td>'+esc(c.kind||'')+'</td><td>'+esc(c.name)+'</td><td>'+esc(c.unit||'')+'</td><td class="num">'
+          +(c.qty==null?'—':(c.unpriced?'('+c.qty+')':c.qty))+'</td></tr>';
+      });
+      h+='</table>';
+    }
+  });
+  $('q-out').innerHTML=h||'<p class="kw">无命中</p>';
+}
+function jump(code){
+  document.querySelector('nav.tabs button[data-p="p-search"]').click();
+  $('q').value=code; doSearch();
+  var el=$('it-'+code); if(el&&el.scrollIntoView)el.scrollIntoView();
+}
+doSearch();
+
+// ---- 总说明 / 计算规则 ----
+(function(){
+  var h='<div class="info sec" style="max-height:none"><h3>说明（'+D.explain.length+' 条）</h3>';
+  D.explain.forEach(function(e){h+='<p><b>'+esc(e.no)+'、</b>'+esc(e.text)+' <span class="kw">[印页 P'+e.pno+']</span></p>'});
+  h+='<h3>工程量计算规则（'+D.rules.length+' 章）</h3>';
+  D.rules.forEach(function(r){h+='<p><b>'+esc(cn(r.ch_no))+'、'+esc(r.title)+'</b> '+esc(r.text)+'</p>'});
+  h+='</div>';
+  $('prose-out').innerHTML=h;
+})();
+
+// ---- 目录对账 ----
+(function(){
+  var tc=D.toc_check;
+  $('toc-count').textContent='目录 '+D.toc.length+' 条 · 对账 '+tc.matched+'/'+tc.sec_total+' · '+esc(tc.note||'');
+  var h='<tr><th>层级</th><th>标题</th><th>章</th><th>印页</th></tr>';
+  D.toc.forEach(function(e){h+='<tr><td>'+esc(e.level)+'</td><td>'+esc(e.title)+'</td><td>'+(e.ch==null?'—':e.ch)+'</td><td>'+(e.print_page==null?'—':e.print_page)+'</td></tr>'});
+  $('toc-tbl').innerHTML=h;
+})();
+
+// ---- 疑点留痕 ----
+(function(){
+  $('iss-count').textContent='留痕 '+D.issues.length+' 条（原文疑点只记录不静默修正；章序号以《工程量计算规则》为权威，原文见章节结构「原文标题」）';
+  var h='<tr><th>类别</th><th>物页</th><th>说明</th></tr>';
+  D.issues.forEach(function(x){h+='<tr><td><span class="tag warn">'+esc(x.kind)+'</span></td><td>'+(x.pno==null?'—':x.pno)+'</td><td>'+esc(x.note)+'</td></tr>'});
+  $('iss-tbl').innerHTML=h;
+})();
+
+// ---- 源信息 ----
+(function(){
+  var m=D.meta, rows=[
+    ['书名',m.title],['发布机关','新疆维吾尔自治区住房和城乡建设厅'],
+    ['发布通知',m.notice_date+' · '+m.notice_url],
+    ['源形态',m.source_kind],['页数',m.pages+' 页（印页 = 物理页 − '+m.print_offset+'）'],
+    ['主源 sha12',m.source_sha12],['5月通知附件 sha12',m.alt_sha12],
+    ['双源一致性',m.source_sha12===m.alt_sha12?'一致（字节级）':'不一致（见疑点）'],
+    ['source.md sha12',m.source_md_sha12],['parse schema',m.parse_schema],
+    ['结构计数',m.n_items+' 子目 / '+m.n_consumptions+' 消耗量 / '+m.n_tables+' 张定额表 / 5 章 8 节']
+  ];
+  var h='<div class="info sec" style="max-height:none"><h3>源与可复现性</h3><table><tr><th>项</th><th>值</th></tr>';
+  rows.forEach(function(r){h+='<tr><td>'+esc(r[0])+'</td><td class="mono">'+esc(r[1])+'</td></tr>'});
+  h+='</table><p class="kw" style="margin-top:10px">忠实层 out/parse_xj18.json 与 out/xj18_source.md 只读；DB 为工作层；全链禁运行时时间戳，门控基线指纹可复跑。</p></div>';
+  $('src-out').innerHTML=h;
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+ "files": {
+  "parse_xj18.json": "036fbb5d0121",
+  "xj18_source.md": "3a163ca2bfa5",
+  "xj18_quota.db": "d2aade7f0cb5",
+  "web/index.html": "501a01e99a55",
+  "web/template.html": "1d59d31254e2"
+ },
+ "anchors": {
+  "official.pdf": "e36b519621de",
+  "official_alt_202605.pdf": "e36b519621de"
+ }
+}

@@ -270,6 +270,16 @@
      "sha256": "74eb8e2aadd49efe78f565a230339886e533fd200c4ee27df78dbe05a333e30b",
      "bytes": 110592,
      "items": 46
+    },
+    {
+     "key": "xj18",
+     "kind": "quota",
+     "label": "新疆智能建造（建筑机器人）消耗量定额项目（试行）",
+     "province": "新疆",
+     "db": "xinjiang-2020/quota-extract-xj18/db_pdf/xj18_quota.db",
+     "sha256": "d2aade7f0cb5e1ba96503d7ca6a728dae1844c9e3a42f5864120a0550212281b",
+     "bytes": 114688,
+     "items": 20
     }
    ]
   }
