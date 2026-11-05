@@ -396,6 +396,22 @@ VOLUMES = [
         "source_sha12": "c0940477ec06",
         "pipeline": "官方 2 页图片型 PDF（无文字层）视觉双遍转写+分歧放大核对 → fee schema + fee_semantics 语义分析表（每条解释一行）→ 七视图前端 → 六门门控+冒烟 13/13；勘误三部分：房建 5-430→xj01、安装补充 B4-x→xj15 已 overlay applied，园林 2 条 not_in_db 留档",
     },
+    {
+        "id": "xj20",
+        "kind": "fee",
+        "tag": "建筑垃圾运输和处置计价（清单增补·新疆）",
+        "name": "新疆维吾尔自治区建筑垃圾运输和处置计价通知（工程量清单增补）",
+        "dir": "quota-extract-xj20",
+        "sub": "out",
+        "db": "xj20_quota.db",
+        "web": "web/index.html",
+        "manifest": "baseline_manifest.json",
+        "report": "交付报告_xj20_建筑垃圾计价清单增补.md",
+        "pdf": "input/attachment.xlsx",
+        "source_sha12": "d14ceca37b2e",
+        "gates": 6,
+        "pipeline": "源形态第五型（网页 HTML+xlsx 双源直读）：条款逐字取自页面原文、清单表 xlsx 单元格级程序化实读（合并展开/多值留换行），parse 内置双源闭环断言 → fee schema + fee_semantics 语义分析 11 条 → 七视图前端 → 六门门控+冒烟 12/12；增补清单项目 X010103003~006，「余方弃置」停止执行（废止性条款）",
+    },
 ]
 
 # 官方清单分组展示顺序（其余组排最后）
