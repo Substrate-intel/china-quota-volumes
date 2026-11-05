@@ -381,6 +381,21 @@ VOLUMES = [
         "gates": 10,
         "pipeline": "官方 PDF 干净文本层 + 矢量网格字符级重建（非 OCR）→ quota schema 九表 + 站点兼容三表 → 六视图前端 → 十门门控（P1 官方原版逐格取证 178/178，印页=物−1）",
     },
+    {
+        "id": "xj19",
+        "kind": "fee",
+        "tag": "计价依据问题解释（五·新疆）",
+        "name": "新疆维吾尔自治区计价依据有关问题解释（五）",
+        "dir": "quota-extract-xj19",
+        "sub": "out",
+        "db": "xj19_quota.db",
+        "web": "web/index.html",
+        "manifest": "baseline_manifest.json",
+        "report": "交付报告_xj19_解释五.md",
+        "pdf": "input/official.pdf",
+        "source_sha12": "c0940477ec06",
+        "pipeline": "官方 2 页图片型 PDF（无文字层）视觉双遍转写+分歧放大核对 → fee schema + fee_semantics 语义分析表（每条解释一行）→ 七视图前端 → 六门门控+冒烟 13/13；勘误三部分：房建 5-430→xj01、安装补充 B4-x→xj15 已 overlay applied，园林 2 条 not_in_db 留档",
+    },
 ]
 
 # 官方清单分组展示顺序（其余组排最后）
