@@ -21,6 +21,37 @@ try:
 except Exception:
     fitz = None
 
+# 新疆 2020 版定额官方发布依据（栏目网页版公告，页面无附件；公告正文已逐字收录在
+# xj01/xj02/xj10 忠实层 P4，网页版与原书逐字对账仅 7 组括号全半角差异，且网页省略公告号）
+XJ_NOTICE_2020 = {
+    "url": "https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/6f45ce7cc94e463ba43bd9536f52cb1f.shtml",
+    "no": "2020年 第145号",
+    "issued": "2020-10-28",
+    "effective": "2021-04-01",
+    "repealed": "2010 建筑工程消耗量定额、2014 建筑安装工程补充消耗量定额（土建装饰部分）、"
+                "2002 全国统一装饰装修工程预算定额、2012 新疆市政工程消耗量定额、"
+                "2017 新疆钢结构工程消耗量定额、2018 绿色建筑工程消耗量定额相应内容",
+    "applies_to": ("xj01", "xj02", "xj10", "xj11", "xj12", "xj13", "xj14"),
+}
+NOTICE_BY_VOL = {vid: XJ_NOTICE_2020 for vid in XJ_NOTICE_2020["applies_to"]}
+
+
+def notice_link(v):
+    n = NOTICE_BY_VOL.get(v["id"])
+    if not n:
+        return ""
+    return (f'<a class="lbtn ghost" href="{n["url"]}" target="_blank">'
+            f'官方发布依据 · {n["no"]}</a>')
+
+
+def notice_meta(v):
+    n = NOTICE_BY_VOL.get(v["id"])
+    if not n:
+        return ""
+    return (f'<div class="meta">官方依据：{n["no"]}（{n["issued"]} 发布，{n["effective"]} 施行）'
+            f' ｜ 同时停止使用：{n["repealed"]}</div>')
+
+
 VOLUMES = [
     {
         "id": "fj",
@@ -749,6 +780,8 @@ def render_docx_quota(v, st):
     links.append(f'<a class="lbtn ghost" href="{v["dir"]}/{db_rel}">SQLite 成果库</a>')
     if st["report_ok"]:
         links.append(f'<a class="lbtn ghost" href="{v["dir"]}/{v["report"]}">交付报告</a>')
+    if v["id"] in NOTICE_BY_VOL:
+        links.append(notice_link(v))
     pdf = f'官方PDF {st["pdf_pages"]} 页' if st["pdf_pages"] else "PDF —"
     base = f'基线指纹 {st["baseline_files"]} 文件' if st["baseline_files"] else "基线指纹 —"
     h1, p1 = st["h1"], st["p1"]
@@ -775,6 +808,7 @@ def render_docx_quota(v, st):
   <div class="qrow">{''.join(q)}</div>
   <div class="links">{''.join(links)}</div>
   <div class="meta">库生成：{st["generated_at"]} ｜ 目录 {v["dir"]}/ ｜ 管线：docx 保真层→子目解析(列=子目/行=费用)→条文每条一记录→H1-H6 造价逻辑核验→P1 官方原版 PDF 取证→九门门控（docx-quota-extract skill）</div>
+  {notice_meta(v)}
 </div>"""
 
 
@@ -865,6 +899,8 @@ def render_xj_quota(v, st):
     links.append(f'<a class="lbtn ghost" href="{v["dir"]}/{db_rel}">SQLite 成果库</a>')
     if st["report_ok"]:
         links.append(f'<a class="lbtn ghost" href="{v["dir"]}/{v["report"]}">交付报告</a>')
+    if v["id"] in NOTICE_BY_VOL:
+        links.append(notice_link(v))
     pdf = f'官方PDF {st["pdf_pages"]} 页' if st["pdf_pages"] else "PDF —"
     base = f'基线指纹 {st["baseline_files"]} 文件' if st["baseline_files"] else "基线指纹 —"
     n_gate = v.get("gates", 9)   # 坑83：门数与管线说明按卷数据驱动，禁静态字面量
@@ -894,6 +930,7 @@ def render_xj_quota(v, st):
   <div class="qrow">{''.join(q)}</div>
   <div class="links">{''.join(links)}</div>
   <div class="meta">{pipeline}</div>
+  {notice_meta(v)}
 </div>"""
 
 

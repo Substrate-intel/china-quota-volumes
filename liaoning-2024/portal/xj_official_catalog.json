@@ -1,0 +1,696 @@
+{
+ "summary": {
+  "total": 59,
+  "by_status": {
+   "covered": 21,
+   "pending": 8,
+   "reference": 12,
+   "draft": 18
+  },
+  "by_category": {
+   "quota_volume": 29,
+   "interpretation": 9,
+   "policy": 15,
+   "notice": 1,
+   "errata": 5
+  },
+  "catalog_url": "https://zjt.xinjiang.gov.cn/xjzjt/c116332/list.shtml",
+  "covered_volumes": "xj01,xj02,xj03,xj10-xj21",
+  "note": "status: covered=已收录；pending=未收录且含实质数据候选；draft=征求意见/过程稿；reference=政策/办法/历史文件（不建卷）"
+ },
+ "items": [
+  {
+   "seq": 1,
+   "page": 1,
+   "date": "2026-05-11",
+   "title": "关于发布《新疆维吾尔自治区智能建造（建筑机器人）消耗量定额项目（试行）的通知",
+   "url": "https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/8d71a8fd2e584eb782b214810e70b08e.shtml",
+   "hash": "8d71a8fd2e58",
+   "category": "quota_volume",
+   "status": "covered",
+   "volumes": "xj18"
+  },
+  {
+   "seq": 2,
+   "page": 1,
+   "date": "2026-05-06",
+   "title": "关于贯彻执行《建设工程工程量清单计价标准》（GB/T50500-2024）及各专业工程工程量计算标准的通知",
+   "url": "https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/15b097128d4f4bd5a59fae26eb2eab33.shtml",
+   "hash": "15b097128d4f",
+   "category": "quota_volume",
+   "status": "pending",
+   "volumes": "",
+   "attachments": [
+    "https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/15b097128d4f4bd5a59fae26eb2eab33/files/%E3%80%90%E7%BB%BC%E5%90%88%E7%AE%A1%E7%90%86%E3%80%912.%E9%99%84%E4%BB%B62%EF%BC%9A%E6%88%BF%E5%B1%8B%E5%BB%BA%E7%AD%91%E4%B8%8E%E8%A3%85%E9%A5%B0%E3%80%81%E9%80%9A%E7%94%A8%E5%AE%89%E8%A3%85%E5%B7%A5%E7%A8%8B%E8%A1%A5%E5%85%85.pdf",
+    "https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/15b097128d4f4bd5a59fae26eb2eab33/files/%E3%80%90%E7%BB%BC%E5%90%88%E7%AE%A1%E7%90%86%E3%80%912.%E9%99%84%E4%BB%B61%EF%BC%9A%E8%87%AA%E6%B2%BB%E5%8C%BA%E7%8E%B0%E8%A1%8C%E8%AE%A1%E4%BB%B7%E4%BE%9D%E6%8D%AE%E7%9A%84%E9%85%8D%E5%A5%97%E8%B0%83%E6%95%B4.pdf",
+    "https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/15b097128d4f4bd5a59fae26eb2eab33/files/%E3%80%90%E7%BB%BC%E5%90%88%E7%AE%A1%E7%90%86%E3%80%912.%E9%99%84%E4%BB%B63%EF%BC%9A%E9%99%84%E5%BD%95%E8%B0%83%E6%95%B4.pdf"
+   ]
+  },
+  {
+   "seq": 3,
+   "page": 1,
+   "date": "2026-02-25",
+   "title": "新疆维吾尔自治区计价依据有关问题解释（五）",
+   "url": "https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/77c95067e70a401a8a1475485409d9c1.shtml",
+   "hash": "77c95067e70a",
+   "category": "interpretation",
+   "status": "covered",
+   "volumes": "xj19"
+  },
+  {
+   "seq": 4,
+   "page": 1,
+   "date": "2025-11-05",
+   "title": "关于进一步明确建筑垃圾运输及处置计价工作的通知",
+   "url": "https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/5bc867ccb50f4dcc96399997ef8b39b6.shtml",
+   "hash": "5bc867ccb50f",
+   "category": "policy",
+   "status": "covered",
+   "volumes": "xj20"
+  },
+  {
+   "seq": 5,
+   "page": 1,
+   "date": "2025-10-16",
+   "title": "关于印发《自治区建设工程造价咨询业务编审要求及成果文件质量评价导则（试行）》的通知",
+   "url": "https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/f617caa5aff740a3a0a9a11b6f08eecb.shtml",
+   "hash": "f617caa5aff7",
+   "category": "policy",
+   "status": "reference",
+   "volumes": ""
+  },
+  {
+   "seq": 6,
+   "page": 1,
+   "date": "2025-07-25",
+   "title": "关于印发《自治区建设工程造价咨询招标文件示范文本》的通知",
+   "url": "https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/af9f360e51f84be38be32774665ea403.shtml",
+   "hash": "af9f360e51f8",
+   "category": "policy",
+   "status": "reference",
+   "volumes": ""
+  },
+  {
+   "seq": 7,
+   "page": 1,
+   "date": "2025-06-19",
+   "title": "关于发布《新疆维吾尔自治区排水设施养护及维修工程消耗量定额》的通知",
+   "url": "https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/21c09e7cc269417685026b0135ab1700.shtml",
+   "hash": "21c09e7cc269",
+   "category": "quota_volume",
+   "status": "covered",
+   "volumes": "xj21"
+  },
+  {
+   "seq": 8,
+   "page": 1,
+   "date": "2025-06-19",
+   "title": "《新疆维吾尔自治区排水设施养护及维修工程消耗量定额》",
+   "url": "https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/37b3c9aba87845b0b895041dd20f8bb4.shtml",
+   "hash": "37b3c9aba878",
+   "category": "quota_volume",
+   "status": "covered",
+   "volumes": "xj21"
+  },
+  {
+   "seq": 9,
+   "page": 1,
+   "date": "2024-12-12",
+   "title": "关于发布《新疆维吾尔自治区房屋建筑与装饰工程消耗量定额》《新疆维吾尔自治区市政工程消耗量定额》的公告",
+   "url": "https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/6f45ce7cc94e463ba43bd9536f52cb1f.shtml",
+   "hash": "6f45ce7cc94e",
+   "category": "notice",
+   "status": "covered",
+   "volumes": "xj01,xj02,xj10-xj14"
+  },
+  {
+   "seq": 10,
+   "page": 1,
+   "date": "2024-12-12",
+   "title": "关于面向全社会公开征求《自治区排水设施养护及维修工程消耗量定额（征求意见稿）》意见建议的公告",
+   "url": "https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/a494fe64975b44e387feaceb6ebb8bb0.shtml",
+   "hash": "a494fe64975b",
+   "category": "quota_volume",
+   "status": "draft",
+   "volumes": ""
+  },
+  {
+   "seq": 11,
+   "page": 1,
+   "date": "2024-09-26",
+   "title": "关于征求《自治区排水设施养护及维修工程消耗量定额》（项目划分稿）意见建议的函",
+   "url": "https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/69ee3301038d4d29a4362441570a0500.shtml",
+   "hash": "69ee3301038d",
+   "category": "quota_volume",
+   "status": "draft",
+   "volumes": ""
+  },
+  {
+   "seq": 12,
+   "page": 1,
+   "date": "2024-09-03",
+   "title": "2020版《新疆维吾尔自治区房屋建筑与装饰工程消耗量定额》勘误",
+   "url": "https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/5e37f4f360754c94aa150286b05caa82.shtml",
+   "hash": "5e37f4f36075",
+   "category": "errata",
+   "status": "covered",
+   "volumes": "xj01,xj02"
+  },
+  {
+   "seq": 13,
+   "page": 1,
+   "date": "2024-09-03",
+   "title": "2020版《新疆维吾尔自治区建筑安装市政工程费用定额》勘误",
+   "url": "https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/faa47cdeb6e0450da6758fde95a99976.shtml",
+   "hash": "faa47cdeb6e0",
+   "category": "errata",
+   "status": "covered",
+   "volumes": "xj03"
+  },
+  {
+   "seq": 14,
+   "page": 1,
+   "date": "2024-04-01",
+   "title": "新疆维吾尔自治区计价依据有关问题解释（四）",
+   "url": "https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/83f5d216bd214f0a85952c9c708184da.shtml",
+   "hash": "83f5d216bd21",
+   "category": "interpretation",
+   "status": "covered",
+   "volumes": "xj17"
+  },
+  {
+   "seq": 15,
+   "page": 1,
+   "date": "2024-01-15",
+   "title": "新疆维吾尔自治区计价依据有关问题解释（三）",
+   "url": "https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/01b2b4f50240449b964daee2ba726ce8.shtml",
+   "hash": "01b2b4f50240",
+   "category": "interpretation",
+   "status": "covered",
+   "volumes": "xj17"
+  },
+  {
+   "seq": 16,
+   "page": 1,
+   "date": "2024-01-12",
+   "title": "关于印发《新疆维吾尔自治区高海拔地区施工增加费用标准》的通知",
+   "url": "https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/482581ccb00942d28df89a65357fa4d1.shtml",
+   "hash": "482581ccb009",
+   "category": "quota_volume",
+   "status": "covered",
+   "volumes": "xj16"
+  },
+  {
+   "seq": 17,
+   "page": 1,
+   "date": "2023-12-26",
+   "title": "关于征求《自治区房屋建筑与装饰工程消耗量定额》动态补充子目（征求意见稿）意见建议的函",
+   "url": "https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/b87fc56680b943d0b89edad8ca2bdb3f.shtml",
+   "hash": "b87fc56680b9",
+   "category": "quota_volume",
+   "status": "draft",
+   "volumes": ""
+  },
+  {
+   "seq": 18,
+   "page": 1,
+   "date": "2023-09-21",
+   "title": "关于印发《新疆维吾尔自治区装配式建筑工程补充工程量清单》的通知",
+   "url": "https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/6cd78c7e532342e48560affd0142aac2.shtml",
+   "hash": "6cd78c7e5323",
+   "category": "quota_volume",
+   "status": "pending",
+   "volumes": "",
+   "attachments": [
+    "https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/6cd78c7e532342e48560affd0142aac2/files/%E3%80%90%E5%AE%9A%E9%A2%9D%E7%AE%A1%E7%90%86%E3%80%916.%E9%99%84%E4%BB%B6%EF%BC%9A%E3%80%8A%E6%96%B0%E7%96%86%E7%BB%B4%E5%90%BE%E5%B0%94%E8%87%AA%E6%B2%BB%E5%8C%BA%E8%A3%85%E9%85%8D%E5%BC%8F%E5%BB%BA%E7%AD%91%E5%B7%A5%E7%A8%8B%E8%A1%A5%E5%85%85%E5%B7%A5%E7%A8%8B%E9%87%8F%E6%B8%85%E5%8D%95%E3%80%8B.pdf"
+   ]
+  },
+  {
+   "seq": 19,
+   "page": 1,
+   "date": "2023-06-13",
+   "title": "2020版新疆维吾尔自治区计价依据有关问题解释（二）",
+   "url": "https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/e135afc343a74f0c9653143cbbffa7c1.shtml",
+   "hash": "e135afc343a7",
+   "category": "interpretation",
+   "status": "covered",
+   "volumes": "xj17"
+  },
+  {
+   "seq": 20,
+   "page": 1,
+   "date": "2023-04-13",
+   "title": "关于征求《装配式建筑工程补充工程量清单（征求意见稿）》意见建议的函",
+   "url": "https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/5e9e196ae3a2441699fce33632fb2bb0.shtml",
+   "hash": "5e9e196ae3a2",
+   "category": "quota_volume",
+   "status": "draft",
+   "volumes": ""
+  },
+  {
+   "seq": 21,
+   "page": 2,
+   "date": "2023-03-24",
+   "title": "2020版新疆维吾尔自治区计价依据有关问题解释",
+   "url": "https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/e5f92b5971124bb0b862214ec0e48aed.shtml",
+   "hash": "e5f92b597112",
+   "category": "interpretation",
+   "status": "covered",
+   "volumes": "xj17"
+  },
+  {
+   "seq": 22,
+   "page": 2,
+   "date": "2023-01-31",
+   "title": "关于发布《新疆维吾尔自治区装配式建筑工程消耗量定额（试行）》的通知",
+   "url": "https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/4f3593ab75184517ab4d5b673ddead07.shtml",
+   "hash": "4f3593ab7518",
+   "category": "quota_volume",
+   "status": "pending",
+   "volumes": "",
+   "attachments": [
+    "https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/4f3593ab75184517ab4d5b673ddead07/files/%E3%80%90%E5%AE%9A%E9%A2%9D%E7%AE%A1%E7%90%86%E3%80%918.%E6%96%B0%E7%96%86%E7%BB%B4%E5%90%BE%E5%B0%94%E8%87%AA%E6%B2%BB%E5%8C%BA%E8%A3%85%E9%85%8D%E5%BC%8F%E5%BB%BA%E7%AD%91%E5%B7%A5%E7%A8%8B%E6%B6%88%E8%80%97%E9%87%8F%E5%AE%9A%E9%A2%9D%EF%BC%88%E8%AF%95%E8%A1%8C%EF%BC%89.pdf"
+   ]
+  },
+  {
+   "seq": 23,
+   "page": 2,
+   "date": "2023-01-31",
+   "title": "新疆维吾尔自治区装配式建筑工程消耗量定额（试行）",
+   "url": "https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/1e84a040342944e8abe0785d267c477c.shtml",
+   "hash": "1e84a0403429",
+   "category": "quota_volume",
+   "status": "pending",
+   "volumes": "",
+   "attachments": [
+    "https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/1e84a040342944e8abe0785d267c477c/files/%E3%80%90%E5%AE%9A%E9%A2%9D%E6%9F%A5%E8%AF%A2%E3%80%914.%E6%96%B0%E7%96%86%E7%BB%B4%E5%90%BE%E5%B0%94%E8%87%AA%E6%B2%BB%E5%8C%BA%E8%A3%85%E9%85%8D%E5%BC%8F%E5%BB%BA%E7%AD%91%E5%B7%A5%E7%A8%8B%E6%B6%88%E8%80%97%E9%87%8F%E5%AE%9A%E9%A2%9D%EF%BC%88%E8%AF%95%E8%A1%8C%EF%BC%89.pdf"
+   ]
+  },
+  {
+   "seq": 24,
+   "page": 2,
+   "date": "2023-01-20",
+   "title": "关于印发《自治区关于新冠病毒感染疫情防控期间房屋建筑和市政基础设施工程计价有关问题的指导意见》的通知",
+   "url": "https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/d196871451d14ee3ba56120746e9ea91.shtml",
+   "hash": "d196871451d1",
+   "category": "policy",
+   "status": "pending",
+   "volumes": "",
+   "attachments": [
+    "https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/d196871451d14ee3ba56120746e9ea91/files/%E3%80%90%E5%AE%9A%E9%A2%9D%E7%AE%A1%E7%90%86%E3%80%919.%E8%87%AA%E6%B2%BB%E5%8C%BA%E5%85%B3%E4%BA%8E%E6%96%B0%E5%86%A0%E7%97%85%E6%AF%92%E6%84%9F%E6%9F%93%E7%96%AB%E6%83%85%E6%9C%9F%E9%97%B4%E6%88%BF%E5%B1%8B%E5%BB%BA%E7%AD%91%E4%B8%8E%E5%B8%82%E6%94%BF%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD%E5%B7%A5%E7%A8%8B%E8%AE%A1%E4%BB%B7%E6%9C%89%E5%85%B3%E9%97%AE%E9%A2%98%E7%9A%84%E6%8C%87%E5%AF%BC%E6%84%8F%E8%A7%81.docx"
+   ]
+  },
+  {
+   "seq": 25,
+   "page": 2,
+   "date": "2023-01-11",
+   "title": "关于发布自保温混凝土复合砌块及复合外保温模板等补充定额项目的通知",
+   "url": "https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/953f03d0121f432b879454a47e25fb71.shtml",
+   "hash": "953f03d0121f",
+   "category": "quota_volume",
+   "status": "pending",
+   "volumes": "",
+   "attachments": [
+    "https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/953f03d0121f432b879454a47e25fb71/files/%E3%80%90%E5%AE%9A%E9%A2%9D%E7%AE%A1%E7%90%86%E3%80%9110.%E9%99%84%E4%BB%B6%EF%BC%9A%E8%87%AA%E4%BF%9D%E6%B8%A9%E6%B7%B7%E5%87%9D%E5%9C%9F%E5%A4%8D%E5%90%88%E7%A0%8C%E5%9D%97%E5%8F%8A%E5%A4%8D%E5%90%88%E5%A4%96%E4%BF%9D%E6%B8%A9%E6%A8%A1%E6%9D%BF%E7%AD%89%E8%A1%A5%E5%85%85%E5%AE%9A%E9%A2%9D%E9%A1%B9%E7%9B%AE.pdf"
+   ]
+  },
+  {
+   "seq": 26,
+   "page": 2,
+   "date": "2023-01-11",
+   "title": "自保温混凝土复合砌块及复合外保温模板等补充定额",
+   "url": "https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/c729e3276c854296baece83d20fea23e.shtml",
+   "hash": "c729e3276c85",
+   "category": "quota_volume",
+   "status": "pending",
+   "volumes": "",
+   "attachments": [
+    "https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/c729e3276c854296baece83d20fea23e/files/%E3%80%90%E5%AE%9A%E9%A2%9D%E6%9F%A5%E8%AF%A2%E3%80%915.%E8%87%AA%E4%BF%9D%E6%B8%A9%E6%B7%B7%E5%87%9D%E5%9C%9F%E5%A4%8D%E5%90%88%E7%A0%8C%E5%9D%97%E5%8F%8A%E5%A4%8D%E5%90%88%E5%A4%96%E4%BF%9D%E6%B8%A9%E6%A8%A1%E6%9D%BF%E7%AD%89%E8%A1%A5%E5%85%85%E5%AE%9A%E9%A2%9D%E9%A1%B9%E7%9B%AE.pdf"
+   ]
+  },
+  {
+   "seq": 27,
+   "page": 2,
+   "date": "2022-10-27",
+   "title": "2020 版《新疆维吾尔自治区安装工程补充消耗量定额》勘误",
+   "url": "https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/9a0f3ea345b24b3ebebf7f26516f628c.shtml",
+   "hash": "9a0f3ea345b2",
+   "category": "errata",
+   "status": "covered",
+   "volumes": "xj15"
+  },
+  {
+   "seq": 28,
+   "page": 2,
+   "date": "2022-10-27",
+   "title": "2020版新疆维吾尔自治区安装工程补充消耗量定额勘误",
+   "url": "https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/e631fdd818664561b8d062b8d85074ce.shtml",
+   "hash": "e631fdd81866",
+   "category": "errata",
+   "status": "covered",
+   "volumes": "xj15"
+  },
+  {
+   "seq": 29,
+   "page": 2,
+   "date": "2022-08-03",
+   "title": "关于征求《自保温混凝土复合砌块及复合外保温模板补充定额（征求意见稿）》意见建议的函",
+   "url": "https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/3a345f8fe6c6455fa77c7166b2b6ab22.shtml",
+   "hash": "3a345f8fe6c6",
+   "category": "quota_volume",
+   "status": "draft",
+   "volumes": ""
+  },
+  {
+   "seq": 30,
+   "page": 2,
+   "date": "2022-05-18",
+   "title": "关于调查装配式建筑工程施工企业费用开支情况的通知",
+   "url": "https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/22c610b5d27347e7880d51c4f2fe98c6.shtml",
+   "hash": "22c610b5d273",
+   "category": "policy",
+   "status": "draft",
+   "volumes": ""
+  },
+  {
+   "seq": 31,
+   "page": 2,
+   "date": "2022-04-22",
+   "title": "关于征求《新疆维吾尔自治区装配式建筑工程消耗量定额》(项目划分征求意见稿)",
+   "url": "https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/2399f3afdf2e446eac8e0e1268a0ef78.shtml",
+   "hash": "2399f3afdf2e",
+   "category": "quota_volume",
+   "status": "draft",
+   "volumes": ""
+  },
+  {
+   "seq": 32,
+   "page": 2,
+   "date": "2022-01-24",
+   "title": "关于修订《自治区工程造价咨询企业及从业人员信用评价管理办法（试行）》的通知",
+   "url": "https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/c4c5fd4d8fda4b4682dd71a9f1468f70.shtml",
+   "hash": "c4c5fd4d8fda",
+   "category": "policy",
+   "status": "draft",
+   "volumes": ""
+  },
+  {
+   "seq": 33,
+   "page": 2,
+   "date": "2021-12-30",
+   "title": "关于印发《新疆维吾尔自治区建筑、安装、市政工程费用定额（2020版）》的通知",
+   "url": "https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/7f11a38e819a4034b69690a745ee3216.shtml",
+   "hash": "7f11a38e819a",
+   "category": "policy",
+   "status": "covered",
+   "volumes": "xj03"
+  },
+  {
+   "seq": 34,
+   "page": 2,
+   "date": "2021-12-30",
+   "title": "2020版新疆维吾尔自治区建筑、安装、市政工程费用定额",
+   "url": "https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/dd90a6647051491c85e935bf415a16f6.shtml",
+   "hash": "dd90a6647051",
+   "category": "policy",
+   "status": "covered",
+   "volumes": "xj03"
+  },
+  {
+   "seq": 35,
+   "page": 2,
+   "date": "2021-12-14",
+   "title": "2020版新疆维吾尔自治区安装工程补充消耗量定额",
+   "url": "https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/1119df047ad745bc80990224813ef4b3.shtml",
+   "hash": "1119df047ad7",
+   "category": "quota_volume",
+   "status": "covered",
+   "volumes": "xj15"
+  },
+  {
+   "seq": 36,
+   "page": 2,
+   "date": "2021-11-24",
+   "title": "关于建筑材料价格风险费用计取的指导意见",
+   "url": "https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/828ccfc4b93e47ba84ae67fd5c256e57.shtml",
+   "hash": "828ccfc4b93e",
+   "category": "policy",
+   "status": "reference",
+   "volumes": ""
+  },
+  {
+   "seq": 37,
+   "page": 2,
+   "date": "2021-11-24",
+   "title": "关于印发《新疆维吾尔自治区安装工程补充消耗量定额（2020版）》的通知",
+   "url": "https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/3c7220f59c0f42dd8de7e5196f28c6ee.shtml",
+   "hash": "3c7220f59c0f",
+   "category": "quota_volume",
+   "status": "covered",
+   "volumes": "xj15"
+  },
+  {
+   "seq": 38,
+   "page": 2,
+   "date": "2021-09-02",
+   "title": "关于发布《新疆维吾尔自治区建设工程计价依据解释与合同价款争议调解办法》的通知",
+   "url": "https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/1a989ba4196b42eb841c56b71f076abd.shtml",
+   "hash": "1a989ba4196b",
+   "category": "interpretation",
+   "status": "reference",
+   "volumes": ""
+  },
+  {
+   "seq": 39,
+   "page": 2,
+   "date": "2021-09-02",
+   "title": "关于发布《新疆维吾尔自治区建设工程工程量清单管理办法》的通知",
+   "url": "https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/107f16a321cb47c3ae158c90650710d5.shtml",
+   "hash": "107f16a321cb",
+   "category": "quota_volume",
+   "status": "reference",
+   "volumes": ""
+  },
+  {
+   "seq": 40,
+   "page": 2,
+   "date": "2021-03-30",
+   "title": "2020版新疆维吾尔自治区市政工程消耗量定额",
+   "url": "https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/bed0a661db9f4bb8973100d3866e18d0.shtml",
+   "hash": "bed0a661db9f",
+   "category": "quota_volume",
+   "status": "covered",
+   "volumes": "xj10-xj14"
+  },
+  {
+   "seq": 41,
+   "page": 3,
+   "date": "2021-03-30",
+   "title": "2020版新疆维吾尔自治区房屋建筑与装饰工程消耗量定额",
+   "url": "https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/5cd0899b2d63423e9583413c8b6f2066.shtml",
+   "hash": "5cd0899b2d63",
+   "category": "quota_volume",
+   "status": "covered",
+   "volumes": "xj01,xj02"
+  },
+  {
+   "seq": 42,
+   "page": 3,
+   "date": "2021-02-10",
+   "title": "关于对《新疆维吾尔自治区建筑、安装、市政工程费用定额》(费用项目组成征求意见稿)征求意见的通知",
+   "url": "https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/d1b540577e89416e890feb993b2a4614.shtml",
+   "hash": "d1b540577e89",
+   "category": "policy",
+   "status": "draft",
+   "volumes": ""
+  },
+  {
+   "seq": 43,
+   "page": 3,
+   "date": "2020-11-13",
+   "title": "关于新疆建设工程扬尘污染防治增加费计取方法的公告",
+   "url": "https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/e9cb37c4ffd748b382cbf324484075f3.shtml",
+   "hash": "e9cb37c4ffd7",
+   "category": "policy",
+   "status": "reference",
+   "volumes": ""
+  },
+  {
+   "seq": 44,
+   "page": 3,
+   "date": "2020-11-13",
+   "title": "关于征求《新疆维吾尔自治区安装工程补充消耗量定额（征求意见稿）》意见的通知",
+   "url": "https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/7995ea11d7a848c0bbdc83f57a8964f7.shtml",
+   "hash": "7995ea11d7a8",
+   "category": "quota_volume",
+   "status": "draft",
+   "volumes": ""
+  },
+  {
+   "seq": 45,
+   "page": 3,
+   "date": "2020-06-12",
+   "title": "关于对《新疆维吾尔自治区安装工程补充消耗量定额（项目划分征求意见稿）》征求意见的通知",
+   "url": "https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/2fc3e54e0a8e4ba697405e7f0c04372d.shtml",
+   "hash": "2fc3e54e0a8e",
+   "category": "quota_volume",
+   "status": "draft",
+   "volumes": ""
+  },
+  {
+   "seq": 46,
+   "page": 3,
+   "date": "2020-05-19",
+   "title": "关于2014年新疆维吾尔自治区建筑安装工程补充计价依据的勘误",
+   "url": "https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/f91e8e3f3f824a76bda6bd0d83cf5c71.shtml",
+   "hash": "f91e8e3f3f82",
+   "category": "errata",
+   "status": "reference",
+   "volumes": ""
+  },
+  {
+   "seq": 47,
+   "page": 3,
+   "date": "2019-12-05",
+   "title": "关于征求《新疆维吾尔自治区市政工程费用定额（项目划分征求意见稿）》意见的函",
+   "url": "https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/ff1383b7767a42539cf2f7163ef7a8d4.shtml",
+   "hash": "ff1383b7767a",
+   "category": "policy",
+   "status": "draft",
+   "volumes": ""
+  },
+  {
+   "seq": 48,
+   "page": 3,
+   "date": "2019-10-28",
+   "title": "关于征求《新疆维吾尔自治区建筑安装工程费用定额（项目划分征求意见稿）》意见的函",
+   "url": "https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/04f56382e58a49efa3f84d13bf018f6e.shtml",
+   "hash": "04f56382e58a",
+   "category": "policy",
+   "status": "draft",
+   "volumes": ""
+  },
+  {
+   "seq": 49,
+   "page": 3,
+   "date": "2019-06-26",
+   "title": "关于对2019年《新疆维吾尔自治区房屋建筑与装饰工程消耗量定额》征求意见的通知",
+   "url": "https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/196f0fa6687b4637b7de823626bcdbe4.shtml",
+   "hash": "196f0fa6687b",
+   "category": "quota_volume",
+   "status": "draft",
+   "volumes": ""
+  },
+  {
+   "seq": 50,
+   "page": 3,
+   "date": "2019-06-26",
+   "title": "关于对2019年《自治区市政工程消耗量定额》征求意见的通知",
+   "url": "https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/5793448d9ce74608b08ca16d8426be67.shtml",
+   "hash": "5793448d9ce7",
+   "category": "quota_volume",
+   "status": "draft",
+   "volumes": ""
+  },
+  {
+   "seq": 51,
+   "page": 3,
+   "date": "2018-08-10",
+   "title": "关于对2018年《新疆维吾尔自治区市政工程消耗量定额》（项目划分稿）征求意见的通知",
+   "url": "https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/08d838fce22b4b098f3c2f7374c1b8ed.shtml",
+   "hash": "08d838fce22b",
+   "category": "quota_volume",
+   "status": "draft",
+   "volumes": ""
+  },
+  {
+   "seq": 52,
+   "page": 3,
+   "date": "2018-08-06",
+   "title": "关于对2018年《新疆维吾尔自治区房屋建筑与装饰工程消耗量定额》（项目划分稿）、《新疆维吾尔自治区装配式建筑工程消耗量定额》（项目划分稿）征求意见的通知",
+   "url": "https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/fcf87e87faa04ff59181726b28ccdabe.shtml",
+   "hash": "fcf87e87faa0",
+   "category": "quota_volume",
+   "status": "draft",
+   "volumes": ""
+  },
+  {
+   "seq": 53,
+   "page": 3,
+   "date": "2018-08-03",
+   "title": "关于发布《新疆维吾尔自治区绿色建筑工程消耗量定额》及配套乌鲁木齐地区单位估价表的通知",
+   "url": "https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/3a0f48f24a754ede8881c595c3b7a78e.shtml",
+   "hash": "3a0f48f24a75",
+   "category": "quota_volume",
+   "status": "pending",
+   "volumes": "",
+   "attachments": []
+  },
+  {
+   "seq": 54,
+   "page": 3,
+   "date": "2018-06-20",
+   "title": "关于对2012年《自治区市政工程消耗量定额》征求意见的通知",
+   "url": "https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/cd57c3477b0c40d5a3699d9261cc53f0.shtml",
+   "hash": "cd57c3477b0c",
+   "category": "quota_volume",
+   "status": "draft",
+   "volumes": ""
+  },
+  {
+   "seq": 55,
+   "page": 3,
+   "date": "2017-11-08",
+   "title": "关于取消32.5等级水泥调整自治区建设工程计价依据的通知",
+   "url": "https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/93e9772f2257423a815464d59d2da567.shtml",
+   "hash": "93e9772f2257",
+   "category": "policy",
+   "status": "reference",
+   "volumes": ""
+  },
+  {
+   "seq": 56,
+   "page": 3,
+   "date": "2017-11-08",
+   "title": "定额有关问题解释（三）",
+   "url": "https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/8cde51dcfc3b4d6baa88c64141c179d2.shtml",
+   "hash": "8cde51dcfc3b",
+   "category": "interpretation",
+   "status": "reference",
+   "volumes": ""
+  },
+  {
+   "seq": 57,
+   "page": 3,
+   "date": "2017-11-08",
+   "title": "定额有关问题解释（二）",
+   "url": "https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/a09f402339a34ca18aa52090fd2a5415.shtml",
+   "hash": "a09f402339a3",
+   "category": "interpretation",
+   "status": "reference",
+   "volumes": ""
+  },
+  {
+   "seq": 58,
+   "page": 3,
+   "date": "2017-11-08",
+   "title": "关于建筑业营业税改增值税调整新疆建设工程计价依据的实施意见",
+   "url": "https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/c56351f5ec834708bfbc0d9fa2532472.shtml",
+   "hash": "c56351f5ec83",
+   "category": "policy",
+   "status": "reference",
+   "volumes": ""
+  },
+  {
+   "seq": 59,
+   "page": 3,
+   "date": "2017-11-02",
+   "title": "定额有关问题解释（一）",
+   "url": "https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/d88b2bb027ce440491138838cca4130f.shtml",
+   "hash": "d88b2bb027ce",
+   "category": "interpretation",
+   "status": "reference",
+   "volumes": ""
+  }
+ ]
+}
