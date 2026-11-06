@@ -1,0 +1,13 @@
+{
+ "files": {
+  "parse_xj22.json": "6b20696e1411",
+  "xj22_source.md": "3f2831ca662a",
+  "xj22_quota.db": "977b5a545a03",
+  "xj22_charmap.json": "8ceebda07168",
+  "web/index.html": "ab916d9f564f",
+  "web/template.html": "fe44e0cc5abd"
+ },
+ "anchors": {
+  "official.pdf": "deb3291d4070"
+ }
+}

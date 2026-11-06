@@ -33,7 +33,17 @@ XJ_NOTICE_2020 = {
                 "2017 新疆钢结构工程消耗量定额、2018 绿色建筑工程消耗量定额相应内容",
     "applies_to": ("xj01", "xj02", "xj10", "xj11", "xj12", "xj13", "xj14"),
 }
+# 装配式定额（试行）官方发布依据（2023-01-31 通知，无公告号，落款 2022-12-26，施行 2023-03-01）
+XJ_NOTICE_PC = {
+    "url": "https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/4f3593ab75184517ab4d5b673ddead07.shtml",
+    "no": "关于发布《新疆维吾尔自治区装配式建筑工程消耗量定额（试行）》的通知",
+    "issued": "2023-01-31",
+    "effective": "2023-03-01",
+    "repealed": "（无废止条款；作为现行建筑工程计价依据的补充，与 2020 版房建/通用安装/安装补充/费用定额配套使用）",
+    "applies_to": ("xj22",),
+}
 NOTICE_BY_VOL = {vid: XJ_NOTICE_2020 for vid in XJ_NOTICE_2020["applies_to"]}
+NOTICE_BY_VOL.update({vid: XJ_NOTICE_PC for vid in XJ_NOTICE_PC["applies_to"]})
 
 
 def notice_link(v):
@@ -458,6 +468,22 @@ VOLUMES = [
         "source_sha12": "5e5c16323e30",
         "gates": 10,
         "pipeline": "官方 99 页 PDF 干净文本层 + 矢量网格字符级重建（复用 xj18 链，非 OCR）→ 9 章 51 节 218 子目 2977 消耗量 → quota schema 九表 + 站点兼容三表 + fee_standard 费用标准表 → 六视图前端 → 十门门控（P1 官方原版逐格取证 2977/2977）+ 冒烟 26/26；双区页码（正文印页=物−6），列级计量单位三形态，括号未计价 99 条",
+    },
+    {
+        "id": "xj22",
+        "kind": "xj_quota",
+        "tag": "装配式建筑工程消耗量定额（新疆·试行·2023）",
+        "name": "新疆维吾尔自治区装配式建筑工程消耗量定额（试行）",
+        "dir": "quota-extract-xj22",
+        "sub": "out",
+        "db": "xj22_quota.db",
+        "web": "web/index.html",
+        "manifest": "baseline_manifest.json",
+        "report": "交付报告_xj22_装配式建筑工程消耗量定额.md",
+        "pdf": "input/official.pdf",
+        "source_sha12": "deb3291d4070",
+        "gates": 10,
+        "pipeline": "第六型源形态：官方 96 页 PDF，中文 FZ* 方正字体可读 + 数字/符号/西文单位用 FzBookMaker 子集字体无 ToUnicode 乱码 → charmap 反解（OCR 独立转写对齐，6 字体 57 glyphs）→ 矢量网格字符级重建 → 5 章 14 节 264 子目 2688 消耗量 → quota schema 九表 + 站点兼容三表 → 六视图前端 → 十门门控（P1 charmap 取证 paired 3613）+ 冒烟 24/24；双区页码（正文印页=物−9），每子目恰 1 条人工，括号未计价 80 条",
     },
 ]
 

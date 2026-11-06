@@ -310,6 +310,16 @@
      "sha256": "4f243606e3a87a4e3386453cce86446b59bc574a231f32f019f4488c1fef477f",
      "bytes": 577536,
      "items": 218
+    },
+    {
+     "key": "xj22",
+     "kind": "quota",
+     "label": "新疆装配式建筑工程消耗量定额（试行）",
+     "province": "新疆",
+     "db": "xinjiang-2020/quota-extract-xj22/db_pdf/xj22_quota.db",
+     "sha256": "977b5a545a03e88574ada2f14262d165d85333120d5228a5a4247581f0096d81",
+     "bytes": 548864,
+     "items": 264
     }
    ]
   }

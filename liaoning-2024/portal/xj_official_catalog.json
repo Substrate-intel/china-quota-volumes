@@ -2,8 +2,8 @@
  "summary": {
   "total": 59,
   "by_status": {
-   "covered": 21,
-   "pending": 8,
+   "covered": 23,
+   "pending": 6,
    "reference": 12,
    "draft": 18
   },
@@ -15,7 +15,7 @@
    "errata": 5
   },
   "catalog_url": "https://zjt.xinjiang.gov.cn/xjzjt/c116332/list.shtml",
-  "covered_volumes": "xj01,xj02,xj03,xj10-xj21",
+  "covered_volumes": "xj01,xj02,xj03,xj10-xj22",
   "note": "status: covered=已收录；pending=未收录且含实质数据候选；draft=征求意见/过程稿；reference=政策/办法/历史文件（不建卷）"
  },
  "items": [
@@ -266,8 +266,8 @@
    "url": "https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/4f3593ab75184517ab4d5b673ddead07.shtml",
    "hash": "4f3593ab7518",
    "category": "quota_volume",
-   "status": "pending",
-   "volumes": "",
+   "status": "covered",
+   "volumes": "xj22",
    "attachments": [
     "https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/4f3593ab75184517ab4d5b673ddead07/files/%E3%80%90%E5%AE%9A%E9%A2%9D%E7%AE%A1%E7%90%86%E3%80%918.%E6%96%B0%E7%96%86%E7%BB%B4%E5%90%BE%E5%B0%94%E8%87%AA%E6%B2%BB%E5%8C%BA%E8%A3%85%E9%85%8D%E5%BC%8F%E5%BB%BA%E7%AD%91%E5%B7%A5%E7%A8%8B%E6%B6%88%E8%80%97%E9%87%8F%E5%AE%9A%E9%A2%9D%EF%BC%88%E8%AF%95%E8%A1%8C%EF%BC%89.pdf"
    ]
@@ -280,8 +280,8 @@
    "url": "https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/1e84a040342944e8abe0785d267c477c.shtml",
    "hash": "1e84a0403429",
    "category": "quota_volume",
-   "status": "pending",
-   "volumes": "",
+   "status": "covered",
+   "volumes": "xj22",
    "attachments": [
     "https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/1e84a040342944e8abe0785d267c477c/files/%E3%80%90%E5%AE%9A%E9%A2%9D%E6%9F%A5%E8%AF%A2%E3%80%914.%E6%96%B0%E7%96%86%E7%BB%B4%E5%90%BE%E5%B0%94%E8%87%AA%E6%B2%BB%E5%8C%BA%E8%A3%85%E9%85%8D%E5%BC%8F%E5%BB%BA%E7%AD%91%E5%B7%A5%E7%A8%8B%E6%B6%88%E8%80%97%E9%87%8F%E5%AE%9A%E9%A2%9D%EF%BC%88%E8%AF%95%E8%A1%8C%EF%BC%89.pdf"
    ]
