@@ -55,6 +55,19 @@ XJ_NOTICE_BOQ = {
 }
 NOTICE_BY_VOL.update({vid: XJ_NOTICE_BOQ for vid in XJ_NOTICE_BOQ["applies_to"]})
 
+# 自保温混凝土复合砌块等补充定额项目官方发布依据
+# （2023-01-11，#25 通知页 + #26 正文页互为发布登记，两份附件 PDF 字节级同源）
+XJ_NOTICE_ZBW = {
+    "url": "https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/953f03d0121f432b879454a47e25fb71.shtml",
+    "no": "关于发布自保温混凝土复合砌块及复合外保温模板等补充定额项目的通知",
+    "issued": "2023-01-11",
+    "effective": "2023-01-11",
+    "repealed": "（无废止条款；作为 2020 版房屋建筑与装饰工程消耗量定额的补充项目，"
+                "#26 正文页挂同一份 PDF 附件，字节级同源）",
+    "applies_to": ("xj24",),
+}
+NOTICE_BY_VOL.update({vid: XJ_NOTICE_ZBW for vid in XJ_NOTICE_ZBW["applies_to"]})
+
 
 def notice_link(v):
     n = NOTICE_BY_VOL.get(v["id"])
@@ -510,6 +523,26 @@ VOLUMES = [
         "source_sha12": "fe9ec3b25abd",
         "gates": 7,
         "pipeline": "第七型源形态（4 页原生文本层 PDF，双源=通知页 HTML 快照+附件）：P3-P4 六列矢量网格，合并单元格按「每列独立行边界」推导（横线 x 跨度判定），组级单元格取词避免跨线 token 二义 → 2 章 24 条目（3 说明条款 + 21 清单项目 X010518001~021，单位恒等 m³，合并组展开）→ fee schema + fee_semantics 语义 3 条 → 七视图前端 → 七门门控（含渲染级冒烟 20/20）+ 复跑零失配；官方原文重复句 1 处留痕（source_dup）",
+    },
+    {
+        "id": "xj24",
+        "kind": "xj_quota",
+        "tag": "自保温砌块及复合外保温模板补充定额（新疆·2023）",
+        "name": "自保温混凝土复合砌块及复合外保温模板等补充定额项目",
+        "dir": "quota-extract-xj24",
+        "sub": "out",
+        "db": "xj24_quota.db",
+        "web": "web/index.html",
+        "manifest": "baseline_manifest.json",
+        "report": "交付报告_xj24_自保温砌块及复合外保温模板补充定额.md",
+        "pdf": "input/official.pdf",
+        "source_sha12": "3b6f7ef0f9f0",
+        "gates": 10,
+        "pipeline": "第八型源形态（3 页微型消耗量定额小卷，#25 通知页与 #26 正文页附件字节级同源）："
+                    "find_tables 段错误禁用 → 矢量 full 横线切类别块 + 文本坐标聚行 + 列区间取词网格 → "
+                    "3 章 3 节 5 子目（B4-1~B4-3 / B10-1 / B10-2）36 消耗格 → quota 九表 + 站点兼容三表 → "
+                    "六视图前端（条文四类分组）→ 十门门控（P1 官方原版逐格取证 36/36）+ 冒烟 28/28 + 全链重建零失配；"
+                    "上标单位归一、单位嵌名称、类别字连排、无目录页、空白尾页共 7 条疑点留痕",
     },
 ]
 

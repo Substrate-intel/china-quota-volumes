@@ -66,11 +66,11 @@ footer{margin-top:34px;color:var(--ink2);font-size:11px;text-align:center;line-h
 </div></header>
 <div class="wrap">
   <div class="cards">
-    <div class="card"><div class="n b">32</div><div class="t">计价依据文件（全独立）</div></div>
+    <div class="card"><div class="n b">33</div><div class="t">计价依据文件（全独立）</div></div>
     <div class="card"><div class="n b">19974</div><div class="t">定额子目合计</div></div>
     <div class="card"><div class="n g">1546</div><div class="t">台班单价（机械+仪表）</div></div>
     <div class="card"><div class="n g">382</div><div class="t">配合比组</div></div>
-    <div class="card"><div class="n">32</div><div class="t">独立成果库前端</div></div>
+    <div class="card"><div class="n">33</div><div class="t">独立成果库前端</div></div>
     <div class="card"><div class="n" style="color:var(--amber)">15</div><div class="t">未识别名目（官方 30 份清单内）</div></div>
   </div>
 
@@ -621,6 +621,24 @@ footer{margin-top:34px;color:var(--ink2);font-size:11px;text-align:center;line-h
   <div class="links"><a class="lbtn" href="quota-extract-xj22/web/index.html">识别成果库·四视图前端</a><a class="lbtn ghost" href="quota-extract-xj22/out/xj22_quota.db">SQLite 成果库</a><a class="lbtn ghost" href="quota-extract-xj22/交付报告_xj22_装配式建筑工程消耗量定额.md">交付报告</a><a class="lbtn ghost" href="https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/4f3593ab75184517ab4d5b673ddead07.shtml" target="_blank">官方发布依据 · 关于发布《新疆维吾尔自治区装配式建筑工程消耗量定额（试行）》的通知</a></div>
   <div class="meta">第六型源形态：官方 96 页 PDF，中文 FZ* 方正字体可读 + 数字/符号/西文单位用 FzBookMaker 子集字体无 ToUnicode 乱码 → charmap 反解（OCR 独立转写对齐，6 字体 57 glyphs）→ 矢量网格字符级重建 → 5 章 14 节 264 子目 2688 消耗量 → quota schema 九表 + 站点兼容三表 → 六视图前端 → 十门门控（P1 charmap 取证 paired 3613）+ 冒烟 24/24；双区页码（正文印页=物−9），每子目恰 1 条人工，括号未计价 80 条</div>
   <div class="meta">官方依据：关于发布《新疆维吾尔自治区装配式建筑工程消耗量定额（试行）》的通知（2023-01-31 发布，2023-03-01 施行） ｜ 同时停止使用：（无废止条款；作为现行建筑工程计价依据的补充，与 2020 版房建/通用安装/安装补充/费用定额配套使用）</div>
+</div>
+<div class="vcard">
+  <div class="vhead"><span class="vtitle">自保温砌块及复合外保温模板补充定额（新疆·2023）</span>
+    <span class="badge g">已收官 · 10门全绿</span>
+    <span class="vtag">官方PDF 3 页</span><span class="vtag">基线指纹 2 文件</span></div>
+  <div class="vname">自保温混凝土复合砌块及复合外保温模板等补充定额项目</div>
+  <div class="ngrid">
+    <div class="num"><div class="n">1</div><div class="t">册</div></div>
+    <div class="num"><div class="n">4</div><div class="t">章</div></div>
+    <div class="num"><div class="n">3</div><div class="t">节</div></div>
+    <div class="num"><div class="n">5</div><div class="t">子目</div></div>
+    <div class="num"><div class="n">36</div><div class="t">消耗量</div></div>
+    <div class="num"><div class="n">0</div><div class="t">未计价材</div></div>
+  </div>
+  <div class="qrow"><span class="qchip ok">TOC 对账 <b>3 条</b></span><span class="qchip warn">疑点留痕 <b>7</b></span><span class="qchip ok">10门门控 <b>全绿</b></span></div>
+  <div class="links"><a class="lbtn" href="quota-extract-xj24/web/index.html">识别成果库·四视图前端</a><a class="lbtn ghost" href="quota-extract-xj24/out/xj24_quota.db">SQLite 成果库</a><a class="lbtn ghost" href="quota-extract-xj24/交付报告_xj24_自保温砌块及复合外保温模板补充定额.md">交付报告</a><a class="lbtn ghost" href="https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/953f03d0121f432b879454a47e25fb71.shtml" target="_blank">官方发布依据 · 关于发布自保温混凝土复合砌块及复合外保温模板等补充定额项目的通知</a></div>
+  <div class="meta">第八型源形态（3 页微型消耗量定额小卷，#25 通知页与 #26 正文页附件字节级同源）：find_tables 段错误禁用 → 矢量 full 横线切类别块 + 文本坐标聚行 + 列区间取词网格 → 3 章 3 节 5 子目（B4-1~B4-3 / B10-1 / B10-2）36 消耗格 → quota 九表 + 站点兼容三表 → 六视图前端（条文四类分组）→ 十门门控（P1 官方原版逐格取证 36/36）+ 冒烟 28/28 + 全链重建零失配；上标单位归一、单位嵌名称、类别字连排、无目录页、空白尾页共 7 条疑点留痕</div>
+  <div class="meta">官方依据：关于发布自保温混凝土复合砌块及复合外保温模板等补充定额项目的通知（2023-01-11 发布，2023-01-11 施行） ｜ 同时停止使用：（无废止条款；作为 2020 版房屋建筑与装饰工程消耗量定额的补充项目，#26 正文页挂同一份 PDF 附件，字节级同源）</div>
 </div></div>
     <div class="note">费用定额为纯计价依据文件（取费基数/费率/计算程序，无消耗量子目），
     与消耗量定额配套使用——「消耗量定额载量价基价、费用定额载费率程序」。

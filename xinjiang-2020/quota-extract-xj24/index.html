@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>自保温混凝土复合砌块及复合外保温模板等补充定额项目</title>
+<style>
+:root{--bg:#f6f7f9;--card:#fff;--bd:#e2e6ea;--tx:#24292f;--sub:#57606a;--ac:#0b62d6;--ok:#1a7f37;--warn:#9a6700;--err:#cf222e;--mono:ui-monospace,Consolas,monospace}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font:14px/1.6 "Segoe UI","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--tx)}
+header{background:var(--card);border-bottom:1px solid var(--bd);padding:14px 22px;display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+header h1{font-size:19px}
+header .meta{color:var(--sub);font-size:12.5px}
+header .meta b{color:var(--ac)}
+nav.tabs{display:flex;gap:4px;padding:10px 22px 0;background:var(--card);border-bottom:1px solid var(--bd);flex-wrap:wrap}
+nav.tabs button{border:1px solid var(--bd);border-bottom:none;background:var(--bg);padding:7px 16px;border-radius:8px 8px 0 0;cursor:pointer;font-size:13.5px;color:var(--sub)}
+nav.tabs button.on{background:var(--card);color:var(--ac);font-weight:600;border-color:var(--ac)}
+main{padding:18px 22px;max-width:1400px;margin:0 auto}
+.panel{display:none}
+.panel.on{display:block}
+.bar{display:flex;gap:10px;margin-bottom:12px;flex-wrap:wrap;align-items:center}
+input[type=text]{padding:8px 12px;border:1px solid var(--bd);border-radius:8px;width:340px;font-size:13.5px}
+select{padding:8px;border:1px solid var(--bd);border-radius:8px;font-size:13px}
+.count{color:var(--sub);font-size:12.5px}
+.grid{display:grid;grid-template-columns:290px 1fr;gap:16px;align-items:start}
+.tree{background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:10px;max-height:76vh;overflow:auto}
+.tree .vol{font-weight:700;margin:8px 0 2px;color:var(--ac)}
+.tree .ch{cursor:pointer;padding:4px 6px;border-radius:6px}
+.tree .ch:hover{background:#eef4fd}
+.tree .ch.on{background:#e7f0fe;color:var(--ac);font-weight:600}
+.info{background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:14px;max-height:76vh;overflow:auto}
+table{border-collapse:collapse;width:100%;font-size:13px;background:var(--card)}
+th,td{border:1px solid var(--bd);padding:5px 9px;text-align:left;vertical-align:top}
+th{background:#f0f3f6;position:sticky;top:0}
+tr:hover td{background:#f7fafd}
+.num{text-align:right;font-variant-numeric:tabular-nums;font-family:var(--mono)}
+.tag{display:inline-block;padding:1px 8px;border-radius:10px;font-size:12px;margin-right:6px}
+.tag.ok{background:#dafbe1;color:var(--ok)}
+.tag.warn{background:#fff8c5;color:var(--warn)}
+.sec h3{margin:14px 0 6px;color:var(--ac);font-size:15px}
+.sec p{margin:4px 0}
+.item-head{background:#f0f6ff;border:1px solid #cfe1ff;border-radius:8px;padding:8px 12px;margin:12px 0 6px;display:flex;gap:12px;flex-wrap:wrap;align-items:baseline}
+.item-head b.code{color:var(--ac);font-size:15px;font-family:var(--mono)}
+.kw{color:var(--sub);font-size:12px}
+.mono{font-family:var(--mono)}
+.pill{display:inline-block;background:#eef4fd;color:var(--ac);border-radius:6px;padding:1px 7px;margin:2px 4px 2px 0;font-size:12px;cursor:pointer}
+</style>
+</head>
+<body>
+<header>
+  <h1 id="h-title"></h1>
+  <span class="meta">官方 PDF 文本层 · 矢量网格重建 · <b id="m-items"></b> 子目 · <b id="m-cons"></b> 消耗量 · <b id="m-sec"></b> 节 · 疑点 <b id="m-iss"></b> · <b id="m-off"></b></span>
+</header>
+<nav class="tabs" id="tabs">
+  <button data-p="p-struct" class="on">章节结构</button>
+  <button data-p="p-search">子目检索</button>
+  <button data-p="p-prose">总说明与计算规则</button>
+  <button data-p="p-toc">目录对账</button>
+  <button data-p="p-issues">疑点留痕</button>
+  <button data-p="p-src">源信息</button>
+</nav>
+<main>
+  <div class="panel on" id="p-struct">
+    <div class="grid">
+      <div class="tree" id="tree"></div>
+      <div class="info sec" id="ch-info"></div>
+    </div>
+  </div>
+  <div class="panel" id="p-search">
+    <div class="bar">
+      <input type="text" id="q" placeholder="子目编号 / 项目名称 / 工作内容 / 消耗量名称…">
+      <select id="f-ch"><option value="">全部章</option></select>
+      <select id="f-kind"><option value="">全部类别</option><option value="人工">人工</option><option value="材料">材料</option><option value="机械">机械</option></select>
+      <span class="count" id="q-count"></span>
+    </div>
+    <div id="q-out" style="max-height:72vh;overflow:auto"></div>
+  </div>
+  <div class="panel" id="p-prose">
+    <div id="prose-out"></div>
+  </div>
+  <div class="panel" id="p-toc">
+    <div class="bar"><span class="count" id="toc-count"></span></div>
+    <div style="max-height:74vh;overflow:auto"><table id="toc-tbl"></table></div>
+  </div>
+  <div class="panel" id="p-issues">
+    <div class="bar"><span class="count" id="iss-count"></span></div>
+    <div style="max-height:74vh;overflow:auto"><table id="iss-tbl"></table></div>
+  </div>
+  <div class="panel" id="p-src">
+    <div id="src-out"></div>
+  </div>
+</main>
+<script id="payload" type="application/json">{"meta":{"title":"自保温混凝土复合砌块及复合外保温模板等补充定额项目","kind":"quota","volume_key":"xj24","region":"新疆维吾尔自治区","year":2023,"pages":3,"print_offset":0,"source_sha12":"3b6f7ef0f9f0","alt_sha12":"3b6f7ef0f9f0","source_md_sha12":"75e0bc04ca00","parse_schema":"xj24-quota-v1","notice_date":"2023-01-11","notice_url":"https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/953f03d0121f432b879454a47e25fb71.shtml","source_kind":"官方附件 PDF 原生文本层 + 矢量 full 横线网格（字符级坐标重建）","n_items":5,"n_consumptions":36,"n_tables":3},"book":{"title":"自保温混凝土复合砌块及复合外保温模板等补充定额项目"},"volumes":{"1":{"title":"自保温混凝土复合砌块及复合外保温模板等补充定额项目"}},"chapters":[{"vol":1,"no":0,"title":"总说明（全卷通用）","raw_title":"","print_page":1,"sections":[],"explain":[],"rules":[],"items":[],"n_items":0},{"vol":1,"no":1,"title":"自保温混凝土复合砌块","raw_title":"一、自保温混凝土复合砌块","print_page":1,"sections":[{"title":"自保温混凝土复合砌块","pno":1}],"explain":[{"pno":1,"text":"说明：砌筑自保温混凝土复合砌块时的水平灰缝和竖向灰缝按薄灰缝考虑，项目已包括砌块零星切割改锯和拉结筋起槽的用工及材料损耗。"}],"rules":[{"pno":1,"text":"工程量计算规则：自保温混凝土复合砌块按设计图示尺寸以体积计算，扣除门窗、洞口及嵌入墙内的砖碹和钢筋混凝土柱、梁（含梯段梁）、圈梁、挑梁、过梁与凹进墙内的壁龛、管槽、暖气槽、消火栓箱所占体积，不扣除梁头、板头、檩头、垫木、木楞头、沿橼木、木砖、木楔卡固、门窗走头及墙内加固筋、木筋、铁件、钢管、刚（柔）性材料嵌缝和单个面积≤0.3m²的孔洞所占的体积。凸出墙面的腰线、挑檐、压顶、窗台线、虎头砖、门窗套的体积亦不增加，凸出墙面的墙垛并入墙体积内计算。"}],"items":["B4-1","B4-2","B4-3"],"n_items":3},{"vol":1,"no":2,"title":"现浇混凝土复合外保温模板","raw_title":"二、现浇混凝土复合外保温模板","print_page":2,"sections":[{"title":"现浇混凝土复合外保温模板","pno":2}],"explain":[],"rules":[{"pno":2,"text":"工程量计算规则：复合外保温模板按与混凝土的接触面积计算。"}],"items":["B10-1"],"n_items":1},{"vol":1,"no":3,"title":"沥青胶泥防腐","raw_title":"三、沥青胶泥防腐","print_page":2,"sections":[{"title":"沥青胶泥防腐","pno":2}],"explain":[{"pno":2,"text":"说明：当沥青胶泥防腐设计厚度≤2mm时，按本定额进行调整。"}],"rules":[{"pno":2,"text":"工程量计算规则：沥青胶泥防腐按设计图示尺寸以面积计算。"}],"items":["B10-2"],"n_items":1}],"items":[{"code":"B4-1","vol":1,"ch_no":1,"section_title":"自保温混凝土复合砌块","project":"自保温混凝土复合砌块 墙厚（mm) ≤250","work_content":"调、运砂浆、铺砂浆、运砌块、安装砌块，安放木砖。","unit":"10m³","phys_page":1,"print_page":1,"chapter":1,"consumptions":[{"kind":"人工","name":"二类人工","unit":"工日","qty":11.841,"unpriced":false,"raw":"11.841"},{"kind":"材料","name":"自保温砌块390×250×190","unit":"m³","qty":9.812,"unpriced":false,"raw":"9.812"},{"kind":"材料","name":"自保温砌块390×300×190","unit":"m³","qty":null,"unpriced":false,"raw":"-"},{"kind":"材料","name":"自保温砌块390×350×190","unit":"m³","qty":null,"unpriced":false,"raw":"-"},{"kind":"材料","name":"专用砌筑砂浆","unit":"m³","qty":0.388,"unpriced":false,"raw":"0.388"},{"kind":"材料","name":"水","unit":"m³","qty":0.265,"unpriced":false,"raw":"0.265"},{"kind":"材料","name":"其他材料费","unit":"%","qty":0.288,"unpriced":false,"raw":"0.288"},{"kind":"机械","name":"干混砂浆罐式搅拌机200L","unit":"台班","qty":0.039,"unpriced":false,"raw":"0.039"}]},{"code":"B4-2","vol":1,"ch_no":1,"section_title":"自保温混凝土复合砌块","project":"自保温混凝土复合砌块 墙厚（mm) ≤300","work_content":"调、运砂浆、铺砂浆、运砌块、安装砌块，安放木砖。","unit":"10m³","phys_page":1,"print_page":1,"chapter":1,"consumptions":[{"kind":"人工","name":"二类人工","unit":"工日","qty":11.682,"unpriced":false,"raw":"11.682"},{"kind":"材料","name":"自保温砌块390×250×190","unit":"m³","qty":null,"unpriced":false,"raw":"-"},{"kind":"材料","name":"自保温砌块390×300×190","unit":"m³","qty":9.812,"unpriced":false,"raw":"9.812"},{"kind":"材料","name":"自保温砌块390×350×190","unit":"m³","qty":null,"unpriced":false,"raw":"-"},{"kind":"材料","name":"专用砌筑砂浆","unit":"m³","qty":0.388,"unpriced":false,"raw":"0.388"},{"kind":"材料","name":"水","unit":"m³","qty":0.265,"unpriced":false,"raw":"0.265"},{"kind":"材料","name":"其他材料费","unit":"%","qty":0.288,"unpriced":false,"raw":"0.288"},{"kind":"机械","name":"干混砂浆罐式搅拌机200L","unit":"台班","qty":0.039,"unpriced":false,"raw":"0.039"}]},{"code":"B4-3","vol":1,"ch_no":1,"section_title":"自保温混凝土复合砌块","project":"自保温混凝土复合砌块 墙厚（mm) ≤350","work_content":"调、运砂浆、铺砂浆、运砌块、安装砌块，安放木砖。","unit":"10m³","phys_page":1,"print_page":1,"chapter":1,"consumptions":[{"kind":"人工","name":"二类人工","unit":"工日","qty":11.343,"unpriced":false,"raw":"11.343"},{"kind":"材料","name":"自保温砌块390×250×190","unit":"m³","qty":null,"unpriced":false,"raw":"-"},{"kind":"材料","name":"自保温砌块390×300×190","unit":"m³","qty":null,"unpriced":false,"raw":"-"},{"kind":"材料","name":"自保温砌块390×350×190","unit":"m³","qty":9.812,"unpriced":false,"raw":"9.812"},{"kind":"材料","name":"专用砌筑砂浆","unit":"m³","qty":0.388,"unpriced":false,"raw":"0.388"},{"kind":"材料","name":"水","unit":"m³","qty":0.265,"unpriced":false,"raw":"0.265"},{"kind":"材料","name":"其他材料费","unit":"%","qty":0.288,"unpriced":false,"raw":"0.288"},{"kind":"机械","name":"干混砂浆罐式搅拌机200L","unit":"台班","qty":0.039,"unpriced":false,"raw":"0.039"}]},{"code":"B10-1","vol":1,"ch_no":2,"section_title":"现浇混凝土复合外保温模板","project":"现浇混凝土复合外保温模板","work_content":"复合外保温模板支撑制作、拆除、堆放、运输，复合外保温模板安装及清理模内杂物等。","unit":"100m²","phys_page":2,"print_page":2,"chapter":2,"consumptions":[{"kind":"人工","name":"二类人工","unit":"工日","qty":19.419,"unpriced":false,"raw":"19.419"},{"kind":"材料","name":"复合外保温模板100厚","unit":"m²","qty":105.0,"unpriced":false,"raw":"105.000"},{"kind":"材料","name":"钢支撑及配件","unit":"kg","qty":27.456,"unpriced":false,"raw":"27.456"},{"kind":"材料","name":"连接件","unit":"个","qty":900.0,"unpriced":false,"raw":"900.000"},{"kind":"材料","name":"C20水泥砂浆垫块","unit":"块","qty":350.0,"unpriced":false,"raw":"350.000"},{"kind":"材料","name":"镀锌铁丝φ4.0","unit":"kg","qty":13.44,"unpriced":false,"raw":"13.440"},{"kind":"材料","name":"板方材","unit":"m³","qty":0.228,"unpriced":false,"raw":"0.228"},{"kind":"材料","name":"铁钉","unit":"kg","qty":4.38,"unpriced":false,"raw":"4.380"},{"kind":"材料","name":"对拉螺栓","unit":"kg","qty":50.184,"unpriced":false,"raw":"50.184"},{"kind":"机械","name":"载重汽车 装载质量6（t）","unit":"台班","qty":0.15,"unpriced":false,"raw":"0.150"}]},{"code":"B10-2","vol":1,"ch_no":3,"section_title":"沥青胶泥防腐","project":"沥青胶泥防腐 厚度 2mm","work_content":"清理基层、涂刷沥青胶泥隔离层。","unit":"100m²","phys_page":2,"print_page":2,"chapter":3,"consumptions":[{"kind":"人工","name":"二类人工","unit":"工日","qty":6.849,"unpriced":false,"raw":"6.849"},{"kind":"材料","name":"耐酸沥青胶泥隔离层用1：0.3：0.05","unit":"m³","qty":0.2,"unpriced":false,"raw":"0.200"}]}],"explain":[{"no":"说明","text":"说明：砌筑自保温混凝土复合砌块时的水平灰缝和竖向灰缝按薄灰缝考虑，项目已包括砌块零星切割改锯和拉结筋起槽的用工及材料损耗。","pno":1},{"no":"说明","text":"说明：当沥青胶泥防腐设计厚度≤2mm时，按本定额进行调整。","pno":2}],"rules":[{"ch_no":1,"title":"自保温混凝土复合砌块","text":"工程量计算规则：自保温混凝土复合砌块按设计图示尺寸以体积计算，扣除门窗、洞口及嵌入墙内的砖碹和钢筋混凝土柱、梁（含梯段梁）、圈梁、挑梁、过梁与凹进墙内的壁龛、管槽、暖气槽、消火栓箱所占体积，不扣除梁头、板头、檩头、垫木、木楞头、沿橼木、木砖、木楔卡固、门窗走头及墙内加固筋、木筋、铁件、钢管、刚（柔）性材料嵌缝和单个面积≤0.3m²的孔洞所占的体积。凸出墙面的腰线、挑檐、压顶、窗台线、虎头砖、门窗套的体积亦不增加，凸出墙面的墙垛并入墙体积内计算。","pno":1},{"ch_no":2,"title":"现浇混凝土复合外保温模板","text":"工程量计算规则：复合外保温模板按与混凝土的接触面积计算。","pno":2},{"ch_no":3,"title":"沥青胶泥防腐","text":"工程量计算规则：沥青胶泥防腐按设计图示尺寸以面积计算。","pno":2}],"prose":[{"ch_no":1,"mode":"explain","pno":1,"title":"自保温混凝土复合砌块","text":"说明：砌筑自保温混凝土复合砌块时的水平灰缝和竖向灰缝按薄灰缝考虑，项目已包括砌块零星切割改锯和拉结筋起槽的用工及材料损耗。"},{"ch_no":1,"mode":"rules","pno":1,"title":"自保温混凝土复合砌块","text":"工程量计算规则：自保温混凝土复合砌块按设计图示尺寸以体积计算，扣除门窗、洞口及嵌入墙内的砖碹和钢筋混凝土柱、梁（含梯段梁）、圈梁、挑梁、过梁与凹进墙内的壁龛、管槽、暖气槽、消火栓箱所占体积，不扣除梁头、板头、檩头、垫木、木楞头、沿橼木、木砖、木楔卡固、门窗走头及墙内加固筋、木筋、铁件、钢管、刚（柔）性材料嵌缝和单个面积≤0.3m²的孔洞所占的体积。凸出墙面的腰线、挑檐、压顶、窗台线、虎头砖、门窗套的体积亦不增加，凸出墙面的墙垛并入墙体积内计算。"},{"ch_no":1,"mode":"work","pno":1,"title":"自保温混凝土复合砌块","text":"工作内容：调、运砂浆、铺砂浆、运砌块、安装砌块，安放木砖。"},{"ch_no":1,"mode":"unit","pno":1,"title":"自保温混凝土复合砌块","text":"计量单位：10m³"},{"ch_no":2,"mode":"rules","pno":2,"title":"现浇混凝土复合外保温模板","text":"工程量计算规则：复合外保温模板按与混凝土的接触面积计算。"},{"ch_no":2,"mode":"work","pno":2,"title":"现浇混凝土复合外保温模板","text":"工作内容：复合外保温模板支撑制作、拆除、堆放、运输，复合外保温模板安装及清理模内杂物等。"},{"ch_no":2,"mode":"unit","pno":2,"title":"现浇混凝土复合外保温模板","text":"计量单位：100m²"},{"ch_no":3,"mode":"explain","pno":2,"title":"沥青胶泥防腐","text":"说明：当沥青胶泥防腐设计厚度≤2mm时，按本定额进行调整。"},{"ch_no":3,"mode":"rules","pno":2,"title":"沥青胶泥防腐","text":"工程量计算规则：沥青胶泥防腐按设计图示尺寸以面积计算。"},{"ch_no":3,"mode":"work","pno":2,"title":"沥青胶泥防腐","text":"工作内容：清理基层、涂刷沥青胶泥隔离层。"},{"ch_no":3,"mode":"unit","pno":2,"title":"沥青胶泥防腐","text":"计量单位：100m²"}],"n_cons":36,"n_sec":3,"toc":[{"level":"h1","title":"一、自保温混凝土复合砌块","print_page":1,"vol":1,"ch":1,"origin":"body_heading"},{"level":"h1","title":"二、现浇混凝土复合外保温模板","print_page":2,"vol":1,"ch":2,"origin":"body_heading"},{"level":"h1","title":"三、沥青胶泥防腐","print_page":2,"vol":1,"ch":3,"origin":"body_heading"}],"toc_check":{"matched":3,"sec_total":3,"unmatched":[],"note":"源无目录页，导航按正文 3 个章标题重建（origin=body_heading）"},"issues":[{"kind":"duplicate_official_attachment","pno":0,"note":"官方目录 #25 通知页与 #26 正文页各挂一份 PDF 附件，实测字节完全相同（130182 B / sha256 3b6f7ef0f9f0…），本卷按单源处理，两页均登记为发布依据"},{"kind":"find_tables_segfault","pno":0,"note":"PyMuPDF find_tables() 在本 PDF 直接段错误（无输出、进程崩溃），全链禁用；改「矢量 full 横线切类别块 + 文本坐标聚行 + 列区间取词」网格法（坑 118 同族）"},{"kind":"no_official_toc","pno":0,"note":"本卷无目录页；导航 toc 由正文 3 个章标题重建（origin=body_heading），非官方目录，不得冒充"},{"kind":"blank_tail_page","pno":3,"note":"物理页 3 仅有页脚「- 3 -」，无正文内容；忠实层留痕，不生成任何条目"},{"kind":"superscript_unit","pno":0,"note":"计量单位 100m + 4.5pt 上标「2」、说明中 ≤0.3m + 上标「2」、表内 m + 上标「2」共 3 类，按视觉行聚类归一为 m²；原文 m³ 为单字符，直接保留"},{"kind":"unit_embedded_in_name","pno":2,"note":"B10-1 机械行原文「载重汽车 装载质量6（t）台班」单位「台班」嵌于名称末 token（x172.8-269.6 跨 c1/c2），按语义拆出单位；名称两 token 间 10pt 几何间距还原为空格分隔"},{"kind":"category_prefix_merged","pno":2,"note":"X=B10-2 材料行原文「材料耐酸沥青胶泥隔离层用1：0.3：0.05」类别字与名称连排（x96.4-298.7 跨列），按字符剥离前 2 字作类别，名称保留余下全文；忠实层不增删字词"}]}</script>
+<script>
+var D = JSON.parse(document.getElementById('payload').textContent);
+function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function $(id){return document.getElementById(id)}
+function cn(n){return ['零','一','二','三','四','五','六','七','八','九','十'][n]||String(n)}
+
+// ---- meta ----
+$('h-title').textContent=D.meta.title;
+document.title=D.meta.title;
+$('m-items').textContent=D.items.length;
+$('m-cons').textContent=D.n_cons;
+$('m-sec').textContent=D.n_sec;
+$('m-iss').textContent=D.issues.length;
+$('m-off').textContent=D.meta.print_offset?('印页=物页−'+D.meta.print_offset):'印页=物页（无偏移）';
+
+// ---- tabs ----
+$('tabs').addEventListener('click',function(e){
+  var b=e.target.closest('button'); if(!b)return;
+  document.querySelectorAll('nav.tabs button').forEach(function(x){x.classList.toggle('on',x===b)});
+  document.querySelectorAll('.panel').forEach(function(p){p.classList.toggle('on',p.id===b.dataset.p)});
+});
+
+// ---- structure tree ----
+var tree=$('tree'), chMap={};
+D.chapters.forEach(function(ch){chMap[ch.no]=ch});
+var dv=document.createElement('div'); dv.className='vol'; dv.textContent=D.meta.region+' · '+D.meta.year; tree.appendChild(dv);
+D.chapters.forEach(function(ch){
+  var d=document.createElement('div'); d.className='ch'; d.dataset.k=ch.no;
+  d.textContent=(ch.no===0?'总说明':('第'+cn(ch.no)+'章 '+ch.title))+'（'+ch.n_items+'子目）';
+  d.onclick=function(){showCh(ch.no)};
+  tree.appendChild(d);
+});
+function showCh(k){
+  document.querySelectorAll('.tree .ch').forEach(function(x){x.classList.toggle('on',Number(x.dataset.k)===Number(k))});
+  var ch=chMap[k]; if(!ch)return;
+  var h='<h3>'+esc(ch.no===0?'总说明（全卷通用）':('第'+cn(ch.no)+'章 '+ch.title))+'</h3>';
+  h+='<p class="kw">原文标题：'+esc(ch.raw_title||'—')+' · 印页 P'+ch.print_page+' · 节 '+ch.sections.length+' · 子目 '+ch.n_items+' · 说明 '+ch.explain.length+' 条 · 计算规则 '+ch.rules.length+' 条</p>';
+  if(ch.sections.length){h+='<h3>节清单</h3>';ch.sections.forEach(function(s){h+='<p>· '+esc(s.title)+(s.pno?' <span class="kw">P'+s.pno+'</span>':'')+'</p>'})}
+  if(ch.explain.length){h+='<h3>'+(ch.no===0?'总说明':'章说明')+'</h3>';ch.explain.forEach(function(x){h+='<p>'+esc(x.text)+'</p>'})}
+  if(ch.rules.length){h+='<h3>工程量计算规则</h3>';ch.rules.forEach(function(x){h+='<p>'+esc(x.text)+'</p>'})}
+  if(ch.items.length){h+='<h3>本章子目</h3><p>';ch.items.forEach(function(c){h+='<span class="pill" onclick="jump(\''+c+'\')">'+esc(c)+'</span>'});h+='</p>'}
+  $('ch-info').innerHTML=h;
+}
+showCh(0);
+
+// ---- search ----
+var chSel=$('f-ch');
+D.chapters.forEach(function(ch){if(ch.no===0)return;var o=document.createElement('option');o.value=ch.no;o.textContent='第'+cn(ch.no)+'章 '+ch.title;chSel.appendChild(o)});
+var idx=D.items.map(function(it){
+  return {it:it,hay:[it.code,it.project,it.work_content,it.unit,it.section].concat((it.consumptions||[]).map(function(c){return c.name})).join(' ')};
+});
+$('q').addEventListener('input',doSearch);
+$('f-ch').addEventListener('change',doSearch);
+$('f-kind').addEventListener('change',doSearch);
+function doSearch(){
+  var q=$('q').value.trim(), fc=chSel.value, fk=$('f-kind').value;
+  var hits=idx.filter(function(x){
+    if(fc&&String(x.it.chapter)!==fc)return false;
+    if(fk&&!(x.it.consumptions||[]).some(function(c){return c.kind===fk}))return false;
+    if(!q)return true;
+    if(/^[A-Za-z]?\d+-\d+$/.test(q))return x.it.code===q;
+    return x.hay.indexOf(q)>=0;
+  }).slice(0,120);
+  $('q-count').textContent='命中 '+hits.length+' 条'+(hits.length===120?'（截断，最多显示 120）':'');
+  var h='';
+  hits.forEach(function(x){
+    var it=x.it;
+    h+='<div class="item-head" id="it-'+esc(it.code)+'"><b class="code">'+esc(it.code)+'</b><span>'+esc(it.project)+'</span>'
+      +'<span class="kw">单位 '+esc(it.unit||'')+'</span><span class="kw">印页 P'+it.print_page+'（物页 '+it.phys_page+'）</span></div>';
+    h+='<p class="kw">节：'+esc(it.section||'')+' · 工作内容：'+esc(it.work_content||'')+'</p>';
+    if((it.consumptions||[]).length){
+      h+='<table><tr><th>类别</th><th>名称</th><th>单位</th><th>消耗量</th></tr>';
+      it.consumptions.forEach(function(c){
+        h+='<tr><td>'+esc(c.kind||'')+'</td><td>'+esc(c.name)+'</td><td>'+esc(c.unit||'')+'</td><td class="num">'
+          +(c.qty==null?'—':(c.unpriced?'('+c.qty+')':c.qty))+'</td></tr>';
+      });
+      h+='</table>';
+    }
+  });
+  $('q-out').innerHTML=h||'<p class="kw">无命中</p>';
+}
+function jump(code){
+  document.querySelector('nav.tabs button[data-p="p-search"]').click();
+  $('q').value=code; doSearch();
+  var el=$('it-'+code); if(el&&el.scrollIntoView)el.scrollIntoView();
+}
+doSearch();
+
+// ---- 条文总览（说明/计算规则/工作内容/计量单位） ----
+(function(){
+  var MODE={explain:'说明',rules:'工程量计算规则',work:'工作内容',unit:'计量单位'};
+  var groups={}; D.prose.forEach(function(x){(groups[x.mode]=groups[x.mode]||[]).push(x)});
+  var h='<div class="info sec" style="max-height:none"><h3>条文总览（'+D.prose.length+' 条 / 4 类）</h3>';
+  ['explain','rules','work','unit'].forEach(function(m){
+    var g=groups[m]||[];
+    h+='<h3>'+MODE[m]+'（'+g.length+' 条）</h3>';
+    g.forEach(function(x){
+      h+='<p><b>'+esc(cn(x.ch_no))+'、'+esc(x.title)+'</b> '+esc(x.text)
+        +' <span class="kw">[印页 P'+x.pno+']</span></p>';
+    });
+  });
+  h+='</div>';
+  $('prose-out').innerHTML=h;
+})();
+
+// ---- 目录对账 ----
+(function(){
+  var tc=D.toc_check;
+  $('toc-count').textContent='目录 '+D.toc.length+' 条 · 对账 '+tc.matched+'/'+tc.sec_total+' · '+esc(tc.note||'');
+  var h='<tr><th>层级</th><th>标题</th><th>章</th><th>印页</th></tr>';
+  D.toc.forEach(function(e){h+='<tr><td>'+esc(e.level)+'</td><td>'+esc(e.title)+'</td><td>'+(e.ch==null?'—':e.ch)+'</td><td>'+(e.print_page==null?'—':e.print_page)+'</td></tr>'});
+  $('toc-tbl').innerHTML=h;
+})();
+
+// ---- 疑点留痕 ----
+(function(){
+  $('iss-count').textContent='留痕 '+D.issues.length+' 条（find_tables 段错误弃用 / 双附件同源 / 无目录页 / 空白尾页 / 上标归一 / 单位嵌名称 / 类别字连排；一律只记录不静默修正）';
+  var h='<tr><th>类别</th><th>物页</th><th>说明</th></tr>';
+  D.issues.forEach(function(x){h+='<tr><td><span class="tag warn">'+esc(x.kind)+'</span></td><td>'+(x.pno==null?'—':x.pno)+'</td><td>'+esc(x.note)+'</td></tr>'});
+  $('iss-tbl').innerHTML=h;
+})();
+
+// ---- 源信息 ----
+(function(){
+  var m=D.meta, rows=[
+    ['书名',m.title],['发布机关','新疆维吾尔自治区住房和城乡建设厅'],
+    ['发布通知',m.notice_date+' · '+m.notice_url],
+    ['官方登记','#25 通知页与 #26 正文页各挂一份附件，实测字节级同源'],
+    ['源形态',m.source_kind],['页数',m.pages+' 页（印页 = 物理页 − '+m.print_offset+'）'],
+    ['主源 sha12',m.source_sha12],['#26 正文页附件 sha12',m.alt_sha12],
+    ['双源一致性',m.source_sha12===m.alt_sha12?'一致（字节级）':'不一致（见疑点）'],
+    ['source.md sha12',m.source_md_sha12],['parse schema',m.parse_schema],
+    ['结构计数',m.n_items+' 子目 / '+m.n_consumptions+' 消耗量 / '+m.n_tables+' 张定额表 / 3 章 3 节']
+  ];
+  var h='<div class="info sec" style="max-height:none"><h3>源与可复现性</h3><table><tr><th>项</th><th>值</th></tr>';
+  rows.forEach(function(r){h+='<tr><td>'+esc(r[0])+'</td><td class="mono">'+esc(r[1])+'</td></tr>'});
+  h+='</table><p class="kw" style="margin-top:10px">忠实层 out/parse_xj24.json 与 out/xj24_source.md 只读；DB 为工作层；全链禁运行时时间戳，门控基线指纹可复跑。</p></div>';
+  $('src-out').innerHTML=h;
+})();
+</script>
+</body>
+</html>

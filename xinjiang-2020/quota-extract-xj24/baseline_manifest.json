@@ -1,0 +1,15 @@
+{
+ "files": {
+  "parse_xj24.json": "2e9f01dd731d",
+  "xj24_source.md": "75e0bc04ca00",
+  "xj24_quota.db": "4d71d96b1b40",
+  "web/index.html": "ed00275a07d7",
+  "web/template.html": "f7bbe243c039"
+ },
+ "anchors": {
+  "official.pdf": "3b6f7ef0f9f0",
+  "official_alt_20230111.pdf": "3b6f7ef0f9f0",
+  "notice_seq25.html": "2f5eb0c6b27d",
+  "notice_seq26.html": "c12a081647d4"
+ }
+}
