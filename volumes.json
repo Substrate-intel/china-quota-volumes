@@ -320,6 +320,16 @@
      "sha256": "977b5a545a03e88574ada2f14262d165d85333120d5228a5a4247581f0096d81",
      "bytes": 548864,
      "items": 264
+    },
+    {
+     "key": "xj23",
+     "kind": "fee",
+     "label": "新疆装配式建筑工程补充工程量清单",
+     "province": "新疆",
+     "db": "xinjiang-2020/quota-extract-xj23/db_pdf/xj23_quota.db",
+     "sha256": "cb57aa4d1c2dc187d3fe2fef7fee3a6f1ce2d2d5f97a7a9e6d7142fd5292e701",
+     "bytes": 114688,
+     "items": 24
     }
    ]
   }

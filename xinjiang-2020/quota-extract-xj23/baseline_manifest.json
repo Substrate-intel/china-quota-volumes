@@ -1,0 +1,12 @@
+{
+ "files": {
+  "parse_fee_xj23.json": "4e3e7aa59747",
+  "xj23_source.md": "c702624b6b30",
+  "xj23_quota.db": "cb57aa4d1c2d",
+  "index.html": "18ab94792820"
+ },
+ "anchors": {
+  "xj23_source.pdf": "fe9ec3b25abd",
+  "xj23_notice.html": "0dcf2d76b948"
+ }
+}

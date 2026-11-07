@@ -44,6 +44,16 @@ XJ_NOTICE_PC = {
 }
 NOTICE_BY_VOL = {vid: XJ_NOTICE_2020 for vid in XJ_NOTICE_2020["applies_to"]}
 NOTICE_BY_VOL.update({vid: XJ_NOTICE_PC for vid in XJ_NOTICE_PC["applies_to"]})
+# 装配式补充工程量清单官方发布依据（2023-09-21 发布，落款 2023-09-20，无公告号）
+XJ_NOTICE_BOQ = {
+    "url": "https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/6cd78c7e532342e48560affd0142aac2.shtml",
+    "no": "关于印发《新疆维吾尔自治区装配式建筑工程补充工程量清单》的通知",
+    "issued": "2023-09-21",
+    "effective": "2023-09-21",
+    "repealed": "（无废止条款；依据 GB50854-2013 编制，与装配式建筑工程消耗量定额（试行）配套的清单计价补充）",
+    "applies_to": ("xj23",),
+}
+NOTICE_BY_VOL.update({vid: XJ_NOTICE_BOQ for vid in XJ_NOTICE_BOQ["applies_to"]})
 
 
 def notice_link(v):
@@ -484,6 +494,22 @@ VOLUMES = [
         "source_sha12": "deb3291d4070",
         "gates": 10,
         "pipeline": "第六型源形态：官方 96 页 PDF，中文 FZ* 方正字体可读 + 数字/符号/西文单位用 FzBookMaker 子集字体无 ToUnicode 乱码 → charmap 反解（OCR 独立转写对齐，6 字体 57 glyphs）→ 矢量网格字符级重建 → 5 章 14 节 264 子目 2688 消耗量 → quota schema 九表 + 站点兼容三表 → 六视图前端 → 十门门控（P1 charmap 取证 paired 3613）+ 冒烟 24/24；双区页码（正文印页=物−9），每子目恰 1 条人工，括号未计价 80 条",
+    },
+    {
+        "id": "xj23",
+        "kind": "fee",
+        "tag": "装配式建筑工程补充工程量清单（新疆·2023）",
+        "name": "新疆维吾尔自治区装配式建筑工程补充工程量清单",
+        "dir": "quota-extract-xj23",
+        "sub": "out",
+        "db": "xj23_quota.db",
+        "web": "web/index.html",
+        "manifest": "baseline_manifest.json",
+        "report": "交付报告_xj23_装配式建筑工程补充工程量清单.md",
+        "pdf": "input/xj23_source.pdf",
+        "source_sha12": "fe9ec3b25abd",
+        "gates": 7,
+        "pipeline": "第七型源形态（4 页原生文本层 PDF，双源=通知页 HTML 快照+附件）：P3-P4 六列矢量网格，合并单元格按「每列独立行边界」推导（横线 x 跨度判定），组级单元格取词避免跨线 token 二义 → 2 章 24 条目（3 说明条款 + 21 清单项目 X010518001~021，单位恒等 m³，合并组展开）→ fee schema + fee_semantics 语义 3 条 → 七视图前端 → 七门门控（含渲染级冒烟 20/20）+ 复跑零失配；官方原文重复句 1 处留痕（source_dup）",
     },
 ]
 
