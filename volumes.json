@@ -56,6 +56,26 @@
      "items": 1885
     },
     {
+     "key": "fy",
+     "kind": "fee",
+     "label": "建设工程费用标准",
+     "province": "辽宁",
+     "db": "liaoning-2024/quota-extract-fy/db_pdf/fy_quota.db",
+     "sha256": "b76fd3eef2eb250dbc837349a57fe79649690597152396b622db1b8dc0d7110a",
+     "bytes": 163840,
+     "items": 104
+    },
+    {
+     "key": "jx",
+     "kind": "quota",
+     "label": "通用安装·第一册 机械设备",
+     "province": "辽宁",
+     "db": "liaoning-2024/quota-extract-jx/db_pdf/jx_quota.db",
+     "sha256": "8dd4b9e45e4b7215c02288a3e2dba5c0cb0c3ffe012c3b2ff75c46d3da1f09ef",
+     "bytes": 1363968,
+     "items": 1371
+    },
+    {
      "key": "jxtb",
      "kind": "table",
      "label": "施工机械台班费用标准（含仪器仪表）",
@@ -64,6 +84,26 @@
      "sha256": "e10855c007b8aae8bb25bbf83c1e738515b45ea0edcbb878e1fc45ad9d7c5901",
      "bytes": 221184,
      "items": 1546
+    },
+    {
+     "key": "jz",
+     "kind": "quota",
+     "label": "通用安装·第三册 静置设备",
+     "province": "辽宁",
+     "db": "liaoning-2024/quota-extract-jz/db_pdf/jz_quota.db",
+     "sha256": "fe286957293d220737ec5fbbcc0af0fb1aa65cc8d170dd9271383cfe228849cc",
+     "bytes": 1982464,
+     "items": 1889
+    },
+    {
+     "key": "lj",
+     "kind": "quota",
+     "label": "市政定额·第七册 生活垃圾处理工程",
+     "province": "辽宁",
+     "db": "liaoning-2024/quota-extract-lj/db_pdf/lj_quota.db",
+     "sha256": "e50b6634efa0e033b3d5d8357c0da8f4aabc13a838e430c766d71542176d5837",
+     "bytes": 208896,
+     "items": 177
     },
     {
      "key": "lvse",
@@ -84,6 +124,46 @@
      "sha256": "710d1da02dc65e697f6c738cb933e0379c2e62c583df88faf7cac1e6fabfaba1",
      "bytes": 110592,
      "items": 382
+    },
+    {
+     "key": "qh",
+     "kind": "quota",
+     "label": "市政定额·第三册 桥涵工程",
+     "province": "辽宁",
+     "db": "liaoning-2024/quota-extract-qh/db_pdf/qh_quota.db",
+     "sha256": "c9ed3cb541c1d826f7bde83b7634aa80b843851fd6886b2d44607454512af194",
+     "bytes": 491520,
+     "items": 670
+    },
+    {
+     "key": "rl",
+     "kind": "quota",
+     "label": "通用安装·第二册 热力设备",
+     "province": "辽宁",
+     "db": "liaoning-2024/quota-extract-rl/db_pdf/rl_quota.db",
+     "sha256": "177c1ffdf5623120fd2603dcd2b3ab88dd1660ba3a452e9e0d85d99e388f1ed5",
+     "bytes": 1277952,
+     "items": 824
+    },
+    {
+     "key": "scl",
+     "kind": "quota",
+     "label": "市政定额·第六册 水处理工程",
+     "province": "辽宁",
+     "db": "liaoning-2024/quota-extract-scl/db_pdf/scl_quota.db",
+     "sha256": "e26aa70574e0ce33dfc922f4e6c0fc810c46631bf97e72f1cfeac62684b4b4ba",
+     "bytes": 716800,
+     "items": 694
+    },
+    {
+     "key": "sd",
+     "kind": "quota",
+     "label": "市政定额·第四册 隧道工程",
+     "province": "辽宁",
+     "db": "liaoning-2024/quota-extract-sd/db_pdf/sd_quota.db",
+     "sha256": "a12e3b734ea877007f1405055c8cb856ec31c8f216375c4eb56b72a55fac89e7",
+     "bytes": 630784,
+     "items": 673
     },
     {
      "key": "sz01",
@@ -126,6 +206,16 @@
      "items": 516
     },
     {
+     "key": "sz09",
+     "kind": "quota",
+     "label": "市政定额·第九册 钢筋工程",
+     "province": "辽宁",
+     "db": "liaoning-2024/quota-extract-sz09/db_pdf/sz09_quota.db",
+     "sha256": "5a20827cebd00fc7bed8141ac129a334bda817acf165d95728f4ad2ea17b31c4",
+     "bytes": 163840,
+     "items": 151
+    },
+    {
      "key": "sz10",
      "kind": "quota",
      "label": "市政工程定额·拆除",
@@ -146,6 +236,36 @@
      "items": 470
     },
     {
+     "key": "tf",
+     "kind": "quota",
+     "label": "通用安装·第七册 通风空调",
+     "province": "辽宁",
+     "db": "liaoning-2024/quota-extract-tf/db_pdf/tf_quota.db",
+     "sha256": "1a49981e382e31b0617dc73a2b9f8ed9e61cc7d5e03e809c69484d415673799f",
+     "bytes": 487424,
+     "items": 501
+    },
+    {
+     "key": "xtx",
+     "kind": "quota",
+     "label": "通用安装·第十一册 信息通信",
+     "province": "辽宁",
+     "db": "liaoning-2024/quota-extract-xtx/db_pdf/xtx_quota.db",
+     "sha256": "1b1c32b1602619e47d2ddb39a7dfe7363114e81f3d10b349c2c5f5fa14ccc837",
+     "bytes": 352256,
+     "items": 493
+    },
+    {
+     "key": "yb",
+     "kind": "quota",
+     "label": "通用安装·第六册 自控仪表",
+     "province": "辽宁",
+     "db": "liaoning-2024/quota-extract-yb/db_pdf/yb_quota.db",
+     "sha256": "9cc450ab442f42566383ddfc2c7eb10d978c3345d3bbe0eb0be07f94dc2b2580",
+     "bytes": 856064,
+     "items": 956
+    },
+    {
      "key": "yl01",
      "kind": "quota",
      "label": "园林绿化工程定额（md源提取）",
@@ -154,6 +274,26 @@
      "sha256": "f4c237c65775567e5cb76b6c9fd9e1f961de6b062dcfd3d5b9c790c4599260e9",
      "bytes": 520192,
      "items": 889
+    },
+    {
+     "key": "zn",
+     "kind": "quota",
+     "label": "通用安装·第五册 建筑智能化",
+     "province": "辽宁",
+     "db": "liaoning-2024/quota-extract-zn/db_pdf/zn_quota.db",
+     "sha256": "6f317d0b2b7db843acb1d828c975cf55e7067d58ce6b88fa51ffb532825d7df8",
+     "bytes": 516096,
+     "items": 1019
+    },
+    {
+     "key": "zzs",
+     "kind": "quota",
+     "label": "装配式建筑工程定额",
+     "province": "辽宁",
+     "db": "liaoning-2024/quota-extract-zzs/db_pdf/zzs_quota.db",
+     "sha256": "868aaac0a8a588922702dfecc3fa6c48fe8397d98a1bdef2d01f83ffc6995404",
+     "bytes": 278528,
+     "items": 251
     }
    ]
   },

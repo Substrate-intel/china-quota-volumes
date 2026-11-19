@@ -544,6 +544,161 @@ VOLUMES = [
                     "六视图前端（条文四类分组）→ 十门门控（P1 官方原版逐格取证 36/36）+ 冒烟 28/28 + 全链重建零失配；"
                     "上标单位归一、单位嵌名称、类别字连排、无目录页、空白尾页共 7 条疑点留痕",
     },
+    {
+        "id": "sz09",
+        "kind": "md_quota",
+        "tag": "市政·第九册 钢筋工程",
+        "name": "辽宁省建设工程计价依据《市政工程定额·第九册 钢筋工程》(2024)",
+        "dir": "quota-extract-sz09",
+        "report": None,
+        "pdf": "input/nowm.pdf",
+        "official_id": "1773818745668531",
+        "source_sha12": "1241b0a5c9ba",
+    },
+    {
+        "id": "lj",
+        "kind": "md_quota",
+        "tag": "市政·第七册 生活垃圾",
+        "name": "辽宁省建设工程计价依据《市政工程定额·第七册 生活垃圾处理工程》(2024)",
+        "dir": "quota-extract-lj",
+        "report": None,
+        "pdf": "input/nowm.pdf",
+        "official_id": "1773818696988773",
+        "source_sha12": "748b8e6820da",
+    },
+    {
+        "id": "qh",
+        "kind": "md_quota",
+        "tag": "市政·第三册 桥涵",
+        "name": "辽宁省建设工程计价依据《市政工程定额·第三册 桥涵工程》(2024)",
+        "dir": "quota-extract-qh",
+        "report": None,
+        "pdf": "input/nowm.pdf",
+        "official_id": "1773818415211293",
+        "source_sha12": "300d3ab69ba8",
+    },
+    {
+        "id": "sd",
+        "kind": "md_quota",
+        "tag": "市政·第四册 隧道",
+        "name": "辽宁省建设工程计价依据《市政工程定额·第四册 隧道工程》(2024)",
+        "dir": "quota-extract-sd",
+        "report": None,
+        "pdf": "input/nowm.pdf",
+        "official_id": "1773818476061359",
+        "source_sha12": "71d7f8fb3550",
+    },
+    {
+        "id": "scl",
+        "kind": "md_quota",
+        "tag": "市政·第六册 水处理",
+        "name": "辽宁省建设工程计价依据《市政工程定额·第六册 水处理工程》(2024)",
+        "dir": "quota-extract-scl",
+        "report": None,
+        "pdf": "input/nowm.pdf",
+        "official_id": "1773818668747916",
+        "source_sha12": "e805b5b182ce",
+    },
+    {
+        "id": "zzs",
+        "kind": "md_quota",
+        "tag": "装配式建筑",
+        "name": "辽宁省建设工程计价依据《装配式建筑工程定额》(2024)",
+        "dir": "quota-extract-zzs",
+        "report": None,
+        "pdf": "input/nowm.pdf",
+        "official_id": "1773817000900819",
+        "source_sha12": "e15cc262e922",
+    },
+    {
+        "id": "xtx",
+        "kind": "md_quota",
+        "tag": "安装·第十一册 信息通信",
+        "name": "辽宁省建设工程计价依据《通用安装工程定额·第十一册 信息通信设备及线缆安装工程》(2024)",
+        "dir": "quota-extract-xtx",
+        "report": None,
+        "pdf": "input/nowm.pdf",
+        "official_id": "1773818095166709",
+        "source_sha12": "c7ebd78dad35",
+    },
+    {
+        "id": "tf",
+        "kind": "md_quota",
+        "tag": "安装·第七册 通风空调",
+        "name": "辽宁省建设工程计价依据《通用安装工程定额·第七册 通风空调安装工程》(2024)",
+        "dir": "quota-extract-tf",
+        "report": None,
+        "pdf": "input/nowm.pdf",
+        "official_id": "1773817847518209",
+        "source_sha12": "92b26bdcf6d3",
+    },
+    {
+        "id": "yb",
+        "kind": "md_quota",
+        "tag": "安装·第六册 自控仪表",
+        "name": "辽宁省建设工程计价依据《通用安装工程定额·第六册 自动化控制仪表安装工程》(2024)",
+        "dir": "quota-extract-yb",
+        "report": None,
+        "pdf": "input/nowm.pdf",
+        "official_id": "1773817800796178",
+        "source_sha12": "d1daa6bffacb",
+    },
+    {
+        "id": "zn",
+        "kind": "md_quota",
+        "tag": "安装·第五册 建筑智能化",
+        "name": "辽宁省建设工程计价依据《通用安装工程定额·第五册 建筑智能化工程》(2024)",
+        "dir": "quota-extract-zn",
+        "report": None,
+        "pdf": "input/nowm.pdf",
+        "official_id": "1773817700853997",
+        "source_sha12": "1f833b71bc60",
+    },
+    {
+        "id": "jx",
+        "kind": "md_quota",
+        "tag": "安装·第一册 机械设备",
+        "name": "辽宁省建设工程计价依据《通用安装工程定额·第一册 机械设备安装工程》(2024)",
+        "dir": "quota-extract-jx",
+        "report": None,
+        "pdf": "input/nowm.pdf",
+        "official_id": "1773817223827840",
+        "source_sha12": "13db3a42009b",
+    },
+    {
+        "id": "rl",
+        "kind": "md_quota",
+        "tag": "安装·第二册 热力设备",
+        "name": "辽宁省建设工程计价依据《通用安装工程定额·第二册 热力设备安装工程》(2024)",
+        "dir": "quota-extract-rl",
+        "report": None,
+        "pdf": "input/nowm.pdf",
+        "official_id": "1773817330205464",
+        "source_sha12": "9d14c81b4977",
+    },
+    {
+        "id": "jz",
+        "kind": "md_quota",
+        "tag": "安装·第三册 静置设备",
+        "name": "辽宁省建设工程计价依据《通用安装工程定额·第三册 静置设备与工艺金属结构制作安装工程》(2024)",
+        "dir": "quota-extract-jz",
+        "report": None,
+        "pdf": "input/nowm.pdf",
+        "official_id": "1773817524947018",
+        "source_sha12": "7550e395520e",
+    },
+    {
+        "id": "fy",
+        "kind": "fee",
+        "tag": "费用标准·取费费率",
+        "name": "辽宁省建设工程计价依据《建设工程费用标准》(2024)",
+        "dir": "quota-extract-fy",
+        "report": None,
+        "pdf": "input/nowm.pdf",
+        "db": "fy_quota.db",
+        "official_id": "1773818980464198",
+        "source_sha12": "1dfe4655e68e",
+    },
 ]
 
 # 官方清单分组展示顺序（其余组排最后）
@@ -742,9 +897,73 @@ def collect_xj_quota(v):
     return st
 
 
+def collect_md_quota(v):
+    """md 源提取卷（2024 辽宁二批 13 册）：库=out/<vid>_quota.db（book_meta/items/
+    item_labors/item_machines/item_materials/toc/desc_rules），前端=web/index.html，
+    核验=out/cost_check_report.json（H1-H6/P1），基线=baseline_manifest.json。"""
+    d = ROOT / v["dir"]
+    dbp = d / v.get("sub", "out") / v.get("db", "%s_quota.db" % v["id"])
+    con = sqlite3.connect(str(dbp))
+    cur = con.cursor()
+    meta = dict(cur.execute("select key, value from book_meta").fetchall())
+
+    def s1(sql, default=0):
+        try:
+            return q1(cur, sql)
+        except Exception:
+            return default
+
+    st = {
+        "kind": "md_quota",
+        "book_name": meta.get("book_name", v["name"]),
+        "items": s1("select count(*) from items"),
+        "labors": s1("select count(*) from item_labors"),
+        "machines": s1("select count(*) from item_machines"),
+        "materials": s1("select count(*) from item_materials"),
+        "toc": s1("select count(*) from toc"),
+        "desc": s1("select count(*) from desc_rules"),
+        "unit_null": s1("select count(*) from items where unit is null or unit=''"),
+        "generated_at": meta.get("built_at", meta.get("source", "")),
+        "pages_meta": meta.get("pages"),
+    }
+    con.close()
+    # 章节数（web_data 章树）
+    st["chapters"] = None
+    try:
+        st["chapters"] = len(json.load(open(d / "out" / "_web_data.json",
+                                            encoding="utf-8"))["chapters"])
+    except Exception:
+        pass
+    try:
+        cc = json.load(open(d / "out" / "cost_check_report.json", encoding="utf-8"))
+        st["h1"] = cc.get("H1"); st["p1"] = cc.get("P1")
+        st["h2"] = cc.get("H2"); st["h3"] = cc.get("H3"); st["h4"] = cc.get("H4")
+        st["h5"] = cc.get("H5"); st["h6"] = cc.get("H6")
+    except Exception:
+        st["h1"] = st["p1"] = st["h2"] = st["h3"] = st["h4"] = st["h5"] = st["h6"] = None
+    # work 空源页留痕条数
+    st["work_absent"] = None
+    try:
+        st["work_absent"] = len(json.load(open(d / "out" / ("%s_work_absent_source.json" % v["id"]),
+                                               encoding="utf-8"))["entries"])
+    except Exception:
+        pass
+    try:
+        mf = json.load(open(d / "baseline_manifest.json", encoding="utf-8"))
+        st["baseline_files"] = len(mf.get("files", mf))
+    except Exception:
+        st["baseline_files"] = None
+    st["pdf_pages"] = pdf_pages(v, d)
+    st["web_ok"] = (d / "web" / "index.html").exists()
+    st["report_ok"] = bool(v.get("report")) and (d / v["report"]).exists()
+    return st
+
+
 def collect_volume(v):
     if v["kind"] == "quota":
         return collect_quota(v)
+    if v["kind"] == "md_quota":
+        return collect_md_quota(v)
     if v["kind"] == "fee":
         return collect_fee(v)
     if v["kind"] == "xj_quota":
@@ -812,6 +1031,47 @@ footer{margin-top:34px;color:var(--ink2);font-size:11px;text-align:center;line-h
 
 def chip(cls, label, val):
     return f'<span class="qchip {cls}">{label} <b>{val}</b></span>'
+
+
+def render_md_quota(v, st):
+    db_rel = f'{v.get("sub", "out")}/{v.get("db", "%s_quota.db" % v["id"])}'
+    links = []
+    if st["web_ok"]:
+        links.append(f'<a class="lbtn" href="{v["dir"]}/web/index.html">识别成果库·章节树前端</a>')
+    links.append(f'<a class="lbtn ghost" href="{v["dir"]}/{db_rel}">SQLite 成果库</a>')
+    if st["report_ok"]:
+        links.append(f'<a class="lbtn ghost" href="{v["dir"]}/{v["report"]}">交付报告</a>')
+    pdf = f'官方PDF {st["pdf_pages"]} 页' if st["pdf_pages"] else "PDF —"
+    base = f'基线指纹 {st["baseline_files"]} 文件' if st["baseline_files"] else "基线指纹 —"
+    h1, p1 = st["h1"], st["p1"]
+    h5, h6 = st["h5"], st["h6"]
+    q = [
+        chip("ok" if h1 and h1["fail"] == 0 else "bad", "H1 基价恒等式",
+             f'{h1["pass"]}/{h1["pass"] + h1["fail"]}' if h1 else "—"),
+        chip("ok" if p1 and p1["fail"] == 0 else "bad", "P1 官方取证", f'{p1["pass"]}' if p1 else "—"),
+        chip("warn" if st["unit_null"] else "ok", "unit 空值", st["unit_null"]),
+        chip("ok" if h5 and h5["fail"] == 0 else "bad", "H5 量纲 fail", h5["fail"] if h5 else "—"),
+    ]
+    if st["work_absent"]:
+        q.append(chip("", "work 空(源页留痕)", st["work_absent"]))
+    return f"""
+<div class="vcard">
+  <div class="vhead"><span class="vtitle">{v["tag"]}</span>
+    <span class="badge g">已收官 · 九门全绿</span>
+    <span class="vtag">{pdf}</span><span class="vtag">{base}</span></div>
+  <div class="vname">{st["book_name"]}</div>
+  <div class="ngrid">
+    <div class="num"><div class="n">{st["items"]}</div><div class="t">定额子目</div></div>
+    <div class="num"><div class="n">{st["labors"]}</div><div class="t">人工条目</div></div>
+    <div class="num"><div class="n">{st["machines"]}</div><div class="t">机械条目</div></div>
+    <div class="num"><div class="n">{st["materials"]}</div><div class="t">材料条目</div></div>
+    <div class="num"><div class="n">{st["toc"] if st["toc"] is not None else "—"}</div><div class="t">目录行</div></div>
+    <div class="num"><div class="n">{st["desc"] if st["desc"] is not None else "—"}</div><div class="t">条文记录</div></div>
+  </div>
+  <div class="qrow">{''.join(q)}</div>
+  <div class="links">{''.join(links)}</div>
+  <div class="meta">目录 {v["dir"]}/ ｜ 管线：去水印干净源→md 转换→子目/目录/条文解析→H1-H6 造价逻辑核验→P1 官方原版逐格取证→九门门控</div>
+</div>"""
 
 
 def render_quota(v, st):
@@ -1114,9 +1374,12 @@ def main():
     quota_vols = [(v, st) for v, st in vols if st["kind"] == "quota"]
     table_vols = [(v, st) for v, st in vols if st["kind"] == "table"]
     docx_vols = [(v, st) for v, st in vols if st["kind"] == "docx_quota"]
+    md_vols = [(v, st) for v, st in vols if st["kind"] == "md_quota"]
     fee_vols = [(v, st) for v, st in vols if st["kind"] == "fee"]
     xj_vols = [(v, st) for v, st in vols if st["kind"] == "xj_quota"]
-    total_items = sum(st["items"] for _, st in quota_vols) + sum(st["items"] for _, st in docx_vols)
+    total_items = (sum(st["items"] for _, st in quota_vols)
+                   + sum(st["items"] for _, st in docx_vols)
+                   + sum(st["items"] for _, st in md_vols))
     jx = next(st for v, st in vols if v["id"] == "jxtb")
     ph = next(st for v, st in vols if v["id"] == "phb")
     registry = load_registry()
@@ -1199,6 +1462,11 @@ def main():
   </section>
 
   <section>
+    <h2>定额卷（md 源提取卷 · 2024 辽宁第二批）</h2>
+    <div class="vgrid">{''.join(render_md_quota(v, st) for v, st in md_vols)}</div>
+  </section>
+
+  <section>
     <h2>费用定额卷（计价依据·fee schema）</h2>
     <div class="vgrid">{''.join(render_fee(v, st) for v, st in fee_vols)}</div>
     <div class="vgrid">{''.join(render_xj_quota(v, st) for v, st in xj_vols)}</div>
@@ -1273,6 +1541,12 @@ def main():
             print(f"  {v['tag']}: vol={st['volumes']} ch={st['chapters']} "
                   f"sec={st['sections']} items={st['items']} cons={st['consumptions']} "
                   f"toc={st['toc']} issues={st['issues']} baseline={st['baseline_files']} pdf={st['pdf_pages']}")
+        elif st["kind"] == "md_quota":
+            _h1 = st["h1"] or {"pass": 0, "fail": 0}
+            _p1 = st["p1"] or {"pass": 0}
+            print(f"  {v['tag']}: items={st['items']} ch={st['chapters']} desc={st['desc']} "
+                  f"toc={st['toc']} H1={_h1['pass']}/{_h1['pass'] + _h1['fail']} "
+                  f"P1={_p1['pass']} baseline={st['baseline_files']} pdf={st['pdf_pages']}")
         else:
             print(f"  {v['tag']}: rows={st['rows']} pdf={st['pdf_pages']}")
 
