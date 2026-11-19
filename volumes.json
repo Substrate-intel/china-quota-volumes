@@ -71,8 +71,8 @@
      "label": "通用安装·第一册 机械设备",
      "province": "辽宁",
      "db": "liaoning-2024/quota-extract-jx/db_pdf/jx_quota.db",
-     "sha256": "8dd4b9e45e4b7215c02288a3e2dba5c0cb0c3ffe012c3b2ff75c46d3da1f09ef",
-     "bytes": 1363968,
+     "sha256": "392ca402a4d40dfb878e8a39ec5b62c63e0833a535d284aa46ca992b8dfc5266",
+     "bytes": 1372160,
      "items": 1371
     },
     {
@@ -91,8 +91,8 @@
      "label": "通用安装·第三册 静置设备",
      "province": "辽宁",
      "db": "liaoning-2024/quota-extract-jz/db_pdf/jz_quota.db",
-     "sha256": "fe286957293d220737ec5fbbcc0af0fb1aa65cc8d170dd9271383cfe228849cc",
-     "bytes": 1982464,
+     "sha256": "7bc00b4093d7cd4e2c010b4923e996974a13d13f0da88137b61a0eec4a0c81ef",
+     "bytes": 1990656,
      "items": 1889
     },
     {
@@ -101,8 +101,8 @@
      "label": "市政定额·第七册 生活垃圾处理工程",
      "province": "辽宁",
      "db": "liaoning-2024/quota-extract-lj/db_pdf/lj_quota.db",
-     "sha256": "e50b6634efa0e033b3d5d8357c0da8f4aabc13a838e430c766d71542176d5837",
-     "bytes": 208896,
+     "sha256": "60634f9e22fc765c312a190ba7b335821d1d886f308eae5a60b65c8aa2a4aecd",
+     "bytes": 217088,
      "items": 177
     },
     {
@@ -131,8 +131,8 @@
      "label": "市政定额·第三册 桥涵工程",
      "province": "辽宁",
      "db": "liaoning-2024/quota-extract-qh/db_pdf/qh_quota.db",
-     "sha256": "c9ed3cb541c1d826f7bde83b7634aa80b843851fd6886b2d44607454512af194",
-     "bytes": 491520,
+     "sha256": "bc0d7393f7faf4f3467cb4d125014bee7597f0cbd44cfcc5796b85490a61cfa3",
+     "bytes": 499712,
      "items": 670
     },
     {
@@ -141,8 +141,8 @@
      "label": "通用安装·第二册 热力设备",
      "province": "辽宁",
      "db": "liaoning-2024/quota-extract-rl/db_pdf/rl_quota.db",
-     "sha256": "177c1ffdf5623120fd2603dcd2b3ab88dd1660ba3a452e9e0d85d99e388f1ed5",
-     "bytes": 1277952,
+     "sha256": "f1089138cfc34f1333c80f7a0530c1758b79b21bbd00b4dcb951adb87c5ee601",
+     "bytes": 1286144,
      "items": 824
     },
     {
@@ -151,8 +151,8 @@
      "label": "市政定额·第六册 水处理工程",
      "province": "辽宁",
      "db": "liaoning-2024/quota-extract-scl/db_pdf/scl_quota.db",
-     "sha256": "e26aa70574e0ce33dfc922f4e6c0fc810c46631bf97e72f1cfeac62684b4b4ba",
-     "bytes": 716800,
+     "sha256": "d7152a8395de34fa47584c0ac3589fe1f770537f3df4492e515bf6baeeea30f4",
+     "bytes": 724992,
      "items": 694
     },
     {
@@ -161,8 +161,8 @@
      "label": "市政定额·第四册 隧道工程",
      "province": "辽宁",
      "db": "liaoning-2024/quota-extract-sd/db_pdf/sd_quota.db",
-     "sha256": "a12e3b734ea877007f1405055c8cb856ec31c8f216375c4eb56b72a55fac89e7",
-     "bytes": 630784,
+     "sha256": "f2dc8ca56ae3848e3d674a4135bb41a6923470c3e314c983b4c63a11affefec9",
+     "bytes": 638976,
      "items": 673
     },
     {
@@ -211,8 +211,8 @@
      "label": "市政定额·第九册 钢筋工程",
      "province": "辽宁",
      "db": "liaoning-2024/quota-extract-sz09/db_pdf/sz09_quota.db",
-     "sha256": "5a20827cebd00fc7bed8141ac129a334bda817acf165d95728f4ad2ea17b31c4",
-     "bytes": 163840,
+     "sha256": "a1b5b245b96a377cf110f7d23001dd599194b62c459264ee342feed4ebf7c7f3",
+     "bytes": 172032,
      "items": 151
     },
     {
@@ -241,8 +241,8 @@
      "label": "通用安装·第七册 通风空调",
      "province": "辽宁",
      "db": "liaoning-2024/quota-extract-tf/db_pdf/tf_quota.db",
-     "sha256": "1a49981e382e31b0617dc73a2b9f8ed9e61cc7d5e03e809c69484d415673799f",
-     "bytes": 487424,
+     "sha256": "d893a6e6e6dd1b044c79bfcce803f17adfbed0145122cf0bb0f3e46e38b53acb",
+     "bytes": 495616,
      "items": 501
     },
     {
@@ -251,8 +251,8 @@
      "label": "通用安装·第十一册 信息通信",
      "province": "辽宁",
      "db": "liaoning-2024/quota-extract-xtx/db_pdf/xtx_quota.db",
-     "sha256": "1b1c32b1602619e47d2ddb39a7dfe7363114e81f3d10b349c2c5f5fa14ccc837",
-     "bytes": 352256,
+     "sha256": "b3cdca769169c785beb86288144262874c0192b75e9b38f5eb7b892c32fdbea1",
+     "bytes": 360448,
      "items": 493
     },
     {
@@ -261,8 +261,8 @@
      "label": "通用安装·第六册 自控仪表",
      "province": "辽宁",
      "db": "liaoning-2024/quota-extract-yb/db_pdf/yb_quota.db",
-     "sha256": "9cc450ab442f42566383ddfc2c7eb10d978c3345d3bbe0eb0be07f94dc2b2580",
-     "bytes": 856064,
+     "sha256": "20c0231e62f788d8a6c8686ee34e40c1e342b9295c62ae35356f409e682ab76d",
+     "bytes": 864256,
      "items": 956
     },
     {
@@ -281,8 +281,8 @@
      "label": "通用安装·第五册 建筑智能化",
      "province": "辽宁",
      "db": "liaoning-2024/quota-extract-zn/db_pdf/zn_quota.db",
-     "sha256": "6f317d0b2b7db843acb1d828c975cf55e7067d58ce6b88fa51ffb532825d7df8",
-     "bytes": 516096,
+     "sha256": "4f60939d7405019b4f658d8905904f0fc689ef1c119d25b039cb1e2523154612",
+     "bytes": 524288,
      "items": 1019
     },
     {
@@ -291,8 +291,8 @@
      "label": "装配式建筑工程定额",
      "province": "辽宁",
      "db": "liaoning-2024/quota-extract-zzs/db_pdf/zzs_quota.db",
-     "sha256": "868aaac0a8a588922702dfecc3fa6c48fe8397d98a1bdef2d01f83ffc6995404",
-     "bytes": 278528,
+     "sha256": "203e575261222a4d4116f70fc16eecd5f5a3b38be1b7e28b884a5bcedcd8fdf9",
+     "bytes": 286720,
      "items": 251
     }
    ]
