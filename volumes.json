@@ -66,6 +66,16 @@
      "items": 104
     },
     {
+     "key": "gy",
+     "kind": "quota",
+     "label": "通用安装·第八册 工业管道",
+     "province": "辽宁",
+     "db": "liaoning-2024/quota-extract-gy/db_pdf/gy_quota.db",
+     "sha256": "ede6984413bd81f57beb582eaf250b5e545775c56c90f68f895885503ffc45d7",
+     "bytes": 3321856,
+     "items": 2999
+    },
+    {
      "key": "jx",
      "kind": "quota",
      "label": "通用安装·第一册 机械设备",

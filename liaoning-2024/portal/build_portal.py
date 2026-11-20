@@ -688,6 +688,17 @@ VOLUMES = [
         "source_sha12": "7550e395520e",
     },
     {
+        "id": "gy",
+        "kind": "md_quota",
+        "tag": "安装·第八册 工业管道",
+        "name": "辽宁省建设工程计价依据《通用安装工程定额·第八册 工业管道安装工程》(2024)",
+        "dir": "quota-extract-gy",
+        "report": None,
+        "pdf": "input/nowm.pdf",
+        "official_id": "1773817916889781",
+        "source_sha12": "7fccbd839639",
+    },
+    {
         "id": "fy",
         "kind": "fee",
         "tag": "费用标准·取费费率",
