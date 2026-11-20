@@ -1,8 +1,8 @@
 {
  "out/xj12_source.md": "288c925fe57d11ac6c42942dcf723072ec1b3b542779a0c3fb10cdc0d4e2895f",
  "out/convert_meta.json": "e7b18010487ab915939d6f31ddcd92736166d8a382b0c269465a211032ac44d5",
- "out/parse_fee.json": "b71dfa5b1b04ea5c896366d3bb478851fee9c24d55e22d9d4be96169b838b954",
- "out/xj12_quota.db": "4f9833b6fbe341b7422bb9977b4cf0ba4bb7cc0b74eaa47af98ce9f1b20d60c4",
- "web/index.html": "a5e5f91c58a53e5cbc5b8b0c72ca72cd76d52e986b1f7ef0da28ca21ddf1de30",
+ "out/parse_fee.json": "d234cfbbeea9c6967ec547ec04feec214c063be5b3115906da8f6849721c37aa",
+ "out/xj12_quota.db": "effe02b334fb6020dcd260674742d96c42ac0d7bee8f3f0507d1f7af02fabb9a",
+ "web/index.html": "72d7461f1cdbcecc5a758458dbb3755548399c5f34f613baf815f5491b1a3b10",
  "web/template.html": "c4db906db94173e5bc7bb9322fe1ae705ed22a5987a1c6f2c9b14198e66573eb"
 }

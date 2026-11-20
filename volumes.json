@@ -347,8 +347,8 @@
      "label": "新疆市政工程消耗量定额（一）（OCR双源）",
      "province": "新疆",
      "db": "xinjiang-2020/quota-extract-xj10/db_pdf/xj10_quota.db",
-     "sha256": "c0f0a83a7cda8a8090ab99504ecf9266aeb918f2160ea714924d2d0696cada96",
-     "bytes": 1552384,
+     "sha256": "c3c86baaa08eee73104394fbe19cc49722222f7e366db7e89fcb7027e5d8a898",
+     "bytes": 1560576,
      "items": 1800
     },
     {
@@ -357,7 +357,7 @@
      "label": "新疆市政工程消耗量定额（二）（本地OCR双源）",
      "province": "新疆",
      "db": "xinjiang-2020/quota-extract-xj11/db_pdf/xj11_quota.db",
-     "sha256": "0abf3f0cbe7ccb018cffa1b784acb428f52da7154d74b01a31394c5ffb3d2e36",
+     "sha256": "5cdf86c71fedba6e562d4a87eed43451ede3c39f41ea12d1ca2af31c1a991d1f",
      "bytes": 1368064,
      "items": 1281
     },
@@ -367,8 +367,8 @@
      "label": "新疆市政工程消耗量定额（三）（OCR双源）",
      "province": "新疆",
      "db": "xinjiang-2020/quota-extract-xj12/db_pdf/xj12_quota.db",
-     "sha256": "4f9833b6fbe341b7422bb9977b4cf0ba4bb7cc0b74eaa47af98ce9f1b20d60c4",
-     "bytes": 1847296,
+     "sha256": "effe02b334fb6020dcd260674742d96c42ac0d7bee8f3f0507d1f7af02fabb9a",
+     "bytes": 1851392,
      "items": 1683
     },
     {
@@ -377,7 +377,7 @@
      "label": "新疆市政工程消耗量定额（四）（OCR双源）",
      "province": "新疆",
      "db": "xinjiang-2020/quota-extract-xj13/db_pdf/xj13_quota.db",
-     "sha256": "c316a64f4f708b2e99da6e5bca4a4871e4902abc25f9034e0191891782d940c2",
+     "sha256": "19ac45e2a7297edd2c4ee3e5f05b8b4850076b112fc3e827c545ff22453c8630",
      "bytes": 1945600,
      "items": 1370
     },
@@ -387,7 +387,7 @@
      "label": "新疆市政工程消耗量定额（五）（OCR双源）",
      "province": "新疆",
      "db": "xinjiang-2020/quota-extract-xj14/db_pdf/xj14_quota.db",
-     "sha256": "0a0b43177fe2cb4486bc2959c038e5f1a76f6bf0ef3d1ce51c6eaff4058a40c0",
+     "sha256": "1e0455bf082e7fe2091806eed6c2694bf49d6aa847cc0fc08b02c4bc4401af15",
      "bytes": 1323008,
      "items": 950
     },
@@ -397,8 +397,8 @@
      "label": "新疆安装工程补充消耗量定额（OCR双源）",
      "province": "新疆",
      "db": "xinjiang-2020/quota-extract-xj15/db_pdf/xj15_quota.db",
-     "sha256": "7bd15c0552d4cc1169daa6a8e35558b1557efc2fbbb470151370677c89b51938",
-     "bytes": 475136,
+     "sha256": "a1fec9a1b0dbac31c49991e7ed9d3f5c919afd90ed389c75356d8bbbe5623d34",
+     "bytes": 466944,
      "items": 318
     },
     {
