@@ -1,13 +1,13 @@
 {
  "md_extract_full.json": "d7ccacbb153cb1d66e884e12b1b91a02a1c3440cbb7d1736e1bbe452b4ae386c",
  "md_index.json": "071bc1222eb1d5c6848c71b11ca734020aaa04e246af452038e5589340acc03e",
- "scl_items.json": "ed134404ce37a8cbc4b4a827382a3cadca27f775c7eb3c8d04090f5c322da616",
+ "scl_items.json": "c72a25f98a5767c6a36c6b7c4a5ede9f71b1caac3d2ad376206a2e01888a5858",
  "scl_toc.json": "3a990125f682fc2a9507c8dbdcb8001435eab5ac1b3e4d1b0c5bf1f19cec6e62",
  "scl_desc_rules.json": "d58863ed33ea41b9a9abb07ab7e43cf96bab2265f74fb67576c977457121fdc7",
- "scl_quota.db": "d7152a8395de34fa47584c0ac3589fe1f770537f3df4492e515bf6baeeea30f4",
- "cost_check_report.json": "730380dcafe0b1c4e05b91a93afeb5947bbaebf016a6230811decd7e64906c09",
+ "scl_quota.db": "e3513548eacdb1139370d5fe1392d81a8582bda3c521bb0aef30dd948343b100",
+ "cost_check_report.json": "8018d905e027a73807e3806a906ef0fc83ea3fa0d187200c3afe8962ee3cc888",
  "_web_data.json": "f9ad97783b0a45adde24ce858eb25b7ff28aed2a4096ec06c98a4fb53f7480b2",
- "index.html": "2f50e366926665d99b97aff602d139519d467340afb7542375601c945e1c68f0",
+ "index.html": "0d6d973877ce06db03923eaa6d6025e4c9d87f69b140efd4144078046b71b569",
  "_anchors": {
   "nowm_pdf_sha12": "e805b5b182ce",
   "wm_pdf_sha12": "bbd6338cc4c9"

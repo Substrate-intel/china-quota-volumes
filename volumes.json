@@ -31,7 +31,7 @@
      "label": "安装工程定额·消防工程（md源提取）",
      "province": "辽宁",
      "db": "liaoning-2024/quota-extract-az09/db_pdf/az09_quota.db",
-     "sha256": "e266aa8c0a4fe85498603f432823ef98ea5107e1e8e50d8758925ec99e182310",
+     "sha256": "8f7e40f080595c8ef89da5ca291bc5b48a5533ab849dd4537f8516b30c4cf1ec",
      "bytes": 344064,
      "items": 286
     },
@@ -81,8 +81,8 @@
      "label": "通用安装·第一册 机械设备",
      "province": "辽宁",
      "db": "liaoning-2024/quota-extract-jx/db_pdf/jx_quota.db",
-     "sha256": "392ca402a4d40dfb878e8a39ec5b62c63e0833a535d284aa46ca992b8dfc5266",
-     "bytes": 1372160,
+     "sha256": "15417bf6dc3e01e1dff8b069020cfa0b87f8d0e211020b9e539f0962d14bd1f8",
+     "bytes": 1363968,
      "items": 1371
     },
     {
@@ -101,8 +101,8 @@
      "label": "通用安装·第三册 静置设备",
      "province": "辽宁",
      "db": "liaoning-2024/quota-extract-jz/db_pdf/jz_quota.db",
-     "sha256": "7bc00b4093d7cd4e2c010b4923e996974a13d13f0da88137b61a0eec4a0c81ef",
-     "bytes": 1990656,
+     "sha256": "18afa1b6136066413e04b84b2aa8cf155882671fce566235109ffd2f83b1c9cd",
+     "bytes": 1982464,
      "items": 1889
     },
     {
@@ -111,8 +111,8 @@
      "label": "市政定额·第七册 生活垃圾处理工程",
      "province": "辽宁",
      "db": "liaoning-2024/quota-extract-lj/db_pdf/lj_quota.db",
-     "sha256": "60634f9e22fc765c312a190ba7b335821d1d886f308eae5a60b65c8aa2a4aecd",
-     "bytes": 217088,
+     "sha256": "07aad084c26ceeedfa4aef901f2f1177f80ff530a65056e1a79af24e2d167601",
+     "bytes": 208896,
      "items": 177
     },
     {
@@ -121,7 +121,7 @@
      "label": "绿色建筑工程定额（md源提取）",
      "province": "辽宁",
      "db": "liaoning-2024/quota-extract-lvse/db_pdf/lvse_quota.db",
-     "sha256": "d9cfea9fab51129920a4f438b75ea022ac6785f652cbb56469bcbf858049a670",
+     "sha256": "6133fd5ef0e7f4c30ef4143fa030be9e2d8845b28be96867050195071a37a63f",
      "bytes": 425984,
      "items": 487
     },
@@ -141,8 +141,8 @@
      "label": "市政定额·第三册 桥涵工程",
      "province": "辽宁",
      "db": "liaoning-2024/quota-extract-qh/db_pdf/qh_quota.db",
-     "sha256": "bc0d7393f7faf4f3467cb4d125014bee7597f0cbd44cfcc5796b85490a61cfa3",
-     "bytes": 499712,
+     "sha256": "aef3066aa6b199a64f4d5351f11ec0b0e9c8f833dff4c104e9b4a6220d10ceb1",
+     "bytes": 491520,
      "items": 670
     },
     {
@@ -151,8 +151,8 @@
      "label": "通用安装·第二册 热力设备",
      "province": "辽宁",
      "db": "liaoning-2024/quota-extract-rl/db_pdf/rl_quota.db",
-     "sha256": "f1089138cfc34f1333c80f7a0530c1758b79b21bbd00b4dcb951adb87c5ee601",
-     "bytes": 1286144,
+     "sha256": "ce82ad38dbe996a2a7ee9211cc1c29202dbf13dffe9eb45054ef26e631d653d3",
+     "bytes": 1273856,
      "items": 824
     },
     {
@@ -161,8 +161,8 @@
      "label": "市政定额·第六册 水处理工程",
      "province": "辽宁",
      "db": "liaoning-2024/quota-extract-scl/db_pdf/scl_quota.db",
-     "sha256": "d7152a8395de34fa47584c0ac3589fe1f770537f3df4492e515bf6baeeea30f4",
-     "bytes": 724992,
+     "sha256": "e3513548eacdb1139370d5fe1392d81a8582bda3c521bb0aef30dd948343b100",
+     "bytes": 716800,
      "items": 694
     },
     {
@@ -171,8 +171,8 @@
      "label": "市政定额·第四册 隧道工程",
      "province": "辽宁",
      "db": "liaoning-2024/quota-extract-sd/db_pdf/sd_quota.db",
-     "sha256": "f2dc8ca56ae3848e3d674a4135bb41a6923470c3e314c983b4c63a11affefec9",
-     "bytes": 638976,
+     "sha256": "3d4126d9b45343f61303d1ac7a0c32f8393a8965a9427fd81df70782dcfc683b",
+     "bytes": 630784,
      "items": 673
     },
     {
@@ -191,7 +191,7 @@
      "label": "市政工程定额·第二册 道路工程（md源提取）",
      "province": "辽宁",
      "db": "liaoning-2024/quota-extract-sz02/db_pdf/sz02_quota.db",
-     "sha256": "36756e4f5efb2a93aac80f7a21f4d8a62113af31a34b6a9c5c0bbad8e291163d",
+     "sha256": "abfaacf2b6162447846f43d9e821ffbd973bc35216e137dadbd390183f6c9863",
      "bytes": 479232,
      "items": 650
     },
@@ -211,7 +211,7 @@
      "label": "市政工程定额·第八册 路灯工程（md源提取）",
      "province": "辽宁",
      "db": "liaoning-2024/quota-extract-sz08/db_pdf/sz08_quota.db",
-     "sha256": "cfe502f161416765cdb50a41b2d041bd16e69897b86e96108c7b06494cebd0ad",
+     "sha256": "1211402da88f60d32674ef4c4ccb1b0a10b03654261bac7714c0da2ed7b45f3b",
      "bytes": 479232,
      "items": 516
     },
@@ -221,8 +221,8 @@
      "label": "市政定额·第九册 钢筋工程",
      "province": "辽宁",
      "db": "liaoning-2024/quota-extract-sz09/db_pdf/sz09_quota.db",
-     "sha256": "a1b5b245b96a377cf110f7d23001dd599194b62c459264ee342feed4ebf7c7f3",
-     "bytes": 172032,
+     "sha256": "8f73293dfb8e8fd84d96ab810cb1551b25766e2599dc0fdd5b652c6765ecf4b9",
+     "bytes": 163840,
      "items": 151
     },
     {
@@ -241,7 +241,7 @@
      "label": "市政工程定额·第十一册 措施项目（md源提取）",
      "province": "辽宁",
      "db": "liaoning-2024/quota-extract-sz11/db_pdf/sz11_quota.db",
-     "sha256": "04e97d06b3227ae3ca2686a3457a8b67bb78f3294ed699ebdebb3d80759f8dc6",
+     "sha256": "17616578066e15bd749c71ce564bf7d4fe08f90662db7330a3f1a81dba3fa1c2",
      "bytes": 421888,
      "items": 470
     },
@@ -251,8 +251,8 @@
      "label": "通用安装·第七册 通风空调",
      "province": "辽宁",
      "db": "liaoning-2024/quota-extract-tf/db_pdf/tf_quota.db",
-     "sha256": "d893a6e6e6dd1b044c79bfcce803f17adfbed0145122cf0bb0f3e46e38b53acb",
-     "bytes": 495616,
+     "sha256": "2829df20af773ef1df0523a6eb35d3b100b7a971d97c7afc10cc9c80e4afd11e",
+     "bytes": 487424,
      "items": 501
     },
     {
@@ -261,8 +261,8 @@
      "label": "通用安装·第十一册 信息通信",
      "province": "辽宁",
      "db": "liaoning-2024/quota-extract-xtx/db_pdf/xtx_quota.db",
-     "sha256": "b3cdca769169c785beb86288144262874c0192b75e9b38f5eb7b892c32fdbea1",
-     "bytes": 360448,
+     "sha256": "acfc7e3a68ef7c0524903012e8ea0ee69038750d5b6717bf9ace94b00d117131",
+     "bytes": 352256,
      "items": 493
     },
     {
@@ -271,8 +271,8 @@
      "label": "通用安装·第六册 自控仪表",
      "province": "辽宁",
      "db": "liaoning-2024/quota-extract-yb/db_pdf/yb_quota.db",
-     "sha256": "20c0231e62f788d8a6c8686ee34e40c1e342b9295c62ae35356f409e682ab76d",
-     "bytes": 864256,
+     "sha256": "68cee6b25a0f53ce6d3c74dfcacfd57e0128780c9b1c9100030356b63f2cb311",
+     "bytes": 856064,
      "items": 956
     },
     {
@@ -281,7 +281,7 @@
      "label": "园林绿化工程定额（md源提取）",
      "province": "辽宁",
      "db": "liaoning-2024/quota-extract-yl01/db_pdf/yl01_quota.db",
-     "sha256": "f4c237c65775567e5cb76b6c9fd9e1f961de6b062dcfd3d5b9c790c4599260e9",
+     "sha256": "fa09a6fb95ef8874cd444d69397266a53c060cc3b103e65e28634674268e10a3",
      "bytes": 520192,
      "items": 889
     },
@@ -291,8 +291,8 @@
      "label": "通用安装·第五册 建筑智能化",
      "province": "辽宁",
      "db": "liaoning-2024/quota-extract-zn/db_pdf/zn_quota.db",
-     "sha256": "4f60939d7405019b4f658d8905904f0fc689ef1c119d25b039cb1e2523154612",
-     "bytes": 524288,
+     "sha256": "e85c251094f94710f7b405a45177012ecafa516f762c8ed02e57488a0403749f",
+     "bytes": 516096,
      "items": 1019
     },
     {
@@ -301,8 +301,8 @@
      "label": "装配式建筑工程定额",
      "province": "辽宁",
      "db": "liaoning-2024/quota-extract-zzs/db_pdf/zzs_quota.db",
-     "sha256": "203e575261222a4d4116f70fc16eecd5f5a3b38be1b7e28b884a5bcedcd8fdf9",
-     "bytes": 286720,
+     "sha256": "e4638316975aa0b3ba7b3f84dd0a6dda45649d49aa8e4e2fe1331336ba55bde2",
+     "bytes": 278528,
      "items": 251
     }
    ]
@@ -317,7 +317,7 @@
      "label": "新疆房屋建筑与装饰消耗量定额·上册（OCR双源）",
      "province": "新疆",
      "db": "xinjiang-2020/quota-extract-xj01/db_pdf/xj01_quota.db",
-     "sha256": "58f4e8134eeb61643c5906938291f37ec27713246218d4c19a75fd68239b1ce1",
+     "sha256": "df0fbf869aa65a0141e7e7d215e930b477b8b4db6fd80ab94b365c7ae4d624f4",
      "bytes": 1433600,
      "items": 1760
     },
@@ -327,7 +327,7 @@
      "label": "新疆房屋建筑与装饰消耗量定额·下册（OCR双源）",
      "province": "新疆",
      "db": "xinjiang-2020/quota-extract-xj02/db_pdf/xj02_quota.db",
-     "sha256": "b16e807b1b7246a1c50def8388a9aa2354ef7c859ec0bc07153a6451a1391136",
+     "sha256": "b3bfb76a0660ece482e4c7137e1b26e12567ec79a73dc35d85533862167b4feb",
      "bytes": 1048576,
      "items": 1296
     },
@@ -347,8 +347,8 @@
      "label": "新疆市政工程消耗量定额（一）（OCR双源）",
      "province": "新疆",
      "db": "xinjiang-2020/quota-extract-xj10/db_pdf/xj10_quota.db",
-     "sha256": "d242eb5e320233ea5b68c2c9cca91d3703c58275149b3baf535769073830e5fb",
-     "bytes": 1572864,
+     "sha256": "c0f0a83a7cda8a8090ab99504ecf9266aeb918f2160ea714924d2d0696cada96",
+     "bytes": 1552384,
      "items": 1800
     },
     {
@@ -357,8 +357,8 @@
      "label": "新疆市政工程消耗量定额（二）（本地OCR双源）",
      "province": "新疆",
      "db": "xinjiang-2020/quota-extract-xj11/db_pdf/xj11_quota.db",
-     "sha256": "e4898652476bc85ba9ba67105c91ae92aa2f7ebcb7a6d67ce7468753a7c798d5",
-     "bytes": 1388544,
+     "sha256": "0abf3f0cbe7ccb018cffa1b784acb428f52da7154d74b01a31394c5ffb3d2e36",
+     "bytes": 1368064,
      "items": 1281
     },
     {
@@ -367,8 +367,8 @@
      "label": "新疆市政工程消耗量定额（三）（OCR双源）",
      "province": "新疆",
      "db": "xinjiang-2020/quota-extract-xj12/db_pdf/xj12_quota.db",
-     "sha256": "35a56cc84b6be6756cb1555dfbf4c19ff95687a2d16a61e2c31f13957e9fdfaa",
-     "bytes": 1859584,
+     "sha256": "4f9833b6fbe341b7422bb9977b4cf0ba4bb7cc0b74eaa47af98ce9f1b20d60c4",
+     "bytes": 1847296,
      "items": 1683
     },
     {
@@ -377,8 +377,8 @@
      "label": "新疆市政工程消耗量定额（四）（OCR双源）",
      "province": "新疆",
      "db": "xinjiang-2020/quota-extract-xj13/db_pdf/xj13_quota.db",
-     "sha256": "0cbbddb918ede012a4e5ba490911ceed066966b9fc5343138c4bcbabf04243e9",
-     "bytes": 1953792,
+     "sha256": "c316a64f4f708b2e99da6e5bca4a4871e4902abc25f9034e0191891782d940c2",
+     "bytes": 1945600,
      "items": 1370
     },
     {
@@ -387,7 +387,7 @@
      "label": "新疆市政工程消耗量定额（五）（OCR双源）",
      "province": "新疆",
      "db": "xinjiang-2020/quota-extract-xj14/db_pdf/xj14_quota.db",
-     "sha256": "fc0bd2f985d6c83c282851d55d10dde6302a2f7680c5096645ca3dba8fc3a0d6",
+     "sha256": "0a0b43177fe2cb4486bc2959c038e5f1a76f6bf0ef3d1ce51c6eaff4058a40c0",
      "bytes": 1323008,
      "items": 950
     },
@@ -397,8 +397,8 @@
      "label": "新疆安装工程补充消耗量定额（OCR双源）",
      "province": "新疆",
      "db": "xinjiang-2020/quota-extract-xj15/db_pdf/xj15_quota.db",
-     "sha256": "c6e16fb76f5dffaa0866fad2f9c56d773c396394443dca2fa6f50d1f2ce8ba6a",
-     "bytes": 466944,
+     "sha256": "7bd15c0552d4cc1169daa6a8e35558b1557efc2fbbb470151370677c89b51938",
+     "bytes": 475136,
      "items": 318
     },
     {
