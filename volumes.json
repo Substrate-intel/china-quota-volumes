@@ -500,7 +500,7 @@
     {
      "key": "gd18",
      "kind": "quota",
-     "label": "广东省建设工程计价依据(2018)·定额全册与48期动态调整",
+     "label": "广东省建设工程计价依据(2018)·定额全册（含动态调整新增子目）",
      "province": "广东",
      "db": "guangdong-2018/quota-extract-gd18/db_pdf/gd18_structure.db",
      "sha256": "bb511876e3ae3e35008b112e5efc2cf828fcc11d4d0f35274b9dd888a7e8a0ed",
