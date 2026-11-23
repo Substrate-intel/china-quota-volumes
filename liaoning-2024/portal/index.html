@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>辽宁省计价依据·文件库总览 (2024)</title>
+<title>全国建设工程计价依据 · 文件库总览</title>
 <style>
 :root{--bg:#f6f7f9;--panel:#fff;--line:#e5e7eb;--ink:#111827;--ink2:#6b7280;
 --accent:#1d4ed8;--accentbg:#eff6ff;--green:#16a34a;--greenbg:#f0fdf4;
@@ -23,6 +23,10 @@ h1{font-size:19px;font-weight:700}
 .card .t{font-size:11px;color:var(--ink2)}
 section{margin-top:26px}
 h2{font-size:15px;font-weight:700;margin-bottom:10px;padding-left:9px;border-left:4px solid var(--accent)}
+.region{margin-top:30px}
+.region-head{display:flex;align-items:baseline;gap:12px;padding:12px 16px;margin-bottom:14px;background:var(--panel);border:1px solid var(--line);border-left:5px solid var(--accent);border-radius:10px}
+.region-name{font-size:18px;font-weight:800;color:var(--accent)}
+.region-count{font-size:12.5px;color:var(--ink2)}
 .vgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 @media(max-width:860px){.vgrid{grid-template-columns:1fr}}
 .vcard{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
@@ -61,22 +65,20 @@ footer{margin-top:34px;color:var(--ink2);font-size:11px;text-align:center;line-h
 </head>
 <body>
 <header><div class="h-in">
-  <h1>辽宁省建设工程计价依据 · 文件库总览（2024）</h1>
-  <span class="h-sub">并列文件识别提取情况与成果库入口 ｜ 双击即开 ｜ 指标现查渲染</span>
+  <h1>全国建设工程计价依据 · 文件库总览</h1>
+  <span class="h-sub">并列文件识别提取情况与成果库入口 ｜ 双击即开 ｜ 指标现查渲染 ｜ 按省份分区</span>
 </div></header>
 <div class="wrap">
   <div class="cards">
-    <div class="card"><div class="n b">48</div><div class="t">计价依据文件（全独立）</div></div>
-    <div class="card"><div class="n b">32642</div><div class="t">定额子目合计</div></div>
+    <div class="card"><div class="n b">49</div><div class="t">计价依据文件（全独立）</div></div>
+    <div class="card"><div class="n b">58986</div><div class="t">定额子目合计</div></div>
     <div class="card"><div class="n g">1546</div><div class="t">台班单价（机械+仪表）</div></div>
     <div class="card"><div class="n g">382</div><div class="t">配合比组</div></div>
-    <div class="card"><div class="n">48</div><div class="t">独立成果库前端</div></div>
+    <div class="card"><div class="n">49</div><div class="t">独立成果库前端</div></div>
     <div class="card"><div class="n" style="color:var(--amber)">0</div><div class="t">未识别名目（官方 30 份清单内）</div></div>
   </div>
 
-  <section>
-    <h2>定额卷（章节树前端）</h2>
-    <div class="vgrid">
+  <section class="region"><div class="region-head"><span class="region-name">辽宁</span><span class="region-count">30 份计价依据文件 ｜ 29690 定额子目</span></div><h2>定额卷（章节树前端）</h2><div class='vgrid'>
 <div class="vcard">
   <div class="vhead"><span class="vtitle">房建装饰卷</span>
     <span class="badge g">已收官 · gate 全绿</span>
@@ -184,12 +186,7 @@ footer{margin-top:34px;color:var(--ink2);font-size:11px;text-align:center;line-h
   <div class="qrow"><span class="qchip warn">unit 空值 <b>4</b></span><span class="qchip bad">H3 fail <b>6</b></span><span class="qchip ">H3 skip(库缺口·反推三表承接) <b>152</b></span><span class="qchip warn">疑点 open <b>507</b></span><span class="qchip warn">缺价反推 open <b>9</b></span><span class="qchip ">勘误 overlay <b>1</b></span></div>
   <div class="links"><a class="lbtn" href="quota-extract-sz05/web/index.html">识别成果库·章节树前端</a><a class="lbtn ghost" href="quota-extract-sz05/out/quota_ln2024.db">SQLite 成果库</a><a class="lbtn ghost" href="quota-extract-sz05/out/SZ05_交付报告_覆盖清单与人工复核.md">交付报告</a></div>
   <div class="meta">库生成：2026-10-14T15:50:56 ｜ 目录 quota-extract-sz05/ ｜ 管线：忠实层(fitz 按字体坐标归位)→语义映射→附注规则→勘误 overlay→校验→章节结构→建库(行数+外键+交叉对账门控)</div>
-</div></div>
-  </section>
-
-  <section>
-    <h2>定额卷（docx 提取卷）</h2>
-    <div class="vgrid">
+</div></div><h2>定额卷（docx 提取卷）</h2><div class='vgrid'>
 <div class="vcard">
   <div class="vhead"><span class="vtitle">安装卷·消防册（md源提取）</span>
     <span class="badge g">已收官 · 九门全绿</span>
@@ -315,48 +312,7 @@ footer{margin-top:34px;color:var(--ink2);font-size:11px;text-align:center;line-h
   <div class="links"><a class="lbtn" href="quota-extract-yl01/web/index.html">识别成果库·章节树前端（提取卷）</a><a class="lbtn ghost" href="quota-extract-yl01/out/yl01_quota.db">SQLite 成果库</a><a class="lbtn ghost" href="quota-extract-yl01/交付报告_yl01_园林绿化工程.md">交付报告</a></div>
   <div class="meta">库生成： ｜ 目录 quota-extract-yl01/ ｜ 管线：docx 保真层→子目解析(列=子目/行=费用)→条文每条一记录→H1-H6 造价逻辑核验→P1 官方原版 PDF 取证→九门门控（docx-quota-extract skill）</div>
   
-</div>
-<div class="vcard">
-  <div class="vhead"><span class="vtitle">房建装饰上册（新疆2020·OCR双源）</span>
-    <span class="badge g">已收官 · 九门全绿</span>
-    <span class="vtag">官方PDF 357 页</span><span class="vtag">基线指纹 12 文件</span></div>
-  <div class="vname">新疆维吾尔自治区房屋建筑与装饰工程消耗量定额（上册）（2020版）</div>
-  <div class="ngrid">
-    <div class="num"><div class="n">1760</div><div class="t">定额子目</div></div>
-    <div class="num"><div class="n">1776</div><div class="t">人工条目</div></div>
-    <div class="num"><div class="n">2099</div><div class="t">机械条目</div></div>
-    <div class="num"><div class="n">7223</div><div class="t">材料条目</div></div>
-    <div class="num"><div class="n">483</div><div class="t">目录行</div></div>
-    <div class="num"><div class="n">193</div><div class="t">条文记录</div></div>
-  </div>
-  <div class="qrow"><span class="qchip ok">H1 <b>0/0</b></span><span class="qchip ok">P1 原版PDF取证 <b>1755</b></span><span class="qchip ok">unit 空值 <b>0</b></span><span class="qchip ok">H2/H3/H4 fail <b>0/0/0</b></span></div>
-  <div class="links"><a class="lbtn" href="quota-extract-xj01/web/index.html">识别成果库·章节树前端（提取卷）</a><a class="lbtn ghost" href="quota-extract-xj01/out/xj01_quota.db">SQLite 成果库</a><a class="lbtn ghost" href="quota-extract-xj01/交付报告_xj01_新疆房建装饰上册.md">交付报告</a><a class="lbtn ghost" href="https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/6f45ce7cc94e463ba43bd9536f52cb1f.shtml" target="_blank">官方发布依据 · 2020年 第145号</a></div>
-  <div class="meta">库生成： ｜ 目录 quota-extract-xj01/ ｜ 管线：docx 保真层→子目解析(列=子目/行=费用)→条文每条一记录→H1-H6 造价逻辑核验→P1 官方原版 PDF 取证→九门门控（docx-quota-extract skill）</div>
-  <div class="meta">官方依据：2020年 第145号（2020-10-28 发布，2021-04-01 施行） ｜ 同时停止使用：2010 建筑工程消耗量定额、2014 建筑安装工程补充消耗量定额（土建装饰部分）、2002 全国统一装饰装修工程预算定额、2012 新疆市政工程消耗量定额、2017 新疆钢结构工程消耗量定额、2018 绿色建筑工程消耗量定额相应内容</div>
-</div>
-<div class="vcard">
-  <div class="vhead"><span class="vtitle">房建装饰下册（新疆2020·OCR双源）</span>
-    <span class="badge g">已收官 · 九门全绿</span>
-    <span class="vtag">官方PDF 325 页</span><span class="vtag">基线指纹 12 文件</span></div>
-  <div class="vname">新疆维吾尔自治区房屋建筑与装饰工程消耗量定额（下册）（2020版）</div>
-  <div class="ngrid">
-    <div class="num"><div class="n">1296</div><div class="t">定额子目</div></div>
-    <div class="num"><div class="n">1282</div><div class="t">人工条目</div></div>
-    <div class="num"><div class="n">920</div><div class="t">机械条目</div></div>
-    <div class="num"><div class="n">7519</div><div class="t">材料条目</div></div>
-    <div class="num"><div class="n">483</div><div class="t">目录行</div></div>
-    <div class="num"><div class="n">185</div><div class="t">条文记录</div></div>
-  </div>
-  <div class="qrow"><span class="qchip ok">H1 <b>0/0</b></span><span class="qchip ok">P1 原版PDF取证 <b>1296</b></span><span class="qchip ok">unit 空值 <b>0</b></span><span class="qchip ok">H2/H3/H4 fail <b>0/0/0</b></span></div>
-  <div class="links"><a class="lbtn" href="quota-extract-xj02/web/index.html">识别成果库·章节树前端（提取卷）</a><a class="lbtn ghost" href="quota-extract-xj02/out/xj02_quota.db">SQLite 成果库</a><a class="lbtn ghost" href="quota-extract-xj02/交付报告_xj02_新疆房建装饰下册.md">交付报告</a><a class="lbtn ghost" href="https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/6f45ce7cc94e463ba43bd9536f52cb1f.shtml" target="_blank">官方发布依据 · 2020年 第145号</a></div>
-  <div class="meta">库生成： ｜ 目录 quota-extract-xj02/ ｜ 管线：docx 保真层→子目解析(列=子目/行=费用)→条文每条一记录→H1-H6 造价逻辑核验→P1 官方原版 PDF 取证→九门门控（docx-quota-extract skill）</div>
-  <div class="meta">官方依据：2020年 第145号（2020-10-28 发布，2021-04-01 施行） ｜ 同时停止使用：2010 建筑工程消耗量定额、2014 建筑安装工程补充消耗量定额（土建装饰部分）、2002 全国统一装饰装修工程预算定额、2012 新疆市政工程消耗量定额、2017 新疆钢结构工程消耗量定额、2018 绿色建筑工程消耗量定额相应内容</div>
-</div></div>
-  </section>
-
-  <section>
-    <h2>定额卷（md 源提取卷 · 2024 辽宁第二批）</h2>
-    <div class="vgrid">
+</div></div><h2>定额卷（md 源提取卷）</h2><div class='vgrid'>
 <div class="vcard">
   <div class="vhead"><span class="vtitle">市政·第九册 钢筋工程</span>
     <span class="badge g">已收官 · 九门全绿</span>
@@ -370,7 +326,7 @@ footer{margin-top:34px;color:var(--ink2);font-size:11px;text-align:center;line-h
     <div class="num"><div class="n">28</div><div class="t">目录行</div></div>
     <div class="num"><div class="n">25</div><div class="t">条文记录</div></div>
   </div>
-  <div class="qrow"><span class="qchip ok">H1 基价恒等式 <b>151/151</b></span><span class="qchip ok">P1 官方取证 <b>151</b></span><span class="qchip ok">unit 空值 <b>0</b></span><span class="qchip ok">H5 量纲 fail <b>0</b></span></div>
+  <div class="qrow"><span class="qchip ok">H1 基价恒等式 <b>151/151</b></span><span class="qchip ok">P1 官方取证 <b>151</b></span><span class="qchip ok">unit 空值 <b>0</b></span><span class="qchip bad">H5 量纲 fail <b>2</b></span></div>
   <div class="links"><a class="lbtn" href="quota-extract-sz09/web/index.html">识别成果库·章节树前端</a><a class="lbtn ghost" href="quota-extract-sz09/out/sz09_quota.db">SQLite 成果库</a></div>
   <div class="meta">目录 quota-extract-sz09/ ｜ 管线：去水印干净源→md 转换→子目/目录/条文解析→H1-H6 造价逻辑核验→P1 官方原版逐格取证→九门门控</div>
 </div>
@@ -523,7 +479,7 @@ footer{margin-top:34px;color:var(--ink2);font-size:11px;text-align:center;line-h
     <div class="num"><div class="n">171</div><div class="t">目录行</div></div>
     <div class="num"><div class="n">83</div><div class="t">条文记录</div></div>
   </div>
-  <div class="qrow"><span class="qchip ok">H1 基价恒等式 <b>1014/1014</b></span><span class="qchip ok">P1 官方取证 <b>1014</b></span><span class="qchip ok">unit 空值 <b>0</b></span><span class="qchip ok">H5 量纲 fail <b>0</b></span><span class="qchip ">work 空(源页留痕) <b>5</b></span></div>
+  <div class="qrow"><span class="qchip ok">H1 基价恒等式 <b>1014/1014</b></span><span class="qchip ok">P1 官方取证 <b>1014</b></span><span class="qchip ok">unit 空值 <b>0</b></span><span class="qchip bad">H5 量纲 fail <b>1</b></span><span class="qchip ">work 空(源页留痕) <b>5</b></span></div>
   <div class="links"><a class="lbtn" href="quota-extract-zn/web/index.html">识别成果库·章节树前端</a><a class="lbtn ghost" href="quota-extract-zn/out/zn_quota.db">SQLite 成果库</a></div>
   <div class="meta">目录 quota-extract-zn/ ｜ 管线：去水印干净源→md 转换→子目/目录/条文解析→H1-H6 造价逻辑核验→P1 官方原版逐格取证→九门门控</div>
 </div>
@@ -594,12 +550,260 @@ footer{margin-top:34px;color:var(--ink2);font-size:11px;text-align:center;line-h
   <div class="qrow"><span class="qchip ok">H1 基价恒等式 <b>2994/2994</b></span><span class="qchip ok">P1 官方取证 <b>2994</b></span><span class="qchip ok">unit 空值 <b>0</b></span><span class="qchip ok">H5 量纲 fail <b>0</b></span><span class="qchip ">work 空(源页留痕) <b>5</b></span></div>
   <div class="links"><a class="lbtn" href="quota-extract-gy/web/index.html">识别成果库·章节树前端</a><a class="lbtn ghost" href="quota-extract-gy/out/gy_quota.db">SQLite 成果库</a></div>
   <div class="meta">目录 quota-extract-gy/ ｜ 管线：去水印干净源→md 转换→子目/目录/条文解析→H1-H6 造价逻辑核验→P1 官方原版逐格取证→九门门控</div>
-</div></div>
-  </section>
-
-  <section>
-    <h2>费用定额卷（计价依据·fee schema）</h2>
-    <div class="vgrid">
+</div></div><h2>费用定额卷（计价依据·fee schema）</h2><div class='vgrid'>
+<div class="vcard">
+  <div class="vhead"><span class="vtitle">费用标准·取费费率</span>
+    <span class="badge g">已收官 · 九门全绿</span>
+    <span class="vtag">官方PDF 68 页</span><span class="vtag">基线指纹 2 文件</span></div>
+  <div class="vname">辽宁省建设工程计价依据《建设工程费用标准》(2024)</div>
+  <div class="ngrid">
+    <div class="num"><div class="n">48</div><div class="t">节/区</div></div>
+    <div class="num"><div class="n">104</div><div class="t">费用条目</div></div>
+    <div class="num"><div class="n">39</div><div class="t">费率表</div></div>
+    <div class="num"><div class="n">0</div><div class="t">计算程序行</div></div>
+    <div class="num"><div class="n">0</div><div class="t">术语</div></div>
+    <div class="num"><div class="n">0</div><div class="t">附录法规文档</div></div>
+  </div>
+  <div class="qrow"><span class="qchip ok">TOC 对账 <b>5/5</b></span><span class="qchip warn">疑点留痕 <b>16</b></span><span class="qchip ok">九门门控 <b>全绿</b></span></div>
+  <div class="links"><a class="lbtn" href="quota-extract-fy/web/index.html">识别成果库·六视图前端</a><a class="lbtn ghost" href="quota-extract-fy/out/fy_quota.db">SQLite 成果库</a></div>
+  <div class="meta">源 PDF sha12=1dfe4655e68e ｜ 目录 quota-extract-fy/ ｜ 管线：charmap 字形反解+isspace 汉字+缩进拆分+TOC 锚定 → fee 语义层（表题 lookahead 归属）→ fee schema 七表 → 六视图前端 → 九门门控（门7 页眉解码实测印页口径）</div>
+</div></div><h2>价格与配合比依据（检索前端）</h2><div class='vgrid'>
+<div class="vcard">
+  <div class="vhead"><span class="vtitle">机械台班费用标准</span>
+    <span class="badge g">独立卷 · 已结构化</span>
+    <span class="vtag">PDF 224 页</span></div>
+  <div class="vname">辽宁省建设工程计价依据《施工机械台班费用标准》(2024)</div>
+  <div class="ngrid"><div class="num"><div class="n">953</div><div class="t">施工机械台班</div></div><div class="num"><div class="n">593</div><div class="t">仪器仪表台班</div></div></div>
+  <div class="qrow"><span class="qchip ok">机械 identity_bad <b>0</b></span><span class="qchip ok">仪表恒等 fail <b>0</b></span><span class="qchip bad">重复编码疑点 <b>1</b></span><span class="qchip">990803060（电动多级离心清水泵 / 砂泵）</span><span class="qchip warn">跨册引用缺口 <b>5</b></span></div>
+  <div class="links"><a class="lbtn" href="quota-extract-jxtb/web/index.html">识别成果库·检索前端</a><a class="lbtn ghost" href="quota-extract-jxtb/out/quota_ln2024.db">SQLite 成果库</a></div>
+  <div class="meta">施工机械 953（P19-141）+ 仪器仪表 593（P144-223，873 段 10 位码）全书两篇全覆盖；仪表恒等式 593/593 全 pass（单价≈折旧+维护+校验+动力费） ｜ 源 PDF sha12=4d7f9419cb92 ｜ 拆分自房建卷库（宿主 5 列副本保留），对应关系见 hosting_map.json</div>
+</div>
+<div class="vcard">
+  <div class="vhead"><span class="vtitle">混凝土·砂浆配合比</span>
+    <span class="badge g">独立卷 · 已结构化</span>
+    <span class="vtag">PDF 63 页</span></div>
+  <div class="vname">辽宁省建设工程计价依据《混凝土、砂浆配合比》(2024)</div>
+  <div class="ngrid"><div class="num"><div class="n">382</div><div class="t">配合比组</div></div><div class="num"><div class="n">1498</div><div class="t">组分明细</div></div></div>
+  <div class="qrow"><span class="qchip">一、混凝土配合比 220、二、耐酸、防腐及特种砂浆、混凝土配合比 52、三、抹灰砂浆配合比 52、五、垫层、保温层材料配合比 34、四、砌筑砂浆配合比 24</span></div>
+  <div class="links"><a class="lbtn" href="quota-extract-phb/web/index.html">识别成果库·检索前端</a><a class="lbtn ghost" href="quota-extract-phb/out/quota_ln2024.db">SQLite 成果库</a></div>
+  <div class="meta">mix_ratios（组基价）+ mix_components（组分消耗量） ｜ 源 PDF sha12=3c98f0b44f51（省平台官方册） ｜ 拆分自房建卷库（宿主副本保留），对应关系见 hosting_map.json</div>
+</div></div></section><section class="region"><div class="region-head"><span class="region-name">新疆</span><span class="region-count">18 份计价依据文件 ｜ 11162 定额子目</span></div><h2>定额卷（docx 提取卷）</h2><div class='vgrid'>
+<div class="vcard">
+  <div class="vhead"><span class="vtitle">房建装饰上册（新疆2020·OCR双源）</span>
+    <span class="badge g">已收官 · 九门全绿</span>
+    <span class="vtag">官方PDF 357 页</span><span class="vtag">基线指纹 12 文件</span></div>
+  <div class="vname">新疆维吾尔自治区房屋建筑与装饰工程消耗量定额（上册）（2020版）</div>
+  <div class="ngrid">
+    <div class="num"><div class="n">1760</div><div class="t">定额子目</div></div>
+    <div class="num"><div class="n">1776</div><div class="t">人工条目</div></div>
+    <div class="num"><div class="n">2099</div><div class="t">机械条目</div></div>
+    <div class="num"><div class="n">7223</div><div class="t">材料条目</div></div>
+    <div class="num"><div class="n">483</div><div class="t">目录行</div></div>
+    <div class="num"><div class="n">193</div><div class="t">条文记录</div></div>
+  </div>
+  <div class="qrow"><span class="qchip ok">H1 <b>0/0</b></span><span class="qchip ok">P1 原版PDF取证 <b>1755</b></span><span class="qchip ok">unit 空值 <b>0</b></span><span class="qchip ok">H2/H3/H4 fail <b>0/0/0</b></span></div>
+  <div class="links"><a class="lbtn" href="quota-extract-xj01/web/index.html">识别成果库·章节树前端（提取卷）</a><a class="lbtn ghost" href="quota-extract-xj01/out/xj01_quota.db">SQLite 成果库</a><a class="lbtn ghost" href="quota-extract-xj01/交付报告_xj01_新疆房建装饰上册.md">交付报告</a><a class="lbtn ghost" href="https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/6f45ce7cc94e463ba43bd9536f52cb1f.shtml" target="_blank">官方发布依据 · 2020年 第145号</a></div>
+  <div class="meta">库生成： ｜ 目录 quota-extract-xj01/ ｜ 管线：docx 保真层→子目解析(列=子目/行=费用)→条文每条一记录→H1-H6 造价逻辑核验→P1 官方原版 PDF 取证→九门门控（docx-quota-extract skill）</div>
+  <div class="meta">官方依据：2020年 第145号（2020-10-28 发布，2021-04-01 施行） ｜ 同时停止使用：2010 建筑工程消耗量定额、2014 建筑安装工程补充消耗量定额（土建装饰部分）、2002 全国统一装饰装修工程预算定额、2012 新疆市政工程消耗量定额、2017 新疆钢结构工程消耗量定额、2018 绿色建筑工程消耗量定额相应内容</div>
+</div>
+<div class="vcard">
+  <div class="vhead"><span class="vtitle">房建装饰下册（新疆2020·OCR双源）</span>
+    <span class="badge g">已收官 · 九门全绿</span>
+    <span class="vtag">官方PDF 325 页</span><span class="vtag">基线指纹 12 文件</span></div>
+  <div class="vname">新疆维吾尔自治区房屋建筑与装饰工程消耗量定额（下册）（2020版）</div>
+  <div class="ngrid">
+    <div class="num"><div class="n">1296</div><div class="t">定额子目</div></div>
+    <div class="num"><div class="n">1282</div><div class="t">人工条目</div></div>
+    <div class="num"><div class="n">920</div><div class="t">机械条目</div></div>
+    <div class="num"><div class="n">7519</div><div class="t">材料条目</div></div>
+    <div class="num"><div class="n">483</div><div class="t">目录行</div></div>
+    <div class="num"><div class="n">185</div><div class="t">条文记录</div></div>
+  </div>
+  <div class="qrow"><span class="qchip ok">H1 <b>0/0</b></span><span class="qchip ok">P1 原版PDF取证 <b>1296</b></span><span class="qchip ok">unit 空值 <b>0</b></span><span class="qchip ok">H2/H3/H4 fail <b>0/0/0</b></span></div>
+  <div class="links"><a class="lbtn" href="quota-extract-xj02/web/index.html">识别成果库·章节树前端（提取卷）</a><a class="lbtn ghost" href="quota-extract-xj02/out/xj02_quota.db">SQLite 成果库</a><a class="lbtn ghost" href="quota-extract-xj02/交付报告_xj02_新疆房建装饰下册.md">交付报告</a><a class="lbtn ghost" href="https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/6f45ce7cc94e463ba43bd9536f52cb1f.shtml" target="_blank">官方发布依据 · 2020年 第145号</a></div>
+  <div class="meta">库生成： ｜ 目录 quota-extract-xj02/ ｜ 管线：docx 保真层→子目解析(列=子目/行=费用)→条文每条一记录→H1-H6 造价逻辑核验→P1 官方原版 PDF 取证→九门门控（docx-quota-extract skill）</div>
+  <div class="meta">官方依据：2020年 第145号（2020-10-28 发布，2021-04-01 施行） ｜ 同时停止使用：2010 建筑工程消耗量定额、2014 建筑安装工程补充消耗量定额（土建装饰部分）、2002 全国统一装饰装修工程预算定额、2012 新疆市政工程消耗量定额、2017 新疆钢结构工程消耗量定额、2018 绿色建筑工程消耗量定额相应内容</div>
+</div></div><h2>市政消耗量定额卷（OCR 双源）</h2><div class='vgrid'>
+<div class="vcard">
+  <div class="vhead"><span class="vtitle">市政消耗量定额一卷（新疆2020·OCR双源）</span>
+    <span class="badge g">已收官 · 9门全绿</span>
+    <span class="vtag">官方PDF 397 页</span><span class="vtag">基线指纹 6 文件</span></div>
+  <div class="vname">新疆维吾尔自治区市政工程消耗量定额（一）（2020版）</div>
+  <div class="ngrid">
+    <div class="num"><div class="n">5</div><div class="t">册</div></div>
+    <div class="num"><div class="n">24</div><div class="t">章</div></div>
+    <div class="num"><div class="n">351</div><div class="t">节</div></div>
+    <div class="num"><div class="n">1800</div><div class="t">子目</div></div>
+    <div class="num"><div class="n">11312</div><div class="t">消耗量</div></div>
+    <div class="num"><div class="n">414</div><div class="t">未计价材</div></div>
+  </div>
+  <div class="qrow"><span class="qchip ok">TOC 对账 <b>428 条</b></span><span class="qchip warn">疑点留痕 <b>146</b></span><span class="qchip ok">9门门控 <b>全绿</b></span></div>
+  <div class="links"><a class="lbtn" href="quota-extract-xj10/web/index.html">识别成果库·四视图前端</a><a class="lbtn ghost" href="quota-extract-xj10/out/xj10_quota.db">SQLite 成果库</a><a class="lbtn ghost" href="quota-extract-xj10/交付报告_xj10_市政消耗量定额.md">交付报告</a><a class="lbtn ghost" href="https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/6f45ce7cc94e463ba43bd9536f52cb1f.shtml" target="_blank">官方发布依据 · 2020年 第145号</a></div>
+  <div class="meta">OCR 双源管线：原版矢量线定网格 + OCR 文字层定内容（原版路径化无文本层） → 全页网格列占位 → 语义层（跨页续表合并/KIND 单字/精确列归属） → quota schema 九表 → 四视图前端 → 九门门控（印页=物−17 零违例）</div>
+  <div class="meta">官方依据：2020年 第145号（2020-10-28 发布，2021-04-01 施行） ｜ 同时停止使用：2010 建筑工程消耗量定额、2014 建筑安装工程补充消耗量定额（土建装饰部分）、2002 全国统一装饰装修工程预算定额、2012 新疆市政工程消耗量定额、2017 新疆钢结构工程消耗量定额、2018 绿色建筑工程消耗量定额相应内容</div>
+</div>
+<div class="vcard">
+  <div class="vhead"><span class="vtitle">市政消耗量定额二卷（新疆2020·OCR双源）</span>
+    <span class="badge g">已收官 · 9门全绿</span>
+    <span class="vtag">官方PDF 317 页</span><span class="vtag">基线指纹 6 文件</span></div>
+  <div class="vname">新疆维吾尔自治区市政工程消耗量定额（二）（2020版）</div>
+  <div class="ngrid">
+    <div class="num"><div class="n">2</div><div class="t">册</div></div>
+    <div class="num"><div class="n">15</div><div class="t">章</div></div>
+    <div class="num"><div class="n">145</div><div class="t">节</div></div>
+    <div class="num"><div class="n">1281</div><div class="t">子目</div></div>
+    <div class="num"><div class="n">10632</div><div class="t">消耗量</div></div>
+    <div class="num"><div class="n">98</div><div class="t">未计价材</div></div>
+  </div>
+  <div class="qrow"><span class="qchip ok">TOC 对账 <b>192 条</b></span><span class="qchip warn">疑点留痕 <b>182</b></span><span class="qchip ok">9门门控 <b>全绿</b></span></div>
+  <div class="links"><a class="lbtn" href="quota-extract-xj11/web/index.html">识别成果库·四视图前端</a><a class="lbtn ghost" href="quota-extract-xj11/out/xj11_quota.db">SQLite 成果库</a><a class="lbtn ghost" href="quota-extract-xj11/交付报告_xj11_市政消耗量定额.md">交付报告</a><a class="lbtn ghost" href="https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/6f45ce7cc94e463ba43bd9536f52cb1f.shtml" target="_blank">官方发布依据 · 2020年 第145号</a></div>
+  <div class="meta">OCR 双源管线：原版矢量线定网格 + OCR 文字层定内容（原版路径化无文本层） → 全页网格列占位 → 语义层（跨页续表合并/KIND 单字/精确列归属） → quota schema 九表 → 四视图前端 → 九门门控（印页=物−17 零违例）</div>
+  <div class="meta">官方依据：2020年 第145号（2020-10-28 发布，2021-04-01 施行） ｜ 同时停止使用：2010 建筑工程消耗量定额、2014 建筑安装工程补充消耗量定额（土建装饰部分）、2002 全国统一装饰装修工程预算定额、2012 新疆市政工程消耗量定额、2017 新疆钢结构工程消耗量定额、2018 绿色建筑工程消耗量定额相应内容</div>
+</div>
+<div class="vcard">
+  <div class="vhead"><span class="vtitle">市政消耗量定额三卷（新疆2020·OCR双源）</span>
+    <span class="badge g">已收官 · 9门全绿</span>
+    <span class="vtag">官方PDF 321 页</span><span class="vtag">基线指纹 6 文件</span></div>
+  <div class="vname">新疆维吾尔自治区市政工程消耗量定额（三）（2020版）</div>
+  <div class="ngrid">
+    <div class="num"><div class="n">2</div><div class="t">册</div></div>
+    <div class="num"><div class="n">12</div><div class="t">章</div></div>
+    <div class="num"><div class="n">144</div><div class="t">节</div></div>
+    <div class="num"><div class="n">1683</div><div class="t">子目</div></div>
+    <div class="num"><div class="n">16986</div><div class="t">消耗量</div></div>
+    <div class="num"><div class="n">1123</div><div class="t">未计价材</div></div>
+  </div>
+  <div class="qrow"><span class="qchip ok">TOC 对账 <b>182 条</b></span><span class="qchip warn">疑点留痕 <b>432</b></span><span class="qchip ok">9门门控 <b>全绿</b></span></div>
+  <div class="links"><a class="lbtn" href="quota-extract-xj12/web/index.html">识别成果库·四视图前端</a><a class="lbtn ghost" href="quota-extract-xj12/out/xj12_quota.db">SQLite 成果库</a><a class="lbtn ghost" href="quota-extract-xj12/交付报告_xj12_市政消耗量定额.md">交付报告</a><a class="lbtn ghost" href="https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/6f45ce7cc94e463ba43bd9536f52cb1f.shtml" target="_blank">官方发布依据 · 2020年 第145号</a></div>
+  <div class="meta">OCR 双源管线：原版矢量线定网格 + OCR 文字层定内容（原版路径化无文本层） → 全页网格列占位 → 语义层（跨页续表合并/KIND 单字/精确列归属） → quota schema 九表 → 四视图前端 → 九门门控（印页=物−17 零违例）</div>
+  <div class="meta">官方依据：2020年 第145号（2020-10-28 发布，2021-04-01 施行） ｜ 同时停止使用：2010 建筑工程消耗量定额、2014 建筑安装工程补充消耗量定额（土建装饰部分）、2002 全国统一装饰装修工程预算定额、2012 新疆市政工程消耗量定额、2017 新疆钢结构工程消耗量定额、2018 绿色建筑工程消耗量定额相应内容</div>
+</div>
+<div class="vcard">
+  <div class="vhead"><span class="vtitle">市政消耗量定额四卷（新疆2020·OCR双源）</span>
+    <span class="badge g">已收官 · 9门全绿</span>
+    <span class="vtag">官方PDF 253 页</span><span class="vtag">基线指纹 6 文件</span></div>
+  <div class="vname">新疆维吾尔自治区市政工程消耗量定额（四）（2020版）</div>
+  <div class="ngrid">
+    <div class="num"><div class="n">1</div><div class="t">册</div></div>
+    <div class="num"><div class="n">7</div><div class="t">章</div></div>
+    <div class="num"><div class="n">113</div><div class="t">节</div></div>
+    <div class="num"><div class="n">1370</div><div class="t">子目</div></div>
+    <div class="num"><div class="n">19096</div><div class="t">消耗量</div></div>
+    <div class="num"><div class="n">1682</div><div class="t">未计价材</div></div>
+  </div>
+  <div class="qrow"><span class="qchip ok">TOC 对账 <b>134 条</b></span><span class="qchip warn">疑点留痕 <b>64</b></span><span class="qchip ok">9门门控 <b>全绿</b></span></div>
+  <div class="links"><a class="lbtn" href="quota-extract-xj13/web/index.html">识别成果库·四视图前端</a><a class="lbtn ghost" href="quota-extract-xj13/out/xj13_quota.db">SQLite 成果库</a><a class="lbtn ghost" href="quota-extract-xj13/交付报告_xj13_市政消耗量定额.md">交付报告</a><a class="lbtn ghost" href="https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/6f45ce7cc94e463ba43bd9536f52cb1f.shtml" target="_blank">官方发布依据 · 2020年 第145号</a></div>
+  <div class="meta">OCR 双源管线：原版矢量线定网格 + OCR 文字层定内容（原版路径化无文本层） → 全页网格列占位 → 语义层（跨页续表合并/KIND 单字/精确列归属） → quota schema 九表 → 四视图前端 → 九门门控（印页=物−17 零违例）</div>
+  <div class="meta">官方依据：2020年 第145号（2020-10-28 发布，2021-04-01 施行） ｜ 同时停止使用：2010 建筑工程消耗量定额、2014 建筑安装工程补充消耗量定额（土建装饰部分）、2002 全国统一装饰装修工程预算定额、2012 新疆市政工程消耗量定额、2017 新疆钢结构工程消耗量定额、2018 绿色建筑工程消耗量定额相应内容</div>
+</div>
+<div class="vcard">
+  <div class="vhead"><span class="vtitle">市政消耗量定额五卷（新疆2020·OCR双源）</span>
+    <span class="badge g">已收官 · 9门全绿</span>
+    <span class="vtag">官方PDF 253 页</span><span class="vtag">基线指纹 6 文件</span></div>
+  <div class="vname">新疆维吾尔自治区市政工程消耗量定额（五）（2020版）</div>
+  <div class="ngrid">
+    <div class="num"><div class="n">2</div><div class="t">册</div></div>
+    <div class="num"><div class="n">5</div><div class="t">章</div></div>
+    <div class="num"><div class="n">242</div><div class="t">节</div></div>
+    <div class="num"><div class="n">950</div><div class="t">子目</div></div>
+    <div class="num"><div class="n">11921</div><div class="t">消耗量</div></div>
+    <div class="num"><div class="n">84</div><div class="t">未计价材</div></div>
+  </div>
+  <div class="qrow"><span class="qchip ok">TOC 对账 <b>259 条</b></span><span class="qchip warn">疑点留痕 <b>135</b></span><span class="qchip ok">9门门控 <b>全绿</b></span></div>
+  <div class="links"><a class="lbtn" href="quota-extract-xj14/web/index.html">识别成果库·四视图前端</a><a class="lbtn ghost" href="quota-extract-xj14/out/xj14_quota.db">SQLite 成果库</a><a class="lbtn ghost" href="quota-extract-xj14/交付报告_xj14_市政消耗量定额.md">交付报告</a><a class="lbtn ghost" href="https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/6f45ce7cc94e463ba43bd9536f52cb1f.shtml" target="_blank">官方发布依据 · 2020年 第145号</a></div>
+  <div class="meta">OCR 双源管线：原版矢量线定网格 + OCR 文字层定内容（原版路径化无文本层） → 全页网格列占位 → 语义层（跨页续表合并/KIND 单字/精确列归属） → quota schema 九表 → 四视图前端 → 九门门控（印页=物−17 零违例）</div>
+  <div class="meta">官方依据：2020年 第145号（2020-10-28 发布，2021-04-01 施行） ｜ 同时停止使用：2010 建筑工程消耗量定额、2014 建筑安装工程补充消耗量定额（土建装饰部分）、2002 全国统一装饰装修工程预算定额、2012 新疆市政工程消耗量定额、2017 新疆钢结构工程消耗量定额、2018 绿色建筑工程消耗量定额相应内容</div>
+</div>
+<div class="vcard">
+  <div class="vhead"><span class="vtitle">安装工程补充消耗量定额（新疆2020·OCR双源）</span>
+    <span class="badge g">已收官 · 9门全绿</span>
+    <span class="vtag">官方PDF 100 页</span><span class="vtag">基线指纹 7 文件</span></div>
+  <div class="vname">新疆维吾尔自治区安装工程补充消耗量定额（2020版）</div>
+  <div class="ngrid">
+    <div class="num"><div class="n">7</div><div class="t">册</div></div>
+    <div class="num"><div class="n">8</div><div class="t">章</div></div>
+    <div class="num"><div class="n">76</div><div class="t">节</div></div>
+    <div class="num"><div class="n">318</div><div class="t">子目</div></div>
+    <div class="num"><div class="n">3086</div><div class="t">消耗量</div></div>
+    <div class="num"><div class="n">15</div><div class="t">未计价材</div></div>
+  </div>
+  <div class="qrow"><span class="qchip ok">TOC 对账 <b>96 条</b></span><span class="qchip warn">疑点留痕 <b>43</b></span><span class="qchip ok">9门门控 <b>全绿</b></span></div>
+  <div class="links"><a class="lbtn" href="quota-extract-xj15/web/index.html">识别成果库·四视图前端</a><a class="lbtn ghost" href="quota-extract-xj15/out/xj15_quota.db">SQLite 成果库</a><a class="lbtn ghost" href="quota-extract-xj15/交付报告_xj15_安装工程补充消耗量定额.md">交付报告</a></div>
+  <div class="meta">OCR 双源管线：原版矢量线定网格 + OCR 文字层定内容（原版路径化无文本层） → 全页网格列占位 → 语义层（跨页续表合并/KIND 单字/精确列归属） → quota schema 九表 → 四视图前端 → 九门门控（印页=物−17 零违例）</div>
+  
+</div>
+<div class="vcard">
+  <div class="vhead"><span class="vtitle">智能建造（建筑机器人）消耗量定额项目（新疆·试行）</span>
+    <span class="badge g">已收官 · 10门全绿</span>
+    <span class="vtag">官方PDF 12 页</span><span class="vtag">基线指纹 2 文件</span></div>
+  <div class="vname">新疆维吾尔自治区智能建造（建筑机器人）消耗量定额项目（试行）</div>
+  <div class="ngrid">
+    <div class="num"><div class="n">1</div><div class="t">册</div></div>
+    <div class="num"><div class="n">6</div><div class="t">章</div></div>
+    <div class="num"><div class="n">8</div><div class="t">节</div></div>
+    <div class="num"><div class="n">20</div><div class="t">子目</div></div>
+    <div class="num"><div class="n">178</div><div class="t">消耗量</div></div>
+    <div class="num"><div class="n">0</div><div class="t">未计价材</div></div>
+  </div>
+  <div class="qrow"><span class="qchip ok">TOC 对账 <b>15 条</b></span><span class="qchip warn">疑点留痕 <b>5</b></span><span class="qchip ok">10门门控 <b>全绿</b></span></div>
+  <div class="links"><a class="lbtn" href="quota-extract-xj18/web/index.html">识别成果库·四视图前端</a><a class="lbtn ghost" href="quota-extract-xj18/out/xj18_quota.db">SQLite 成果库</a><a class="lbtn ghost" href="quota-extract-xj18/交付报告_xj18_智能建造建筑机器人消耗量定额.md">交付报告</a></div>
+  <div class="meta">官方 PDF 干净文本层 + 矢量网格字符级重建（非 OCR）→ quota schema 九表 + 站点兼容三表 → 六视图前端 → 十门门控（P1 官方原版逐格取证 178/178，印页=物−1）</div>
+  
+</div>
+<div class="vcard">
+  <div class="vhead"><span class="vtitle">排水设施养护及维修工程消耗量定额（新疆·2025）</span>
+    <span class="badge g">已收官 · 10门全绿</span>
+    <span class="vtag">官方PDF 99 页</span><span class="vtag">基线指纹 2 文件</span></div>
+  <div class="vname">新疆维吾尔自治区排水设施养护及维修工程消耗量定额</div>
+  <div class="ngrid">
+    <div class="num"><div class="n">1</div><div class="t">册</div></div>
+    <div class="num"><div class="n">10</div><div class="t">章</div></div>
+    <div class="num"><div class="n">51</div><div class="t">节</div></div>
+    <div class="num"><div class="n">218</div><div class="t">子目</div></div>
+    <div class="num"><div class="n">2977</div><div class="t">消耗量</div></div>
+    <div class="num"><div class="n">99</div><div class="t">未计价材</div></div>
+  </div>
+  <div class="qrow"><span class="qchip ok">TOC 对账 <b>63 条</b></span><span class="qchip warn">疑点留痕 <b>3</b></span><span class="qchip ok">10门门控 <b>全绿</b></span></div>
+  <div class="links"><a class="lbtn" href="quota-extract-xj21/web/index.html">识别成果库·四视图前端</a><a class="lbtn ghost" href="quota-extract-xj21/out/xj21_quota.db">SQLite 成果库</a><a class="lbtn ghost" href="quota-extract-xj21/交付报告_xj21_排水设施养护及维修工程消耗量定额.md">交付报告</a></div>
+  <div class="meta">官方 99 页 PDF 干净文本层 + 矢量网格字符级重建（复用 xj18 链，非 OCR）→ 9 章 51 节 218 子目 2977 消耗量 → quota schema 九表 + 站点兼容三表 + fee_standard 费用标准表 → 六视图前端 → 十门门控（P1 官方原版逐格取证 2977/2977）+ 冒烟 26/26；双区页码（正文印页=物−6），列级计量单位三形态，括号未计价 99 条</div>
+  
+</div>
+<div class="vcard">
+  <div class="vhead"><span class="vtitle">装配式建筑工程消耗量定额（新疆·试行·2023）</span>
+    <span class="badge g">已收官 · 10门全绿</span>
+    <span class="vtag">官方PDF 96 页</span><span class="vtag">基线指纹 2 文件</span></div>
+  <div class="vname">新疆维吾尔自治区装配式建筑工程消耗量定额（试行）</div>
+  <div class="ngrid">
+    <div class="num"><div class="n">1</div><div class="t">册</div></div>
+    <div class="num"><div class="n">6</div><div class="t">章</div></div>
+    <div class="num"><div class="n">14</div><div class="t">节</div></div>
+    <div class="num"><div class="n">264</div><div class="t">子目</div></div>
+    <div class="num"><div class="n">2688</div><div class="t">消耗量</div></div>
+    <div class="num"><div class="n">80</div><div class="t">未计价材</div></div>
+  </div>
+  <div class="qrow"><span class="qchip ok">TOC 对账 <b>21 条</b></span><span class="qchip ok">疑点留痕 <b>0</b></span><span class="qchip ok">10门门控 <b>全绿</b></span></div>
+  <div class="links"><a class="lbtn" href="quota-extract-xj22/web/index.html">识别成果库·四视图前端</a><a class="lbtn ghost" href="quota-extract-xj22/out/xj22_quota.db">SQLite 成果库</a><a class="lbtn ghost" href="quota-extract-xj22/交付报告_xj22_装配式建筑工程消耗量定额.md">交付报告</a><a class="lbtn ghost" href="https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/4f3593ab75184517ab4d5b673ddead07.shtml" target="_blank">官方发布依据 · 关于发布《新疆维吾尔自治区装配式建筑工程消耗量定额（试行）》的通知</a></div>
+  <div class="meta">第六型源形态：官方 96 页 PDF，中文 FZ* 方正字体可读 + 数字/符号/西文单位用 FzBookMaker 子集字体无 ToUnicode 乱码 → charmap 反解（OCR 独立转写对齐，6 字体 57 glyphs）→ 矢量网格字符级重建 → 5 章 14 节 264 子目 2688 消耗量 → quota schema 九表 + 站点兼容三表 → 六视图前端 → 十门门控（P1 charmap 取证 paired 3613）+ 冒烟 24/24；双区页码（正文印页=物−9），每子目恰 1 条人工，括号未计价 80 条</div>
+  <div class="meta">官方依据：关于发布《新疆维吾尔自治区装配式建筑工程消耗量定额（试行）》的通知（2023-01-31 发布，2023-03-01 施行） ｜ 同时停止使用：（无废止条款；作为现行建筑工程计价依据的补充，与 2020 版房建/通用安装/安装补充/费用定额配套使用）</div>
+</div>
+<div class="vcard">
+  <div class="vhead"><span class="vtitle">自保温砌块及复合外保温模板补充定额（新疆·2023）</span>
+    <span class="badge g">已收官 · 10门全绿</span>
+    <span class="vtag">官方PDF 3 页</span><span class="vtag">基线指纹 2 文件</span></div>
+  <div class="vname">自保温混凝土复合砌块及复合外保温模板等补充定额项目</div>
+  <div class="ngrid">
+    <div class="num"><div class="n">1</div><div class="t">册</div></div>
+    <div class="num"><div class="n">4</div><div class="t">章</div></div>
+    <div class="num"><div class="n">3</div><div class="t">节</div></div>
+    <div class="num"><div class="n">5</div><div class="t">子目</div></div>
+    <div class="num"><div class="n">36</div><div class="t">消耗量</div></div>
+    <div class="num"><div class="n">0</div><div class="t">未计价材</div></div>
+  </div>
+  <div class="qrow"><span class="qchip ok">TOC 对账 <b>3 条</b></span><span class="qchip warn">疑点留痕 <b>7</b></span><span class="qchip ok">10门门控 <b>全绿</b></span></div>
+  <div class="links"><a class="lbtn" href="quota-extract-xj24/web/index.html">识别成果库·四视图前端</a><a class="lbtn ghost" href="quota-extract-xj24/out/xj24_quota.db">SQLite 成果库</a><a class="lbtn ghost" href="quota-extract-xj24/交付报告_xj24_自保温砌块及复合外保温模板补充定额.md">交付报告</a><a class="lbtn ghost" href="https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/953f03d0121f432b879454a47e25fb71.shtml" target="_blank">官方发布依据 · 关于发布自保温混凝土复合砌块及复合外保温模板等补充定额项目的通知</a></div>
+  <div class="meta">第八型源形态（3 页微型消耗量定额小卷，#25 通知页与 #26 正文页附件字节级同源）：find_tables 段错误禁用 → 矢量 full 横线切类别块 + 文本坐标聚行 + 列区间取词网格 → 3 章 3 节 5 子目（B4-1~B4-3 / B10-1 / B10-2）36 消耗格 → quota 九表 + 站点兼容三表 → 六视图前端（条文四类分组）→ 十门门控（P1 官方原版逐格取证 36/36）+ 冒烟 28/28 + 全链重建零失配；上标单位归一、单位嵌名称、类别字连排、无目录页、空白尾页共 7 条疑点留痕</div>
+  <div class="meta">官方依据：关于发布自保温混凝土复合砌块及复合外保温模板等补充定额项目的通知（2023-01-11 发布，2023-01-11 施行） ｜ 同时停止使用：（无废止条款；作为 2020 版房屋建筑与装饰工程消耗量定额的补充项目，#26 正文页挂同一份 PDF 附件，字节级同源）</div>
+</div></div><h2>费用定额卷（计价依据·fee schema）</h2><div class='vgrid'>
 <div class="vcard">
   <div class="vhead"><span class="vtitle">费用定额卷（新疆2020·计价依据）</span>
     <span class="badge g">已收官 · 九门全绿</span>
@@ -701,239 +905,39 @@ footer{margin-top:34px;color:var(--ink2);font-size:11px;text-align:center;line-h
   <div class="qrow"><span class="qchip ok">TOC 对账 <b>3/3</b></span><span class="qchip warn">疑点留痕 <b>1</b></span><span class="qchip ok">九门门控 <b>全绿</b></span></div>
   <div class="links"><a class="lbtn" href="quota-extract-xj23/web/index.html">识别成果库·六视图前端</a><a class="lbtn ghost" href="quota-extract-xj23/out/xj23_quota.db">SQLite 成果库</a><a class="lbtn ghost" href="quota-extract-xj23/交付报告_xj23_装配式建筑工程补充工程量清单.md">交付报告</a></div>
   <div class="meta">源 PDF sha12=fe9ec3b25abd ｜ 目录 quota-extract-xj23/ ｜ 管线：charmap 字形反解+isspace 汉字+缩进拆分+TOC 锚定 → fee 语义层（表题 lookahead 归属）→ fee schema 七表 → 六视图前端 → 九门门控（门7 页眉解码实测印页口径）</div>
-</div>
+</div></div></section><section class="region"><div class="region-head"><span class="region-name">广东</span><span class="region-count">1 套综合定额 · 27 册 ｜ 24710 定额子目</span></div><h2>综合定额（结构层 + 子目逐册提取）</h2><div class='vgrid'>
 <div class="vcard">
-  <div class="vhead"><span class="vtitle">费用标准·取费费率</span>
-    <span class="badge g">已收官 · 九门全绿</span>
-    <span class="vtag">官方PDF 68 页</span><span class="vtag">基线指纹 2 文件</span></div>
-  <div class="vname">辽宁省建设工程计价依据《建设工程费用标准》(2024)</div>
+  <div class="vhead"><span class="vtitle">广东 2018 综合定额 · 全套 27 册</span>
+    <span class="badge a">结构层 + 子目五要素 + 台班册 全部收官</span>
+    <span class="vtag">官方PDF 11255 页</span></div>
+  <div class="vname">广东省建设工程计价依据《广东省房屋建筑与装饰/通用安装/市政/园林绿化工程综合定额》(2018)</div>
   <div class="ngrid">
-    <div class="num"><div class="n">48</div><div class="t">节/区</div></div>
-    <div class="num"><div class="n">104</div><div class="t">费用条目</div></div>
-    <div class="num"><div class="n">39</div><div class="t">费率表</div></div>
-    <div class="num"><div class="n">0</div><div class="t">计算程序行</div></div>
-    <div class="num"><div class="n">0</div><div class="t">术语</div></div>
-    <div class="num"><div class="n">0</div><div class="t">附录法规文档</div></div>
+    <div class="num"><div class="n">22</div><div class="t">专业组</div></div>
+    <div class="num"><div class="n">206</div><div class="t">章</div></div>
+    <div class="num"><div class="n">1608</div><div class="t">节</div></div>
+    <div class="num"><div class="n">26355</div><div class="t">子目码</div></div>
+    <div class="num"><div class="n">24710</div><div class="t">已提子目</div></div>
+    <div class="num"><div class="n">1614</div><div class="t">台班</div></div>
+    <div class="num"><div class="n">0</div><div class="t">孤儿码</div></div>
   </div>
-  <div class="qrow"><span class="qchip ok">TOC 对账 <b>5/5</b></span><span class="qchip warn">疑点留痕 <b>16</b></span><span class="qchip ok">九门门控 <b>全绿</b></span></div>
-  <div class="links"><a class="lbtn" href="quota-extract-fy/web/index.html">识别成果库·六视图前端</a><a class="lbtn ghost" href="quota-extract-fy/out/fy_quota.db">SQLite 成果库</a></div>
-  <div class="meta">源 PDF sha12=1dfe4655e68e ｜ 目录 quota-extract-fy/ ｜ 管线：charmap 字形反解+isspace 汉字+缩进拆分+TOC 锚定 → fee 语义层（表题 lookahead 归属）→ fee schema 七表 → 六视图前端 → 九门门控（门7 页眉解码实测印页口径）</div>
-</div></div>
-    <div class="vgrid">
-<div class="vcard">
-  <div class="vhead"><span class="vtitle">市政消耗量定额一卷（新疆2020·OCR双源）</span>
-    <span class="badge g">已收官 · 9门全绿</span>
-    <span class="vtag">官方PDF 397 页</span><span class="vtag">基线指纹 6 文件</span></div>
-  <div class="vname">新疆维吾尔自治区市政工程消耗量定额（一）（2020版）</div>
-  <div class="ngrid">
-    <div class="num"><div class="n">5</div><div class="t">册</div></div>
-    <div class="num"><div class="n">24</div><div class="t">章</div></div>
-    <div class="num"><div class="n">351</div><div class="t">节</div></div>
-    <div class="num"><div class="n">1800</div><div class="t">子目</div></div>
-    <div class="num"><div class="n">11312</div><div class="t">消耗量</div></div>
-    <div class="num"><div class="n">414</div><div class="t">未计价材</div></div>
-  </div>
-  <div class="qrow"><span class="qchip ok">TOC 对账 <b>428 条</b></span><span class="qchip warn">疑点留痕 <b>384</b></span><span class="qchip ok">9门门控 <b>全绿</b></span></div>
-  <div class="links"><a class="lbtn" href="quota-extract-xj10/web/index.html">识别成果库·四视图前端</a><a class="lbtn ghost" href="quota-extract-xj10/out/xj10_quota.db">SQLite 成果库</a><a class="lbtn ghost" href="quota-extract-xj10/交付报告_xj10_市政消耗量定额.md">交付报告</a><a class="lbtn ghost" href="https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/6f45ce7cc94e463ba43bd9536f52cb1f.shtml" target="_blank">官方发布依据 · 2020年 第145号</a></div>
-  <div class="meta">OCR 双源管线：原版矢量线定网格 + OCR 文字层定内容（原版路径化无文本层） → 全页网格列占位 → 语义层（跨页续表合并/KIND 单字/精确列归属） → quota schema 九表 → 四视图前端 → 九门门控（印页=物−17 零违例）</div>
-  <div class="meta">官方依据：2020年 第145号（2020-10-28 发布，2021-04-01 施行） ｜ 同时停止使用：2010 建筑工程消耗量定额、2014 建筑安装工程补充消耗量定额（土建装饰部分）、2002 全国统一装饰装修工程预算定额、2012 新疆市政工程消耗量定额、2017 新疆钢结构工程消耗量定额、2018 绿色建筑工程消耗量定额相应内容</div>
-</div>
-<div class="vcard">
-  <div class="vhead"><span class="vtitle">市政消耗量定额二卷（新疆2020·OCR双源）</span>
-    <span class="badge g">已收官 · 9门全绿</span>
-    <span class="vtag">官方PDF 317 页</span><span class="vtag">基线指纹 6 文件</span></div>
-  <div class="vname">新疆维吾尔自治区市政工程消耗量定额（二）（2020版）</div>
-  <div class="ngrid">
-    <div class="num"><div class="n">2</div><div class="t">册</div></div>
-    <div class="num"><div class="n">15</div><div class="t">章</div></div>
-    <div class="num"><div class="n">145</div><div class="t">节</div></div>
-    <div class="num"><div class="n">1281</div><div class="t">子目</div></div>
-    <div class="num"><div class="n">10632</div><div class="t">消耗量</div></div>
-    <div class="num"><div class="n">98</div><div class="t">未计价材</div></div>
-  </div>
-  <div class="qrow"><span class="qchip ok">TOC 对账 <b>192 条</b></span><span class="qchip warn">疑点留痕 <b>568</b></span><span class="qchip ok">9门门控 <b>全绿</b></span></div>
-  <div class="links"><a class="lbtn" href="quota-extract-xj11/web/index.html">识别成果库·四视图前端</a><a class="lbtn ghost" href="quota-extract-xj11/out/xj11_quota.db">SQLite 成果库</a><a class="lbtn ghost" href="quota-extract-xj11/交付报告_xj11_市政消耗量定额.md">交付报告</a><a class="lbtn ghost" href="https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/6f45ce7cc94e463ba43bd9536f52cb1f.shtml" target="_blank">官方发布依据 · 2020年 第145号</a></div>
-  <div class="meta">OCR 双源管线：原版矢量线定网格 + OCR 文字层定内容（原版路径化无文本层） → 全页网格列占位 → 语义层（跨页续表合并/KIND 单字/精确列归属） → quota schema 九表 → 四视图前端 → 九门门控（印页=物−17 零违例）</div>
-  <div class="meta">官方依据：2020年 第145号（2020-10-28 发布，2021-04-01 施行） ｜ 同时停止使用：2010 建筑工程消耗量定额、2014 建筑安装工程补充消耗量定额（土建装饰部分）、2002 全国统一装饰装修工程预算定额、2012 新疆市政工程消耗量定额、2017 新疆钢结构工程消耗量定额、2018 绿色建筑工程消耗量定额相应内容</div>
-</div>
-<div class="vcard">
-  <div class="vhead"><span class="vtitle">市政消耗量定额三卷（新疆2020·OCR双源）</span>
-    <span class="badge g">已收官 · 9门全绿</span>
-    <span class="vtag">官方PDF 321 页</span><span class="vtag">基线指纹 6 文件</span></div>
-  <div class="vname">新疆维吾尔自治区市政工程消耗量定额（三）（2020版）</div>
-  <div class="ngrid">
-    <div class="num"><div class="n">2</div><div class="t">册</div></div>
-    <div class="num"><div class="n">12</div><div class="t">章</div></div>
-    <div class="num"><div class="n">144</div><div class="t">节</div></div>
-    <div class="num"><div class="n">1683</div><div class="t">子目</div></div>
-    <div class="num"><div class="n">16986</div><div class="t">消耗量</div></div>
-    <div class="num"><div class="n">1123</div><div class="t">未计价材</div></div>
-  </div>
-  <div class="qrow"><span class="qchip ok">TOC 对账 <b>182 条</b></span><span class="qchip warn">疑点留痕 <b>499</b></span><span class="qchip ok">9门门控 <b>全绿</b></span></div>
-  <div class="links"><a class="lbtn" href="quota-extract-xj12/web/index.html">识别成果库·四视图前端</a><a class="lbtn ghost" href="quota-extract-xj12/out/xj12_quota.db">SQLite 成果库</a><a class="lbtn ghost" href="quota-extract-xj12/交付报告_xj12_市政消耗量定额.md">交付报告</a><a class="lbtn ghost" href="https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/6f45ce7cc94e463ba43bd9536f52cb1f.shtml" target="_blank">官方发布依据 · 2020年 第145号</a></div>
-  <div class="meta">OCR 双源管线：原版矢量线定网格 + OCR 文字层定内容（原版路径化无文本层） → 全页网格列占位 → 语义层（跨页续表合并/KIND 单字/精确列归属） → quota schema 九表 → 四视图前端 → 九门门控（印页=物−17 零违例）</div>
-  <div class="meta">官方依据：2020年 第145号（2020-10-28 发布，2021-04-01 施行） ｜ 同时停止使用：2010 建筑工程消耗量定额、2014 建筑安装工程补充消耗量定额（土建装饰部分）、2002 全国统一装饰装修工程预算定额、2012 新疆市政工程消耗量定额、2017 新疆钢结构工程消耗量定额、2018 绿色建筑工程消耗量定额相应内容</div>
-</div>
-<div class="vcard">
-  <div class="vhead"><span class="vtitle">市政消耗量定额四卷（新疆2020·OCR双源）</span>
-    <span class="badge g">已收官 · 9门全绿</span>
-    <span class="vtag">官方PDF 253 页</span><span class="vtag">基线指纹 6 文件</span></div>
-  <div class="vname">新疆维吾尔自治区市政工程消耗量定额（四）（2020版）</div>
-  <div class="ngrid">
-    <div class="num"><div class="n">1</div><div class="t">册</div></div>
-    <div class="num"><div class="n">7</div><div class="t">章</div></div>
-    <div class="num"><div class="n">113</div><div class="t">节</div></div>
-    <div class="num"><div class="n">1370</div><div class="t">子目</div></div>
-    <div class="num"><div class="n">19096</div><div class="t">消耗量</div></div>
-    <div class="num"><div class="n">1682</div><div class="t">未计价材</div></div>
-  </div>
-  <div class="qrow"><span class="qchip ok">TOC 对账 <b>134 条</b></span><span class="qchip warn">疑点留痕 <b>206</b></span><span class="qchip ok">9门门控 <b>全绿</b></span></div>
-  <div class="links"><a class="lbtn" href="quota-extract-xj13/web/index.html">识别成果库·四视图前端</a><a class="lbtn ghost" href="quota-extract-xj13/out/xj13_quota.db">SQLite 成果库</a><a class="lbtn ghost" href="quota-extract-xj13/交付报告_xj13_市政消耗量定额.md">交付报告</a><a class="lbtn ghost" href="https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/6f45ce7cc94e463ba43bd9536f52cb1f.shtml" target="_blank">官方发布依据 · 2020年 第145号</a></div>
-  <div class="meta">OCR 双源管线：原版矢量线定网格 + OCR 文字层定内容（原版路径化无文本层） → 全页网格列占位 → 语义层（跨页续表合并/KIND 单字/精确列归属） → quota schema 九表 → 四视图前端 → 九门门控（印页=物−17 零违例）</div>
-  <div class="meta">官方依据：2020年 第145号（2020-10-28 发布，2021-04-01 施行） ｜ 同时停止使用：2010 建筑工程消耗量定额、2014 建筑安装工程补充消耗量定额（土建装饰部分）、2002 全国统一装饰装修工程预算定额、2012 新疆市政工程消耗量定额、2017 新疆钢结构工程消耗量定额、2018 绿色建筑工程消耗量定额相应内容</div>
-</div>
-<div class="vcard">
-  <div class="vhead"><span class="vtitle">市政消耗量定额五卷（新疆2020·OCR双源）</span>
-    <span class="badge g">已收官 · 9门全绿</span>
-    <span class="vtag">官方PDF 253 页</span><span class="vtag">基线指纹 6 文件</span></div>
-  <div class="vname">新疆维吾尔自治区市政工程消耗量定额（五）（2020版）</div>
-  <div class="ngrid">
-    <div class="num"><div class="n">2</div><div class="t">册</div></div>
-    <div class="num"><div class="n">5</div><div class="t">章</div></div>
-    <div class="num"><div class="n">242</div><div class="t">节</div></div>
-    <div class="num"><div class="n">950</div><div class="t">子目</div></div>
-    <div class="num"><div class="n">11921</div><div class="t">消耗量</div></div>
-    <div class="num"><div class="n">84</div><div class="t">未计价材</div></div>
-  </div>
-  <div class="qrow"><span class="qchip ok">TOC 对账 <b>259 条</b></span><span class="qchip warn">疑点留痕 <b>177</b></span><span class="qchip ok">9门门控 <b>全绿</b></span></div>
-  <div class="links"><a class="lbtn" href="quota-extract-xj14/web/index.html">识别成果库·四视图前端</a><a class="lbtn ghost" href="quota-extract-xj14/out/xj14_quota.db">SQLite 成果库</a><a class="lbtn ghost" href="quota-extract-xj14/交付报告_xj14_市政消耗量定额.md">交付报告</a><a class="lbtn ghost" href="https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/6f45ce7cc94e463ba43bd9536f52cb1f.shtml" target="_blank">官方发布依据 · 2020年 第145号</a></div>
-  <div class="meta">OCR 双源管线：原版矢量线定网格 + OCR 文字层定内容（原版路径化无文本层） → 全页网格列占位 → 语义层（跨页续表合并/KIND 单字/精确列归属） → quota schema 九表 → 四视图前端 → 九门门控（印页=物−17 零违例）</div>
-  <div class="meta">官方依据：2020年 第145号（2020-10-28 发布，2021-04-01 施行） ｜ 同时停止使用：2010 建筑工程消耗量定额、2014 建筑安装工程补充消耗量定额（土建装饰部分）、2002 全国统一装饰装修工程预算定额、2012 新疆市政工程消耗量定额、2017 新疆钢结构工程消耗量定额、2018 绿色建筑工程消耗量定额相应内容</div>
-</div>
-<div class="vcard">
-  <div class="vhead"><span class="vtitle">安装工程补充消耗量定额（新疆2020·OCR双源）</span>
-    <span class="badge g">已收官 · 9门全绿</span>
-    <span class="vtag">官方PDF 100 页</span><span class="vtag">基线指纹 7 文件</span></div>
-  <div class="vname">新疆维吾尔自治区安装工程补充消耗量定额（2020版）</div>
-  <div class="ngrid">
-    <div class="num"><div class="n">7</div><div class="t">册</div></div>
-    <div class="num"><div class="n">8</div><div class="t">章</div></div>
-    <div class="num"><div class="n">76</div><div class="t">节</div></div>
-    <div class="num"><div class="n">318</div><div class="t">子目</div></div>
-    <div class="num"><div class="n">3086</div><div class="t">消耗量</div></div>
-    <div class="num"><div class="n">15</div><div class="t">未计价材</div></div>
-  </div>
-  <div class="qrow"><span class="qchip ok">TOC 对账 <b>96 条</b></span><span class="qchip warn">疑点留痕 <b>64</b></span><span class="qchip ok">9门门控 <b>全绿</b></span></div>
-  <div class="links"><a class="lbtn" href="quota-extract-xj15/web/index.html">识别成果库·四视图前端</a><a class="lbtn ghost" href="quota-extract-xj15/out/xj15_quota.db">SQLite 成果库</a><a class="lbtn ghost" href="quota-extract-xj15/交付报告_xj15_安装工程补充消耗量定额.md">交付报告</a></div>
-  <div class="meta">OCR 双源管线：原版矢量线定网格 + OCR 文字层定内容（原版路径化无文本层） → 全页网格列占位 → 语义层（跨页续表合并/KIND 单字/精确列归属） → quota schema 九表 → 四视图前端 → 九门门控（印页=物−17 零违例）</div>
-  
-</div>
-<div class="vcard">
-  <div class="vhead"><span class="vtitle">智能建造（建筑机器人）消耗量定额项目（新疆·试行）</span>
-    <span class="badge g">已收官 · 10门全绿</span>
-    <span class="vtag">官方PDF 12 页</span><span class="vtag">基线指纹 2 文件</span></div>
-  <div class="vname">新疆维吾尔自治区智能建造（建筑机器人）消耗量定额项目（试行）</div>
-  <div class="ngrid">
-    <div class="num"><div class="n">1</div><div class="t">册</div></div>
-    <div class="num"><div class="n">6</div><div class="t">章</div></div>
-    <div class="num"><div class="n">8</div><div class="t">节</div></div>
-    <div class="num"><div class="n">20</div><div class="t">子目</div></div>
-    <div class="num"><div class="n">178</div><div class="t">消耗量</div></div>
-    <div class="num"><div class="n">0</div><div class="t">未计价材</div></div>
-  </div>
-  <div class="qrow"><span class="qchip ok">TOC 对账 <b>15 条</b></span><span class="qchip warn">疑点留痕 <b>5</b></span><span class="qchip ok">10门门控 <b>全绿</b></span></div>
-  <div class="links"><a class="lbtn" href="quota-extract-xj18/web/index.html">识别成果库·四视图前端</a><a class="lbtn ghost" href="quota-extract-xj18/out/xj18_quota.db">SQLite 成果库</a><a class="lbtn ghost" href="quota-extract-xj18/交付报告_xj18_智能建造建筑机器人消耗量定额.md">交付报告</a></div>
-  <div class="meta">官方 PDF 干净文本层 + 矢量网格字符级重建（非 OCR）→ quota schema 九表 + 站点兼容三表 → 六视图前端 → 十门门控（P1 官方原版逐格取证 178/178，印页=物−1）</div>
-  
-</div>
-<div class="vcard">
-  <div class="vhead"><span class="vtitle">排水设施养护及维修工程消耗量定额（新疆·2025）</span>
-    <span class="badge g">已收官 · 10门全绿</span>
-    <span class="vtag">官方PDF 99 页</span><span class="vtag">基线指纹 2 文件</span></div>
-  <div class="vname">新疆维吾尔自治区排水设施养护及维修工程消耗量定额</div>
-  <div class="ngrid">
-    <div class="num"><div class="n">1</div><div class="t">册</div></div>
-    <div class="num"><div class="n">10</div><div class="t">章</div></div>
-    <div class="num"><div class="n">51</div><div class="t">节</div></div>
-    <div class="num"><div class="n">218</div><div class="t">子目</div></div>
-    <div class="num"><div class="n">2977</div><div class="t">消耗量</div></div>
-    <div class="num"><div class="n">99</div><div class="t">未计价材</div></div>
-  </div>
-  <div class="qrow"><span class="qchip ok">TOC 对账 <b>63 条</b></span><span class="qchip warn">疑点留痕 <b>3</b></span><span class="qchip ok">10门门控 <b>全绿</b></span></div>
-  <div class="links"><a class="lbtn" href="quota-extract-xj21/web/index.html">识别成果库·四视图前端</a><a class="lbtn ghost" href="quota-extract-xj21/out/xj21_quota.db">SQLite 成果库</a><a class="lbtn ghost" href="quota-extract-xj21/交付报告_xj21_排水设施养护及维修工程消耗量定额.md">交付报告</a></div>
-  <div class="meta">官方 99 页 PDF 干净文本层 + 矢量网格字符级重建（复用 xj18 链，非 OCR）→ 9 章 51 节 218 子目 2977 消耗量 → quota schema 九表 + 站点兼容三表 + fee_standard 费用标准表 → 六视图前端 → 十门门控（P1 官方原版逐格取证 2977/2977）+ 冒烟 26/26；双区页码（正文印页=物−6），列级计量单位三形态，括号未计价 99 条</div>
-  
-</div>
-<div class="vcard">
-  <div class="vhead"><span class="vtitle">装配式建筑工程消耗量定额（新疆·试行·2023）</span>
-    <span class="badge g">已收官 · 10门全绿</span>
-    <span class="vtag">官方PDF 96 页</span><span class="vtag">基线指纹 2 文件</span></div>
-  <div class="vname">新疆维吾尔自治区装配式建筑工程消耗量定额（试行）</div>
-  <div class="ngrid">
-    <div class="num"><div class="n">1</div><div class="t">册</div></div>
-    <div class="num"><div class="n">6</div><div class="t">章</div></div>
-    <div class="num"><div class="n">14</div><div class="t">节</div></div>
-    <div class="num"><div class="n">264</div><div class="t">子目</div></div>
-    <div class="num"><div class="n">2688</div><div class="t">消耗量</div></div>
-    <div class="num"><div class="n">80</div><div class="t">未计价材</div></div>
-  </div>
-  <div class="qrow"><span class="qchip ok">TOC 对账 <b>21 条</b></span><span class="qchip ok">疑点留痕 <b>0</b></span><span class="qchip ok">10门门控 <b>全绿</b></span></div>
-  <div class="links"><a class="lbtn" href="quota-extract-xj22/web/index.html">识别成果库·四视图前端</a><a class="lbtn ghost" href="quota-extract-xj22/out/xj22_quota.db">SQLite 成果库</a><a class="lbtn ghost" href="quota-extract-xj22/交付报告_xj22_装配式建筑工程消耗量定额.md">交付报告</a><a class="lbtn ghost" href="https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/4f3593ab75184517ab4d5b673ddead07.shtml" target="_blank">官方发布依据 · 关于发布《新疆维吾尔自治区装配式建筑工程消耗量定额（试行）》的通知</a></div>
-  <div class="meta">第六型源形态：官方 96 页 PDF，中文 FZ* 方正字体可读 + 数字/符号/西文单位用 FzBookMaker 子集字体无 ToUnicode 乱码 → charmap 反解（OCR 独立转写对齐，6 字体 57 glyphs）→ 矢量网格字符级重建 → 5 章 14 节 264 子目 2688 消耗量 → quota schema 九表 + 站点兼容三表 → 六视图前端 → 十门门控（P1 charmap 取证 paired 3613）+ 冒烟 24/24；双区页码（正文印页=物−9），每子目恰 1 条人工，括号未计价 80 条</div>
-  <div class="meta">官方依据：关于发布《新疆维吾尔自治区装配式建筑工程消耗量定额（试行）》的通知（2023-01-31 发布，2023-03-01 施行） ｜ 同时停止使用：（无废止条款；作为现行建筑工程计价依据的补充，与 2020 版房建/通用安装/安装补充/费用定额配套使用）</div>
-</div>
-<div class="vcard">
-  <div class="vhead"><span class="vtitle">自保温砌块及复合外保温模板补充定额（新疆·2023）</span>
-    <span class="badge g">已收官 · 10门全绿</span>
-    <span class="vtag">官方PDF 3 页</span><span class="vtag">基线指纹 2 文件</span></div>
-  <div class="vname">自保温混凝土复合砌块及复合外保温模板等补充定额项目</div>
-  <div class="ngrid">
-    <div class="num"><div class="n">1</div><div class="t">册</div></div>
-    <div class="num"><div class="n">4</div><div class="t">章</div></div>
-    <div class="num"><div class="n">3</div><div class="t">节</div></div>
-    <div class="num"><div class="n">5</div><div class="t">子目</div></div>
-    <div class="num"><div class="n">36</div><div class="t">消耗量</div></div>
-    <div class="num"><div class="n">0</div><div class="t">未计价材</div></div>
-  </div>
-  <div class="qrow"><span class="qchip ok">TOC 对账 <b>3 条</b></span><span class="qchip warn">疑点留痕 <b>7</b></span><span class="qchip ok">10门门控 <b>全绿</b></span></div>
-  <div class="links"><a class="lbtn" href="quota-extract-xj24/web/index.html">识别成果库·四视图前端</a><a class="lbtn ghost" href="quota-extract-xj24/out/xj24_quota.db">SQLite 成果库</a><a class="lbtn ghost" href="quota-extract-xj24/交付报告_xj24_自保温砌块及复合外保温模板补充定额.md">交付报告</a><a class="lbtn ghost" href="https://zjt.xinjiang.gov.cn/xjzjt/c116332/202607/953f03d0121f432b879454a47e25fb71.shtml" target="_blank">官方发布依据 · 关于发布自保温混凝土复合砌块及复合外保温模板等补充定额项目的通知</a></div>
-  <div class="meta">第八型源形态（3 页微型消耗量定额小卷，#25 通知页与 #26 正文页附件字节级同源）：find_tables 段错误禁用 → 矢量 full 横线切类别块 + 文本坐标聚行 + 列区间取词网格 → 3 章 3 节 5 子目（B4-1~B4-3 / B10-1 / B10-2）36 消耗格 → quota 九表 + 站点兼容三表 → 六视图前端（条文四类分组）→ 十门门控（P1 官方原版逐格取证 36/36）+ 冒烟 28/28 + 全链重建零失配；上标单位归一、单位嵌名称、类别字连排、无目录页、空白尾页共 7 条疑点留痕</div>
-  <div class="meta">官方依据：关于发布自保温混凝土复合砌块及复合外保温模板等补充定额项目的通知（2023-01-11 发布，2023-01-11 施行） ｜ 同时停止使用：（无废止条款；作为 2020 版房屋建筑与装饰工程消耗量定额的补充项目，#26 正文页挂同一份 PDF 附件，字节级同源）</div>
-</div></div>
-    <div class="note">费用定额为纯计价依据文件（取费基数/费率/计算程序，无消耗量子目），
-    与消耗量定额配套使用——「消耗量定额载量价基价、费用定额载费率程序」。
-    xj03 为费用定额卷种首个结构化卷（新疆2020版，66 页），独立 fee schema 七表；
-    材料单价计取规则分析见其交付报告第五章（四要素构成+营改增除税+两级发布+价差调整四层闭环）。</div>
-  </section>
+  <div class="qrow"><span class="qchip ok">子目八门门控 26 册 <b>全绿</b></span><span class="qchip ok">六项审计 <b>全绿</b></span><span class="qchip ok">台班册八门 1614 台班 + 20 安拆子目 <b>全绿</b></span>
+    <span class="qchip">已提分册 <b>fj1、fj2、fj3、az01、az02、az03a、az03b、az04a、az04b、az05、az06、az07、az08a、az08b、az09、az10、az11、az12、sz01、sz02、sz03、sz04、sz05、sz06、sz07、yl</b></span></div>
+  <div class="links"><a class="lbtn" href="quota-extract-gd18/out/GD18_章节地图.html">章节地图·结构成果</a><a class="lbtn ghost" href="quota-extract-gd18/out/gd18_structure.db">SQLite 结构库</a><a class="lbtn ghost" href="quota-extract-gd18/out/GD18_识别与结构化报告.md">识别与结构化报告</a></div>
+  <div class="meta">依据 粤建市〔2019〕6号（2019-03-01 施行）｜ 27 册 22 专业组结构全部落地、
+  编码落地率 100%，子目五要素逐册提取 26 册 24710 子目，
+  每册八门门控（编码连续/五要素零空/基价恒等式/名称质量/消耗恒等式/三层表头/私有区零残留/码覆盖对账）；
+  第 27 册台班 1614 个台班单价 + 20 个台班安拆子目，
+  台班单价恒等式 1614/1614 全过、与 26 册消耗交叉比对 24,462 条一致 ｜ 目录 quota-extract-gd18/</div>
+</div></div></section>
 
   <section>
-    <h2>价格与配合比依据（检索前端）</h2>
-    <div class="vgrid">
-<div class="vcard">
-  <div class="vhead"><span class="vtitle">机械台班费用标准</span>
-    <span class="badge g">独立卷 · 已结构化</span>
-    <span class="vtag">PDF 224 页</span></div>
-  <div class="vname">辽宁省建设工程计价依据《施工机械台班费用标准》(2024)</div>
-  <div class="ngrid"><div class="num"><div class="n">953</div><div class="t">施工机械台班</div></div><div class="num"><div class="n">593</div><div class="t">仪器仪表台班</div></div></div>
-  <div class="qrow"><span class="qchip ok">机械 identity_bad <b>0</b></span><span class="qchip ok">仪表恒等 fail <b>0</b></span><span class="qchip bad">重复编码疑点 <b>1</b></span><span class="qchip">990803060（电动多级离心清水泵 / 砂泵）</span><span class="qchip warn">跨册引用缺口 <b>5</b></span></div>
-  <div class="links"><a class="lbtn" href="quota-extract-jxtb/web/index.html">识别成果库·检索前端</a><a class="lbtn ghost" href="quota-extract-jxtb/out/quota_ln2024.db">SQLite 成果库</a></div>
-  <div class="meta">施工机械 953（P19-141）+ 仪器仪表 593（P144-223，873 段 10 位码）全书两篇全覆盖；仪表恒等式 593/593 全 pass（单价≈折旧+维护+校验+动力费） ｜ 源 PDF sha12=4d7f9419cb92 ｜ 拆分自房建卷库（宿主 5 列副本保留），对应关系见 hosting_map.json</div>
-</div>
-<div class="vcard">
-  <div class="vhead"><span class="vtitle">混凝土·砂浆配合比</span>
-    <span class="badge g">独立卷 · 已结构化</span>
-    <span class="vtag">PDF 63 页</span></div>
-  <div class="vname">辽宁省建设工程计价依据《混凝土、砂浆配合比》(2024)</div>
-  <div class="ngrid"><div class="num"><div class="n">382</div><div class="t">配合比组</div></div><div class="num"><div class="n">1498</div><div class="t">组分明细</div></div></div>
-  <div class="qrow"><span class="qchip">一、混凝土配合比 220、二、耐酸、防腐及特种砂浆、混凝土配合比 52、三、抹灰砂浆配合比 52、五、垫层、保温层材料配合比 34、四、砌筑砂浆配合比 24</span></div>
-  <div class="links"><a class="lbtn" href="quota-extract-phb/web/index.html">识别成果库·检索前端</a><a class="lbtn ghost" href="quota-extract-phb/out/quota_ln2024.db">SQLite 成果库</a></div>
-  <div class="meta">mix_ratios（组基价）+ mix_components（组分消耗量） ｜ 源 PDF sha12=3c98f0b44f51（省平台官方册） ｜ 拆分自房建卷库（宿主副本保留），对应关系见 hosting_map.json</div>
-</div></div>
-    <div class="note">机械台班费用标准与混凝土·砂浆配合比为并列层级的独立计价依据文件，
-    2026-10-13 起从房建卷库拆分独立（原寄生形态：machine_prices / mix_ratios / mix_components 表）。
+    <h2>说明</h2>
+    <div class="note">费用定额为纯计价依据文件（取费基数/费率/计算程序，无消耗量子目），
+    与消耗量定额配套使用——「消耗量定额载量价基价、费用定额载费率程序」。
+    机械台班费用标准与混凝土·砂浆配合比为并列层级的独立计价依据文件，
+    2026-10-13 起从房建卷库拆分独立（原寄生形态：machine_prices / mix_ratios / mix_components 表），
     拆分前对应关系、宿主副本与恢复/复建引用路径全部留档于
-    <a href="hosting_map.json">hosting_map.json</a>；宿主卷库内历史副本保留、基线指纹不动，
-    需要数据链接或引用时从独立库按列映射复建。</div>
+    <a href="hosting_map.json">hosting_map.json</a>。</div>
   </section>
 
   

@@ -354,7 +354,7 @@
     {
      "key": "xj11",
      "kind": "quota",
-     "label": "2020版新疆维吾尔自治区市政工程消耗量定额（二）",
+     "label": "新疆市政工程消耗量定额（二）（本地OCR双源）",
      "province": "新疆",
      "db": "xinjiang-2020/quota-extract-xj11/db_pdf/xj11_quota.db",
      "sha256": "ec00e4c7d40dbc4ca862d0594e8395d7f873cb62f75c6c60ddf5887a3057b021",
@@ -490,6 +490,22 @@
      "sha256": "4d71d96b1b40e324340a1647a5fdd91ffada220721bd7b5df4754395eb0d4e49",
      "bytes": 86016,
      "items": 5
+    }
+   ]
+  },
+  {
+   "dir": "guangdong-2018",
+   "province": "广东",
+   "volumes": [
+    {
+     "key": "gd18",
+     "kind": "quota",
+     "label": "广东省建设工程计价依据(2018)·定额全册与48期动态调整",
+     "province": "广东",
+     "db": "guangdong-2018/quota-extract-gd18/db_pdf/gd18_structure.db",
+     "sha256": "d87bd235a38ae5586a8db2c8c8333c6c001b8fee56ed90399bc2a3b95c9ce08f",
+     "bytes": 39198720,
+     "items": 24710
     }
    ]
   }

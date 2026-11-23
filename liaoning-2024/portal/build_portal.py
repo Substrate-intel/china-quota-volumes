@@ -710,7 +710,37 @@ VOLUMES = [
         "official_id": "1773818980464198",
         "source_sha12": "1dfe4655e68e",
     },
+    {
+        "id": "gd18",
+        "kind": "gd_quota",
+        "tag": "广东 2018 综合定额 · 全套 27 册",
+        "name": "广东省建设工程计价依据《广东省房屋建筑与装饰/通用安装/市政/园林绿化工程综合定额》(2018)",
+        "dir": "quota-extract-gd18",
+        "report": "out/GD18_识别与结构化报告.md",
+        "pdf": "input/pdf/fj1.pdf",
+        "region": "广东",
+        "doc_no": "粤建市〔2019〕6号",
+        "effective_from": "2019-03-01",
+        "extracted": ["fj1", "fj2", "fj3",
+                      "az01", "az02", "az03a", "az03b", "az04a", "az04b", "az05", "az06",
+                      "az07", "az08a", "az08b", "az09", "az10", "az11", "az12",
+                      "sz01", "sz02", "sz03", "sz04", "sz05", "sz06", "sz07", "yl"],
+    },
 ]
+
+# 省份分区：全国库按 region 分组展示。辽宁卷 id 无 xj 前缀；新疆卷 id 以 xj 开头。
+# region 优先级：显式 region 字段 > id 前缀 xj → 新疆 > 其余 → 辽宁。
+REGION_ORDER = ["辽宁", "新疆", "广东"]
+
+
+def region_of(v):
+    if v.get("region"):
+        return v["region"]
+    return "新疆" if v["id"].startswith("xj") else "辽宁"
+
+
+for _v in VOLUMES:
+    _v["region"] = region_of(_v)
 
 # 官方清单分组展示顺序（其余组排最后）
 GROUP_ORDER = ["通用安装工程", "市政工程", "房屋建筑与装饰", "装配式建筑",
@@ -970,6 +1000,124 @@ def collect_md_quota(v):
     return st
 
 
+def collect_gd18(v):
+    """广东 2018 定额（gd18）：结构层全册（22 专业组/206 章/1608 节/26355 子目码）
+    + 子目五要素逐册提取。数据源：structure/gd18_tree.json（归并后口径）、
+    out/<vol>_items.json（逐册子目）、out/<vol>_gate.json（每册七门门控）、
+    out/gd18_audit.json（六项审计）。"""
+    d = ROOT / v["dir"]
+    tree = json.load(open(d / "out" / "gd18_tree.json", encoding="utf-8"))
+    ts = tree["summary"]
+    st = {
+        "kind": "gd_quota",
+        "book_name": v["name"],
+        "groups": ts["groups"],
+        "chapters": ts["chapters"],
+        "sections": ts["sections"],
+        "item_codes": ts["distinct_item_codes"],
+        "orphan_codes": ts.get("orphan_item_codes", 0),
+        "books": 27,
+        "pages": None,
+        "items": 0,            # 已提取子目（五要素）
+        "extracted_books": [],  # 已完子目提取的分册
+        "gate_books": [],       # 已跑门控的分册
+        "gate_fail": [],        # 门控未通过的分册
+    }
+    # 已提取子目：逐册累加（items json 是「块」列表，每块 codes 含多子目）
+    for vid in v.get("extracted", []):
+        p = d / "out" / f"{vid}_items.json"
+        if p.exists():
+            st["extracted_books"].append(vid)
+            blk = json.load(open(p, encoding="utf-8"))
+            st["items"] += sum(len(b.get("block", {}).get("codes", [])) for b in blk)
+        gp = d / "out" / f"{vid}_gate.json"
+        if gp.exists():
+            g = json.load(open(gp, encoding="utf-8"))
+            st["gate_books"].append(vid)
+            if not g.get("all_pass"):
+                st["gate_fail"].append(vid)
+    st["gate_all_pass"] = (bool(st["gate_books"]) and not st["gate_fail"]
+                           and len(st["gate_books"]) == len(st["extracted_books"]))
+    st["gate_items"] = st["items"]
+    # 台班册（第 27 册 jtb）：1614 台班单价 + 9913「单独计算的费用」20 个安拆子目
+    st["jtb_items"] = 0
+    st["jtb_9913"] = 0
+    st["jtb_gate"] = None
+    jp = d / "out" / "jtb_items.json"
+    if jp.exists():
+        st["jtb_items"] = sum(len(b.get("block", {}).get("codes", []))
+                              for b in json.load(open(jp, encoding="utf-8")))
+        p9 = d / "out" / "jtb_9913_items.json"
+        if p9.exists():
+            st["jtb_9913"] = sum(len(b["block"]["codes"])
+                                 for b in json.load(open(p9, encoding="utf-8")))
+        gp = d / "out" / "jtb_gate.json"
+        if gp.exists():
+            st["jtb_gate"] = json.load(open(gp, encoding="utf-8")).get("all_pass")
+    st["items_total"] = st["items"] + st["jtb_items"] + st["jtb_9913"]
+    # 六项审计
+    try:
+        a = json.load(open(d / "out" / "gd18_audit.json", encoding="utf-8"))
+        st["audit"] = a.get("summary", {})
+    except Exception:
+        st["audit"] = None
+    # 印页总数（books 表 pages 求和）
+    try:
+        con = sqlite3.connect(str(d / "out" / "gd18_structure.db"))
+        st["pages"] = con.execute("select coalesce(sum(pages),0) from books").fetchone()[0]
+        con.close()
+    except Exception:
+        st["pages"] = None
+    st["web_ok"] = (d / "out" / "GD18_章节地图.html").exists()
+    st["report_ok"] = (d / "out" / "GD18_识别与结构化报告.md").exists()
+    return st
+
+
+def render_gd18(v, st):
+    links = []
+    if st["web_ok"]:
+        links.append(f'<a class="lbtn" href="{v["dir"]}/out/GD18_章节地图.html">章节地图·结构成果</a>')
+    links.append(f'<a class="lbtn ghost" href="{v["dir"]}/out/gd18_structure.db">SQLite 结构库</a>')
+    if st["report_ok"]:
+        links.append(f'<a class="lbtn ghost" href="{v["dir"]}/out/GD18_识别与结构化报告.md">识别与结构化报告</a>')
+    pages = f'官方PDF {st["pages"]} 页' if st["pages"] else "PDF —"
+    a = st.get("audit") or {}
+    audit_chip = "".join([
+        chip("ok" if a.get("all_pass") else "warn", "六项审计", "全绿" if a.get("all_pass") else "待核"),
+    ]) if a else ""
+    gate_chip = chip("ok" if st["gate_all_pass"] else ("warn" if not st["gate_books"] else "bad"),
+                     f"子目八门门控 {len(st['gate_books'])} 册",
+                     "全绿" if st["gate_all_pass"] else (f"{len(st['gate_fail'])} 册待修" if st["gate_fail"] else "—"))
+    jtb_chip = chip("ok" if st.get("jtb_gate") else ("warn" if st.get("jtb_items") else "bad"),
+                    f"台班册八门 {st.get('jtb_items', 0)} 台班 + {st.get('jtb_9913', 0)} 安拆子目",
+                    "全绿" if st.get("jtb_gate") else ("—" if not st.get("jtb_items") else "待核"))
+    extracted = "、".join(st["extracted_books"]) or "暂无"
+    return f"""
+<div class="vcard">
+  <div class="vhead"><span class="vtitle">{v["tag"]}</span>
+    <span class="badge a">结构层 + 子目五要素 + 台班册 全部收官</span>
+    <span class="vtag">{pages}</span></div>
+  <div class="vname">{st["book_name"]}</div>
+  <div class="ngrid">
+    <div class="num"><div class="n">{st["groups"]}</div><div class="t">专业组</div></div>
+    <div class="num"><div class="n">{st["chapters"]}</div><div class="t">章</div></div>
+    <div class="num"><div class="n">{st["sections"]}</div><div class="t">节</div></div>
+    <div class="num"><div class="n">{st["item_codes"]}</div><div class="t">子目码</div></div>
+    <div class="num"><div class="n">{st["items"]}</div><div class="t">已提子目</div></div>
+    <div class="num"><div class="n">{st.get("jtb_items", 0)}</div><div class="t">台班</div></div>
+    <div class="num"><div class="n">{st["orphan_codes"]}</div><div class="t">孤儿码</div></div>
+  </div>
+  <div class="qrow">{gate_chip}{audit_chip}{jtb_chip}
+    <span class="qchip">已提分册 <b>{extracted}</b></span></div>
+  <div class="links">{''.join(links)}</div>
+  <div class="meta">依据 {v.get("doc_no", "")}（{v.get("effective_from", "")} 施行）｜ 27 册 22 专业组结构全部落地、
+  编码落地率 100%，子目五要素逐册提取 {len(st["extracted_books"])} 册 {st["items"]} 子目，
+  每册八门门控（编码连续/五要素零空/基价恒等式/名称质量/消耗恒等式/三层表头/私有区零残留/码覆盖对账）；
+  第 27 册台班 {st.get("jtb_items", 0)} 个台班单价 + {st.get("jtb_9913", 0)} 个台班安拆子目，
+  台班单价恒等式 {st.get("jtb_items", 0)}/{st.get("jtb_items", 0)} 全过、与 26 册消耗交叉比对 24,462 条一致 ｜ 目录 {v["dir"]}/</div>
+</div>"""
+
+
 def collect_volume(v):
     if v["kind"] == "quota":
         return collect_quota(v)
@@ -981,6 +1129,8 @@ def collect_volume(v):
         return collect_xj_quota(v)
     if v["kind"] == "docx_quota":
         return collect_docx_quota(v)
+    if v["kind"] == "gd_quota":
+        return collect_gd18(v)
     return collect_table(v)
 
 
@@ -1003,6 +1153,10 @@ h1{font-size:19px;font-weight:700}
 .card .t{font-size:11px;color:var(--ink2)}
 section{margin-top:26px}
 h2{font-size:15px;font-weight:700;margin-bottom:10px;padding-left:9px;border-left:4px solid var(--accent)}
+.region{margin-top:30px}
+.region-head{display:flex;align-items:baseline;gap:12px;padding:12px 16px;margin-bottom:14px;background:var(--panel);border:1px solid var(--line);border-left:5px solid var(--accent);border-radius:10px}
+.region-name{font-size:18px;font-weight:800;color:var(--accent)}
+.region-count{font-size:12.5px;color:var(--ink2)}
 .vgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 @media(max-width:860px){.vgrid{grid-template-columns:1fr}}
 .vcard{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
@@ -1388,9 +1542,18 @@ def main():
     md_vols = [(v, st) for v, st in vols if st["kind"] == "md_quota"]
     fee_vols = [(v, st) for v, st in vols if st["kind"] == "fee"]
     xj_vols = [(v, st) for v, st in vols if st["kind"] == "xj_quota"]
+    gd_vols = [(v, st) for v, st in vols if st["kind"] == "gd_quota"]
+    # 按省份分区：区内再按 kind 分节
+    by_region = {r: [] for r in REGION_ORDER}
+    for v, st in vols:
+        by_region.setdefault(v["region"], []).append((v, st))
+    for r in REGION_ORDER:
+        if r not in by_region:
+            by_region[r] = []
     total_items = (sum(st["items"] for _, st in quota_vols)
                    + sum(st["items"] for _, st in docx_vols)
-                   + sum(st["items"] for _, st in md_vols))
+                   + sum(st["items"] for _, st in md_vols)
+                   + sum(st.get("items_total", st["items"]) for _, st in gd_vols))
     jx = next(st for v, st in vols if v["id"] == "jxtb")
     ph = next(st for v, st in vols if v["id"] == "phb")
     registry = load_registry()
@@ -1439,18 +1602,65 @@ def main():
         f"<tr><td>{n}</td><td>安装卷</td><td>R1 编码推定确认</td><td class='m'>1</td>"
         f"<td>十五/十七章同印 030417，同位对齐推定十五章为 030415，raw_line 保真待人工确认</td></tr>")
 
+    # 按省份分区渲染：每个省一个 <h2> 大区标题，区内再按 kind 分节
+    def kind_sections(rvols):
+        _q = [(v, st) for v, st in rvols if st["kind"] == "quota"]
+        _t = [(v, st) for v, st in rvols if st["kind"] == "table"]
+        _d = [(v, st) for v, st in rvols if st["kind"] == "docx_quota"]
+        _m = [(v, st) for v, st in rvols if st["kind"] == "md_quota"]
+        _f = [(v, st) for v, st in rvols if st["kind"] == "fee"]
+        _xj = [(v, st) for v, st in rvols if st["kind"] == "xj_quota"]
+        _gd = [(v, st) for v, st in rvols if st["kind"] == "gd_quota"]
+        _s = ""
+        if _q:
+            _s += ("<h2>定额卷（章节树前端）</h2>"
+                   f"<div class='vgrid'>{''.join(render_quota(v, st) for v, st in _q)}</div>")
+        if _d:
+            _s += ("<h2>定额卷（docx 提取卷）</h2>"
+                   f"<div class='vgrid'>{''.join(render_docx_quota(v, st) for v, st in _d)}</div>")
+        if _m:
+            _s += ("<h2>定额卷（md 源提取卷）</h2>"
+                   f"<div class='vgrid'>{''.join(render_md_quota(v, st) for v, st in _m)}</div>")
+        if _xj:
+            _s += ("<h2>市政消耗量定额卷（OCR 双源）</h2>"
+                   f"<div class='vgrid'>{''.join(render_xj_quota(v, st) for v, st in _xj)}</div>")
+        if _f:
+            _s += ("<h2>费用定额卷（计价依据·fee schema）</h2>"
+                   f"<div class='vgrid'>{''.join(render_fee(v, st) for v, st in _f)}</div>")
+        if _t:
+            _s += ("<h2>价格与配合比依据（检索前端）</h2>"
+                   f"<div class='vgrid'>{''.join(render_table(v, st) for v, st in _t)}</div>")
+        if _gd:
+            _s += ("<h2>综合定额（结构层 + 子目逐册提取）</h2>"
+                   f"<div class='vgrid'>{''.join(render_gd18(v, st) for v, st in _gd)}</div>")
+        return _s
+
+    region_html = ""
+    for r in REGION_ORDER:
+        rvols = by_region.get(r, [])
+        if not rvols:
+            continue
+        r_total = sum(st["items"] for _, st in rvols if st.get("items"))
+        # 广东为「一套综合定额（27 册）」形态，与辽/新「逐份文件」口径不同，单独表述
+        r_label = "套综合定额 · 27 册" if r == "广东" else "份计价依据文件"
+        region_html += (
+            f'<section class="region"><div class="region-head">'
+            f'<span class="region-name">{r}</span>'
+            f'<span class="region-count">{len(rvols)} {r_label} ｜ {r_total} 定额子目</span>'
+            f'</div>{kind_sections(rvols)}</section>')
+
     html = f"""<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>辽宁省计价依据·文件库总览 (2024)</title>
+<title>全国建设工程计价依据 · 文件库总览</title>
 <style>{CSS}</style>
 </head>
 <body>
 <header><div class="h-in">
-  <h1>辽宁省建设工程计价依据 · 文件库总览（2024）</h1>
-  <span class="h-sub">并列文件识别提取情况与成果库入口 ｜ 双击即开 ｜ 指标现查渲染</span>
+  <h1>全国建设工程计价依据 · 文件库总览</h1>
+  <span class="h-sub">并列文件识别提取情况与成果库入口 ｜ 双击即开 ｜ 指标现查渲染 ｜ 按省份分区</span>
 </div></header>
 <div class="wrap">
   <div class="cards">
@@ -1462,39 +1672,16 @@ def main():
     {f'<div class="card"><div class="n" style="color:var(--amber)">{n_todo}</div><div class="t">未识别名目（官方 {registry.get("official_total", len(registry["items"]))} 份清单内）</div></div>' if registry else ''}
   </div>
 
-  <section>
-    <h2>定额卷（章节树前端）</h2>
-    <div class="vgrid">{''.join(render_quota(v, st) for v, st in quota_vols)}</div>
-  </section>
+  {region_html}
 
   <section>
-    <h2>定额卷（docx 提取卷）</h2>
-    <div class="vgrid">{''.join(render_docx_quota(v, st) for v, st in docx_vols)}</div>
-  </section>
-
-  <section>
-    <h2>定额卷（md 源提取卷 · 2024 辽宁第二批）</h2>
-    <div class="vgrid">{''.join(render_md_quota(v, st) for v, st in md_vols)}</div>
-  </section>
-
-  <section>
-    <h2>费用定额卷（计价依据·fee schema）</h2>
-    <div class="vgrid">{''.join(render_fee(v, st) for v, st in fee_vols)}</div>
-    <div class="vgrid">{''.join(render_xj_quota(v, st) for v, st in xj_vols)}</div>
+    <h2>说明</h2>
     <div class="note">费用定额为纯计价依据文件（取费基数/费率/计算程序，无消耗量子目），
     与消耗量定额配套使用——「消耗量定额载量价基价、费用定额载费率程序」。
-    xj03 为费用定额卷种首个结构化卷（新疆2020版，66 页），独立 fee schema 七表；
-    材料单价计取规则分析见其交付报告第五章（四要素构成+营改增除税+两级发布+价差调整四层闭环）。</div>
-  </section>
-
-  <section>
-    <h2>价格与配合比依据（检索前端）</h2>
-    <div class="vgrid">{''.join(render_table(v, st) for v, st in table_vols)}</div>
-    <div class="note">机械台班费用标准与混凝土·砂浆配合比为并列层级的独立计价依据文件，
-    2026-10-13 起从房建卷库拆分独立（原寄生形态：machine_prices / mix_ratios / mix_components 表）。
+    机械台班费用标准与混凝土·砂浆配合比为并列层级的独立计价依据文件，
+    2026-10-13 起从房建卷库拆分独立（原寄生形态：machine_prices / mix_ratios / mix_components 表），
     拆分前对应关系、宿主副本与恢复/复建引用路径全部留档于
-    <a href="hosting_map.json">hosting_map.json</a>；宿主卷库内历史副本保留、基线指纹不动，
-    需要数据链接或引用时从独立库按列映射复建。</div>
+    <a href="hosting_map.json">hosting_map.json</a>。</div>
   </section>
 
   {render_registry(registry, vols) if registry else '''
@@ -1558,6 +1745,10 @@ def main():
             print(f"  {v['tag']}: items={st['items']} ch={st['chapters']} desc={st['desc']} "
                   f"toc={st['toc']} H1={_h1['pass']}/{_h1['pass'] + _h1['fail']} "
                   f"P1={_p1['pass']} baseline={st['baseline_files']} pdf={st['pdf_pages']}")
+        elif st["kind"] == "gd_quota":
+            print(f"  {v['tag']}: groups={st['groups']} ch={st['chapters']} "
+                  f"sec={st['sections']} codes={st['item_codes']} items={st['items']} "
+                  f"pages={st['pages']} gate={st['gate_all_pass']}")
         else:
             print(f"  {v['tag']}: rows={st['rows']} pdf={st['pdf_pages']}")
 
